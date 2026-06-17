@@ -290,9 +290,8 @@
 
  <!--Contact Section -->
 <section id="contact" style="background:#f4f4f4; padding:60px 20px; font-family:'Segoe UI', sans-serif;">
-    <h2 style="text-align:center; color:#222; margin-bottom:20px;">Contact Naveen Kumar B</h2>
+    <h2 style="text-align:center; color:#222; margin-bottom:20px;">Contact to Naveen Kumar B</h2>
     <p style="text-align:center; color:#555; margin-bottom:40px;">
-        MBA in Finance | Business Analyst | Skilled in Power BI, MySQL, and Financial Modeling
     </p>
     
     <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" 
@@ -314,16 +313,7 @@
                 style="background:#0078d7; color:#fff; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; width:100%; font-size:16px; transition:0.3s;">
             Send Message
         </button>
-    </form>
     
-    <div style="text-align:center; margin-top:30px; color:#555;">
-        <p>Email: <a href="mailto:naveenbalakrishnan146@gmail.com" style="color:#0078d7;">naveenbalakrishnan146@gmail.com</a></p>
-        <p>Phone: <a href="tel:6369311629" style="color:#0078d7;">+91 63693 11629</a></p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/naveenkumar" style="color:#0078d7;">linkedin.com/in/naveenkumar</a></p>
-    </div>
-</section>
-
-
     <!--Footer -->
 <footer style="background:#111; color:#ddd; padding:30px 20px; font-family:'Segoe UI', sans-serif;">
     <div style="max-width:800px; margin:auto; display:flex; flex-direction:column; align-items:center;">
