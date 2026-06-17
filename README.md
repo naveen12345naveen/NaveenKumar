@@ -288,16 +288,41 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Contact Me</h2>
-        <form class="contact-form" action="https://formsubmit.co" method="POST">
-            <input type="text" name="name" placeholder="NaveenKumar B" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+ <!--Contact Section -->
+<section id="contact" style="background:#f4f4f4; padding:60px 20px; font-family:'Segoe UI', sans-serif;">
+    <h2 style="text-align:center; color:#222; margin-bottom:20px;">Contact Naveen Kumar B</h2>
+    <p style="text-align:center; color:#555; margin-bottom:40px;">
+        MBA in Finance | Business Analyst | Skilled in Power BI, MySQL, and Financial Modeling
+    </p>
+    
+    <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" 
+          style="max-width:600px; margin:auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+        
+        <!-- Hidden field to disable captcha -->
+        <input type="hidden" name="_captcha" value="false">
+        
+        <input type="text" name="name" placeholder="Your Name" required 
+               style="width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:6px;">
+        
+        <input type="email" name="email" placeholder="Your Email" required 
+               style="width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:6px;">
+        
+        <textarea name="message" placeholder="Write your message here..." required 
+                  style="width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:6px; height:120px;"></textarea>
+        
+        <button type="submit" 
+                style="background:#0078d7; color:#fff; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; width:100%; font-size:16px; transition:0.3s;">
+            Send Message
+        </button>
+    </form>
+    
+    <div style="text-align:center; margin-top:30px; color:#555;">
+        <p>Email: <a href="mailto:naveenbalakrishnan146@gmail.com" style="color:#0078d7;">naveenbalakrishnan146@gmail.com</a></p>
+        <p>Phone: <a href="tel:6369311629" style="color:#0078d7;">+91 63693 11629</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/naveenkumar" style="color:#0078d7;">linkedin.com/in/naveenkumar</a></p>
+    </div>
+</section>
+
 
     <!--Footer -->
 <footer style="background:#111; color:#ddd; padding:30px 20px; font-family:'Segoe UI', sans-serif;">
