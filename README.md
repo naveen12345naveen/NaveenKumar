@@ -4,8 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NaveenKumar B - Personal Portfolio</title>
     <style>
-        /* Base Reset & Variables */
-        * {
+        / Base Reset & Variables /
+        {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -27,7 +27,7 @@
             line-height: 1.6;
         }
 
-        /* Navbar */
+        / Navbar /
         nav {
             display: flex;
             justify-content: space-between;
@@ -65,7 +65,7 @@
             color: var(--primary-color);
         }
 
-        /* Hero Section */
+        / Hero Section /
         .hero {
             display: flex;
             flex-direction: column;
@@ -107,7 +107,7 @@
             transform: translateY(-3px);
         }
 
-        /* Sections */
+        / Sections /
         section {
             padding: 5rem 5%;
             max-width: 1200px;
@@ -131,7 +131,7 @@
             border-radius: 2px;
         }
 
-        /* About Section */
+        / About Section /
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -144,7 +144,7 @@
             font-size: 1.1rem;
         }
 
-        /* Projects Section */
+        / Projects Section /
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -178,7 +178,7 @@
             font-weight: bold;
         }
 
-        /* Contact Section */
+        / Contact Section /
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -216,7 +216,7 @@
             background-color: #45a049;
         }
 
-        /* Footer */
+        / Footer /
         footer {
             text-align: center;
             padding: 2rem;
@@ -224,10 +224,10 @@
             color: var(--text-muted);
         }
 
-        /* Responsive Design */
+        / Responsive Design /
         @media (max-width: 768px) {
             nav ul {
-                display: none; /* Consider adding a mobile menu here */
+                display: none; / Consider adding a mobile menu here /
             }
             .about-content {
                 grid-template-columns: 1fr;
