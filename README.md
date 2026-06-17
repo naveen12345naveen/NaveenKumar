@@ -45,20 +45,24 @@
         }
         nav ul {
             display: flex;
-            list-style: none;
+            list-style: none; 
         }
+        
         nav ul li {
             margin-left: 2rem;
         }
+        
         nav ul li a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s;
         }
+        
         nav ul li a:hover {
             color: var(--primary-color);
         }
+        
         / Hero Section /
         .hero {
             display: flex;
@@ -69,13 +73,16 @@
             text-align: center;
             padding: 0 1rem;
         }
+        
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
         }
+        
         .hero h1 span {
             color: var(--primary-color);
         }
+        
         .hero p {
             font-size: 1.2rem;
             color: var(--text-muted);
@@ -92,10 +99,12 @@
             font-weight: bold;
             transition: transform 0.3s, background-color 0.3s;
         }
+        
         .cta-btn:hover {
             background-color: #45a049;
             transform: translateY(-3px);
         }
+        
         / Sections /
         section {
             padding: 5rem 5%;
@@ -118,6 +127,7 @@
             margin: 10px auto 0;
             border-radius: 2px;
         }
+        
         / About Section /
         .about-content {
             display: grid;
@@ -137,6 +147,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
+        
         .project-card {
             background-color: var(--card-bg);
             border-radius: 10px;
@@ -156,6 +167,7 @@
             color: var(--text-muted);
             margin-bottom: 1rem;
         }
+        
         .project-card a {
             color: var(--primary-color);
             text-decoration: none;
@@ -178,6 +190,7 @@
             border-radius: 5px;
             font-size: 1rem;
         }
+        
         .contact-form textarea {
             resize: vertical;
             height: 150px;
@@ -288,7 +301,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 [NaveenKumar B]. Built with HTML & CSS.</p>
+        <p>&copy; 2026 [NaveenKumar B]. Built with HTML.</p>
     </footer>
 
 </body>
