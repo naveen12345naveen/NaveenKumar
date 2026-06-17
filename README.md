@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -30,6 +31,35 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
       scroll-behavior: smooth;
+      padding: 20px;
+    }
+
+    /* Layout Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header/Hero Section */
+    header {
+      text-align: center;
+      padding: 50px 0;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    /* Section Styling */
+    section {
+      margin: 40px 0;
     }
 
     /* Section Titles */
@@ -38,6 +68,13 @@
       font-size: 2rem;
       margin-bottom: 20px;
       color: var(--primary-color);
+    }
+
+    /* Projects Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
     }
 
     /* Card Component */
@@ -51,6 +88,14 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
+    .card h3 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 15px;
     }
 
     /* Buttons */
@@ -66,9 +111,71 @@
     .btn:hover {
       background: var(--secondary-color);
     }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-muted);
+      margin-top: 40px;
+      border-top: 1px solid #222;
+    }
   </style>
 </head>
 <body>
+
+  <div class="container">
+    <!-- Hero Header -->
+    <header>
+      <h1>NaveenKumar B</h1>
+      <p>Welcome to my professional portfolio web space.</p>
+      <a href="#contact" class="btn">Get In Touch</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <div class="card">
+        <p>Hello! I am NaveenKumar. I build things for the web. This is where I showcase my latest projects, technical skill sets, and professional journey.</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2 class="section-title">My Projects</h2>
+      <div class="grid">
+        <!-- Project 1 -->
+        <div class="card">
+          <h3>Project Title One</h3>
+          <p>A brief description explaining what this web project does and the technology stack used to build it.</p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+        <!-- Project 2 -->
+        <div class="card">
+          <h3>Project Title Two</h3>
+          <p>A brief description explaining what this web project does and the technology stack used to build it.</p>
+          <a href="#" class="btn">View Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="card" style="text-align: center;">
+        <p style="margin-bottom: 15px;">Interested in working together or hiring me?</p>
+        <a href="mailto:your-email@example.com" class="btn">Email Me</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 NaveenKumar B. All Rights Reserved.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
 
 
         / Navbar /
