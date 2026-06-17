@@ -255,7 +255,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <p>Hello, I'm</p>
-        <h1>[Your Name]</h1>
+        <h1>[Naveenkumar B]</h1>
         <p>A passionate Developer & Designer building digital experiences.</p>
         <a href="#contact" class="cta-btn">Get In Touch</a>
     </section>
