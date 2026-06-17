@@ -299,7 +299,7 @@
     <section id="contact">
         <h2 class="section-title">Contact Me</h2>
         <form class="contact-form" action="https://formsubmit.co" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="name" placeholder="NaveenKumar B" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
             <button type="submit">Send Message</button>
@@ -308,7 +308,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 [Your Name]. Built with HTML & CSS.</p>
+        <p>&copy; 2026 [NaveenKumar B]. Built with HTML & CSS.</p>
     </footer>
 
 </body>
