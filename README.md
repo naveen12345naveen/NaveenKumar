@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Portfolio</title>
+    <title>NaveenKumar B - Personal Portfolio</title>
     <style>
         /* Base Reset & Variables */
         * {
