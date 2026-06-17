@@ -14,7 +14,6 @@
       --neon-blue: #00e5ff;
     }
     
-    /* Global Smooth Scrolling */
     html {
       scroll-behavior: smooth;
     }
@@ -33,7 +32,7 @@
       overflow-x: hidden;
     }
     
-    /* Modern Navigation Bar with Glassmorphism */
+    /* Navigation Bar */
     nav { 
       background: rgba(0, 0, 0, 0.85); 
       backdrop-filter: blur(12px);
@@ -75,11 +74,11 @@
       width: 100%;
     }
 
-    /* UNIQUE VISUAL EFFECT: LIVE MARKET TICKER LAYER */
+    /* Ticker & Audio Bar */
     .market-ticker-container {
       background: #050505;
       border-bottom: 1px dashed rgba(76, 175, 80, 0.4);
-      padding: 10px 20px;
+      padding: 12px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -111,30 +110,31 @@
 
     .up-trend { color: #00ff88 !important; }
 
-    /* Sound Controller Button Layout */
     .audio-control-btn {
-      background: rgba(76, 175, 80, 0.1);
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      padding: 4px 12px;
+      background: linear-gradient(90deg, #1e3a20, #4CAF50);
+      color: #000;
+      border: none;
+      padding: 6px 16px;
       border-radius: 20px;
       cursor: pointer;
-      font-size: 0.75rem;
+      font-size: 0.8rem;
       font-family: inherit;
       font-weight: bold;
       text-transform: uppercase;
       transition: all 0.3s ease;
-      animation: pulseBorder 2s infinite;
+      box-shadow: 0 0 15px var(--primary-glow);
+      animation: pulseGlowBtn 1.5s infinite;
     }
 
     .audio-control-btn.active {
-      background: var(--primary);
-      color: #000;
+      background: #222;
+      color: var(--primary);
+      border: 1px solid #333;
       animation: none;
-      box-shadow: 0 0 10px var(--primary);
+      box-shadow: none;
     }
 
-    /* HIGH-EFFECT SHIFTING GRADIENT HEADER BLOCK */
+    /* Shifting Gradient Header */
     header { 
       background: linear-gradient(-45deg, #0f1f11, #141414, #050b06, #112614);
       background-size: 400% 400%;
@@ -175,7 +175,6 @@
       line-height: 1.8;
     }
 
-    /* Standard Layout Space */
     .container { 
       max-width: 1100px; 
       margin: auto; 
@@ -187,7 +186,6 @@
       border-bottom: 1px solid #1a1a1a; 
     }
     
-    /* ANIMATED GLOWING HEADERS & REVEAL LINES */
     h2 { 
       color: var(--primary); 
       font-size: 2.3rem; 
@@ -211,7 +209,6 @@
       animation: expandLine 2s ease-out infinite alternate;
     }
 
-    /* Responsive Presentation Cards */
     .grid { 
       display: grid; 
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
@@ -252,96 +249,23 @@
       transform: scaleY(1);
     }
     
-    .card h3 { 
-      margin-bottom: 12px; 
-      color: #fff; 
-      font-size: 1.45rem;
-    }
-    
-    .card h4 { 
-      color: var(--primary); 
-      margin-bottom: 12px; 
-      font-weight: 400; 
-    }
-    
-    .meta { 
-      font-size: 0.95rem; 
-      color: var(--muted); 
-      margin-bottom: 18px; 
-      display: block; 
-    }
+    .card h3 { margin-bottom: 12px; color: #fff; font-size: 1.45rem; }
+    .card h4 { color: var(--primary); margin-bottom: 12px; font-weight: 400; }
+    .meta { font-size: 0.95rem; color: var(--muted); margin-bottom: 18px; display: block; }
 
-    /* Work Experience Checked Architecture */
-    .experience-list {
-      list-style: none;
-      margin-top: 15px;
-    }
+    .experience-list { list-style: none; margin-top: 15px; }
+    .experience-list li { position: relative; padding-left: 25px; margin-bottom: 12px; color: #e0e0e0; font-size: 0.98rem; }
+    .experience-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; text-shadow: 0 0 8px var(--primary); }
 
-    .experience-list li {
-      position: relative;
-      padding-left: 25px;
-      margin-bottom: 12px;
-      color: #e0e0e0;
-      font-size: 0.98rem;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .skills-box { background: #0f0f0f; padding: 30px; border-radius: 12px; border: 1px solid #1a1a1a; transition: border-color 0.3s ease; }
+    .skills-box:hover { border-color: rgba(76, 175, 80, 0.3); }
+    .skills-box h3 { font-size: 1.25rem; margin-bottom: 20px; color: #fff; border-bottom: 1px solid #222; padding-bottom: 10px; }
+    .skills-box ul { list-style: none; }
+    .skills-box li { background: #181818; padding: 12px 18px; margin-bottom: 12px; border-radius: 8px; font-size: 0.95rem; border-left: 4px solid var(--primary); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease; }
+    .skills-box li:hover { transform: translateX(10px) scale(1.02); background: #1f2d21; }
 
-    .experience-list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-weight: bold;
-      text-shadow: 0 0 8px var(--primary);
-    }
-
-    /* Responsive Grid layout for Interactive Skills */
-    .skills-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 30px; 
-    }
-    
-    .skills-box {
-      background: #0f0f0f;
-      padding: 30px;
-      border-radius: 12px;
-      border: 1px solid #1a1a1a;
-      transition: border-color 0.3s ease;
-    }
-
-    .skills-box:hover {
-      border-color: rgba(76, 175, 80, 0.3);
-    }
-    
-    .skills-box h3 {
-      font-size: 1.25rem;
-      margin-bottom: 20px;
-      color: #fff;
-      border-bottom: 1px solid #222;
-      padding-bottom: 10px;
-      position: relative;
-    }
-    
-    .skills-box ul { 
-      list-style: none; 
-    }
-    
-    .skills-box li { 
-      background: #181818; 
-      padding: 12px 18px; 
-      margin-bottom: 12px; 
-      border-radius: 8px; 
-      font-size: 0.95rem; 
-      border-left: 4px solid var(--primary); 
-      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
-    }
-    
-    .skills-box li:hover {
-      transform: translateX(10px) scale(1.02);
-      background: #1f2d21;
-    }
-
-    /* Forms Interactivity elements */
+    /* Dynamic Contact Form & Upload Mechanics */
     form { 
       max-width: 650px; 
       margin: auto; 
@@ -368,8 +292,78 @@
       outline: none; 
       box-shadow: 0 0 15px rgba(76, 175, 80, 0.25);
     }
-    
-    button { 
+
+    /* UNIQUE VISUAL COMPONENT: PHOTO UPLOAD CONTAINER */
+    .file-upload-wrapper {
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .file-upload-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      background: #0f0f0f;
+      border: 2px dashed #333;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .file-upload-label:hover {
+      border-color: var(--primary);
+      background: rgba(76, 175, 80, 0.03);
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.1);
+    }
+
+    .file-upload-label span {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 5px;
+    }
+
+    .file-upload-label .icon {
+      font-size: 1.8rem;
+      color: var(--primary);
+      text-shadow: 0 0 8px var(--primary-glow);
+    }
+
+    /* Hidden Native File Input Wrapper */
+    .file-upload-input {
+      display: none;
+    }
+
+    /* Dynamic Preview Block Component */
+    .image-preview-box {
+      margin-top: 15px;
+      display: none;
+      text-align: center;
+      border: 1px solid #222;
+      padding: 10px;
+      border-radius: 8px;
+      background: #090909;
+    }
+
+    .image-preview-box img {
+      max-width: 100%;
+      max-height: 200px;
+      border-radius: 6px;
+      border: 1px solid #333;
+    }
+
+    .remove-preview-btn {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: #ff5252;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    button[type="submit"] { 
       background: var(--primary); 
       color: #000; 
       font-weight: bold; 
@@ -384,13 +378,12 @@
       letter-spacing: 1px;
     }
     
-    button:hover { 
+    button[type="submit"]:hover { 
       background: #45a049; 
       box-shadow: 0 0 20px var(--primary);
       transform: translateY(-3px);
     }
 
-    /* HIGH-EFFECT FLOATING GLOW FOOTER BLOCK */
     footer { 
       background: #030704; 
       color: #ddd; 
@@ -420,16 +413,9 @@
       align-items: center; 
     }
     
-    .footer-content p { 
-      margin: 6px 0; 
-      text-align: center; 
-    }
+    .footer-content p { margin: 6px 0; text-align: center; }
+    .footer-links { margin-top: 30px; }
     
-    .footer-links { 
-      margin-top: 30px; 
-    }
-    
-    /* Neon Circular Interactive Bubble Link Modules */
     .footer-links a { 
       color: #fff; 
       text-decoration: none; 
@@ -439,7 +425,6 @@
       border: 1px solid #333;
       border-radius: 30px;
       display: inline-block;
-      box-shadow: inset 0 0 0 rgba(255,255,255,0);
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
     }
     
@@ -451,7 +436,6 @@
       transform: translateY(-5px);
     }
 
-    /* Layout Timelines & Rendering Keyframes */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -473,12 +457,12 @@
       to { width: 110px; }
     }
 
-    @keyframes pulseBorder {
-      0%, 100% { border-color: var(--primary); box-shadow: 0 0 2px transparent; }
-      50% { border-color: #fff; box-shadow: 0 0 8px var(--primary-glow); }
+    @keyframes pulseGlowBtn {
+      0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7); }
+      70% { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(76, 175, 80, 0); }
+      100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 175, 80, 0); }
     }
 
-    /* Display Architecture Scaling */
     @media (max-width: 768px) { 
       header h1 { font-size: 2.8rem; }
       nav a { margin: 0 6px; font-size: 0.9rem; }
@@ -490,11 +474,11 @@
 <body>
 
   <nav>
-    <a href="#about" class="snd-hover" onclick="playClick()">About</a>
-    <a href="#experience" class="snd-hover" onclick="playClick()">Experience</a>
-    <a href="#projects" class="snd-hover" onclick="playClick()">Projects</a>
-    <a href="#skills" class="snd-hover" onclick="playClick()">Skills</a>
-    <a href="#contact" class="snd-hover" onclick="playClick()">Contact</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
   </nav>
 
   <div class="market-ticker-container">
@@ -504,7 +488,7 @@
       <div class="ticker-item">USD/INR: <span id="usd-val">83.54</span></div>
     </div>
     <div>
-      <button id="audio-toggle" class="audio-control-btn" onclick="toggleAudioSystem()">Sound OFF</button>
+      <button id="audio-toggle" class="audio-control-btn" onclick="toggleMusicEngine()">Unmute Background Music</button>
     </div>
   </div>
 
@@ -520,15 +504,15 @@
     
     <section id="experience">
       <h2>Corporate Exposure</h2>
-      <div class="card snd-hover">
-        <h3>Junior Analyst</h3>
-        <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
-        <span class="meta">August 2025 - Present</span>
+      <div class="card">
+        <h3>Junior Analyst [cite: 12]</h3>
+        <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet [cite: 12]</h4>
+        <span class="meta">August 2025 - Present [cite: 12]</span>
         <ul class="experience-list">
-          <li>Assisted in preparing and maintaining accurate financial records and reports.</li>
-          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
-          <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
-          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
+          <li>Assisted in preparing and maintaining accurate financial records and reports. [cite: 12]</li>
+          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries. [cite: 13]</li>
+          <li>Managed accounts payable and receivable to ensure timely processing and compliance. [cite: 14]</li>
+          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors. [cite: 15]</li>
         </ul>
       </div>
     </section>
@@ -536,15 +520,15 @@
     <section id="projects">
       <h2>Research & Projects</h2>
       <div class="grid">
-        <div class="card snd-hover">
-          <h3>NBFC Financial Performance Analysis</h3>
-          <span class="meta">Postgraduate Project (Published - May 2025)</span>
-          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
+        <div class="card">
+          <h3>NBFC Financial Performance Analysis [cite: 26]</h3>
+          <span class="meta">Postgraduate Project (Published - May 2025) [cite: 25, 49, 50]</span>
+          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025. [cite: 49, 50]</p>
         </div>
-        <div class="card snd-hover">
-          <h3>Handloom Weaving Landscape Study</h3>
-          <span class="meta">Research Project (Pollachi Taluk)</span>
-          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
+        <div class="card">
+          <h3>Handloom Weaving Landscape Study [cite: 23]</h3>
+          <span class="meta">Research Project (Pollachi Taluk) [cite: 21, 23]</span>
+          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies. [cite: 23, 24]</p>
         </div>
       </div>
     </section>
@@ -553,30 +537,30 @@
       <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
         <div class="skills-box">
-          <h3>Analytical & Technical Skills</h3>
+          <h3>Analytical & Technical Skills [cite: 28]</h3>
           <ul>
-            <li class="snd-hover">Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
-            <li class="snd-hover">MySQL – Database queries, joins, stored procedures</li>
-            <li class="snd-hover">Power BI – Dashboard creation, data modeling</li>
-            <li class="snd-hover">Python – Data analysis, automation, visualization (Pandas)</li>
-            <li class="snd-hover">Business Analysis – Financial modeling, process improvement, strategic insights</li>
+            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization [cite: 29]</li>
+            <li>MySQL – Database queries, joins, stored procedures [cite: 30]</li>
+            <li>Power BI – Dashboard creation, data modeling [cite: 31]</li>
+            <li>Python – Data analysis, automation, visualization (Pandas) [cite: 32]</li>
+            <li>Business Analysis – Financial modeling, process improvement, strategic insights [cite: 33]</li>
           </ul>
         </div>
         <div class="skills-box">
-          <h3>Accounting & Taxation Skills</h3>
+          <h3>Accounting & Taxation Skills [cite: 34]</h3>
           <ul>
-            <li class="snd-hover">GST compliance, filing, and reconciliation</li>
-            <li class="snd-hover">Tally Prime for accounting and financial management</li>
-            <li class="snd-hover">TDS (Tax Deducted at Source) calculation and reporting</li>
-            <li class="snd-hover">Income Tax preparation and return filing</li>
-            <li class="snd-hover">VAT accounting and compliance procedures</li>
+            <li>GST compliance, filing, and reconciliation [cite: 35]</li>
+            <li>Tally Prime for accounting and financial management [cite: 36]</li>
+            <li>TDS (Tax Deducted at Source) calculation and reporting [cite: 37]</li>
+            <li>Income Tax preparation and return filing [cite: 37]</li>
+            <li>VAT accounting and compliance procedures [cite: 38]</li>
           </ul>
         </div>
         <div class="skills-box">
-          <h3>Professional Certifications</h3>
+          <h3>Professional Certifications [cite: 39]</h3>
           <ul>
-            <li class="snd-hover">Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
-            <li class="snd-hover">AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
+            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices [cite: 42]</li>
+            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies [cite: 43]</li>
           </ul>
         </div>
       </div>
@@ -584,14 +568,29 @@
 
     <section id="contact">
       <h2>Get In Touch</h2>
-      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
+      
+      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_captcha" value="false">
         
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         
-        <button type="submit" class="snd-hover" onclick="playClick()">Send Message</button>
+        <div class="file-upload-wrapper">
+          <label for="photo-attachment" class="file-upload-label">
+            <div class="icon">dagger;</div>
+            <p style="font-weight: bold; margin-top: 5px; color: #fff;">Upload Image / Attachment</p>
+            <span>Click to browse files (Images, PDF, PNG, JPG)</span>
+          </label>
+          <input type="file" id="photo-attachment" name="attachment" accept="image/*,application/pdf" class="file-upload-input" onchange="previewImage(event)">
+        </div>
+
+        <div id="preview-container" class="image-preview-box">
+          <img id="output-image" src="#" alt="Upload Preview">
+          <div><span class="remove-preview-btn" onclick="clearPreviewFile()">Remove Attachment</span></div>
+        </div>
+        
+        <button type="submit">Send Message</button>
       </form>
     </section>
 
@@ -602,90 +601,107 @@
       <p>&copy; 2026 Naveen Kumar B</p>
       <p>Finance & Business Analyst | Portfolio Website</p>
       <div class="footer-links">
-        <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank" class="snd-hover" onclick="playClick()">LinkedIn</a>
-        <a href="https://github.com/naveen12345naveen" target="_blank" class="snd-hover" onclick="playClick()">GitHub</a>
-        <a href="mailto:naveenbalakrishnan146@gmail.com" class="snd-hover" onclick="playClick()">Email</a>
+        <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
+        <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
+        <a href="mailto:naveenbalakrishnan146@gmail.com">Email</a>
       </div>
     </div>
   </footer>
 
   <script>
     let audioCtx = null;
-    let audioEnabled = false;
+    let musicPlaying = false;
+    let sequenceInterval = null;
+    let currentStep = 0;
 
-    // Securely switch Sound System permissions
-    function toggleAudioSystem() {
+    const chords = [
+      [164.81, 196.00, 246.94, 293.66], 
+      [130.81, 164.81, 196.00, 261.63], 
+      [146.83, 196.00, 246.94, 293.66], 
+      [146.83, 220.00, 293.66, 369.99]  
+    ];
+
+    function toggleMusicEngine() {
       const btn = document.getElementById('audio-toggle');
-      if (!audioEnabled) {
+      if (!musicPlaying) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        audioEnabled = true;
-        btn.textContent = "Sound ON";
+        musicPlaying = true;
+        btn.textContent = "Music Loop Active";
         btn.classList.add('active');
-        playClick();
+        playAmbientChord();
+        sequenceInterval = setInterval(playAmbientChord, 4000);
       } else {
-        audioEnabled = false;
-        btn.textContent = "Sound OFF";
+        musicPlaying = false;
+        btn.textContent = "Unmute Background Music";
         btn.classList.remove('active');
+        clearInterval(sequenceInterval);
       }
     }
 
-    // Professional micro-hover synth blip
-    function playHover() {
-      if (!audioEnabled || !audioCtx) return;
-      try {
+    function playAmbientChord() {
+      if (!musicPlaying || !audioCtx) return;
+      const chord = chords[currentStep];
+      const now = audioCtx.currentTime;
+      chord.forEach((freq) => {
         let osc = audioCtx.createOscillator();
         let gain = audioCtx.createGain();
         osc.type = 'sine';
-        osc.frequency.setValueAtTime(1300, audioCtx.currentTime); 
-        gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.04);
+        osc.frequency.setValueAtTime(freq, now);
+        gain.gain.setValueAtTime(0, now);
+        gain.gain.linearRampToValueAtTime(0.015, now + 1.5);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 4.0);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.04);
-      } catch (e) {}
+        osc.start(now);
+        osc.stop(now + 4.0);
+      });
+      currentStep = (currentStep + 1) % chords.length;
     }
 
-    // Solid structural action feedback click
-    function playClick() {
-      if (!audioEnabled || !audioCtx) return;
-      try {
-        let osc = audioCtx.createOscillator();
-        let gain = audioCtx.createGain();
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(550, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.06);
-        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.06);
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.06);
-      } catch (e) {}
+    /* NEW JAVASCRIPT: MEDIA FILE READERS & PREVIEW CONTROL ENGINE */
+    function previewImage(event) {
+      const reader = new FileReader();
+      const imageField = document.getElementById('output-image');
+      const previewContainer = document.getElementById('preview-container');
+
+      reader.onload = function() {
+        if (reader.readyState === 2) {
+          // If the uploaded file is a PDF, use a standard icon placeholder, otherwise show the image
+          if (event.target.files[0].type === "application/pdf") {
+            imageField.src = "https://cdn-icons-png.flaticon.com/512/337/337946.png"; 
+          } else {
+            imageField.src = reader.result;
+          }
+          previewContainer.style.display = "block";
+        }
+      }
+      if (event.target.files[0]) {
+        reader.readAsDataURL(event.target.files[0]);
+      }
     }
 
-    // Asynchronous Live Ticker updates to simulate active API parsing
-    function updateMarketData() {
+    function clearPreviewFile() {
+      const fileInput = document.getElementById('photo-attachment');
+      const previewContainer = document.getElementById('preview-container');
+      const imageField = document.getElementById('output-image');
+      
+      fileInput.value = ""; // Erases the stored attachment file data
+      imageField.src = "#";
+      previewContainer.style.display = "none";
+    }
+
+    function initTickerEngine() {
       setInterval(() => {
         const nseDelta = (Math.random() * 4 - 2);
         const bseDelta = (Math.random() * 12 - 6);
-        
         const currentNse = parseFloat(document.getElementById('nse-val').textContent.replace(/,/g, ''));
         const currentBse = parseFloat(document.getElementById('bse-val').textContent.replace(/,/g, ''));
-        
         document.getElementById('nse-val').textContent = (currentNse + nseDelta).toLocaleString('en-IN', {maximumFractionDigits: 2});
         document.getElementById('bse-val').textContent = (currentBse + bseDelta).toLocaleString('en-IN', {maximumFractionDigits: 2});
       }, 4000);
     }
 
-    // Bind event controllers across documents
-    document.addEventListener("DOMContentLoaded", () => {
-      const elements = document.querySelectorAll('.snd-hover');
-      elements.forEach(el => {
-        el.addEventListener('mouseenter', playHover);
-      });
-      updateMarketData();
-    });
+    document.addEventListener("DOMContentLoaded", initTickerEngine);
   </script>
 
 </body>
