@@ -299,12 +299,15 @@
         </form>
     </section>
 
-    <!-- Footer -->
-<footer style="background-color:#222; color:#eee; text-align:center; padding:20px; font-family:Arial, sans-serif;">
-    <p>&copy; 2026 NaveenKumar B | Built with ❤️ and HTML</p>
-    <p>
-        <a href="https://www.linkedin.com/in/naveenkumar" style="color:#4db8ff; text-decoration:none; margin:0 10px;">LinkedIn</a> |
-        <a href="https://github.com/naveenkumar" style="color:#4db8ff; text-decoration:none; margin:0 10px;">GitHub</a> |
-        <a href="mailto:naveen@example.com" style="color:#4db8ff; text-decoration:none; margin:0 10px;">Contact</a>
-    </p>
+    <!--Footer -->
+<footer style="background:#111; color:#ddd; padding:30px 20px; font-family:'Segoe UI', sans-serif;">
+    <div style="max-width:800px; margin:auto; display:flex; flex-direction:column; align-items:center;">
+        <p style="margin:5px 0;">&copy; 2026 Naveen Kumar B</p>
+        <p style="margin:5px 0;">Finance & Business Analyst | Portfolio Website</p>
+        <div style="margin-top:10px;">
+            <a href="https://www.linkedin.com/in/naveenkumar" style="color:#00aced; text-decoration:none; margin:0 12px;">LinkedIn</a>
+            <a href="https://github.com/naveenkumar" style="color:#00aced; text-decoration:none; margin:0 12px;">GitHub</a>
+            <a href="mailto:naveen@example.com" style="color:#00aced; text-decoration:none; margin:0 12px;">Email</a>
+        </div>
+    </div>
 </footer>
