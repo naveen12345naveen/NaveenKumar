@@ -1,7 +1,11 @@
 
 <!-- Navigation Bar -->
 <nav style="background:#000; padding:15px; text-align:center; font-family:'Segoe UI', sans-serif;">
-  <a href="#about" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">About</a>
+  <a href="#about" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">I am Naveen Kumar B, an MBA in Finance with a strong interest in business analysis and financial modeling.
+I specialize in transforming complex data into clear insights using tools like Power BI, MySQL, and Python.
+My research spans diverse areas, from NBFC performance evaluation to handloom industry studies.
+I believe in combining analytical skills with effective communication to deliver impactful solutions.
+Driven by curiosity and continuous learning, I aim to contribute to smarter, data‑driven business decisions.</a>
   <a href="#projects" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Projects</a>
   <a href="#contact" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Contact</a>
 </nav>
@@ -50,8 +54,6 @@
     </button>
   </form>
 </section>
-
-
 
 
 
