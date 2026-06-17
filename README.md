@@ -1,113 +1,161 @@
-
-<!-- Navigation Bar -->
-<nav style="background:#000; padding:15px; text-align:center; font-family:'Segoe UI', sans-serif;">
-  <a href="#about" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">I am Naveen Kumar B, an MBA in Finance with a strong interest in business analysis and financial modeling.
-I specialize in transforming complex data into clear insights using tools like Power BI, MySQL, and Python.
-My research spans diverse areas, from NBFC performance evaluation to handloom industry studies.
-I believe in combining analytical skills with effective communication to deliver impactful solutions.
-Driven by curiosity and continuous learning, I aim to contribute to smarter, data‑driven business decisions.</a>
-  <a href="#projects" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Projects</a>
-  <a href="#contact" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Contact</a>
-</nav>
-
-<!-- One Header Section -->
-<header style="background:#1a1a1a; color:#fff; text-align:center; padding:80px 20px; font-family:'Segoe UI', sans-serif;">
-  <h1 style="font-size:3rem; margin-bottom:15px;">NaveenKumar B</h1>
-  <p style="font-size:1.2rem; color:#a0a0a0; margin-bottom:25px;">
-     </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Get In Touch Box -->
-<section id="contact" style="padding:50px 20px; font-family:'Segoe UI', sans-serif;">
-  <h2 style="text-align:center; color:#4CAF50; margin-bottom:20px;">Get In Touch</h2>
-  
-  <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" 
-        style="max-width:600px; margin:auto; background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.1);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Naveen Kumar B | Portfolio</title>
+  <style>
+    :root {
+      --primary: #4CAF50;
+      --dark: #121212;
+      --card-bg: #1e1e1e;
+      --text: #ffffff;
+      --muted: #a0a0a0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--dark); color: var(--text); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; }
     
-    <!-- Hidden field to disable captcha -->
-    <input type="hidden" name="_captcha" value="false">
+    /* Navigation Bar */
+    nav { background: #000; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #333; }
+    nav a { color: var(--text); text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
+    nav a:hover { color: var(--primary); }
+
+    /* Hero Header Section */
+    header { background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%); text-align: center; padding: 100px 20px; border-bottom: 1px solid #222; }
+    header h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: 1px; }
+    header p { font-size: 1.3rem; color: var(--primary); margin-bottom: 15px; font-weight: 300; }
+    header .sub { font-size: 1rem; color: var(--muted); max-width: 600px; margin: 0 auto; }
+
+    /* Main Container & Sections */
+    .container { max-width: 1100px; margin: auto; padding: 20px; }
+    section { padding: 60px 0; border-bottom: 1px solid #222; }
+    h2 { color: var(--primary); font-size: 2rem; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* Grid Layouts */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .card { background: var(--card-bg); padding: 25px; border-radius: 8px; border: 1px solid #333; transition: 0.3s; }
+    .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+    .card h3 { margin-bottom: 10px; color: #fff; }
+    .card h4 { color: var(--primary); margin-bottom: 10px; font-weight: 400; }
+    .meta { font-size: 0.9rem; color: var(--muted); margin-bottom: 10px; display: block; }
+
+    /* Skills Grid */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+    .skills-box ul { list-style: none; }
+    .skills-box li { background: #252525; padding: 8px 12px; margin-bottom: 8px; border-radius: 4px; font-size: 0.95rem; border-left: 3px solid var(--primary); }
+
+    /* Contact Form */
+    form { max-width: 600px; margin: auto; background: var(--card-bg); padding: 30px; border-radius: 10px; border: 1px solid #333; }
+    input, textarea { width: 100%; padding: 12px; margin: 10px 0; background: #2d2d2d; border: 1px solid #444; border-radius: 6px; color: #fff; font-family: inherit; }
+    input:focus, textarea:focus { border-color: var(--primary); outline: none; }
+    button { background: var(--primary); color: #000; font-weight: bold; border: none; padding: 14px 20px; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; transition: 0.3s; text-transform: uppercase; }
+    button:hover { background: #45a049; }
+
+    /* Footer Styling */
+    footer { background: #111; color: #ddd; padding: 40px 20px; font-family: 'Segoe UI', sans-serif; border-top: 1px solid #222; }
+    .footer-content { max-width: 800px; margin: auto; display: flex; flex-direction: column; align-items: center; }
+    .footer-content p { margin: 5px 0; text-align: center; }
+    .footer-links { margin-top: 15px; }
+    .footer-links a { color: var(--primary); text-decoration: none; margin: 0 15px; font-weight: 500; transition: 0.3s; }
+    .footer-links a:hover { color: #fff; text-shadow: 0 0 8px var(--primary); }
+
+    @media (max-width: 768px) { header h1 { font-size: 2.5rem; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="about">
+    <h1>Naveen Kumar B</h1>
+    <p>MBA in Finance & Business Analyst</p>
+    <p class="sub">Specializing in financial modeling, data analysis, and transforming complex data into strategic business insights using Power BI, MySQL, and Python.</p>
+  </header>
+
+  <div class="container">
     
-    <input type="text" name="name" placeholder="Your Name" required 
-           style="width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:6px;">
-    
-    <input type="email" name="email" placeholder="Your Email" required 
-           style="width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:6px;">
-    
-    <textarea name="message" placeholder="Your Description / Message" required 
-              style="width:100%; padding:12px; margin:10px 0; border:1px solid #ccc; border-radius:6px; height:120px;"></textarea>
-    
-    <button type="submit" 
-            style="background:#4CAF50; color:#fff; border:none; padding:12px 20px; border-radius:6px; cursor:pointer; width:100%; font-size:16px; transition:0.3s;">
-      Send Message
-    </button>
-  </form>
-</section>
+    <section id="experience">
+      <h2>Work Experience</h2>
+      <div class="card">
+        <h3>Junior Analyst</h3>
+        <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
+        <span class="meta">August 2025 - Present</span>
+        <p>Assisted in preparing financial records, facilitated monthly closing processes and reconciliations, and managed accounts payable/receivable. Collaborated closely with senior accountants to streamline reporting efficiency.</p>
+      </div>
+    </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <footer style="background:#111; color:#ddd; padding:30px 20px; font-family:'Segoe UI', sans-serif;">
-    <div style="max-width:800px; margin:auto; display:flex; flex-direction:column; align-items:center;">
-        <p style="margin:5px 0;">&copy; 2026 Naveen Kumar B</p>
-        <p style="margin:5px 0;">Finance & Business Analyst | Portfolio Website</p>
-        <div style="margin-top:10px;">
-            <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" style="color:#00aced; text-decoration:none; margin:0 12px;">LinkedIn</a>
-            <a href="https://github.com/naveen12345naveen" style="color:#00aced; text-decoration:none; margin:0 12px;">GitHub</a>
-            <a href="mailto:naveenbalakrishnan@146.com" style="color:#00aced; text-decoration:none; margin:0 12px;">Email</a>
+    <section id="projects">
+      <h2>Research & Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>NBFC Financial Performance Analysis</h3>
+          <span class="meta">Postgraduate Project (Published - EPRA EBMS Journal, May 2025)</span>
+          <p>Analyzed the capital adequacy, profitability, and trend evaluation of the top five NBFCs in India over a decade. Formulated strategic recommendations for long-term financial sustainability.</p>
         </div>
+        <div class="card">
+          <h3>Handloom Weaving Landscape Study</h3>
+          <span class="meta">Research Project (Pollachi Taluk)</span>
+          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical & Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skills-box">
+          <h3>Analytics & Tech</h3>
+          <ul>
+            <li>Advanced Excel (Pivots, Macros)</li>
+            <li>MySQL (Queries, Joins, SPs)</li>
+            <li>Power BI Dashboarding</li>
+            <li>Python Data Analysis (Pandas)</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Accounting & Tax</h3>
+          <ul>
+            <li>Tally Prime Management</li>
+            <li>GST Compliance & Filing</li>
+            <li>TDS Calculation</li>
+            <li>Income Tax Preparation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get In Touch</h2>
+      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 Naveen Kumar B</p>
+      <p>Finance & Business Analyst | Portfolio Website</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
+        <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
+        <a href="mailto:naveenbalakrishnan146@gmail.com">Email</a>
+      </div>
     </div>
-</footer>
+  </footer>
+
+</body>
+</html>
