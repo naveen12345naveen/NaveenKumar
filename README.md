@@ -20,7 +20,6 @@
             --text-color: #e0e0e0;
             --text-muted: #a0a0a0;
         }
-
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -44,27 +43,22 @@
             font-weight: bold;
             color: var(--primary-color);
         }
-
         nav ul {
             display: flex;
             list-style: none;
         }
-
         nav ul li {
             margin-left: 2rem;
         }
-
         nav ul li a {
             text-decoration: none;
             color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s;
         }
-
         nav ul li a:hover {
             color: var(--primary-color);
         }
-
         / Hero Section /
         .hero {
             display: flex;
@@ -75,16 +69,13 @@
             text-align: center;
             padding: 0 1rem;
         }
-
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
         }
-
         .hero h1 span {
             color: var(--primary-color);
         }
-
         .hero p {
             font-size: 1.2rem;
             color: var(--text-muted);
@@ -101,19 +92,16 @@
             font-weight: bold;
             transition: transform 0.3s, background-color 0.3s;
         }
-
         .cta-btn:hover {
             background-color: #45a049;
             transform: translateY(-3px);
         }
-
         / Sections /
         section {
             padding: 5rem 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
-
         h2.section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -130,7 +118,6 @@
             margin: 10px auto 0;
             border-radius: 2px;
         }
-
         / About Section /
         .about-content {
             display: grid;
@@ -150,7 +137,6 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
-
         .project-card {
             background-color: var(--card-bg);
             border-radius: 10px;
@@ -158,7 +144,6 @@
             padding: 1.5rem;
             transition: transform 0.3s;
         }
-
         .project-card:hover {
             transform: translateY(-5px);
         }
@@ -171,13 +156,11 @@
             color: var(--text-muted);
             margin-bottom: 1rem;
         }
-
         .project-card a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: bold;
         }
-
         / Contact Section /
         .contact-form {
             max-width: 600px;
@@ -195,12 +178,10 @@
             border-radius: 5px;
             font-size: 1rem;
         }
-
         .contact-form textarea {
             resize: vertical;
             height: 150px;
         }
-
         .contact-form button {
             background-color: var(--primary-color);
             color: #fff;
