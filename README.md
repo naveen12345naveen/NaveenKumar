@@ -166,6 +166,7 @@
       border: 1px solid #222; 
       position: relative;
       overflow: hidden;
+      cursor: pointer;
       transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
                   border-color 0.4s ease, 
                   box-shadow 0.4s ease; 
@@ -274,6 +275,7 @@
       border-radius: 8px; 
       font-size: 0.95rem; 
       border-left: 4px solid var(--primary); 
+      cursor: pointer;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
     }
     
@@ -432,11 +434,11 @@
 
   <!-- Navigation Bar -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
+    <a href="#about" class="snd-hover" onclick="playClick()">About</a>
+    <a href="#experience" class="snd-hover" onclick="playClick()">Experience</a>
+    <a href="#projects" class="snd-hover" onclick="playClick()">Projects</a>
+    <a href="#skills" class="snd-hover" onclick="playClick()">Skills</a>
+    <a href="#contact" class="snd-hover" onclick="playClick()">Contact</a>
   </nav>
 
   <!-- High Effect Header Section -->
@@ -453,15 +455,15 @@
     <!-- Corporate Exposure / Experience Section -->
     <section id="experience">
       <h2>Corporate Exposure</h2>
-      <div class="card">
+      <div class="card snd-hover">
         <h3>Junior Analyst</h3>
         <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
-        <span class="meta">August 2025 - Present</span>
+        <span class="meta">August 2025 - Present[cite: 1]</span>
         <ul class="experience-list">
-          <li>Assisted in preparing and maintaining accurate financial records and reports.</li>
-          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
-          <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
-          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
+          <li>Assisted in preparing and maintaining accurate financial records and reports.[cite: 1]</li>
+          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.[cite: 1]</li>
+          <li>Managed accounts payable and receivable to ensure timely processing and compliance.[cite: 1]</li>
+          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.[cite: 1]</li>
         </ul>
       </div>
     </section>
@@ -470,15 +472,15 @@
     <section id="projects">
       <h2>Research & Projects</h2>
       <div class="grid">
-        <div class="card">
+        <div class="card snd-hover">
           <h3>NBFC Financial Performance Analysis</h3>
-          <span class="meta">Postgraduate Project (Published - May 2025)</span>
-          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
+          <span class="meta">Postgraduate Project (Published - May 2025[cite: 1])</span>
+          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.[cite: 1]</p>
         </div>
-        <div class="card">
+        <div class="card snd-hover">
           <h3>Handloom Weaving Landscape Study</h3>
-          <span class="meta">Research Project (Pollachi Taluk)</span>
-          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
+          <span class="meta">Research Project (Pollachi Taluk[cite: 1])</span>
+          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.[cite: 1]</p>
         </div>
       </div>
     </section>
@@ -488,30 +490,30 @@
       <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
         <div class="skills-box">
-          <h3>Analytical & Technical Skills</h3>
+          <h3>Analytical & Technical Skills[cite: 1]</h3>
           <ul>
-            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
-            <li>MySQL – Database queries, joins, stored procedures</li>
-            <li>Power BI – Dashboard creation, data modeling</li>
-            <li>Python – Data analysis, automation, visualization (Pandas)</li>
-            <li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
+            <li class="snd-hover">Advanced Excel – Pivot Tables, Macros, Data Visualization[cite: 1]</li>
+            <li class="snd-hover">MySQL – Database queries, joins, stored procedures[cite: 1]</li>
+            <li class="snd-hover">Power BI – Dashboard creation, data modeling[cite: 1]</li>
+            <li class="snd-hover">Python – Data analysis, automation, visualization (Pandas)[cite: 1]</li>
+            <li class="snd-hover">Business Analysis – Financial modeling, process improvement, strategic insights[cite: 1]</li>
           </ul>
         </div>
         <div class="skills-box">
-          <h3>Accounting & Taxation Skills</h3>
+          <h3>Accounting & Taxation Skills[cite: 1]</h3>
           <ul>
-            <li>GST compliance, filing, and reconciliation</li>
-            <li>Tally Prime for accounting and financial management</li>
-            <li>TDS (Tax Deducted at Source) calculation and reporting</li>
-            <li>Income Tax preparation and return filing</li>
-            <li>VAT accounting and compliance procedures</li>
+            <li class="snd-hover">GST compliance, filing, and reconciliation[cite: 1]</li>
+            <li class="snd-hover">Tally Prime for accounting and financial management[cite: 1]</li>
+            <li class="snd-hover">TDS (Tax Deducted at Source) calculation and reporting[cite: 1]</li>
+            <li class="snd-hover">Income Tax preparation and return filing[cite: 1]</li>
+            <li class="snd-hover">VAT accounting and compliance procedures[cite: 1]</li>
           </ul>
         </div>
         <div class="skills-box">
           <h3>Professional Certifications</h3>
           <ul>
-            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
-            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
+            <li class="snd-hover">Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices[cite: 1]</li>
+            <li class="snd-hover">AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies[cite: 1]</li>
           </ul>
         </div>
       </div>
@@ -527,7 +529,7 @@
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         
-        <button type="submit">Send Message</button>
+        <button type="submit" class="snd-hover" onclick="playClick()">Send Message</button>
       </form>
     </section>
 
@@ -539,12 +541,84 @@
       <p>&copy; 2026 Naveen Kumar B</p>
       <p>Finance & Business Analyst | Portfolio Website</p>
       <div class="footer-links">
-        <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
-        <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
-        <a href="mailto:naveenbalakrishnan146@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank" class="snd-hover" onclick="playClick()">LinkedIn</a>
+        <a href="https://github.com/naveen12345naveen" target="_blank" class="snd-hover" onclick="playClick()">GitHub</a>
+        <a href="mailto:naveenbalakrishnan146@gmail.com" class="snd-hover" onclick="playClick()">Email</a>
       </div>
     </div>
   </footer>
+
+  <!-- ADVANCED JAVASCRIPT AUDIO ENGINE -->
+  <script>
+    // Create modern Web Audio context safely
+    let audioCtx = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    // 1. Gentle, Short Hover Sound (Soft high-frequency blip)
+    function playHover() {
+      try {
+        initAudio();
+        if (!audioCtx) return;
+
+        let osc = audioCtx.createOscillator();
+        let gain = audioCtx.createGain();
+
+        osc.type = 'sine';
+        // Elegant micro-blip frequency
+        osc.frequency.setValueAtTime(1200, audioCtx.currentTime); 
+        
+        // Keep volume extremely faint so it is elegant, not disruptive (2% volume)
+        gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.05);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.05);
+      } catch (e) {
+        // Prevent audio errors on older browsers
+      }
+    }
+
+    // 2. Crisp, Solid Click Sound (Mid-frequency structural click)
+    function playClick() {
+      try {
+        initAudio();
+        if (!audioCtx) return;
+
+        let osc = audioCtx.createOscillator();
+        let gain = audioCtx.createGain();
+
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.08);
+
+        // Solid click volume (6% volume)
+        gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.08);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.08);
+      } catch (e) {}
+    }
+
+    // Bind hover sounds dynamically to all elements with class 'snd-hover'
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll('.snd-hover');
+      elements.forEach(el => {
+        el.addEventListener('mouseenter', playHover);
+      });
+    });
+  </script>
 
 </body>
 </html>
