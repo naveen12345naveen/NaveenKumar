@@ -7,6 +7,12 @@
     Get In Touch
   </a>
 </header>
+<style>
+  body {
+    background-color: #90ee90; /* another light grey */
+  }
+</style>
+
 <!-- Navigation Bar -->
 <nav style="background:#000; padding:15px; text-align:center; font-family:'Segoe UI', sans-serif;">
   <a href="#about" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">About</a>
