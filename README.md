@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,14 +7,14 @@
   <style>
     :root {
       --primary: #4CAF50;
-      --primary-glow: rgba(76, 175, 80, 0.3);
+      --primary-glow: rgba(76, 175, 80, 0.4);
       --dark: #0a0a0a;
       --card-bg: #141414;
       --text: #ffffff;
       --muted: #b0b0b0;
     }
     
-    /* Global Smooth Scrolling */
+    /* Smooth Scroll Tracking */
     html {
       scroll-behavior: smooth;
     }
@@ -32,11 +33,11 @@
       overflow-x: hidden;
     }
     
-    /* Modern Navigation Bar with Glassmorphism */
+    /* Sticky Navigation Bar with backdrop filter */
     nav { 
-      background: rgba(0, 0, 0, 0.8); 
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.85); 
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       padding: 20px; 
       text-align: center; 
       position: sticky; 
@@ -74,48 +75,48 @@
       width: 100%;
     }
 
-    /* HIGH-EFFECT HEADER SECTION (Moving Gradient Backdrop) */
+    /* HIGH-EFFECT SHIFTING GRADIENT HEADER BLOCK */
     header { 
-      background: linear-gradient(-45deg, #111, #1a3a1e, #000, #141414);
+      background: linear-gradient(-45deg, #0f1f11, #141414, #050b06, #112614);
       background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      animation: gradientBG 12s ease infinite;
       text-align: center; 
-      padding: 140px 20px; 
-      border-bottom: 1px solid #222; 
+      padding: 150px 20px; 
+      border-bottom: 1px solid #1e3a20; 
       position: relative;
+      box-shadow: inset 0 -50px 100px rgba(0,0,0,0.8);
     }
     
-    /* Fade and Rise Entry Presentation */
     .header-reveal {
-      animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: fadeInUp 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
       opacity: 0;
     }
     
     header h1 { 
-      font-size: 4rem; 
+      font-size: 4.2rem; 
       margin-bottom: 15px; 
       letter-spacing: 2px;
-      text-shadow: 0 0 20px rgba(255,255,255,0.1);
+      text-shadow: 0 0 30px rgba(76, 175, 80, 0.2);
     }
     
     header p { 
-      font-size: 1.4rem; 
+      font-size: 1.5rem; 
       color: var(--primary); 
-      margin-bottom: 20px; 
+      margin-bottom: 25px; 
       font-weight: 400; 
       letter-spacing: 1px;
-      text-shadow: 0 0 10px var(--primary-glow);
+      text-shadow: 0 0 12px var(--primary-glow);
     }
     
     header .sub { 
-      font-size: 1.05rem; 
+      font-size: 1.1rem; 
       color: var(--muted); 
-      max-width: 650px; 
+      max-width: 700px; 
       margin: 0 auto; 
       line-height: 1.8;
     }
 
-    /* Layout Containers */
+    /* Standard Layout Space */
     .container { 
       max-width: 1100px; 
       margin: auto; 
@@ -123,58 +124,79 @@
     }
     
     section { 
-      padding: 80px 0; 
+      padding: 90px 0; 
       border-bottom: 1px solid #1a1a1a; 
     }
     
+    /* ANIMATED GLOWING HEADERS & REVEAL LINES */
     h2 { 
       color: var(--primary); 
-      font-size: 2.2rem; 
-      margin-bottom: 40px; 
+      font-size: 2.3rem; 
+      margin-bottom: 45px; 
       text-transform: uppercase; 
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       position: relative;
       display: inline-block;
+      text-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
     }
     
     h2::after {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -8px;
-      width: 50px;
+      bottom: -10px;
+      width: 65px;
       height: 3px;
       background: var(--primary);
-      box-shadow: 0 0 8px var(--primary);
+      box-shadow: 0 0 12px var(--primary), 0 0 20px var(--primary);
+      animation: expandLine 2s ease-out infinite alternate;
     }
 
-    /* Interactive Adaptive Card Grids */
+    /* Responsive Presentation Cards */
     .grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-      gap: 30px; 
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      gap: 35px; 
     }
     
     .card { 
       background: var(--card-bg); 
-      padding: 30px; 
-      border-radius: 12px; 
+      padding: 35px; 
+      border-radius: 14px; 
       border: 1px solid #222; 
+      position: relative;
+      overflow: hidden;
       transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
                   border-color 0.4s ease, 
                   box-shadow 0.4s ease; 
     }
     
     .card:hover { 
-      transform: translateY(-10px); 
+      transform: translateY(-12px); 
       border-color: var(--primary); 
-      box-shadow: 0 15px 30px rgba(76, 175, 80, 0.12);
+      box-shadow: 0 20px 40px rgba(76, 175, 80, 0.15);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--primary);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover::before {
+      transform: scaleY(1);
     }
     
     .card h3 { 
       margin-bottom: 12px; 
       color: #fff; 
-      font-size: 1.4rem;
+      font-size: 1.45rem;
     }
     
     .card h4 { 
@@ -184,32 +206,61 @@
     }
     
     .meta { 
-      font-size: 0.9rem; 
+      font-size: 0.95rem; 
       color: var(--muted); 
-      margin-bottom: 15px; 
+      margin-bottom: 18px; 
       display: block; 
     }
 
-    /* Interactive Skills Architecture */
+    /* Work Experience Checked Architecture */
+    .experience-list {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .experience-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      color: #e0e0e0;
+      font-size: 0.98rem;
+    }
+
+    .experience-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+      text-shadow: 0 0 8px var(--primary);
+    }
+
+    /* Responsive Grid layout for Interactive Skills */
     .skills-grid { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
       gap: 30px; 
     }
     
     .skills-box {
       background: #0f0f0f;
-      padding: 25px;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 12px;
       border: 1px solid #1a1a1a;
+      transition: border-color 0.3s ease;
+    }
+
+    .skills-box:hover {
+      border-color: rgba(76, 175, 80, 0.3);
     }
     
     .skills-box h3 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
+      font-size: 1.25rem;
+      margin-bottom: 20px;
       color: #fff;
       border-bottom: 1px solid #222;
-      padding-bottom: 8px;
+      padding-bottom: 10px;
+      position: relative;
     }
     
     .skills-box ul { 
@@ -218,32 +269,32 @@
     
     .skills-box li { 
       background: #181818; 
-      padding: 10px 15px; 
-      margin-bottom: 10px; 
-      border-radius: 6px; 
+      padding: 12px 18px; 
+      margin-bottom: 12px; 
+      border-radius: 8px; 
       font-size: 0.95rem; 
-      border-left: 3px solid var(--primary); 
+      border-left: 4px solid var(--primary); 
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
     }
     
     .skills-box li:hover {
-      transform: translateX(8px) scale(1.02);
-      background: #202020;
+      transform: translateX(10px) scale(1.02);
+      background: #1f2d21;
     }
 
-    /* Form Fields Styling & Focus Effects */
+    /* Forms Interactivity elements */
     form { 
-      max-width: 600px; 
+      max-width: 650px; 
       margin: auto; 
       background: var(--card-bg); 
       padding: 40px; 
-      border-radius: 12px; 
+      border-radius: 14px; 
       border: 1px solid #222; 
     }
     
     input, textarea { 
       width: 100%; 
-      padding: 14px; 
+      padding: 15px; 
       margin: 12px 0; 
       background: #181818; 
       border: 1px solid #2a2a2a; 
@@ -256,7 +307,7 @@
     input:focus, textarea:focus { 
       border-color: var(--primary); 
       outline: none; 
-      box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.25);
     }
     
     button { 
@@ -276,31 +327,30 @@
     
     button:hover { 
       background: #45a049; 
-      box-shadow: 0 0 15px var(--primary);
-      transform: translateY(-2px);
+      box-shadow: 0 0 20px var(--primary);
+      transform: translateY(-3px);
     }
 
-    /* HIGH-EFFECT FOOTER SECTION */
+    /* HIGH-EFFECT FLOATING GLOW FOOTER BLOCK */
     footer { 
-      background: #050505; 
+      background: #030704; 
       color: #ddd; 
-      padding: 50px 20px; 
+      padding: 60px 20px; 
       font-family: 'Segoe UI', sans-serif; 
-      border-top: 1px solid #1a1a1a; 
+      border-top: 1px solid #152b18; 
       position: relative;
     }
     
-    /* Pulsing Top Footer Ambient Light */
     footer::before {
       content: '';
       position: absolute;
       top: -1px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--primary), transparent);
-      animation: pulseGlow 4s ease-in-out infinite;
+      width: 90%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--primary), #fff, var(--primary), transparent);
+      animation: pulseGlow 5s ease-in-out infinite;
     }
     
     .footer-content { 
@@ -317,31 +367,32 @@
     }
     
     .footer-links { 
-      margin-top: 25px; 
+      margin-top: 30px; 
     }
     
-    /* Glowing Bubble Footer Links */
+    /* Neon Circular Interactive Bubble Link Modules */
     .footer-links a { 
       color: #fff; 
       text-decoration: none; 
-      margin: 0 12px; 
+      margin: 0 15px; 
       font-weight: 500; 
-      padding: 8px 18px;
-      border: 1px solid #222;
+      padding: 10px 24px;
+      border: 1px solid #333;
       border-radius: 30px;
       display: inline-block;
-      transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); 
+      box-shadow: inset 0 0 0 rgba(255,255,255,0);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
     }
     
     .footer-links a:hover { 
       color: var(--primary); 
       border-color: var(--primary);
-      background: rgba(76, 175, 80, 0.05);
-      box-shadow: 0 0 15px var(--primary-glow);
-      transform: translateY(-3px);
+      background: rgba(76, 175, 80, 0.08);
+      box-shadow: 0 0 20px var(--primary-glow), inset 0 0 8px rgba(76,175,80,0.1);
+      transform: translateY(-5px);
     }
 
-    /* Core Animation Timelines (Keyframes) */
+    /* Layout Timelines & Rendering Keyframes */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -351,7 +402,7 @@
     @keyframes fadeInUp {
       from {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(50px);
       }
       to {
         opacity: 1;
@@ -360,19 +411,26 @@
     }
     
     @keyframes pulseGlow {
-      0%, 100% { opacity: 0.3; width: 60%; }
-      50% { opacity: 1; width: 90%; }
+      0%, 100% { opacity: 0.4; width: 70%; }
+      50% { opacity: 1; width: 95%; }
     }
 
-    /* Responsive Tweaks */
+    @keyframes expandLine {
+      from { width: 50px; }
+      to { width: 110px; }
+    }
+
+    /* Display Architecture Scaling */
     @media (max-width: 768px) { 
       header h1 { font-size: 2.8rem; }
-      nav a { margin: 0 8px; font-size: 0.95rem; }
+      nav a { margin: 0 6px; font-size: 0.9rem; }
+      .footer-links a { margin: 8px; padding: 8px 18px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -381,6 +439,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- High Effect Header Section -->
   <header id="about">
     <div class="header-reveal">
       <h1>Naveen Kumar B</h1>
@@ -391,23 +450,30 @@
 
   <div class="container">
     
+    <!-- Corporate Exposure / Experience Section -->
     <section id="experience">
-      <h2>Work Experience</h2>
+      <h2>Corporate Exposure</h2>
       <div class="card">
         <h3>Junior Analyst</h3>
         <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
         <span class="meta">August 2025 - Present</span>
-        <p>Assisted in preparing financial records, facilitated monthly closing processes and reconciliations, and managed accounts payable/receivable. Collaborated closely with senior accountants to streamline reporting efficiency.</p>
+        <ul class="experience-list">
+          <li>Assisted in preparing and maintaining accurate financial records and reports.</li>
+          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
+          <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
+          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
+        </ul>
       </div>
     </section>
 
+    <!-- Projects & Publications Section -->
     <section id="projects">
       <h2>Research & Projects</h2>
       <div class="grid">
         <div class="card">
           <h3>NBFC Financial Performance Analysis</h3>
-          <span class="meta">Postgraduate Project (Published - EPRA EBMS Journal, May 2025)</span>
-          <p>Analyzed the capital adequacy, profitability, and trend evaluation of the top five NBFCs in India over a decade. Formulated strategic recommendations for long-term financial sustainability.</p>
+          <span class="meta">Postgraduate Project (Published - May 2025)</span>
+          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
         </div>
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
@@ -417,30 +483,41 @@
       </div>
     </section>
 
+    <!-- Skills & Certifications Section -->
     <section id="skills">
-      <h2>Technical & Core Skills</h2>
+      <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
         <div class="skills-box">
-          <h3>Analytics & Tech</h3>
+          <h3>Analytical & Technical Skills</h3>
           <ul>
-            <li>Advanced Excel (Pivots, Macros)</li>
-            <li>MySQL (Queries, Joins, SPs)</li>
-            <li>Power BI Dashboarding</li>
-            <li>Python Data Analysis (Pandas)</li>
+            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
+            <li>MySQL – Database queries, joins, stored procedures</li>
+            <li>Power BI – Dashboard creation, data modeling</li>
+            <li>Python – Data analysis, automation, visualization (Pandas)</li>
+            <li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
           </ul>
         </div>
         <div class="skills-box">
-          <h3>Accounting & Tax</h3>
+          <h3>Accounting & Taxation Skills</h3>
           <ul>
-            <li>Tally Prime Management</li>
-            <li>GST Compliance & Filing</li>
-            <li>TDS Calculation</li>
-            <li>Income Tax Preparation</li>
+            <li>GST compliance, filing, and reconciliation</li>
+            <li>Tally Prime for accounting and financial management</li>
+            <li>TDS (Tax Deducted at Source) calculation and reporting</li>
+            <li>Income Tax preparation and return filing</li>
+            <li>VAT accounting and compliance procedures</li>
+          </ul>
+        </div>
+        <div class="skills-box">
+          <h3>Professional Certifications</h3>
+          <ul>
+            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
+            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Get In Touch</h2>
       <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
@@ -456,6 +533,7 @@
 
   </div>
 
+  <!-- High Effect Footer Section -->
   <footer>
     <div class="footer-content">
       <p>&copy; 2026 Naveen Kumar B</p>
