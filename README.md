@@ -1,74 +1,75 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NaveenKumar B - Personal Portfolio</title>
-    <style>
-        /* Base Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NaveenKumar B - Personal Portfolio</title>
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Global Variables */
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #0078d7;
-            --bg-color: #121212;
-            --card-bg: #1e1e1e;
-            --text-color: #e0e0e0;
-            --text-muted: #a0a0a0;
-            --border-radius: 10px;
-            --transition-speed: 0.3s;
-        }
+    /* Global Variables */
+    :root {
+      --primary-color: #4CAF50;
+      --secondary-color: #0078d7;
+      --bg-color: #121212;
+      --card-bg: #1e1e1e;
+      --text-color: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --border-radius: 10px;
+      --transition-speed: 0.3s;
+    }
 
-        /* Body Styling */
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+    /* Body Styling */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
+    /* Section Titles */
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
 
-        /* Card Layout */
-        .card {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-        }
+    /* Card Component */
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            transition: background var(--transition-speed);
-        }
-        .btn:hover {
-            background: var(--secondary-color);
-        }
-    </style>
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: var(--border-radius);
+      text-decoration: none;
+      transition: background var(--transition-speed);
+    }
+    .btn:hover {
+      background: var(--secondary-color);
+    }
+  </style>
 </head>
 <body>
+
 
         / Navbar /
         nav {
