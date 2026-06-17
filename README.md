@@ -300,9 +300,11 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 [NaveenKumar B]. Built with HTML.</p>
-    </footer>
-
-</body>
-</html>
+<footer style="background-color:#222; color:#eee; text-align:center; padding:20px; font-family:Arial, sans-serif;">
+    <p>&copy; 2026 NaveenKumar B | Built with ❤️ and HTML</p>
+    <p>
+        <a href="https://www.linkedin.com/in/naveenkumar" style="color:#4db8ff; text-decoration:none; margin:0 10px;">LinkedIn</a> |
+        <a href="https://github.com/naveenkumar" style="color:#4db8ff; text-decoration:none; margin:0 10px;">GitHub</a> |
+        <a href="mailto:naveen@example.com" style="color:#4db8ff; text-decoration:none; margin:0 10px;">Contact</a>
+    </p>
+</footer>
