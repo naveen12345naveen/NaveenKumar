@@ -305,9 +305,9 @@
         <p style="margin:5px 0;">&copy; 2026 Naveen Kumar B</p>
         <p style="margin:5px 0;">Finance & Business Analyst | Portfolio Website</p>
         <div style="margin-top:10px;">
-            <a href="https://www.linkedin.com/in/naveenkumar" style="color:#00aced; text-decoration:none; margin:0 12px;">LinkedIn</a>
-            <a href="https://github.com/naveenkumar" style="color:#00aced; text-decoration:none; margin:0 12px;">GitHub</a>
-            <a href="mailto:naveen@example.com" style="color:#00aced; text-decoration:none; margin:0 12px;">Email</a>
+            <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" style="color:#00aced; text-decoration:none; margin:0 12px;">LinkedIn</a>
+            <a href="https://github.com/naveen12345naveen" style="color:#00aced; text-decoration:none; margin:0 12px;">GitHub</a>
+            <a href="mailto:naveenbalakrishnan@146.com" style="color:#00aced; text-decoration:none; margin:0 12px;">Email</a>
         </div>
     </div>
 </footer>
