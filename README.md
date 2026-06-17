@@ -1,14 +1,29 @@
+
+<!-- Navigation Bar -->
+<nav style="background:#000; padding:15px; text-align:center; font-family:'Segoe UI', sans-serif;">
+  <a href="#about" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">About</a>
+  <a href="#projects" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Projects</a>
+  <a href="#contact" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Contact</a>
+</nav>
+
 <!-- One Header Section -->
 <header style="background:#1a1a1a; color:#fff; text-align:center; padding:80px 20px; font-family:'Segoe UI', sans-serif;">
   <h1 style="font-size:3rem; margin-bottom:15px;">NaveenKumar B</h1>
   <p style="font-size:1.2rem; color:#a0a0a0; margin-bottom:25px;">
      </p>
 
-<style>
-  body {
-    background-color: #D3D3D3; /* another light grey */
-  }
-</style>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Get In Touch Box -->
 <section id="contact" style="padding:50px 20px; font-family:'Segoe UI', sans-serif;">
@@ -39,12 +54,18 @@
 
 
 
-<!-- Navigation Bar -->
-<nav style="background:#000; padding:15px; text-align:center; font-family:'Segoe UI', sans-serif;">
-  <a href="#about" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">About</a>
-  <a href="#projects" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Projects</a>
-  <a href="#contact" style="color:#fff; text-decoration:none; margin:0 15px; font-size:1rem; transition:0.3s;">Contact</a>
-</nav>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
