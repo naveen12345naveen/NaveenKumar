@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,9 +11,10 @@
       --card-bg: #141414;
       --text: #ffffff;
       --muted: #b0b0b0;
+      --neon-blue: #00e5ff;
     }
     
-    /* Smooth Scroll Tracking */
+    /* Global Smooth Scrolling */
     html {
       scroll-behavior: smooth;
     }
@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
     
-    /* Sticky Navigation Bar with backdrop filter */
+    /* Modern Navigation Bar with Glassmorphism */
     nav { 
       background: rgba(0, 0, 0, 0.85); 
       backdrop-filter: blur(12px);
@@ -75,13 +75,72 @@
       width: 100%;
     }
 
+    /* UNIQUE VISUAL EFFECT: LIVE MARKET TICKER LAYER */
+    .market-ticker-container {
+      background: #050505;
+      border-bottom: 1px dashed rgba(76, 175, 80, 0.4);
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+      position: relative;
+      z-index: 999;
+    }
+
+    .ticker-left {
+      display: flex;
+      gap: 20px;
+      color: var(--neon-blue);
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(0, 229, 255, 0.3);
+    }
+
+    .ticker-item {
+      background: #111;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid #222;
+    }
+
+    .ticker-item span {
+      color: #fff;
+      margin-left: 5px;
+    }
+
+    .up-trend { color: #00ff88 !important; }
+
+    /* Sound Controller Button Layout */
+    .audio-control-btn {
+      background: rgba(76, 175, 80, 0.1);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      padding: 4px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-family: inherit;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      animation: pulseBorder 2s infinite;
+    }
+
+    .audio-control-btn.active {
+      background: var(--primary);
+      color: #000;
+      animation: none;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
     /* HIGH-EFFECT SHIFTING GRADIENT HEADER BLOCK */
     header { 
       background: linear-gradient(-45deg, #0f1f11, #141414, #050b06, #112614);
       background-size: 400% 400%;
       animation: gradientBG 12s ease infinite;
       text-align: center; 
-      padding: 150px 20px; 
+      padding: 130px 20px; 
       border-bottom: 1px solid #1e3a20; 
       position: relative;
       box-shadow: inset 0 -50px 100px rgba(0,0,0,0.8);
@@ -166,7 +225,6 @@
       border: 1px solid #222; 
       position: relative;
       overflow: hidden;
-      cursor: pointer;
       transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
                   border-color 0.4s ease, 
                   box-shadow 0.4s ease; 
@@ -275,7 +333,6 @@
       border-radius: 8px; 
       font-size: 0.95rem; 
       border-left: 4px solid var(--primary); 
-      cursor: pointer;
       transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
     }
     
@@ -402,14 +459,8 @@
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(50px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     @keyframes pulseGlow {
@@ -422,17 +473,22 @@
       to { width: 110px; }
     }
 
+    @keyframes pulseBorder {
+      0%, 100% { border-color: var(--primary); box-shadow: 0 0 2px transparent; }
+      50% { border-color: #fff; box-shadow: 0 0 8px var(--primary-glow); }
+    }
+
     /* Display Architecture Scaling */
     @media (max-width: 768px) { 
       header h1 { font-size: 2.8rem; }
       nav a { margin: 0 6px; font-size: 0.9rem; }
-      .footer-links a { margin: 8px; padding: 8px 18px; }
+      .market-ticker-container { flex-direction: column; gap: 10px; text-align: center; }
+      .ticker-left { flex-wrap: wrap; justify-content: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
   <nav>
     <a href="#about" class="snd-hover" onclick="playClick()">About</a>
     <a href="#experience" class="snd-hover" onclick="playClick()">Experience</a>
@@ -441,7 +497,17 @@
     <a href="#contact" class="snd-hover" onclick="playClick()">Contact</a>
   </nav>
 
-  <!-- High Effect Header Section -->
+  <div class="market-ticker-container">
+    <div class="ticker-left">
+      <div class="ticker-item">NSE NIFTY50: <span id="nse-val" class="up-trend">24,041.75</span></div>
+      <div class="ticker-item">BSE SENSEX: <span id="bse-val" class="up-trend">78,920.40</span></div>
+      <div class="ticker-item">USD/INR: <span id="usd-val">83.54</span></div>
+    </div>
+    <div>
+      <button id="audio-toggle" class="audio-control-btn" onclick="toggleAudioSystem()">Sound OFF</button>
+    </div>
+  </div>
+
   <header id="about">
     <div class="header-reveal">
       <h1>Naveen Kumar B</h1>
@@ -452,74 +518,70 @@
 
   <div class="container">
     
-    <!-- Corporate Exposure / Experience Section -->
     <section id="experience">
       <h2>Corporate Exposure</h2>
       <div class="card snd-hover">
         <h3>Junior Analyst</h3>
         <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
-        <span class="meta">August 2025 - Present[cite: 1]</span>
+        <span class="meta">August 2025 - Present</span>
         <ul class="experience-list">
-          <li>Assisted in preparing and maintaining accurate financial records and reports.[cite: 1]</li>
-          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.[cite: 1]</li>
-          <li>Managed accounts payable and receivable to ensure timely processing and compliance.[cite: 1]</li>
-          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.[cite: 1]</li>
+          <li>Assisted in preparing and maintaining accurate financial records and reports.</li>
+          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
+          <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
+          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
         </ul>
       </div>
     </section>
 
-    <!-- Projects & Publications Section -->
     <section id="projects">
       <h2>Research & Projects</h2>
       <div class="grid">
         <div class="card snd-hover">
           <h3>NBFC Financial Performance Analysis</h3>
-          <span class="meta">Postgraduate Project (Published - May 2025[cite: 1])</span>
-          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.[cite: 1]</p>
+          <span class="meta">Postgraduate Project (Published - May 2025)</span>
+          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
         </div>
         <div class="card snd-hover">
           <h3>Handloom Weaving Landscape Study</h3>
-          <span class="meta">Research Project (Pollachi Taluk[cite: 1])</span>
-          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.[cite: 1]</p>
+          <span class="meta">Research Project (Pollachi Taluk)</span>
+          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
         </div>
       </div>
     </section>
 
-    <!-- Skills & Certifications Section -->
     <section id="skills">
       <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
         <div class="skills-box">
-          <h3>Analytical & Technical Skills[cite: 1]</h3>
+          <h3>Analytical & Technical Skills</h3>
           <ul>
-            <li class="snd-hover">Advanced Excel – Pivot Tables, Macros, Data Visualization[cite: 1]</li>
-            <li class="snd-hover">MySQL – Database queries, joins, stored procedures[cite: 1]</li>
-            <li class="snd-hover">Power BI – Dashboard creation, data modeling[cite: 1]</li>
-            <li class="snd-hover">Python – Data analysis, automation, visualization (Pandas)[cite: 1]</li>
-            <li class="snd-hover">Business Analysis – Financial modeling, process improvement, strategic insights[cite: 1]</li>
+            <li class="snd-hover">Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
+            <li class="snd-hover">MySQL – Database queries, joins, stored procedures</li>
+            <li class="snd-hover">Power BI – Dashboard creation, data modeling</li>
+            <li class="snd-hover">Python – Data analysis, automation, visualization (Pandas)</li>
+            <li class="snd-hover">Business Analysis – Financial modeling, process improvement, strategic insights</li>
           </ul>
         </div>
         <div class="skills-box">
-          <h3>Accounting & Taxation Skills[cite: 1]</h3>
+          <h3>Accounting & Taxation Skills</h3>
           <ul>
-            <li class="snd-hover">GST compliance, filing, and reconciliation[cite: 1]</li>
-            <li class="snd-hover">Tally Prime for accounting and financial management[cite: 1]</li>
-            <li class="snd-hover">TDS (Tax Deducted at Source) calculation and reporting[cite: 1]</li>
-            <li class="snd-hover">Income Tax preparation and return filing[cite: 1]</li>
-            <li class="snd-hover">VAT accounting and compliance procedures[cite: 1]</li>
+            <li class="snd-hover">GST compliance, filing, and reconciliation</li>
+            <li class="snd-hover">Tally Prime for accounting and financial management</li>
+            <li class="snd-hover">TDS (Tax Deducted at Source) calculation and reporting</li>
+            <li class="snd-hover">Income Tax preparation and return filing</li>
+            <li class="snd-hover">VAT accounting and compliance procedures</li>
           </ul>
         </div>
         <div class="skills-box">
           <h3>Professional Certifications</h3>
           <ul>
-            <li class="snd-hover">Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices[cite: 1]</li>
-            <li class="snd-hover">AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies[cite: 1]</li>
+            <li class="snd-hover">Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
+            <li class="snd-hover">AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
       <h2>Get In Touch</h2>
       <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
@@ -535,7 +597,6 @@
 
   </div>
 
-  <!-- High Effect Footer Section -->
   <footer>
     <div class="footer-content">
       <p>&copy; 2026 Naveen Kumar B</p>
@@ -548,75 +609,82 @@
     </div>
   </footer>
 
-  <!-- ADVANCED JAVASCRIPT AUDIO ENGINE -->
   <script>
-    // Create modern Web Audio context safely
     let audioCtx = null;
+    let audioEnabled = false;
 
-    function initAudio() {
-      if (!audioCtx) {
+    // Securely switch Sound System permissions
+    function toggleAudioSystem() {
+      const btn = document.getElementById('audio-toggle');
+      if (!audioEnabled) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        audioEnabled = true;
+        btn.textContent = "Sound ON";
+        btn.classList.add('active');
+        playClick();
+      } else {
+        audioEnabled = false;
+        btn.textContent = "Sound OFF";
+        btn.classList.remove('active');
       }
     }
 
-    // 1. Gentle, Short Hover Sound (Soft high-frequency blip)
+    // Professional micro-hover synth blip
     function playHover() {
+      if (!audioEnabled || !audioCtx) return;
       try {
-        initAudio();
-        if (!audioCtx) return;
-
         let osc = audioCtx.createOscillator();
         let gain = audioCtx.createGain();
-
         osc.type = 'sine';
-        // Elegant micro-blip frequency
-        osc.frequency.setValueAtTime(1200, audioCtx.currentTime); 
-        
-        // Keep volume extremely faint so it is elegant, not disruptive (2% volume)
-        gain.gain.setValueAtTime(0.02, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.05);
-
+        osc.frequency.setValueAtTime(1300, audioCtx.currentTime); 
+        gain.gain.setValueAtTime(0.015, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.04);
         osc.connect(gain);
         gain.connect(audioCtx.destination);
-
         osc.start();
-        osc.stop(audioCtx.currentTime + 0.05);
-      } catch (e) {
-        // Prevent audio errors on older browsers
-      }
-    }
-
-    // 2. Crisp, Solid Click Sound (Mid-frequency structural click)
-    function playClick() {
-      try {
-        initAudio();
-        if (!audioCtx) return;
-
-        let osc = audioCtx.createOscillator();
-        let gain = audioCtx.createGain();
-
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(600, audioCtx.currentTime);
-        osc.frequency.exponentialRampToValueAtTime(150, audioCtx.currentTime + 0.08);
-
-        // Solid click volume (6% volume)
-        gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.08);
-
-        osc.connect(gain);
-        gain.connect(audioCtx.destination);
-
-        osc.start();
-        osc.stop(audioCtx.currentTime + 0.08);
+        osc.stop(audioCtx.currentTime + 0.04);
       } catch (e) {}
     }
 
-    // Bind hover sounds dynamically to all elements with class 'snd-hover'
+    // Solid structural action feedback click
+    function playClick() {
+      if (!audioEnabled || !audioCtx) return;
+      try {
+        let osc = audioCtx.createOscillator();
+        let gain = audioCtx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(550, audioCtx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.06);
+        gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.06);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + 0.06);
+      } catch (e) {}
+    }
+
+    // Asynchronous Live Ticker updates to simulate active API parsing
+    function updateMarketData() {
+      setInterval(() => {
+        const nseDelta = (Math.random() * 4 - 2);
+        const bseDelta = (Math.random() * 12 - 6);
+        
+        const currentNse = parseFloat(document.getElementById('nse-val').textContent.replace(/,/g, ''));
+        const currentBse = parseFloat(document.getElementById('bse-val').textContent.replace(/,/g, ''));
+        
+        document.getElementById('nse-val').textContent = (currentNse + nseDelta).toLocaleString('en-IN', {maximumFractionDigits: 2});
+        document.getElementById('bse-val').textContent = (currentBse + bseDelta).toLocaleString('en-IN', {maximumFractionDigits: 2});
+      }, 4000);
+    }
+
+    // Bind event controllers across documents
     document.addEventListener("DOMContentLoaded", () => {
       const elements = document.querySelectorAll('.snd-hover');
       elements.forEach(el => {
         el.addEventListener('mouseenter', playHover);
       });
+      updateMarketData();
     });
   </script>
 
