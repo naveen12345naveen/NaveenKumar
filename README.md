@@ -536,7 +536,6 @@
       "Innovating to shape a brand new world."
     </p>
   </div>
-</section>
  
     <!-- Contact Section -->
     <section id="contact">
