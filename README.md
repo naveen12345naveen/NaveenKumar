@@ -111,7 +111,7 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
-    <a href="#learing">learing</a>
+    <a href="#my events & learing">my events & learing</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -125,7 +125,6 @@
   </header>
 
   <div class="container">
-    
     <section id="experience">
       <h2>Corporate Exposure</h2>
       <div class="card">
@@ -133,15 +132,14 @@
         <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
         <span class="meta">August 2025 - Present</span>
         <ul class="experience-list">
-              <li>Assisted in preparing and maintaining accurate financial records and reports.[span_0]</li>
+              <li>Assisted in preparing and maintaining accurate financial records and reports.</li>
               <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
               <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
               <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
         </ul>
       </div>
-    </section>
-
-   <h2>Research & Projects</h2>
+      
+      <h2>Research & Projects</h2>
 <div class="grid">
   <div class="card">
     <!-- Clickable Heading Link to your PDF -->
@@ -153,13 +151,13 @@
     <span class="meta">Postgraduate Project (Published - May 2025)</span>
     <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
   </div>
+      </section>
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
           <span class="meta">Research Project (Pollachi Taluk)</span>
-          [span_6](start_span)<p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
+          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
         </div>
       </div>
-    </section>
 
     <section id="skills">
       <h2>Technical Skills & Credentials</h2>
@@ -167,32 +165,38 @@
         <div class="skills-box">
           <h3>Analytical & Technical Skills</h3>
           <ul>
-            (start_span)<li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
-            (start_span)<li>MySQL – Database queries, joins, stored procedures</li>
-            (start_span)<li>Power BI – Dashboard creation, data modeling</li>
-            (start_span)<li>Python – Data analysis, automation, visualization (Pandas)</li>
-            (start_span)<li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
+            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
+            <li>MySQL – Database queries, joins, stored procedures</li>
+            <li>Power BI – Dashboard creation, data modeling</li>
+            <li>Python – Data analysis, automation, visualization (Pandas)</li>
+            <li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
           </ul>
         </div>
         <div class="skills-box">
           <h3>Accounting & Taxation Skills</h3>
           <ul>
-            (start_span)<li>GST compliance, filing, and reconciliation</li>
-            (start_span)<li>Tally Prime for accounting and financial management</li>
-            (start_span)<li>TDS (Tax Deducted at Source) calculation and reporting</li>
-            (start_span)<li>Income Tax preparation and return filing</li>
-            (start_span)<li>VAT accounting and compliance procedures</li>
+            <li>GST compliance, filing, and reconciliation</li>
+            <li>Tally Prime for accounting and financial management</li>
+            <li>TDS (Tax Deducted at Source) calculation and reporting</li>
+            <li>Income Tax preparation and return filing</li>
+            <li>VAT accounting and compliance procedures</li>
           </ul>
         </div>
         <div class="skills-box">
           <h3>Professional Certifications</h3>
           <ul>
-            [span_17](start_span)<li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices[span_17]</li>
-            [span_18](start_span)<li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies[span_18]</li>
+            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
+            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
           </ul>
         </div>
       </div>
     </section>
+
+ <section id="my events & learing">
+
+
+
+
 
     <section id="contact">
       <h2>Get In Touch</h2>
