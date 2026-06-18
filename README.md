@@ -74,7 +74,7 @@
       width: 100%;
     }
 
-    /* Ticker & Audio Bar */
+    /* SYSTEM AUDIO STATUS & LIVE TICKER BAR */
     .market-ticker-container {
       background: #050505;
       border-bottom: 1px dashed rgba(76, 175, 80, 0.4);
@@ -110,6 +110,7 @@
 
     .up-trend { color: #00ff88 !important; }
 
+    /* HIGH-ATTENTION SYSTEM UNMUTE BUTTON */
     .audio-control-btn {
       background: linear-gradient(90deg, #1e3a20, #4CAF50);
       color: #000;
@@ -134,7 +135,7 @@
       box-shadow: none;
     }
 
-    /* Shifting Gradient Header */
+    /* HEADER WITH SHIFTING BACKGROUND GRAPHICS */
     header { 
       background: linear-gradient(-45deg, #0f1f11, #141414, #050b06, #112614);
       background-size: 400% 400%;
@@ -249,23 +250,92 @@
       transform: scaleY(1);
     }
     
-    .card h3 { margin-bottom: 12px; color: #fff; font-size: 1.45rem; }
-    .card h4 { color: var(--primary); margin-bottom: 12px; font-weight: 400; }
-    .meta { font-size: 0.95rem; color: var(--muted); margin-bottom: 18px; display: block; }
+    .card h3 { 
+      margin-bottom: 12px; 
+      color: #fff; 
+      font-size: 1.45rem;
+    }
+    
+    .card h4 { 
+      color: var(--primary); 
+      margin-bottom: 12px; 
+      font-weight: 400; 
+    }
+    
+    .meta { 
+      font-size: 0.95rem; 
+      color: var(--muted); 
+      margin-bottom: 18px; 
+      display: block; 
+    }
 
-    .experience-list { list-style: none; margin-top: 15px; }
-    .experience-list li { position: relative; padding-left: 25px; margin-bottom: 12px; color: #e0e0e0; font-size: 0.98rem; }
-    .experience-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; text-shadow: 0 0 8px var(--primary); }
+    .experience-list {
+      list-style: none;
+      margin-top: 15px;
+    }
 
-    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-    .skills-box { background: #0f0f0f; padding: 30px; border-radius: 12px; border: 1px solid #1a1a1a; transition: border-color 0.3s ease; }
-    .skills-box:hover { border-color: rgba(76, 175, 80, 0.3); }
-    .skills-box h3 { font-size: 1.25rem; margin-bottom: 20px; color: #fff; border-bottom: 1px solid #222; padding-bottom: 10px; }
-    .skills-box ul { list-style: none; }
-    .skills-box li { background: #181818; padding: 12px 18px; margin-bottom: 12px; border-radius: 8px; font-size: 0.95rem; border-left: 4px solid var(--primary); transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease; }
-    .skills-box li:hover { transform: translateX(10px) scale(1.02); background: #1f2d21; }
+    .experience-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      color: #e0e0e0;
+      font-size: 0.98rem;
+    }
 
-    /* Dynamic Contact Form & Upload Mechanics */
+    .experience-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+      text-shadow: 0 0 8px var(--primary);
+    }
+
+    .skills-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      gap: 30px; 
+    }
+    
+    .skills-box {
+      background: #0f0f0f;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #1a1a1a;
+      transition: border-color 0.3s ease;
+    }
+
+    .skills-box:hover {
+      border-color: rgba(76, 175, 80, 0.3);
+    }
+    
+    .skills-box h3 {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+      color: #fff;
+      border-bottom: 1px solid #222;
+      padding-bottom: 10px;
+    }
+    
+    .skills-box ul { 
+      list-style: none; 
+    }
+    
+    .skills-box li { 
+      background: #181818; 
+      padding: 12px 18px; 
+      margin-bottom: 12px; 
+      border-radius: 8px; 
+      font-size: 0.95rem; 
+      border-left: 4px solid var(--primary); 
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
+    }
+    
+    .skills-box li:hover {
+      transform: translateX(10px) scale(1.02);
+      background: #1f2d21;
+    }
+
     form { 
       max-width: 650px; 
       margin: auto; 
@@ -292,78 +362,8 @@
       outline: none; 
       box-shadow: 0 0 15px rgba(76, 175, 80, 0.25);
     }
-
-    /* UNIQUE VISUAL COMPONENT: PHOTO UPLOAD CONTAINER */
-    .file-upload-wrapper {
-      margin: 20px 0;
-      position: relative;
-    }
-
-    .file-upload-label {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 25px;
-      background: #0f0f0f;
-      border: 2px dashed #333;
-      border-radius: 8px;
-      cursor: pointer;
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .file-upload-label:hover {
-      border-color: var(--primary);
-      background: rgba(76, 175, 80, 0.03);
-      box-shadow: 0 0 15px rgba(76, 175, 80, 0.1);
-    }
-
-    .file-upload-label span {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-top: 5px;
-    }
-
-    .file-upload-label .icon {
-      font-size: 1.8rem;
-      color: var(--primary);
-      text-shadow: 0 0 8px var(--primary-glow);
-    }
-
-    /* Hidden Native File Input Wrapper */
-    .file-upload-input {
-      display: none;
-    }
-
-    /* Dynamic Preview Block Component */
-    .image-preview-box {
-      margin-top: 15px;
-      display: none;
-      text-align: center;
-      border: 1px solid #222;
-      padding: 10px;
-      border-radius: 8px;
-      background: #090909;
-    }
-
-    .image-preview-box img {
-      max-width: 100%;
-      max-height: 200px;
-      border-radius: 6px;
-      border: 1px solid #333;
-    }
-
-    .remove-preview-btn {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 0.8rem;
-      color: #ff5252;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-
-    button[type="submit"] { 
+    
+    button { 
       background: var(--primary); 
       color: #000; 
       font-weight: bold; 
@@ -378,7 +378,7 @@
       letter-spacing: 1px;
     }
     
-    button[type="submit"]:hover { 
+    button:hover { 
       background: #45a049; 
       box-shadow: 0 0 20px var(--primary);
       transform: translateY(-3px);
@@ -413,8 +413,14 @@
       align-items: center; 
     }
     
-    .footer-content p { margin: 6px 0; text-align: center; }
-    .footer-links { margin-top: 30px; }
+    .footer-content p { 
+      margin: 6px 0; 
+      text-align: center; 
+    }
+    
+    .footer-links { 
+      margin-top: 30px; 
+    }
     
     .footer-links a { 
       color: #fff; 
@@ -436,6 +442,7 @@
       transform: translateY(-5px);
     }
 
+    /* Animations styling framework */
     @keyframes gradientBG {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -473,6 +480,7 @@
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -481,6 +489,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- Financial Ticker Display & Music Enable Checkbox -->
   <div class="market-ticker-container">
     <div class="ticker-left">
       <div class="ticker-item">NSE NIFTY50: <span id="nse-val" class="up-trend">24,041.75</span></div>
@@ -492,103 +501,93 @@
     </div>
   </div>
 
+  <!-- High Effect Header Section -->
   <header id="about">
     <div class="header-reveal">
       <h1>Naveen Kumar B</h1>
-      <p>MBA in Finance & Business Analyst</p>
-      <p class="sub">Specializing in financial modeling, data analysis, and transforming complex data into strategic business insights using Power BI, MySQL, and Python.</p>
+      <p>MBA in Finance & Business Analyst[span_0](start_span)[span_0](end_span)</p>
+      <p class="sub">Specializing in financial modeling, data analysis, and transforming complex data into strategic business insights using Power BI, MySQL, and Python.[span_1](start_span)[span_1](end_span)</p>
     </div>
   </header>
 
   <div class="container">
     
+    <!-- Experience Section -->
     <section id="experience">
       <h2>Corporate Exposure</h2>
       <div class="card">
-        <h3>Junior Analyst [cite: 12]</h3>
-        <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet [cite: 12]</h4>
-        <span class="meta">August 2025 - Present [cite: 12]</span>
+        <h3>Junior Analyst[span_2](start_span)[span_2](end_span)</h3>
+        <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet[span_3](start_span)[span_3](end_span)</h4>
+        <span class="meta">August 2025 - Present[span_4](start_span)[span_4](end_span)</span>
         <ul class="experience-list">
-          <li>Assisted in preparing and maintaining accurate financial records and reports. [cite: 12]</li>
-          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries. [cite: 13]</li>
-          <li>Managed accounts payable and receivable to ensure timely processing and compliance. [cite: 14]</li>
-          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors. [cite: 15]</li>
+          <li>Assisted in preparing and maintaining accurate financial records and reports.[span_5](start_span)[span_5](end_span)</li>
+          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.[span_6](start_span)[span_6](end_span)</li>
+          <li>Managed accounts payable and receivable to ensure timely processing and compliance.[span_7](start_span)[span_7](end_span)</li>
+          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.[span_8](start_span)[span_8](end_span)</li>
         </ul>
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
       <h2>Research & Projects</h2>
       <div class="grid">
         <div class="card">
-          <h3>NBFC Financial Performance Analysis [cite: 26]</h3>
-          <span class="meta">Postgraduate Project (Published - May 2025) [cite: 25, 49, 50]</span>
-          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025. [cite: 49, 50]</p>
+          <h3>NBFC Financial Performance Analysis</h3>
+          <span class="meta">Postgraduate Project (Published - May 2025[span_9](start_span)[span_9](end_span))</span>
+          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.[span_10](start_span)[span_10](end_span)</p>
         </div>
         <div class="card">
-          <h3>Handloom Weaving Landscape Study [cite: 23]</h3>
-          <span class="meta">Research Project (Pollachi Taluk) [cite: 21, 23]</span>
-          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies. [cite: 23, 24]</p>
+          <h3>Handloom Weaving Landscape Study</h3>
+          <span class="meta">Research Project (Pollachi Taluk[span_11](start_span)[span_11](end_span))</span>
+          <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.[span_12](start_span)[span_12](end_span)</p>
         </div>
       </div>
     </section>
 
+    <!-- Skills Section -->
     <section id="skills">
       <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
         <div class="skills-box">
-          <h3>Analytical & Technical Skills [cite: 28]</h3>
+          <h3>Analytical & Technical Skills[span_13](start_span)[span_13](end_span)</h3>
           <ul>
-            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization [cite: 29]</li>
-            <li>MySQL – Database queries, joins, stored procedures [cite: 30]</li>
-            <li>Power BI – Dashboard creation, data modeling [cite: 31]</li>
-            <li>Python – Data analysis, automation, visualization (Pandas) [cite: 32]</li>
-            <li>Business Analysis – Financial modeling, process improvement, strategic insights [cite: 33]</li>
+            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization[span_14](start_span)[span_14](end_span)</li>
+            <li>MySQL – Database queries, joins, stored procedures[span_15](start_span)[span_15](end_span)</li>
+            <li>Power BI – Dashboard creation, data modeling[span_16](start_span)[span_16](end_span)</li>
+            <li>Python – Data analysis, automation, visualization (Pandas)[span_17](start_span)[span_17](end_span)</li>
+            <li>Business Analysis – Financial modeling, process improvement, strategic insights[span_18](start_span)[span_18](end_span)</li>
           </ul>
         </div>
         <div class="skills-box">
-          <h3>Accounting & Taxation Skills [cite: 34]</h3>
+          <h3>Accounting & Taxation Skills[span_19](start_span)[span_19](end_span)</h3>
           <ul>
-            <li>GST compliance, filing, and reconciliation [cite: 35]</li>
-            <li>Tally Prime for accounting and financial management [cite: 36]</li>
-            <li>TDS (Tax Deducted at Source) calculation and reporting [cite: 37]</li>
-            <li>Income Tax preparation and return filing [cite: 37]</li>
-            <li>VAT accounting and compliance procedures [cite: 38]</li>
+            <li>GST compliance, filing, and reconciliation[span_20](start_span)[span_20](end_span)</li>
+            <li>Tally Prime for accounting and financial management[span_21](start_span)[span_21](end_span)</li>
+            <li>TDS (Tax Deducted at Source) calculation and reporting[span_22](start_span)[span_22](end_span)</li>
+            <li>Income Tax preparation and return filing[span_23](start_span)[span_23](end_span)</li>
+            <li>VAT accounting and compliance procedures[span_24](start_span)[span_24](end_span)</li>
           </ul>
         </div>
         <div class="skills-box">
-          <h3>Professional Certifications [cite: 39]</h3>
+          <h3>Professional Certifications</h3>
           <ul>
-            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices [cite: 42]</li>
-            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies [cite: 43]</li>
+            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices[span_25](start_span)[span_25](end_span)</li>
+            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies[span_26](start_span)[span_26](end_span)</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
       <h2>Get In Touch</h2>
-      
-      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" enctype="multipart/form-data">
+      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
-        
-        <div class="file-upload-wrapper">
-          <label for="photo-attachment" class="file-upload-label">
-            <div class="icon">dagger;</div>
-            <p style="font-weight: bold; margin-top: 5px; color: #fff;">Upload Image / Attachment</p>
-            <span>Click to browse files (Images, PDF, PNG, JPG)</span>
-          </label>
-          <input type="file" id="photo-attachment" name="attachment" accept="image/*,application/pdf" class="file-upload-input" onchange="previewImage(event)">
-        </div>
-
-        <div id="preview-container" class="image-preview-box">
-          <img id="output-image" src="#" alt="Upload Preview">
-          <div><span class="remove-preview-btn" onclick="clearPreviewFile()">Remove Attachment</span></div>
-        </div>
         
         <button type="submit">Send Message</button>
       </form>
@@ -596,6 +595,7 @@
 
   </div>
 
+  <!-- Footer Section -->
   <footer>
     <div class="footer-content">
       <p>&copy; 2026 Naveen Kumar B</p>
@@ -608,26 +608,32 @@
     </div>
   </footer>
 
+  <!-- ADVANCED WEB AUDIO BACKGROUND MUSIC ENGINE -->
   <script>
     let audioCtx = null;
     let musicPlaying = false;
     let sequenceInterval = null;
     let currentStep = 0;
 
+    // Chords array: E-Minor, C-Major, G-Major, D-Major (Professional Ambient Archetype)
     const chords = [
-      [164.81, 196.00, 246.94, 293.66], 
-      [130.81, 164.81, 196.00, 261.63], 
-      [146.83, 196.00, 246.94, 293.66], 
-      [146.83, 220.00, 293.66, 369.99]  
+      [164.81, 196.00, 246.94, 293.66], // Em7
+      [130.81, 164.81, 196.00, 261.63], // Cmaj7
+      [146.83, 196.00, 246.94, 293.66], // Gmaj
+      [146.83, 220.00, 293.66, 369.99]  // Dmaj
     ];
 
     function toggleMusicEngine() {
       const btn = document.getElementById('audio-toggle');
+      
       if (!musicPlaying) {
+        // Initialize safe browser audio architecture
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
         musicPlaying = true;
         btn.textContent = "Music Loop Active";
         btn.classList.add('active');
+        
+        // Start continuous background music playback loops
         playAmbientChord();
         sequenceInterval = setInterval(playAmbientChord, 4000);
       } else {
@@ -640,62 +646,43 @@
 
     function playAmbientChord() {
       if (!musicPlaying || !audioCtx) return;
+
       const chord = chords[currentStep];
       const now = audioCtx.currentTime;
+
+      // Synthesize 4 frequencies together seamlessly to create rich pad texture
       chord.forEach((freq) => {
         let osc = audioCtx.createOscillator();
         let gain = audioCtx.createGain();
-        osc.type = 'sine';
+
+        osc.type = 'sine'; // Pure beautiful ambient sound wave
         osc.frequency.setValueAtTime(freq, now);
+
+        // Slow soft volume fade in and fade out rules
         gain.gain.setValueAtTime(0, now);
-        gain.gain.linearRampToValueAtTime(0.015, now + 1.5);
+        gain.gain.linearRampToValueAtTime(0.015, now + 1.5); // Max 1.5% low background sound level
         gain.gain.exponentialRampToValueAtTime(0.0001, now + 4.0);
+
         osc.connect(gain);
         gain.connect(audioCtx.destination);
+
         osc.start(now);
         osc.stop(now + 4.0);
       });
+
+      // Shift matrix index to next rhythmic chord step
       currentStep = (currentStep + 1) % chords.length;
     }
 
-    /* NEW JAVASCRIPT: MEDIA FILE READERS & PREVIEW CONTROL ENGINE */
-    function previewImage(event) {
-      const reader = new FileReader();
-      const imageField = document.getElementById('output-image');
-      const previewContainer = document.getElementById('preview-container');
-
-      reader.onload = function() {
-        if (reader.readyState === 2) {
-          // If the uploaded file is a PDF, use a standard icon placeholder, otherwise show the image
-          if (event.target.files[0].type === "application/pdf") {
-            imageField.src = "https://cdn-icons-png.flaticon.com/512/337/337946.png"; 
-          } else {
-            imageField.src = reader.result;
-          }
-          previewContainer.style.display = "block";
-        }
-      }
-      if (event.target.files[0]) {
-        reader.readAsDataURL(event.target.files[0]);
-      }
-    }
-
-    function clearPreviewFile() {
-      const fileInput = document.getElementById('photo-attachment');
-      const previewContainer = document.getElementById('preview-container');
-      const imageField = document.getElementById('output-image');
-      
-      fileInput.value = ""; // Erases the stored attachment file data
-      imageField.src = "#";
-      previewContainer.style.display = "none";
-    }
-
+    // Live Simulated Analytics Ticker Engine Loop
     function initTickerEngine() {
       setInterval(() => {
         const nseDelta = (Math.random() * 4 - 2);
         const bseDelta = (Math.random() * 12 - 6);
+        
         const currentNse = parseFloat(document.getElementById('nse-val').textContent.replace(/,/g, ''));
         const currentBse = parseFloat(document.getElementById('bse-val').textContent.replace(/,/g, ''));
+        
         document.getElementById('nse-val').textContent = (currentNse + nseDelta).toLocaleString('en-IN', {maximumFractionDigits: 2});
         document.getElementById('bse-val').textContent = (currentBse + bseDelta).toLocaleString('en-IN', {maximumFractionDigits: 2});
       }, 4000);
