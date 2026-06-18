@@ -116,6 +116,225 @@
   </nav>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn With Me</title>
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cloudflare.com">
+  
+  <style>
+    /* Light Mode Variables (Default) */
+    :root {
+      --bg-color: #f4f4f9;
+      --text-color: #333333;
+      --container-bg: #ffffff;
+      --btn-bg: #e0e0e0;
+      --btn-hover: #d0d0d0;
+      --border-color: #cccccc;
+    }
+
+    /* Dark Mode Variables */
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #ffffff;
+      --container-bg: #1e1e1e;
+      --btn-bg: #333333;
+      --btn-hover: #444444;
+      --border-color: #444444;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Top Layout Row */
+    .top-bar {
+      max-width: 1000px;
+      margin: 20px auto 0 auto;
+      padding: 0 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Back Button */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: 600;
+      background-color: var(--btn-bg);
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+    .back-btn:hover {
+      background-color: var(--btn-hover);
+    }
+
+    /* Dark Mode Toggle Switch Button */
+    .theme-toggle-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    /* PDF View Container Box */
+    .pdf-container {
+      position: relative;
+      width: 100%;
+      height: 80vh; 
+      border: 2px solid var(--border-color);
+      border-radius: 8px;
+      background-color: var(--container-bg);
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    /* Loading Spinner Design */
+    .loader-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--container-bg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      transition: opacity 0.4s ease-out;
+    }
+
+    .spinner {
+      font-size: 3rem;
+      color: #007bff;
+      animation: spin 1s linear infinite;
+    }
+
+    .loader-box p {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .download-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #007bff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .download-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Navigation Bar -->
+  <div class="top-bar">
+    <a href="index.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+    <button class="theme-toggle-btn" id="theme-btn" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
+
+  <div class="container">
+    <h1>We learn New Thing</h1>
+    
+    <div class="pdf-container">
+      <!-- Loading Animation Layer -->
+      <div id="loading-layer" class="loader-box">
+        <i class="fas fa-spinner spinner"></i>
+        <p>Opening Document...</p>
+      </div>
+
+      <!-- PDF Viewer Frame -->
+      <iframe id="pdf-frame" src="NaveenKumar_Published_Article.pdf" onload="hideLoader()"></iframe>
+    </div>
+
+    <a class="download-link" href="NaveenKumar_Published_Article.pdf" target="_blank">
+      📥 View or Download full PDF directly
+    </a>
+  </div>
+
+  <script>
+    // 1. Hide Loading Animation when PDF is fully ready
+    function hideLoader() {
+      const loader = document.getElementById('loading-layer');
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 400); // Gives a smooth fade away look
+    }
+
+    // 2. Dark Mode Switch logic
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const themeBtnIcon = document.querySelector('#theme-btn i');
+      
+      if (currentTheme === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        themeBtnIcon.className = 'fas fa-moon'; // Show moon icon for light mode
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeBtnIcon.className = 'fas fa-sun'; // Show sun icon for dark mode
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // 3. Keep user saved theme selection active upon page refresh
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.querySelector('#theme-btn i').className = 'fas fa-sun';
+    }
+  </script>
+
+</body>
+</html>
+
+
+
 
 
 
