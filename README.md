@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -469,12 +468,14 @@
     <!-- Projects & Publications Section -->
     <section id="projects">
       <h2>Research & Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>NBFC Financial Performance Analysis</h3>
-          <span class="meta">Postgraduate Project (Published - May 2025)</span>
-          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
-        </div>
+     <div class="grid">
+  <div class="card">
+    <h3>NBFC Financial Performance Analysis</h3>
+    <span class="meta">Postgraduate Project (Published - May 2025)</span>
+    <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
+    <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="btn-pdf">View Published Article (PDF)</a>
+  </div>
+</div>
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
           <span class="meta">Research Project (Pollachi Taluk)</span>
@@ -542,6 +543,7 @@
         <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
         <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
         <a href="mailto:naveenbalakrishnan146@gmail.com">Email</a>
+          <a href="https://www.instagram.com/naveenkumar.b.nkb?igsh=MXNhYjFycG9tN2lnYw==">Instagram</a>
       </div>
     </div>
   </footer>
