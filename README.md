@@ -170,7 +170,8 @@
         <li>Business Analysis – Financial Modelling, Process Improvement</li>
       </ul>
     </div>
-
+    
+<section id="skills">
  <!-- Technical Skills Section -->
   <section id="skills">
     <h2>Technical Skills & Credentials</h2>
@@ -187,7 +188,8 @@
           <li>Business Analysis – Financial Modelling, Process Improvement</li>
         </ul>
       </div>
-
+      
+<section id="skills">
       <!-- 2. Accounting & Taxation Skills -->
       <div class="skills-box">
         <h3>Accounting & Taxation Skills</h3>
@@ -199,7 +201,8 @@
           <li>VAT – Regulatory Compliance, Accounting Methods</li>
         </ul>
       </div>
-
+  
+<section id="skills">
       <!-- 3. Professional Certifications -->
       <div class="skills-box">
         <h3>Professional Certifications</h3>
@@ -213,86 +216,194 @@
   </section> <!-- End of skills section -->
 
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Get In Touch</h2>
-    <form action="https://formsubmit.co" method="POST" enctype="multipart/form-data">
-      <!-- Formsubmit.co configuration -->
-      <input type="hidden" name="_captcha" value="false">
-      
-      <!-- User inputs -->
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      
-      <!-- File upload area -->
-      <div class="file-upload-wrapper">
-        <label id="file-label-element" for="photo-attachment" class="file-upload-label">
-          <span class="upload-title">Upload Image / Attachment</span>
-          <span class="upload-subtitle">Click to add proof files (PNG, JPG, PDF)</span>
-        </label>
-        <input type="file" id="photo-attachment" name="attachment" accept="image/*,application/pdf" class="file-upload-input" onchange="previewFile(event)">
-      </div>
+ 
+<!-- Styling to center the contact form on the webpage -->
+<style>
+  /* Centers the section on the screen */
+  #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Takes full height of the viewport */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f9f9f9; /* Optional background color */
+  }
 
-      <!-- Preview container (Hidden by default using standard hidden attribute) -->
-      <div id="preview-container" class="image-preview-box" hidden>
-        <img id="output-image" src="" alt="Upload Preview">
-        <p id="file-name-preview" class="file-name-text"></p>
-        <div><button type="button" class="remove-preview-btn" onclick="clearPreviewFile()">Remove Attachment</button></div>
-      </div>
-      
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+  /* Form container styling */
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px; /* Limits form width for better readability */
+    gap: 15px; /* Adds consistent spacing between form fields */
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a modern card shadow */
+  }
 
-  <!-- JavaScript for File Upload Preview Logic -->
-  <script>
-  function previewFile(event) {
-    const input = event.target;
-    const container = document.getElementById('preview-container');
-    const imgElement = document.getElementById('output-image');
-    const nameElement = document.getElementById('file-name-preview');
+  /* Basic form element formatting */
+  #contact input[type="text"],
+  #contact input[type="email"],
+  #contact textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  #contact textarea {
+    height: 120px;
+    resize: vertical;
+  }
+
+  /* Upload block styling */
+  .file-upload-wrapper {
+    border: 2px dashed #aaa;
+    padding: 20px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #fafafa;
+  }
+
+  .file-upload-label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .upload-title {
+    font-weight: bold;
+    color: #333;
+  }
+
+  .upload-subtitle {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .file-upload-input {
+    display: none; /* Hides the ugly native file input button */
+  }
+
+  /* Image preview layout */
+  .image-preview-box {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #eee;
+    background: #fcfcfc;
+    border-radius: 4px;
+  }
+
+  #output-image {
+    max-width: 100%;
+    max-height: 150px;
+    margin: 0 auto 10px auto;
+    border-radius: 4px;
+  }
+
+  /* Buttons formatting */
+  .remove-preview-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #contact button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  #contact button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <form action="https://formsubmit.co" method="POST" enctype="multipart/form-data">
+    <!-- Formsubmit.co configuration -->
+    <input type="hidden" name="_captcha" value="false">
     
-    if (input.files && input.files[0]) {
-      const file = input.files[0];
-      
-      // Display the container
-      container.removeAttribute('hidden');
-      
-      // Handle image preview vs document preview
-      if (file.type.startsWith('image/')) {
-        imgElement.src = URL.createObjectURL(file);
-        imgElement.style.display = 'block';
-        nameElement.textContent = ''; 
-      } else {
-        // If it's a PDF, hide image tag and show filename text instead
-        imgElement.src = '';
-        imgElement.style.display = 'none';
-        nameElement.textContent = `Document attached: ${file.name}`;
-      }
+    <!-- User inputs -->
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    
+    <!-- File upload area -->
+    <div class="file-upload-wrapper">
+      <label id="file-label-element" for="photo-attachment" class="file-upload-label">
+        <span class="upload-title">Upload Image / Attachment</span>
+        <span class="upload-subtitle">Click to add proof files (PNG, JPG, PDF)</span>
+      </label>
+      <input type="file" id="photo-attachment" name="attachment" accept="image/*,application/pdf" class="file-upload-input" onchange="previewFile(event)">
+    </div>
+
+    <!-- Preview container -->
+    <div id="preview-container" class="image-preview-box" hidden>
+      <img id="output-image" src="" alt="Upload Preview">
+      <p id="file-name-preview" class="file-name-text"></p>
+      <div><button type="button" class="remove-preview-btn" onclick="clearPreviewFile()">Remove Attachment</button></div>
+    </div>
+    
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- JavaScript for File Upload Preview Logic -->
+<script>
+function previewFile(event) {
+  const input = event.target;
+  const container = document.getElementById('preview-container');
+  const imgElement = document.getElementById('output-image');
+  const nameElement = document.getElementById('file-name-preview');
+  
+  if (input.files && input.files[0]) {
+    const file = input.files[0];
+    
+    container.removeAttribute('hidden');
+    
+    if (file.type.startsWith('image/')) {
+      imgElement.src = URL.createObjectURL(file);
+      imgElement.style.display = 'block';
+      nameElement.textContent = ''; 
+    } else {
+      imgElement.src = '';
+      imgElement.style.display = 'none';
+      nameElement.textContent = `Document attached: ${file.name}`;
     }
   }
+}
 
-  function clearPreviewFile() {
-    const fileInput = document.getElementById('photo-attachment');
-    const container = document.getElementById('preview-container');
-    const imgElement = document.getElementById('output-image');
-    const nameElement = document.getElementById('file-name-preview');
-    
-    // Clear the actual input value
-    fileInput.value = '';
-    
-    // Reset elements and hide container
-    imgElement.src = '';
-    nameElement.textContent = '';
-    container.setAttribute('hidden', 'true');
-  }
-  </script>
-
-</body>
-</html>
-
-
+function clearPreviewFile() {
+  const fileInput = document.getElementById('photo-attachment');
+  const container = document.getElementById('preview-container');
+  const imgElement = document.getElementById('output-image');
+  const nameElement = document.getElementById('file-name-preview');
+  
+  fileInput.value = '';
+  imgElement.src = '';
+  nameElement.textContent = '';
+  container.setAttribute('hidden', 'true');
+}
+</script>
+  
   <footer>
     <p>&copy; 2026 Naveen Kumar B | Finance & Business Analyst Portfolio</p>
     <div class="footer-links">
