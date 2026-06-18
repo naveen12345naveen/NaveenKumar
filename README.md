@@ -151,12 +151,12 @@
     <span class="meta">Postgraduate Project (Published - May 2025)</span>
     <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
   </div>
-      </section>
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
           <span class="meta">Research Project (Pollachi Taluk)</span>
           <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
         </div>
+  
     <section id="skills">
       <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
