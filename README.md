@@ -111,15 +111,23 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#learing">learing</a>
     <a href="#contact">Contact</a>
   </nav>
 
-  <div class="market-ticker-container">
+ <div class="market-ticker-container">
     <div class="ticker-left">
-      <div class="ticker-item">NSE NIFTY50: <span id="nse-val" class="up-trend">https://www.nseindia.com/</span></div>
-      <div class="ticker-item">BSE SENSEX: <span id="bse-val" class="up-trend">https://www.bseindia.com/</span></div>
-      <div class="ticker-item">USD/INR: <span id="usd-val">https://www.rbi.org.in/</span></div>
+      <div class="ticker-item">
+        NSE NIFTY50: <span id="nse-val" class="up-trend"><a href="https://www.nseindia.com/" target="_blank">https://www.nseindia.com/</a></span>
+      </div>
+      <div class="ticker-item">
+        BSE SENSEX: <span id="bse-val" class="up-trend"><a href="https://www.bseindia.com/" target="_blank">https://www.bseindia.com/</a></span>
+      </div>
+      <div class="ticker-item">
+        USD/INR: <span id="usd-val"><a href="https://www.rbi.org.in/" target="_blank">https://www.rbi.org.in/</a></span>
+      </div>
     </div>
+</div>
     <button id="audio-toggle" class="audio-control-btn" onclick="toggleMusicEngine()">Unmute Background Music</button>
   </div>
 
