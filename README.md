@@ -475,7 +475,7 @@
     <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
     <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="btn-pdf">View Published Article (PDF)</a>
   </div>
-</div>
+
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
           <span class="meta">Research Project (Pollachi Taluk)</span>
