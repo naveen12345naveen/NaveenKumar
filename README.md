@@ -432,6 +432,7 @@
   <!-- Navigation Bar -->
   <nav>
     <a href="#about">About</a>
+    <a href="#education section">Education Section</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -444,9 +445,61 @@
     <div class="header-reveal">
       <h1>Naveen Kumar B</h1>
       <p>MBA in Finance & Business Analyst</p>
-      <p class="sub">Specializing in financial modeling, data analysis, and transforming complex data into strategic business insights using Power BI, MySQL, and Python.</p>
+      <p class="sub">I am an MBA in Finance and Business Analytics professional blending core financial acumen with a robust data analytics toolkit. Currently driving financial health as a Junior Analyst at ZOLD UDP Foods, I specialize in financial modeling, accounts optimization, and month-end reconciliations. With hands-on mastery over Excel, Power BI, MySQL, and Python, I transform raw corporate data into strategic, actionable business insights. My background spans published research on NBFC capital adequacy alongside practical exposure to manufacturing and supply chain operations. I bridge the gap between finance and technology to eliminate operational inefficiencies and fuel data-backed business growth</p>
     </div>
   </header>
+
+<!-- Education Section -->
+    <section id="education">
+      <h2>Education</h2>
+      
+      <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+        
+        <!-- Postgraduate Degree -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <!-- College Visual / Logo Placeholder -->
+            <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
+              <span style="font-size: 2.5rem;">🏛️</span> <!-- Replace this emoji with an <img src="anna-univ-logo.png"> later -->
+            </div>
+            <h3>Master of Business Administration (MBA)</h3>
+            <h4>Anna University (Regional Campus, Coimbatore)</h4>
+            <span class="meta">2023 - 2025</span>
+            <ul class="experience-list" style="margin-top: 12px;">
+              <li>Specialization in Financial Management & Data Analytics.</li>
+              <li>Deepened expertise in data-driven corporate finance strategy.</li>
+            </ul>
+          </div>
+          <!-- Academic Gift/Highlight Tag -->
+          <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
+            🏆 Academic Merit: 7.8 CGPA
+          </div>
+        </div>
+
+        <!-- Undergraduate Degree -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <!-- College Visual / Logo Placeholder -->
+            <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
+              <span style="font-size: 2.5rem;">🎓</span> <!-- Replace this emoji with an <img src="ngm-logo.png"> later -->
+            </div>
+            <h3>Bachelor of Commerce (B.Com)</h3>
+            <h4>NGM College, Pollachi</h4>
+            <span class="meta" style="font-size: 0.85rem; color: #777;">Affiliated to Bharathiar University</span><br>
+            <span class="meta">2020 - 2023</span>
+            <ul class="experience-list" style="margin-top: 12px;">
+              <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
+              <li>Active participation in commerce and financial literacy forums.</li>
+            </ul>
+          </div>
+          <!-- Academic Gift/Highlight Tag -->
+          <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
+            🏆 Academic Merit: 7.5 CGPA
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   <div class="container">
     
