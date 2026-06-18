@@ -116,9 +116,9 @@
 
   <div class="market-ticker-container">
     <div class="ticker-left">
-      <div class="ticker-item">NSE NIFTY50: <span id="nse-val" class="up-trend">24,041.75</span></div>
-      <div class="ticker-item">BSE SENSEX: <span id="bse-val" class="up-trend">78,920.40</span></div>
-      <div class="ticker-item">USD/INR: <span id="usd-val">83.54</span></div>
+      <div class="ticker-item">NSE NIFTY50: <span id="nse-val" class="up-trend">https://www.nseindia.com/</span></div>
+      <div class="ticker-item">BSE SENSEX: <span id="bse-val" class="up-trend">https://www.bseindia.com/</span></div>
+      <div class="ticker-item">USD/INR: <span id="usd-val">https://www.rbi.org.in/</span></div>
     </div>
     <button id="audio-toggle" class="audio-control-btn" onclick="toggleMusicEngine()">Unmute Background Music</button>
   </div>
