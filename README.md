@@ -615,7 +615,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     </section>
 
 <!-- My Professional Work -->
-<section id="My Professional Work">
+<section id="my professional work">
     <div class="skills-box">
       <h3>My Professional Work</h3>
       <ul>
