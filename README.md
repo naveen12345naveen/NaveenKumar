@@ -157,8 +157,6 @@
           <span class="meta">Research Project (Pollachi Taluk)</span>
           <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
         </div>
-      </div>
-
     <section id="skills">
       <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
@@ -182,6 +180,7 @@
             <li>VAT accounting and compliance procedures</li>
           </ul>
         </div>
+    
         <div class="skills-box">
           <h3>Professional Certifications</h3>
           <ul>
@@ -191,13 +190,6 @@
         </div>
       </div>
     </section>
-
- <section id="my events & learing">
-
-
-
-
-
     <section id="contact">
       <h2>Get In Touch</h2>
       <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" enctype="multipart/form-data">
@@ -222,7 +214,6 @@
         <button type="submit">Send Message</button>
       </form>
     </section>
-  </div>
 
   <footer>
     <p>&copy; 2026 Naveen Kumar B | Finance & Business Analyst Portfolio</p>
@@ -290,5 +281,3 @@
       }, 4000);
     });
   </script>
-</body>
-</html>
