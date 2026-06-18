@@ -1,27 +1,3 @@
-<!-- Splash Screen / Welcome Page -->
-<div id="welcome-screen">
-  <div class="welcome-content">
-    <h1>Welcome to My Website</h1>
-    <p>We are glad you are here.</p>
-  </div>
-  <!-- Start Icon Button at the bottom -->
-  <button id="start-btn" onclick="goToNextPage()">
-    <i class="fas fa-play"></i> Start
-  </button>
-</div>
-
-<!-- Your Already Prepared Next Page Content -->
-<div id="main-content" style="display: none;">
-  <!-- Put your existing website HTML code here -->
-  <h1>This is your main page content</h1>
-  <p>Your prepared content goes here...</p>
-</div>
-
-<!-- FontAwesome link for the start icon (Put this in your <head>) -->
-<link rel="stylesheet" href="https://cloudflare.com">
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
