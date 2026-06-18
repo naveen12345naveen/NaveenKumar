@@ -444,10 +444,52 @@
   <header id="about">
     <div class="header-reveal">
       <h1>Naveen Kumar B</h1>
-      <p>MBA in Finance & Business Analyst</p>
+      <p>Finance Analyst</p>
       <p class="sub">I am an MBA in Finance and Business Analytics professional blending core financial acumen with a robust data analytics toolkit. Currently driving financial health as a Junior Analyst at ZOLD UDP Foods, I specialize in financial modeling, accounts optimization, and month-end reconciliations. With hands-on mastery over Excel, Power BI, MySQL, and Python, I transform raw corporate data into strategic, actionable business insights. My background spans published research on NBFC capital adequacy alongside practical exposure to manufacturing and supply chain operations. I bridge the gap between finance and technology to eliminate operational inefficiencies and fuel data-backed business growth</p>
     </div>
   </header>
+
+<!-- Tamil Culture & Philosophy Interactive Showcase Module -->
+<div class="cultural-motto-card" style="
+  margin-top: 45px; 
+  padding: 30px; 
+  background: linear-gradient(135deg, rgba(253, 251, 247, 0.9) 0%, rgba(245, 240, 230, 0.9) 100%); 
+  border-radius: 16px; 
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: default;
+" 
+onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 30px rgba(212, 175, 55, 0.18)'; this.style.borderColor='rgba(212, 175, 55, 0.5)';"
+onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(212, 175, 55, 0.08)'; this.style.borderColor='rgba(212, 175, 55, 0.2)';"
+>
+  <!-- Decorative Background Quote Mark -->
+  <div style="position: absolute; top: -20px; right: -10px; font-size: 7rem; color: rgba(212, 175, 55, 0.04); font-family: serif; pointer-events: none; user-select: none;">"</div>
+  
+  <!-- Icon -->
+  <div style="font-size: 2rem; margin-bottom: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">✨</div>
+
+  <!-- Tamil Quote -->
+  <p style="font-size: 1.6rem; font-weight: 800; color: #2c221e; margin: 0 0 12px 0; font-family: 'Mukta Malar', sans-serif; letter-spacing: 0.5px;">
+    "யாதும் ஊரே யாவரும் கேளிர்"
+  </p>
+  
+  <!-- Elegant Divider Line -->
+  <div style="width: 50px; height: 2px; background: #d4af37; margin: 0 auto 16px auto; border-radius: 2px;"></div>
+
+  <!-- Meaning -->
+  <p style="font-size: 1.1rem; font-style: italic; color: #4a3e39; margin: 0; line-height: 1.7; font-weight: 500;">
+    <strong style="color: #d4af37; font-style: normal;">பொருள்:</strong> எல்லா ஊர்களும் நமது ஊர்களே, எல்லா மக்களும் நமது உறவினர்களே.
+  </p>
+  
+  <!-- Poet Credit -->
+  <span style="display: block; font-size: 0.85rem; color: #8c766c; margin-top: 15px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;">
+    — கணியன் பூங்குன்றனார் (புறநானூறு)
+  </span>
+</div>
 
 <!-- Education Section -->
     <section id="education">
@@ -573,7 +615,7 @@
     </section>
 
 <!-- My Professional Work -->
-<section id="My Professional Work ">
+<section id="My Professional Work">
     <div class="skills-box">
       <h3>My Professional Work</h3>
       <ul>
