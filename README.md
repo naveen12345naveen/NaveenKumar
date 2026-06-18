@@ -435,6 +435,7 @@
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
+    <a href="#my professional work">My Professional Work</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -518,6 +519,24 @@
       </div>
     </section>
 
+<!-- My Professional Work -->
+    <div class="skills-box">
+      <h3>My Professional Work</h3>
+      <ul>
+        <li>Digital Marketing – Strategic content creation, professional video editing, and impact-driven poster design.</li>
+        <li>Financial Analysis – Comprehensive financial statement evaluation and strategic portfolio management.</li>
+        <li>Custom Solutions – Dedicated consulting and tailored support to solve your unique business challenges.</li>
+      </ul>
+    </div>
+    
+  <!-- Vision Theme -->
+  <div class="vision-statement" style="text-align: center; margin-top: 40px; padding: 15px; border-top: 1px dashed #ddd;">
+    <p style="font-size: 1.25rem; font-style: italic; font-weight: 600; color: #2c3e50; margin: 0;">
+      "Innovating to shape a brand new world."
+    </p>
+  </div>
+</section>
+ 
     <!-- Contact Section -->
     <section id="contact">
       <h2>Get In Touch</h2>
