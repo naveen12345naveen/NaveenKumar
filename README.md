@@ -171,30 +171,8 @@
       </ul>
     </div>
     
-<section id="skills">
-   <div class="card">
- <!-- Technical Skills Section -->
-  <section id="skills">
-    <h2>Technical Skills & Credentials</h2>
-    <div class="skills-grid">
-      
-      <!-- 1. Analytical & Technical Skills -->
-      <div class="skills-box">
-        <h3>Analytical & Technical Skills</h3>
-        <ul>
-          <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
-          <li>MySQL – Database Queries, Joins, Stored Procedures</li>
-          <li>Power BI – Dashboard Creation, Data Modelling</li>
-          <li>Python – Data Analysis, Automation, Pandas</li>
-          <li>Business Analysis – Financial Modelling, Process Improvement</li>
-        </ul>
-      </div>
-      
-<section id="skills">
-   <div class="card">
-      <!-- 2. Accounting & Taxation Skills -->
-      <div class="skills-box">
-        <h3>Accounting & Taxation Skills</h3>
+     <div class="card">
+              <h3>Accounting & Taxation Skills</h3>
         <ul>
           <li>GST Compliance – Filing, Reconciliation, Documentation</li>
           <li>Tally Prime – Financial Accounting, Inventory Management</li>
@@ -203,22 +181,16 @@
           <li>VAT – Regulatory Compliance, Accounting Methods</li>
         </ul>
       </div>
-  
-<section id="skills">
-   <div class="card">
-      <!-- 3. Professional Certifications -->
-      <div class="skills-box">
-        <h3>Professional Certifications</h3>
+
+     <div class="card">
+          <h3>Professional Certifications</h3>
         <ul>
           <li>Human Resources Management (Swayam-NPTEL)</li>
           <li>AI in Marketing (Swayam-NPTEL)</li>
         </ul>
       </div>
-
     </div> <!-- End of skills-grid -->
   </section> <!-- End of skills section -->
-
-
  
 <!-- Styling to center the contact form on the webpage -->
 <style>
@@ -332,6 +304,7 @@
     transition: background 0.2s;
   }
 
+  /* FIXED: Darkens the blue background on hover instead of hiding the white text */
   #contact button[type="submit"]:hover {
     background-color: #0056b3;
   }
@@ -340,6 +313,7 @@
 <!-- Contact Section -->
 <section id="contact">
   <h2>Get In Touch</h2>
+  <!-- REMEMBER: Formsubmit.co requires your real email inside the action attribute to work -->
   <form action="https://formsubmit.co" method="POST" enctype="multipart/form-data">
     <!-- Formsubmit.co configuration -->
     <input type="hidden" name="_captcha" value="false">
@@ -406,6 +380,7 @@ function clearPreviewFile() {
   container.setAttribute('hidden', 'true');
 }
 </script>
+
   
   <footer>
     <p>&copy; 2026 Naveen Kumar B | Finance & Business Analyst Portfolio</p>
