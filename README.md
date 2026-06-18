@@ -1,46 +1,25 @@
-/* Center the welcome screen */
-#welcome-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #111111; /* Dark background */
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease-in-out;
-}
+<!-- Splash Screen / Welcome Page -->
+<div id="welcome-screen">
+  <div class="welcome-content">
+    <h1>Welcome to My Website</h1>
+    <p>We are glad you are here.</p>
+  </div>
+  <!-- Start Icon Button at the bottom -->
+  <button id="start-btn" onclick="goToNextPage()">
+    <i class="fas fa-play"></i> Start
+  </button>
+</div>
 
-/* Center text styling */
-.welcome-content {
-  text-align: center;
-}
+<!-- Your Already Prepared Next Page Content -->
+<div id="main-content" style="display: none;">
+  <!-- Put your existing website HTML code here -->
+  <h1>This is your main page content</h1>
+  <p>Your prepared content goes here...</p>
+</div>
 
-/* Position start icon at the bottom */
-#start-btn {
-  position: absolute;
-  bottom: 50px;
-  background: #007bff;
-  color: white;
-  border: none;
-  padding: 15px 30px;
-  font-size: 18px;
-  border-radius: 50px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.2s;
-}
+<!-- FontAwesome link for the start icon (Put this in your <head>) -->
+<link rel="stylesheet" href="https://cloudflare.com">
 
-#start-btn:hover {
-  transform: scale(1.05);
-}
 
 <!DOCTYPE html>
 <html lang="en">
