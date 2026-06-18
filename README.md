@@ -172,6 +172,7 @@
     </div>
     
 <section id="skills">
+   <div class="card">
  <!-- Technical Skills Section -->
   <section id="skills">
     <h2>Technical Skills & Credentials</h2>
@@ -190,6 +191,7 @@
       </div>
       
 <section id="skills">
+   <div class="card">
       <!-- 2. Accounting & Taxation Skills -->
       <div class="skills-box">
         <h3>Accounting & Taxation Skills</h3>
@@ -203,6 +205,7 @@
       </div>
   
 <section id="skills">
+   <div class="card">
       <!-- 3. Professional Certifications -->
       <div class="skills-box">
         <h3>Professional Certifications</h3>
