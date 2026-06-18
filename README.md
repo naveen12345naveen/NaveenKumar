@@ -141,10 +141,10 @@
         <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
         <span class="meta">August 2025 - Present</span>
         <ul class="experience-list">
-          [span_0](start_span)<li>Assisted in preparing and maintaining accurate financial records and reports.[span_0](end_span)</li>
-          [span_1](start_span)<li>Facilitated monthly closing processes, including reconciliations and posting journal entries.[span_1](end_span)</li>
-          [span_2](start_span)<li>Managed accounts payable and receivable to ensure timely processing and compliance.[span_2](end_span)</li>
-          [span_3](start_span)<li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.[span_3](end_span)</li>
+              <li>Assisted in preparing and maintaining accurate financial records and reports.[span_0](end_span)</li>
+              <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.[span_1](end_span)</li>
+              <li>Managed accounts payable and receivable to ensure timely processing and compliance.[span_2](end_span)</li>
+              <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.[span_3](end_span)</li>
         </ul>
       </div>
     </section>
