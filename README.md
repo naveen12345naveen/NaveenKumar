@@ -526,6 +526,7 @@
         <li>Digital Marketing – Strategic content creation, professional video editing, and impact-driven poster design.</li>
         <li>Financial Analysis – Comprehensive financial statement evaluation and strategic portfolio management.</li>
         <li>Custom Solutions – Dedicated consulting and tailored support to solve your unique business challenges.</li>
+        <li>Finance Filling – GST, VAT, TDS, TCS, Income Tax and other Filling and Queries.</li>
       </ul>
     </div>
     
@@ -551,7 +552,6 @@
       </form>
     </section>
 
-  </div>
 
   <!-- High Effect Footer Section -->
   <footer>
