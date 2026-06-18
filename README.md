@@ -432,7 +432,7 @@
   <!-- Navigation Bar -->
   <nav>
     <a href="#about">About</a>
-    <a href="#education section">Education Section</a>
+    <a href="#education">Education Section</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
@@ -573,6 +573,7 @@
     </section>
 
 <!-- My Professional Work -->
+<section id="My Professional Work ">
     <div class="skills-box">
       <h3>My Professional Work</h3>
       <ul>
@@ -586,7 +587,7 @@
   <!-- Vision Theme -->
   <div class="vision-statement" style="text-align: center; margin-top: 40px; padding: 15px; border-top: 1px dashed #ddd;">
     <p style="font-size: 1.25rem; font-style: italic; font-weight: 600; color: #2c3e50; margin: 0;">
-      "Innovating to shape a brand new world."
+      "A flexible, innovative approach to problem-solving that uses limited resources to get things done"
     </p>
   </div>
  
