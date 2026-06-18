@@ -170,6 +170,8 @@
             <li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
           </ul>
         </div>
+
+      
         <div class="skills-box">
           <h3>Accounting & Taxation Skills</h3>
           <ul>
@@ -190,6 +192,8 @@
         </div>
       </div>
     </section>
+
+    
     <section id="contact">
       <h2>Get In Touch</h2>
       <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" enctype="multipart/form-data">
