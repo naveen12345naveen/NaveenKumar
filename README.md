@@ -1,3 +1,47 @@
+/* Center the welcome screen */
+#welcome-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #111111; /* Dark background */
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Center text styling */
+.welcome-content {
+  text-align: center;
+}
+
+/* Position start icon at the bottom */
+#start-btn {
+  position: absolute;
+  bottom: 50px;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s;
+}
+
+#start-btn:hover {
+  transform: scale(1.05);
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -141,10 +185,10 @@
         <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
         <span class="meta">August 2025 - Present</span>
         <ul class="experience-list">
-              <li>Assisted in preparing and maintaining accurate financial records and reports.[span_0](end_span)</li>
-              <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.[span_1](end_span)</li>
-              <li>Managed accounts payable and receivable to ensure timely processing and compliance.[span_2](end_span)</li>
-              <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.[span_3](end_span)</li>
+              <li>Assisted in preparing and maintaining accurate financial records and reports.[span_0]</li>
+              <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
+              <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
+              <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
         </ul>
       </div>
     </section>
@@ -155,12 +199,12 @@
         <div class="card">
           <h3>NBFC Financial Performance Analysis</h3>
           <span class="meta">Postgraduate Project (Published - May 2025)</span>
-          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. [span_4](start_span)[span_5](start_span)12, Issue 5, May 2025.[span_4](end_span)[span_5](end_span)</p>
+          <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. [span_4](start_span)[span_5](start_span)12, Issue 5, May 2025.</p>
         </div>
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
           <span class="meta">Research Project (Pollachi Taluk)</span>
-          [span_6](start_span)<p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.[span_6](end_span)</p>
+          [span_6](start_span)<p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
         </div>
       </div>
     </section>
@@ -171,28 +215,28 @@
         <div class="skills-box">
           <h3>Analytical & Technical Skills</h3>
           <ul>
-            [span_7](start_span)<li>Advanced Excel – Pivot Tables, Macros, Data Visualization[span_7](end_span)</li>
-            [span_8](start_span)<li>MySQL – Database queries, joins, stored procedures[span_8](end_span)</li>
-            [span_9](start_span)<li>Power BI – Dashboard creation, data modeling[span_9](end_span)</li>
-            [span_10](start_span)<li>Python – Data analysis, automation, visualization (Pandas)[span_10](end_span)</li>
-            [span_11](start_span)<li>Business Analysis – Financial modeling, process improvement, strategic insights[span_11](end_span)</li>
+            (start_span)<li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
+            (start_span)<li>MySQL – Database queries, joins, stored procedures</li>
+            (start_span)<li>Power BI – Dashboard creation, data modeling</li>
+            (start_span)<li>Python – Data analysis, automation, visualization (Pandas)</li>
+            (start_span)<li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
           </ul>
         </div>
         <div class="skills-box">
           <h3>Accounting & Taxation Skills</h3>
           <ul>
-            [span_12](start_span)<li>GST compliance, filing, and reconciliation[span_12](end_span)</li>
-            [span_13](start_span)<li>Tally Prime for accounting and financial management[span_13](end_span)</li>
-            [span_14](start_span)<li>TDS (Tax Deducted at Source) calculation and reporting[span_14](end_span)</li>
-            [span_15](start_span)<li>Income Tax preparation and return filing[span_15](end_span)</li>
-            [span_16](start_span)<li>VAT accounting and compliance procedures[span_16](end_span)</li>
+            (start_span)<li>GST compliance, filing, and reconciliation</li>
+            (start_span)<li>Tally Prime for accounting and financial management</li>
+            (start_span)<li>TDS (Tax Deducted at Source) calculation and reporting</li>
+            (start_span)<li>Income Tax preparation and return filing</li>
+            (start_span)<li>VAT accounting and compliance procedures</li>
           </ul>
         </div>
         <div class="skills-box">
           <h3>Professional Certifications</h3>
           <ul>
-            [span_17](start_span)<li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices[span_17](end_span)</li>
-            [span_18](start_span)<li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies[span_18](end_span)</li>
+            [span_17](start_span)<li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices[span_17]</li>
+            [span_18](start_span)<li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies[span_18]</li>
           </ul>
         </div>
       </div>
