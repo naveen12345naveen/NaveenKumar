@@ -157,67 +157,136 @@
           <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
         </div>
   
-    <section id="skills">
-      <h2>Technical Skills & Credentials</h2>
-      <div class="skills-grid">
-        <div class="skills-box">
-          <h3>Analytical & Technical Skills</h3>
-          <ul>
-            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
-            <li>MySQL – Database queries, joins, stored procedures</li>
-            <li>Power BI – Dashboard creation, data modeling</li>
-            <li>Python – Data analysis, automation, visualization (Pandas)</li>
-            <li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
-          </ul>
-        </div>
-
-      
-        <div class="skills-box">
-          <h3>Accounting & Taxation Skills</h3>
-          <ul>
-            <li>GST compliance, filing, and reconciliation</li>
-            <li>Tally Prime for accounting and financial management</li>
-            <li>TDS (Tax Deducted at Source) calculation and reporting</li>
-            <li>Income Tax preparation and return filing</li>
-            <li>VAT accounting and compliance procedures</li>
-          </ul>
-        </div>
+<section id="skills">
+  <h2>Technical Skills & Credentials</h2>
+  <div class="skills-grid">
+    <div class="skills-box">
+      <h3>Analytical & Technical Skills</h3>
+      <ul>
+        <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
+        <li>MySQL – Database Queries, Joins, Stored Procedures</li>
+        <li>Power BI – Dashboard Creation, Data Modelling</li>
+        <li>Python – Data Analysis, Automation, Pandas</li>
+        <li>Business Analysis – Financial Modelling, Process Improvement</li>
+      </ul>
+    </div>
+<!-- Technical Skills Section -->
+<section id="skills">
+  <h2>Technical Skills & Credentials</h2>
+  <div class="skills-grid">
     
-        <div class="skills-box">
-          <h3>Professional Certifications</h3>
-          <ul>
-            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
-            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+    <!-- 1. Analytical & Technical Skills -->
+    <div class="skills-box">
+      <h3>Analytical & Technical Skills</h3>
+      <ul>
+        <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
+        <li>MySQL – Database Queries, Joins, Stored Procedures</li>
+        <li>Power BI – Dashboard Creation, Data Modelling</li>
+        <li>Python – Data Analysis, Automation, Pandas</li>
+        <li>Business Analysis – Financial Modelling, Process Improvement</li>
+      </ul>
+    </div>
 
+    <!-- 2. Accounting & Taxation Skills -->
+    <div class="skills-box">
+      <h3>Accounting & Taxation Skills</h3>
+      <ul>
+        <li>GST Compliance – Filing, Reconciliation, Documentation</li>
+        <li>Tally Prime – Financial Accounting, Inventory Management</li>
+        <li>TDS – Calculations, Deductions, Returns Reporting</li>
+        <li>Income Tax – Tax Planning, Return Filing Procedures</li>
+        <li>VAT – Regulatory Compliance, Accounting Methods</li>
+      </ul>
+    </div>
+
+    <!-- 3. Professional Certifications -->
+    <div class="skills-box">
+      <h3>Professional Certifications</h3>
+      <ul>
+        <li>Human Resources Management (Swayam-NPTEL)</li>
+        <li>AI in Marketing (Swayam-NPTEL)</li>
+      </ul>
+    </div>
+
+  </div> <!-- End of skills-grid -->
+</section> <!-- End of skills section -->
+
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" enctype="multipart/form-data">
+    <!-- Formsubmit.co configuration -->
+    <input type="hidden" name="_captcha" value="false">
     
-    <section id="contact">
-      <h2>Get In Touch</h2>
-      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        
-        <div class="file-upload-wrapper">
-          <label for="photo-attachment" class="file-upload-label">
-            <p style="font-weight: bold; color: var(--primary);">Upload Image / Attachment</p>
-            <span style="font-size:0.8rem; color:var(--muted)">Click to add proof files (PNG, JPG, PDF)</span>
-          </label>
-          <input type="file" id="photo-attachment" name="attachment" accept="image/*,application/pdf" class="file-upload-input" onchange="previewImage(event)">
-        </div>
+    <!-- User inputs -->
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    
+    <!-- File upload area -->
+    <div class="file-upload-wrapper">
+      <label id="file-label-element" for="photo-attachment" class="file-upload-label">
+        <span class="upload-title">Upload Image / Attachment</span>
+        <span class="upload-subtitle">Click to add proof files (PNG, JPG, PDF)</span>
+      </label>
+      <input type="file" id="photo-attachment" name="attachment" accept="image/*,application/pdf" class="file-upload-input" onchange="previewFile(event)">
+    </div>
 
-        <div id="preview-container" class="image-preview-box">
-          <img id="output-image" src="#" alt="Upload Preview">
-          <div><span class="remove-preview-btn" onclick="clearPreviewFile()">Remove Attachment</span></div>
-        </div>
-        
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+    <!-- Preview container (Hidden by default using standard hidden attribute) -->
+    <div id="preview-container" class="image-preview-box" hidden>
+      <img id="output-image" src="" alt="Upload Preview">
+      <p id="file-name-preview" class="file-name-text"></p>
+      <div><button type="button" class="remove-preview-btn" onclick="clearPreviewFile()">Remove Attachment</button></div>
+    </div>
+    
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<!-- JavaScript for File Upload Preview Logic -->
+<script>
+function previewFile(event) {
+  const input = event.target;
+  const container = document.getElementById('preview-container');
+  const imgElement = document.getElementById('output-image');
+  const nameElement = document.getElementById('file-name-preview');
+  
+  if (input.files && input.files[0]) {
+    const file = input.files[0];
+    
+    // Display the container
+    container.removeAttribute('hidden');
+    
+    // Handle image preview vs document preview
+    if (file.type.startsWith('image/')) {
+      imgElement.src = URL.createObjectURL(file);
+      imgElement.style.display = 'block';
+      nameElement.textContent = ''; 
+    } else {
+      // If it's a PDF, hide image tag and show filename text instead
+      imgElement.src = '';
+      imgElement.style.display = 'none';
+      nameElement.textContent = `Document attached: ${file.name}`;
+    }
+  }
+}
+
+function clearPreviewFile() {
+  const fileInput = document.getElementById('photo-attachment');
+  const container = document.getElementById('preview-container');
+  const imgElement = document.getElementById('output-image');
+  const nameElement = document.getElementById('file-name-preview');
+  
+  // Clear the actual input value
+  fileInput.value = '';
+  
+  // Reset elements and hide container
+  imgElement.src = '';
+  nameElement.textContent = '';
+  container.setAttribute('hidden', 'true');
+}
+</script>
 
   <footer>
     <p>&copy; 2026 Naveen Kumar B | Finance & Business Analyst Portfolio</p>
