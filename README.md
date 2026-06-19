@@ -443,7 +443,7 @@
   <!-- High Effect Header Section -->
   <header id="about">
     <div class="header-reveal">
-      <h1>Naveen Kumar B</h1>
+      <h1>NaveenKumar B</h1>
       <p>Finance Analyst</p>
       <p class="sub">I am an MBA in Finance and Business Analytics professional blending core financial acumen with a robust data analytics toolkit. Currently driving financial health as a Junior Analyst at ZOLD UDP Foods, I specialize in financial modeling, accounts optimization, and month-end reconciliations. With hands-on mastery over Excel, Power BI, MySQL, and Python, I transform raw corporate data into strategic, actionable business insights. My background spans published research on NBFC capital adequacy alongside practical exposure to manufacturing and supply chain operations. I bridge the gap between finance and technology to eliminate operational inefficiencies and fuel data-backed business growth</p>
     </div>
@@ -527,7 +527,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
             </div>
             <h3>Bachelor of Commerce (B.Com)</h3>
             <h4>NGM College, Pollachi</h4>
-            <span class="meta" style="font-size: 0.85rem; color: #777;">Affiliated to Bharathiar University</span><br>
+            <span class="meta" style="font-size: 0.85rem; color: #777;">Affiliated to Bharathiar University<br>
             <span class="meta">2020 - 2023</span>
             <ul class="experience-list" style="margin-top: 12px;">
               <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
@@ -686,8 +686,8 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   <!-- High Effect Footer Section -->
   <footer>
     <div class="footer-content">
-      <p>&copy; 2026 Naveen Kumar B</p>
-      <p>Finance & Business Analyst | Portfolio Website</p>
+      <p>&copy; 2026 NaveenKumar B</p>
+      <p>Portfolio Website</p>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
         <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
