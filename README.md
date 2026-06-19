@@ -632,13 +632,42 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     </div>
 </section>
 
+  <!-- Vision Statement Showcase Module -->
+<div class="vision-container" style="
+  margin-top: 45px; 
+  padding: 30px; 
+  background: linear-gradient(135deg, rgba(253, 251, 247, 0.9) 0%, rgba(245, 240, 230, 0.9) 100%); 
+  border-radius: 16px; 
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: default;
+" 
+onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 30px rgba(212, 175, 55, 0.18)'; this.style.borderColor='rgba(212, 175, 55, 0.5)';"
+onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(212, 175, 55, 0.08)'; this.style.borderColor='rgba(212, 175, 55, 0.2)';"
+>
+  <!-- Decorative Background Quote Mark -->
+  <div style="position: absolute; top: -20px; right: -10px; font-size: 7rem; color: rgba(212, 175, 55, 0.04); font-family: serif; pointer-events: none; user-select: none;">"</div>
+  
+  <!-- Icon -->
+  <div style="font-size: 2rem; margin-bottom: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">💡</div>
 
-  <div class="vision-container">
-    <span class="vision-label">OUR VISION</span>
-    <blockquote class="vision-text">
-      A flexible, innovative approach to problem-solving that uses limited resources to get things done
-    </blockquote>
-  </div>
+  <!-- Label / Tagline -->
+  <span class="vision-label" style="display: block; font-size: 0.85rem; color: #8c766c; margin-bottom: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">
+    Our Vision
+  </span>
+  
+  <!-- Elegant Divider Line -->
+  <div style="width: 50px; height: 2px; background: #d4af37; margin: 0 auto 16px auto; border-radius: 2px;"></div>
+
+  <!-- Main Core Quote -->
+  <blockquote class="vision-text" style="font-size: 1.45rem; font-style: italic; font-weight: 600; color: #2c221e; margin: 0; padding: 0 10px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
+    "A flexible, innovative approach to problem-solving that uses limited resources to get things done"
+  </blockquote>
+</div>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -653,7 +682,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         <button type="su  bmit">Send Message</button>
       </form>
     </section>
-
 
   <!-- High Effect Footer Section -->
   <footer>
