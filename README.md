@@ -544,17 +544,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   </div> <!-- /education-grid -->
 </section> <!-- /education -->
     
-    <!-- Corporate Exposure / Experience Section -->
-    <section id="experience">
-      <h2>Corporate Exposure</h2>
-      <div class="card">
-        <h3 style="display: inline-flex; align-items: center; gap: 12px; font-family: sans-serif; color: #2c221e; margin: 0;">
-  Junior Analyst 
-  <span style="font-size: 0.75rem; font-weight: 700; color: #d4af37; background: rgba(212, 175, 55, 0.08); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(212, 175, 55, 0.25); letter-spacing: 0.5px;">
-    ✨ ANALYST // 2026
-  </span>
-</h3>
-        <!-- Job Experience Block -->
+  <!-- Job Experience Block -->
 <div>
   <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
   
@@ -584,9 +574,9 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
 </div>
 
 
+
   <section id="projects">
   <h2>Research & Projects</h2>
-  
   <div class="grid">
     <div class="card">
       <h3>NBFC Financial Performance Analysis</h3>
