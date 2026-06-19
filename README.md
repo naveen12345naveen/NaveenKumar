@@ -569,21 +569,12 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     <h3>NBFC Financial Performance Analysis</h3>
     <span class="meta">Postgraduate Project (Published - May 2025)</span>
     <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
-  <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="btn-pdf primary-doc">
-    <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-      <polyline points="14 2 14 8 20 8"></polyline>
-      <line x1="16" y1="13" x2="8" y2="13"></line>
-      <line x1="16" y1="17" x2="8" y2="17"></line>
-      <polyline points="10 9 9 9 8 9"></polyline>
-    </svg>
+<div class="article-links-container">
+  <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="text-link-pdf primary-link">
     View Published Article (PDF)
   </a>
-  
-  <a href="naveenkumar_article_certificate.pdf" target="_blank" class="btn-pdf secondary-doc">
-    <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-    </svg>
+  <span class="link-separator">|</span>
+  <a href="naveenkumar_article_certificate.pdf" target="_blank" class="text-link-pdf secondary-link">
     View Published Article Certificate (PDF)
   </a>
 </div>
@@ -642,13 +633,84 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </ul>
     </div>
     
-<div class="vision-container modern-minimal">
-  <span class="vision-label">OUR VISION</span>
-  <blockquote class="vision-text">
-    "**A flexible, innovative approach to problem-solving that uses limited resources to get things done**"
-  </blockquote>
-</div>
- 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Vision</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .vision-container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .vision-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(255,255,255,0.4);
+    }
+
+    .vision-label {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .vision-text {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #f0f0f0;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .vision-text::before, .vision-text::after {
+      content: "❝";
+      font-size: 2rem;
+      color: #ffdd57;
+      position: absolute;
+    }
+
+    .vision-text::before {
+      left: -25px;
+      top: -10px;
+    }
+
+    .vision-text::after {
+      content: "❞";
+      right: -25px;
+      bottom: -10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="vision-container">
+    <span class="vision-label">OUR VISION</span>
+    <blockquote class="vision-text">
+      A flexible, innovative approach to problem-solving that uses limited resources to get things done
+    </blockquote>
+  </div>
+</body>
+</html>
+
     <!-- Contact Section -->
     <section id="contact">
       <h2>Get In Touch</h2>
