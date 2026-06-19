@@ -579,7 +579,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   </a>
 </div>
     
-      <h2>Research & Projects</h2>
      <div class="grid">
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
@@ -640,8 +639,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       A flexible, innovative approach to problem-solving that uses limited resources to get things done
     </blockquote>
   </div>
-</body>
-</html>
 
     <!-- Contact Section -->
     <section id="contact">
