@@ -738,3 +738,23 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </div>
     </div>
   </footer>
+  
+<!-- Stylish Button Link to Learn with Me Page -->
+<div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
+    <a href="learn-with-me.html" style="
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 18px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        border-radius: 50px;
+        text-decoration: none;
+        box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(255, 75, 43, 0.6)';" 
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(255, 75, 43, 0.4)';">
+        🎁 Learn with me
+    </a>
+</div>
