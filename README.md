@@ -758,3 +758,191 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         🎁 Learn with me
     </a>
 </div>
+
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="audio-player-widget">
+  <div class="visualizer" id="visualizer">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  
+  <button id="mute-btn" onclick="toggleMute()">🔇</button>
+  
+  <div class="slider-container">
+    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.5" oninput="changeVolume(this.value)">
+  </div>
+</div>
+
+<style>
+  .audio-player-widget {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 18px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    z-index: 1000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .audio-player-widget:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  #mute-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    line-height: 1;
+    transition: transform 0.2s ease;
+  }
+
+  #mute-btn:active {
+    transform: scale(0.85);
+  }
+
+  .slider-container {
+    display: flex;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+  }
+
+  /* Reveal volume slider gracefully on widget hover */
+  .audio-player-widget:hover .slider-container {
+    width: 80px;
+  }
+
+  #volume-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.3);
+    outline: none;
+    cursor: pointer;
+  }
+
+  #volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 4px rgba(0,0,0,0.5);
+  }
+
+  /* Audio Visualizer Waves */
+  .visualizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    width: 18px;
+    height: 16px;
+  }
+
+  .bar {
+    width: 2px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 1px;
+    transform-origin: bottom;
+    transition: transform 0.2s ease;
+  }
+
+  /* Animation classes applied via JS */
+  .visualizer.playing .bar {
+    animation: bounce 0.8s ease-in-out infinite alternate;
+  }
+  .visualizer.playing .bar:nth-child(1) { animation-delay: 0.1s; }
+  .visualizer.playing .bar:nth-child(2) { animation-delay: 0.4s; }
+  .visualizer.playing .bar:nth-child(3) { animation-delay: 0.2s; }
+  .visualizer.playing .bar:nth-child(4) { animation-delay: 0.6s; }
+
+  @keyframes bounce {
+    0% { transform: scaleY(0.2); }
+    100% { transform: scaleY(1); }
+  }
+</style>
+
+<script>
+  const music = document.getElementById('bg-music');
+  const muteBtn = document.getElementById('mute-btn');
+  const slider = document.getElementById('volume-slider');
+  const visualizer = document.getElementById('visualizer');
+
+  // Load user settings from localStorage if they exist
+  const savedVolume = localStorage.getItem('bg-volume');
+  const savedMuteStatus = localStorage.getItem('bg-muted');
+
+  if (savedVolume !== null) {
+    music.volume = parseFloat(savedVolume);
+    slider.value = savedVolume;
+  } else {
+    music.volume = 0.5;
+  }
+
+  if (savedMuteStatus === 'true') {
+    music.muted = true;
+    muteBtn.innerText = "🔇";
+  }
+
+  // Trigger audio playback safely on first interaction
+  document.addEventListener('click', () => {
+    if (music.paused && !music.muted) {
+      playAudio();
+    }
+  }, { once: true });
+
+  function playAudio() {
+    music.play()
+      .then(() => visualizer.classList.add('playing'))
+      .catch(() => console.log("Autoplay restricted. Waiting for direct user action."));
+  }
+
+  function toggleMute() {
+    if (music.muted) {
+      music.muted = false;
+      muteBtn.innerText = music.volume === 0 ? "🔇" : "🔊";
+      playAudio();
+      localStorage.setItem('bg-muted', 'false');
+    } else {
+      music.muted = true;
+      muteBtn.innerText = "🔇";
+      visualizer.classList.remove('playing');
+      localStorage.setItem('bg-muted', 'true');
+    }
+  }
+
+  function changeVolume(volumeValue) {
+    music.volume = volumeValue;
+    localStorage.setItem('bg-volume', volumeValue);
+
+    if (volumeValue == 0) {
+      music.muted = true;
+      muteBtn.innerText = "🔇";
+      visualizer.classList.remove('playing');
+    } else {
+      music.muted = false;
+      muteBtn.innerText = "🔊";
+      if (!music.paused) visualizer.classList.add('playing');
+    }
+  }
+</script>
