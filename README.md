@@ -440,8 +440,24 @@
   </nav>
 
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
-  <!-- Your image replaces the old text/emoji tag safely -->
-  <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #d4af37;">
+  <!-- Profile Image Link -->
+  <a href="NaveenKumar_B_Resume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
+    <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #d4af37; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px rgba(212, 175, 55, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+  </a>
+  
+  <!-- Integrated PDF Download Action Bar -->
+  <div style="margin-top: 12px;">
+    <a href="naveenKumarResume.pdf" download="naveenKumarResume.pdf" style="display: inline-inline-flex; align-items: center; justify-content: center; gap: 8px; color: #81C784; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 6px 14px; border: 1px solid rgba(129, 199, 132, 0.3); border-radius: 20px; background: rgba(129, 199, 132, 0.05); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(129, 199, 132, 0.15)'; this.style.borderColor='#81C784'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(129, 199, 132, 0.05)'; this.style.borderColor='rgba(129, 199, 132, 0.3)'; this.style.transform='translateY(0)';">
+      <!-- Inline SVG Graphic representing a PDF file with a clear downward download arrow -->
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="12" y1="18" x2="12" y2="12"></line>
+        <polyline points="9 15 12 18 15 15"></polyline>
+      </svg>
+      Download Resume
+    </a>
+  </div>
 </div>
 
   <!-- High Effect Header Section -->
