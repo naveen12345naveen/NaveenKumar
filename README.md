@@ -569,9 +569,24 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     <h3>NBFC Financial Performance Analysis</h3>
     <span class="meta">Postgraduate Project (Published - May 2025)</span>
     <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
-    <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="btn-pdf">View Published Article (PDF)</a>
-    <a href="naveenkumar_article_certificate.pdf" target="_blank" class="btn-pdf">View Published Article Certificate (PDF)</a>
-  </div>
+  <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="btn-pdf primary-doc">
+    <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+      <polyline points="14 2 14 8 20 8"></polyline>
+      <line x1="16" y1="13" x2="8" y2="13"></line>
+      <line x1="16" y1="17" x2="8" y2="17"></line>
+      <polyline points="10 9 9 9 8 9"></polyline>
+    </svg>
+    View Published Article (PDF)
+  </a>
+  
+  <a href="naveenkumar_article_certificate.pdf" target="_blank" class="btn-pdf secondary-doc">
+    <svg class="btn-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+    </svg>
+    View Published Article Certificate (PDF)
+  </a>
+</div>
 
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
@@ -627,10 +642,11 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </ul>
     </div>
     
-<div class="vision-container vision-bold">
-  <p class="vision-statement-text">
-    A flexible, innovative approach to problem-solving <span class="highlight">that uses limited resources</span> to get things done.
-  </p>
+<div class="vision-container modern-minimal">
+  <span class="vision-label">OUR VISION</span>
+  <blockquote class="vision-text">
+    "**A flexible, innovative approach to problem-solving that uses limited resources to get things done**"
+  </blockquote>
 </div>
  
     <!-- Contact Section -->
