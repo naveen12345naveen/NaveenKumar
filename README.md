@@ -733,6 +733,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   <footer>
     <div class="footer-content">
       <p>&copy;💙2026 NaveenKumar B💙</p>
+      <p>📍Thungavi- Udumalpet - Coimbatore📍</p>
       <p>🌐My personal design🌐</p>
       <p>🎨Portfolio Website🎨</p>
       <div class="footer-links">
