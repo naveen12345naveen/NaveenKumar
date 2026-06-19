@@ -542,8 +542,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
 
       </div>
     </section>
-
-  <div class="container">
     
     <!-- Corporate Exposure / Experience Section -->
     <section id="experience">
@@ -578,7 +576,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     View Published Article Certificate (PDF)
   </a>
 </div>
-
+</section>
 
     <!-- Skills & Certifications Section -->
     <section id="skills">
@@ -625,7 +623,9 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         <li>Finance Filling – GST, VAT, TDS, TCS, Income Tax and other Filling and Queries.</li>
       </ul>
     </div>
-    
+</section>
+
+
   <div class="vision-container">
     <span class="vision-label">OUR VISION</span>
     <blockquote class="vision-text">
