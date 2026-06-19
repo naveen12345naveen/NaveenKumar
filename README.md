@@ -517,7 +517,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   
   <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
     
-    <!-- Postgraduate Degree -->
+<!-- Postgraduate Degree -->
     <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <!-- College Visual / Logo Placeholder -->
@@ -525,8 +525,11 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
           <span style="font-size: 2.5rem;">🏛️</span> <!-- Replace this emoji with an <img src="anna-univ-logo.png"> later -->
         </div>
         <h3>Master of Business Administration (MBA)</h3>
-        <h4>SIIMS College-Pollachi</h4>
-        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px;">Affiliated to Anna University - Chennai </span>
+        <!-- Added hyperlink to college website -->
+        <a href="https://siims.ac.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <h4 style="margin: 0; transition: text-decoration 0.2s;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">SIIMS College-Pollachi</h4>
+        </a>
+        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px; margin-top: 4px;">Affiliated to Anna University - Chennai </span>
         <span class="meta" style="display: block; margin-bottom: 4px;">2023 - 2025</span>
         <ul class="experience-list" style="margin-top: 12px;">
           <li>Specialization in Financial Management & Data Analytics.</li>
@@ -538,8 +541,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         🏆 Academic Merit: 7.8 CGPA
       </div>
     </div> <!-- /card -->
-
-    <!-- Undergraduate Degree -->
+   <!-- Undergraduate Degree -->
     <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
       <div>
         <!-- College Visual / Logo Placeholder -->
@@ -547,8 +549,11 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
           <span style="font-size: 2.5rem;">🎓</span> <!-- Replace this emoji with an <img src="ngm-logo.png"> later -->
         </div>
         <h3>Bachelor of Commerce (B.Com)</h3>
-        <h4>NGM College - Pollachi</h4>
-        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px;">Affiliated to Bharathiar University - Coimbatore </span>
+        <!-- Added hyperlink to NGM college website -->
+        <a href="https://www.ngmc.org/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
+          <h4 style="margin: 0; transition: text-decoration 0.2s;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">NGM College - Pollachi</h4>
+        </a>
+        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px; margin-top: 4px;">Affiliated to Bharathiar University - Coimbatore </span>
         <span class="meta" style="display: block; margin-bottom: 4px;">2020 - 2023</span>
         <ul class="experience-list" style="margin-top: 12px;">
           <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
