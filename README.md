@@ -527,7 +527,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
             </div>
             <h3>Bachelor of Commerce (B.Com)</h3>
             <h4>NGM College, Pollachi</h4>
-            <span class="meta" style="font-size: 0.85rem; color: #777;">Affiliated to Bharathiar University<br>
+            <span class="meta" style="font-size: 0.85rem; color: #777;">Affiliated to Bharathiar University<Span<br>
             <span class="meta">2020 - 2023</span>
             <ul class="experience-list" style="margin-top: 12px;">
               <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
