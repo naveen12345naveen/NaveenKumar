@@ -765,12 +765,12 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     </a>
 </div>
 
-<audio id="bg-music" loop>
+<audio id="bg-music" loop dynamic-start>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="audio-player-widget">
-  <div class="visualizer-container" id="visualizer">
+  <div class="visualizer-container playing" id="visualizer">
     <div class="glow-orb"></div>
     <div class="vfx-bars">
       <span class="bar3d"></span>
@@ -818,7 +818,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     gap: 16px;
     z-index: 1000;
     
-    /* 3D Depth Orchestration */
     transform: perspective(800px) rotateX(10deg) rotateY(-10deg);
     transform-style: preserve-3d;
     box-shadow: 
@@ -837,7 +836,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       inset 0 1px 2px rgba(255, 255, 255, 0.3);
   }
 
-  /* --- 3D VISUALIZER EFFECTS --- */
   .visualizer-container {
     position: relative;
     display: flex;
@@ -848,11 +846,10 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     background: rgba(0, 0, 0, 0.3);
     border-radius: 14px;
     border: 1px solid rgba(255, 255, 255, 0.05);
-    transform: translateZ(15px); /* Pull out in 3D Space */
+    transform: translateZ(15px);
     overflow: hidden;
   }
 
-  /* Internal Ambient Glow */
   .glow-orb {
     position: absolute;
     width: 120%;
@@ -876,7 +873,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     z-index: 2;
   }
 
-  /* Isometric 3D Bar Look */
   .bar3d {
     width: 3px;
     height: 30%;
@@ -887,7 +883,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     transition: height 0.15s ease;
   }
 
-  /* VFX Dynamic Keyframes */
   .visualizer-container.playing .bar3d {
     animation: vfxBounce 0.6s ease-in-out infinite alternate;
   }
@@ -897,7 +892,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   .visualizer-container.playing .bar3d:nth-child(4) { animation-delay: 0.5s; height: 100%; }
   .visualizer-container.playing .bar3d:nth-child(5) { animation-delay: 0.15s; height: 40%; }
 
-  /* --- CONTROL INTERFACE --- */
   .control-node {
     display: flex;
     align-items: center;
@@ -931,7 +925,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     transform: scale(0.92);
   }
 
-  /* Sleek Reveal Slider Engine */
   .slider-container {
     display: flex;
     align-items: center;
@@ -964,7 +957,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     z-index: 2;
   }
 
-  /* Futuristic Stylized Slider Thumb */
   #volume-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 10px;
@@ -983,7 +975,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     background: var(--neon-cyan);
   }
 
-  /* --- ANIMATION ARTIFACTS --- */
   @keyframes vfxBounce {
     0% { transform: scaleY(0.25); filter: hue-rotate(0deg); }
     100% { transform: scaleY(1.1); filter: hue-rotate(45deg); }
@@ -1001,10 +992,9 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   const slider = document.getElementById('volume-slider');
   const visualizer = document.getElementById('visualizer');
 
-  // Load configuration safely from localStorage
+  // Load custom setting memory
   const savedVolume = localStorage.getItem('bg-volume');
-  const savedMuteStatus = localStorage.getItem('bg-muted');
-
+  
   if (savedVolume !== null) {
     music.volume = parseFloat(savedVolume);
     slider.value = savedVolume;
@@ -1012,50 +1002,57 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     music.volume = 0.5;
   }
 
-  if (savedMuteStatus === 'true') {
-    music.muted = true;
-    muteBtn.innerHTML = "🔇";
-  }
+  // FORCE AUTOPLAY TRICK: Start muted so the browser allows the code to run instantly
+  music.muted = true;
+  muteBtn.innerHTML = "🔇";
 
-  // Intercept gesture triggers to initial audio instance
+  // Bootup the engine immediately upon DOM load
+  window.addEventListener('DOMContentLoaded', () => {
+    music.play()
+      .then(() => {
+        visualizer.classList.add('playing');
+        console.log("Engine: Muted Autoplay Succeeded.");
+      })
+      .catch((e) => {
+        console.log("Engine Fallback Mode Active.");
+      });
+  });
+
+  // Fallback: If muted autoplay is still restricted, trigger on the first touch/click
   document.addEventListener('click', () => {
-    if (music.paused && !music.muted) {
-      playAudio();
+    if (music.paused) {
+      music.play().then(() => visualizer.classList.add('playing'));
     }
   }, { once: true });
-
-  function playAudio() {
-    music.play()
-      .then(() => visualizer.classList.add('playing'))
-      .catch(() => console.log("Engine: System Autoplay blocked. Triggered via active client loop."));
-  }
 
   function toggleMute() {
     if (music.muted) {
       music.muted = false;
       muteBtn.innerHTML = music.volume == 0 ? "🔇" : "🔊";
-      playAudio();
-      localStorage.setItem('bg-muted', 'false');
+      visualizer.classList.add('playing');
+      // Re-invoke play state in case browser paused it
+      music.play().catch(() => {});
     } else {
       music.muted = true;
       muteBtn.innerHTML = "🔇";
       visualizer.classList.remove('playing');
-      localStorage.setItem('bg-muted', 'true');
     }
   }
 
   function changeVolume(volumeValue) {
-    music.volume = volumeValue;
+    const numericVolume = parseFloat(volumeValue);
+    music.volume = numericVolume;
     localStorage.setItem('bg-volume', volumeValue);
 
-    if (volumeValue == 0) {
+    if (numericVolume === 0) {
       music.muted = true;
       muteBtn.innerHTML = "🔇";
       visualizer.classList.remove('playing');
     } else {
       music.muted = false;
       muteBtn.innerHTML = "🔊";
-      if (!music.paused) visualizer.classList.add('playing');
+      visualizer.classList.add('playing');
+      music.play().catch(() => {});
     }
   }
 </script>
