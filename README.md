@@ -579,8 +579,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   </a>
 </div>
     
-     <div class="grid">
-        <div class="card">
+  <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
           <span class="meta">Research Project (Pollachi Taluk)</span>
           <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
