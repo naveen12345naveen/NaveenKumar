@@ -440,16 +440,6 @@
   </nav>
 
 
-  <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
-  <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none; padding: 10px; background-image: url('Indiaflag.jpg'); background-size: cover; background-position: center; border-radius: 50%; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
-    
-    <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 2px solid #d4af37; display: block;">
-  
-  </a>
-</div>
-
-
-
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
   <!-- Profile Image Link -->
   <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
