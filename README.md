@@ -1,4 +1,4 @@
-<html lang="en">
+<img width="92" height="92" alt="image" src="https://github.com/user-attachments/assets/d064847f-b99a-48b9-9a04-a79c42cb4850" /><html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -582,8 +582,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   </div> <!-- /grid -->
 </section> <!-- /experience -->
 
-
-
   <section id="projects">
   <h2>Research & Projects</h2>
   <div class="grid">
@@ -709,8 +707,9 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   <!-- High Effect Footer Section -->
   <footer>
     <div class="footer-content">
-      <p>&copy; 2026 NaveenKumar B</p>
-      <p>Portfolio Website</p>
+      <p>&copy;💙2026 NaveenKumar B💙</p>
+      <p>🌐My personal design🌐</p>
+      <p>🎨Portfolio Website🎨</p>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
         <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
