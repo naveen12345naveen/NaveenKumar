@@ -741,7 +741,8 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
         <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
         <a href="mailto:naveenbalakrishnan146@gmail.com">Email</a>
-          <a href="https://www.instagram.com/naveenkumar.b.nkb?igsh=MXNhYjFycG9tN2lnYw==">Instagram</a>
+        <a href="https://www.instagram.com/naveenkumar.b.nkb?igsh=MXNhYjFycG9tN2lnYw==">Instagram</a>
+        <a href="tel:+916369311629">Mobile</a>
       </div>
     </div>
   </footer>
