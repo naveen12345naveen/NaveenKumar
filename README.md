@@ -570,6 +570,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     <span class="meta">Postgraduate Project (Published - May 2025)</span>
     <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
     <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="btn-pdf">View Published Article (PDF)</a>
+    <a href="naveenkumar_article_certificate.pdf" target="_blank" class="btn-pdf">View Published Article Certificate (PDF)</a>
   </div>
 
         <div class="card">
@@ -626,12 +627,11 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </ul>
     </div>
     
-  <!-- Vision Theme -->
-  <div class="vision-statement" style="text-align: center; margin-top: 40px; padding: 15px; border-top: 1px dashed #ddd;">
-    <p style="font-size: 1.25rem; font-style: italic; font-weight: 600; color: #2c3e50; margin: 0;">
-      "A flexible, innovative approach to problem-solving that uses limited resources to get things done"
-    </p>
-  </div>
+<div class="vision-container vision-bold">
+  <p class="vision-statement-text">
+    A flexible, innovative approach to problem-solving <span class="highlight">that uses limited resources</span> to get things done.
+  </p>
+</div>
  
     <!-- Contact Section -->
     <section id="contact">
