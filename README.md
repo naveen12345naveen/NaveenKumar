@@ -439,6 +439,11 @@
     <a href="#contact">Contact</a>
   </nav>
 
+<div class="college-badge" style="text-align: center; margin-bottom: 15px;">
+  <!-- Your image replaces the old text/emoji tag safely -->
+  <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 2px solid #d4af37;">
+</div>
+
   <!-- High Effect Header Section -->
   <header id="about">
     <div class="header-reveal">
