@@ -492,56 +492,56 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
 </div>
 
 <!-- Education Section -->
-    <section id="education">
-      <h2>Education</h2>
-      
-      <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        
-        <!-- Postgraduate Degree -->
-        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <!-- College Visual / Logo Placeholder -->
-            <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
-              <span style="font-size: 2.5rem;">🏛️</span> <!-- Replace this emoji with an <img src="anna-univ-logo.png"> later -->
-            </div>
-            <h3>Master of Business Administration (MBA)</h3>
-            <h4>Anna University (Regional Campus, Coimbatore)</h4>
-            <span class="meta">2023 - 2025</span>
-            <ul class="experience-list" style="margin-top: 12px;">
-              <li>Specialization in Financial Management & Data Analytics.</li>
-              <li>Deepened expertise in data-driven corporate finance strategy.</li>
-            </ul>
-          </div>
-          <!-- Academic Gift/Highlight Tag -->
-          <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
-            🏆 Academic Merit: 7.8 CGPA
-          </div>
+<section id="education">
+  <h2>Education</h2>
+  
+  <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    
+    <!-- Postgraduate Degree -->
+    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <!-- College Visual / Logo Placeholder -->
+        <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
+          <span style="font-size: 2.5rem;">🏛️</span> <!-- Replace this emoji with an <img src="anna-univ-logo.png"> later -->
         </div>
-
-        <!-- Undergraduate Degree -->
-        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <!-- College Visual / Logo Placeholder -->
-            <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
-              <span style="font-size: 2.5rem;">🎓</span> <!-- Replace this emoji with an <img src="ngm-logo.png"> later -->
-            </div>
-            <h3>Bachelor of Commerce (B.Com)</h3>
-            <h4>NGM College, Pollachi</h4>
-            <span class="meta" style="font-size: 0.85rem; color: #777;">Affiliated to Bharathiar University<Span<br>
-            <span class="meta">2020 - 2023</span>
-            <ul class="experience-list" style="margin-top: 12px;">
-              <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
-              <li>Active participation in commerce and financial literacy forums.</li>
-            </ul>
-          </div>
-          <!-- Academic Gift/Highlight Tag -->
-          <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
-            🏆 Academic Merit: 7.5 CGPA
-          </div>
-        </div>
-
+        <h3>Master of Business Administration (MBA)</h3>
+        <h4>Anna University (Regional Campus, Coimbatore)</h4>
+        <span class="meta" style="display: block; margin-bottom: 4px;">2023 - 2025</span>
+        <ul class="experience-list" style="margin-top: 12px;">
+          <li>Specialization in Financial Management & Data Analytics.</li>
+          <li>Deepened expertise in data-driven corporate finance strategy.</li>
+        </ul>
       </div>
-    </section>
+      <!-- Academic Gift/Highlight Tag -->
+      <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
+        🏆 Academic Merit: 7.8 CGPA
+      </div>
+    </div> <!-- /card -->
+
+    <!-- Undergraduate Degree -->
+    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <!-- College Visual / Logo Placeholder -->
+        <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
+          <span style="font-size: 2.5rem;">🎓</span> <!-- Replace this emoji with an <img src="ngm-logo.png"> later -->
+        </div>
+        <h3>Bachelor of Commerce (B.Com)</h3>
+        <h4>NGM College, Pollachi</h4>
+        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px;">Affiliated to Bharathiar University</span>
+        <span class="meta" style="display: block; margin-bottom: 4px;">2020 - 2023</span>
+        <ul class="experience-list" style="margin-top: 12px;">
+          <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
+          <li>Active participation in commerce and financial literacy forums.</li>
+        </ul>
+      </div>
+      <!-- Academic Gift/Highlight Tag -->
+      <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
+        🏆 Academic Merit: 7.5 CGPA
+      </div>
+    </div> <!-- /card -->
+
+  </div> <!-- /education-grid -->
+</section> <!-- /education -->
     
     <!-- Corporate Exposure / Experience Section -->
     <section id="experience">
