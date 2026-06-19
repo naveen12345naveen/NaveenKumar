@@ -447,7 +447,8 @@
   
   <!-- Integrated PDF Download Action Bar -->
   <div style="margin-top: 12px;">
-    <a href="naveenKumarResume.pdf" download="naveenKumarResume.pdf" style="display: inline-inline-flex; align-items: center; justify-content: center; gap: 8px; color: #81C784; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 6px 14px; border: 1px solid rgba(129, 199, 132, 0.3); border-radius: 20px; background: rgba(129, 199, 132, 0.05); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(129, 199, 132, 0.15)'; this.style.borderColor='#81C784'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(129, 199, 132, 0.05)'; this.style.borderColor='rgba(129, 199, 132, 0.3)'; this.style.transform='translateY(0)';">
+    <!-- FIXED: Changed inline-inline-flex to inline-flex -->
+    <a href="naveenKumarResume.pdf" download="naveenKumarResume.pdf" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; color: #81C784; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 6px 14px; border: 1px solid rgba(129, 199, 132, 0.3); border-radius: 20px; background: rgba(129, 199, 132, 0.05); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(129, 199, 132, 0.15)'; this.style.borderColor='#81C784'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(129, 199, 132, 0.05)'; this.style.borderColor='rgba(129, 199, 132, 0.3)'; this.style.transform='translateY(0)';">
       <!-- Inline SVG Graphic representing a PDF file with a clear downward download arrow -->
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -459,7 +460,6 @@
     </a>
   </div>
 </div>
-
   <!-- High Effect Header Section -->
   <header id="about">
     <div class="header-reveal">
