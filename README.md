@@ -578,14 +578,15 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     View Published Article Certificate (PDF)
   </a>
 </div>
-
+    
+      <h2>Research & Projects</h2>
+     <div class="grid">
         <div class="card">
           <h3>Handloom Weaving Landscape Study</h3>
           <span class="meta">Research Project (Pollachi Taluk)</span>
           <p>Conducted qualitative data gathering from local weavers to analyze critical bottlenecks in demand, credit access, and marketing infrastructure, proposing sustainable growth strategies.</p>
         </div>
       </div>
-    </section>
 
     <!-- Skills & Certifications Section -->
     <section id="skills">
@@ -652,7 +653,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
         
-        <button type="submit">Send Message</button>
+        <button type="su  bmit">Send Message</button>
       </form>
     </section>
 
