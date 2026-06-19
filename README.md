@@ -440,25 +440,24 @@
     <a href="#contact">Contact</a>
   </nav>
 
-<div id="scroll-left-pop" class="left-popup-box">
+<a id="scroll-left-pop" href="Indiamap.jpg" target="_blank" class="left-popup-box">
   <img src="Indiaflag.jpg" alt="Pop-up Image">
-</div>
+</a>
 
 <style>
-  /* Fixed position on the screen, hidden off-screen to the left initially */
   .left-popup-box {
-    position: fixed;
-    bottom: 40px;          /* Distance from the bottom of the screen */
-    left: -120px;          /* Keeps it completely hidden off-screen */
-    width: 80px;
-    height: 80px;
+    position: move;
+    top: 80px;          
+    right: -130px;          
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     border: 2px solid #4CAF50;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    z-index: 99999;        /* Ensures it stays on top of all other content */
+    z-index: 99999;        
+    display: block; /* Ensures the entire circle link area remains clickable */
     
-    /* Smooth transition effect for shifting positions */
     transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -468,9 +467,8 @@
     object-fit: cover;
   }
 
-  /* Dynamic utility class triggered via JavaScript when scrolling down */
   .left-popup-box.slide-in {
-    left: 25px;            /* Slides smoothly into view on the screen */
+    left: 25px;            
   }
 </style>
 
@@ -478,16 +476,13 @@
   window.addEventListener('scroll', function() {
     const popImage = document.getElementById('scroll-left-pop');
     
-    // If the user scrolls down more than 200 pixels, add the 'slide-in' class
     if (window.scrollY > 200) {
       popImage.classList.add('slide-in');
     } else {
-      // If they scroll back up to the top, hide it away again
       popImage.classList.remove('slide-in');
     }
   });
 </script>
-
 
 
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
