@@ -437,7 +437,7 @@
     <a href="#skills">Skills</a>
     <a href="#my professional work">My Professional Work</a>
     <a href="#contact">Contact</a>
-  </nav
+  </nav>
 
 
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
@@ -445,6 +445,7 @@
   <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
     <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 2px solid #d4af37; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px rgba(212, 175, 55, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
   </a>
+
   
   <!-- Integrated PDF Download Action Bar -->
   <div style="margin-top: 12px;">
