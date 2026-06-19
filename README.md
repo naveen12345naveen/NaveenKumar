@@ -741,7 +741,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   
 <!-- Stylish Button Link to Learn with Me Page -->
 <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
-    <a href="Learn with me" style="
+    <a href="page2.html" style="
         display: inline-block;
         padding: 15px 30px;
         font-size: 18px;
