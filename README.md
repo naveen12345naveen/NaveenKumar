@@ -439,6 +439,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
+
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
   <!-- Profile Image Link -->
   <a href="NaveenKumar_B_Resume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
