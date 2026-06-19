@@ -505,7 +505,8 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
           <span style="font-size: 2.5rem;">🏛️</span> <!-- Replace this emoji with an <img src="anna-univ-logo.png"> later -->
         </div>
         <h3>Master of Business Administration (MBA)</h3>
-        <h4>Anna University , Chennai,(SIIMS College Pollachi)</h4>
+        <h4>SIIMS College-Pollachi</h4>
+        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px;">Affiliated to Anna University - Chennai </span>
         <span class="meta" style="display: block; margin-bottom: 4px;">2023 - 2025</span>
         <ul class="experience-list" style="margin-top: 12px;">
           <li>Specialization in Financial Management & Data Analytics.</li>
@@ -526,8 +527,8 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
           <span style="font-size: 2.5rem;">🎓</span> <!-- Replace this emoji with an <img src="ngm-logo.png"> later -->
         </div>
         <h3>Bachelor of Commerce (B.Com)</h3>
-        <h4>NGM College, Pollachi</h4>
-        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px;">Affiliated to Bharathiar University</span>
+        <h4>NGM College - Pollachi</h4>
+        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px;">Affiliated to Bharathiar University - Coimbatore </span>
         <span class="meta" style="display: block; margin-bottom: 4px;">2020 - 2023</span>
         <ul class="experience-list" style="margin-top: 12px;">
           <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
