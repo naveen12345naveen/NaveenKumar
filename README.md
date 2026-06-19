@@ -446,9 +446,9 @@
 
 <style>
   .left-popup-box {
-    position: move;
-    top: 80px;          
-    right: -130px;          
+    position: fixed;
+    bottom: 80px;          
+    left: 130px;          
     width: 100px;
     height: 100px;
     border-radius: 50%;
