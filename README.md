@@ -559,26 +559,33 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </div>
     </section>
 
-    <!-- Projects & Publications Section -->
-    <section id="projects">
-      <h2>Research & Projects</h2>
-     <div class="grid">
-  <div class="card">
-    <h3>NBFC Financial Performance Analysis</h3>
-    <span class="meta">Postgraduate Project (Published - May 2025)</span>
-    <p>Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.</p>
-<div class="article-links-container">
-  <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="text-link-pdf primary-link">
-    View Published Article (PDF)
-  </a>
-  <span class="link-separator">|</span>
-  <a href="naveenkumar_article_certificate.pdf" target="_blank" class="text-link-pdf secondary-link">
-    View Published Article Certificate (PDF)
-  </a>
-</div>
-</section>
 
-    <!-- Skills & Certifications Section -->
+  <section id="projects">
+  <h2>Research & Projects</h2>
+  
+  <div class="grid">
+    <div class="card">
+      <h3>NBFC Financial Performance Analysis</h3>
+      <span class="meta">Postgraduate Project (Published - May 2025)</span>
+      
+      <p>
+        Published a research paper titled "Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India" 
+        in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.
+      </p>
+      
+      <div class="article-links-container">
+        <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="text-link-pdf primary-link">
+          View Published Article (PDF)
+        </a>
+        <span class="link-separator">|</span>
+        <a href="naveenkumar_article_certificate.pdf" target="_blank" class="text-link-pdf secondary-link">
+          View Published Article Certificate (PDF)
+        </a>
+      </div>
+    </div> </div> </section>
+
+
+<!-- Skills & Certifications Section -->
     <section id="skills">
       <h2>Technical Skills & Credentials</h2>
       <div class="skills-grid">
