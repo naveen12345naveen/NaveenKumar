@@ -766,3 +766,101 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         🎁 Learn with me
     </a>
 </div>
+
+
+
+<div class="map-popup-wrapper">
+  <button class="map-trigger-btn" onclick="toggleMapPopup()">📍 IND</button>
+  <div id="flag-card" class="flag-popup-card">
+    <img src="Indiaflag.jpg" alt="India Flag">
+    <p>Udumalpet, TN, India</p>
+  </div>
+</div>
+
+<style>
+  :root {
+    --primary: #4CAF50;
+  }
+
+  .map-popup-wrapper { 
+    position: relative; 
+    display: inline-block; 
+  }
+
+  .map-trigger-btn { 
+    background: #111; 
+    border: 1px solid #333; 
+    padding: 4px 10px; 
+    border-radius: 4px; 
+    color: #fff; 
+    cursor: pointer; 
+    display: flex; 
+    align-items: center; 
+    gap: 6px; 
+    font-weight: bold; 
+    font-family: inherit; 
+    transition: 0.3s ease; 
+  }
+
+  .map-trigger-btn:hover { 
+    border-color: var(--primary); 
+    color: var(--primary); 
+  }
+  
+  .flag-popup-card { 
+    display: none; 
+    position: absolute; 
+    top: calc(100% + 10px); 
+    left: 0; 
+    background: rgba(20, 20, 20, 0.95); 
+    border: 1px solid var(--primary); 
+    padding: 12px; 
+    border-radius: 8px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    width: 160px; 
+    text-align: center; 
+    z-index: 9999;
+    animation: popupFadeIn 0.3s ease forwards; 
+  }
+
+  .flag-popup-card img { 
+    width: 100%; 
+    height: auto; 
+    border-radius: 4px; 
+    border: 1px solid #333; 
+    margin-bottom: 6px; 
+  }
+
+  .flag-popup-card p { 
+    font-size: 0.75rem; 
+    color: #fff; 
+    font-family: sans-serif; 
+    letter-spacing: 0.5px; 
+    margin: 0;
+  }
+  
+  .show-popup { 
+    display: block !important; 
+  }
+
+  @keyframes popupFadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+  }
+</style>
+
+<script>
+  function toggleMapPopup() {
+    document.getElementById('flag-card').classList.toggle('show-popup');
+  }
+
+  // Closes the window gracefully if clicked outside
+  window.addEventListener('click', function(e) {
+    const wrapper = document.querySelector('.map-popup-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+      document.getElementById('flag-card').classList.remove('show-popup');
+    }
+  });
+</script>
