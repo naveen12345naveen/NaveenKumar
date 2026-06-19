@@ -439,6 +439,82 @@
     <a href="#contact">Contact</a>
   </nav>
 
+<div class="flag-circle-container">
+  <img src="Indiaflag.jpg" alt="India Flag">
+</div>
+
+<style>
+  .flag-circle-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* VFX 1: Subtle modern pulse animation */
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
+    animation: neonGlow 3s ease-in-out infinite alternate;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* VFX 2: Animated glowing border overlay */
+  .flag-circle-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    padding: 2px; /* Smooth border thickness */
+    background: linear-gradient(0deg, #FF9933, #FFFFFF, #138808);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .flag-circle-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    z-index: 1;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.6s ease;
+  }
+
+  /* VFX 3: Interactive Dynamic Hover state */
+  .flag-circle-container:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 25px rgba(76, 175, 80, 0.8), 
+                0 0 50px rgba(0, 229, 255, 0.4);
+    cursor: pointer;
+  }
+
+  .flag-circle-container:hover img {
+    transform: scale(1.15);
+    filter: brightness(1.2);
+  }
+
+  /* VFX 4: Ambient glow oscillation keyframes */
+  @keyframes neonGlow {
+    0% {
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.4), 
+                  0 0 5px rgba(255, 153, 51, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 22px rgba(76, 175, 80, 0.6), 
+                  0 0 15px rgba(0, 229, 255, 0.3);
+    }
+  }
+</style>
+
+
+
+
+
 
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
   <!-- Profile Image Link -->
@@ -768,99 +844,3 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
 </div>
 
 
-
-<div class="map-popup-wrapper">
-  <button class="map-trigger-btn" onclick="toggleMapPopup()">📍 IND</button>
-  <div id="flag-card" class="flag-popup-card">
-    <img src="Indiaflag.jpg" alt="India Flag">
-    <p>Udumalpet, TN, India</p>
-  </div>
-</div>
-
-<style>
-  :root {
-    --primary: #4CAF50;
-  }
-
-  .map-popup-wrapper { 
-    position: relative; 
-    display: inline-block; 
-  }
-
-  .map-trigger-btn { 
-    background: #111; 
-    border: 1px solid #333; 
-    padding: 4px 10px; 
-    border-radius: 4px; 
-    color: #fff; 
-    cursor: pointer; 
-    display: flex; 
-    align-items: center; 
-    gap: 6px; 
-    font-weight: bold; 
-    font-family: inherit; 
-    transition: 0.3s ease; 
-  }
-
-  .map-trigger-btn:hover { 
-    border-color: var(--primary); 
-    color: var(--primary); 
-  }
-  
-  .flag-popup-card { 
-    display: none; 
-    position: absolute; 
-    top: calc(100% + 10px); 
-    left: 0; 
-    background: rgba(20, 20, 20, 0.95); 
-    border: 1px solid var(--primary); 
-    padding: 12px; 
-    border-radius: 8px; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5); 
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px);
-    width: 160px; 
-    text-align: center; 
-    z-index: 9999;
-    animation: popupFadeIn 0.3s ease forwards; 
-  }
-
-  .flag-popup-card img { 
-    width: 100%; 
-    height: auto; 
-    border-radius: 4px; 
-    border: 1px solid #333; 
-    margin-bottom: 6px; 
-  }
-
-  .flag-popup-card p { 
-    font-size: 0.75rem; 
-    color: #fff; 
-    font-family: sans-serif; 
-    letter-spacing: 0.5px; 
-    margin: 0;
-  }
-  
-  .show-popup { 
-    display: block !important; 
-  }
-
-  @keyframes popupFadeIn { 
-    from { opacity: 0; transform: translateY(10px); } 
-    to { opacity: 1; transform: translateY(0); } 
-  }
-</style>
-
-<script>
-  function toggleMapPopup() {
-    document.getElementById('flag-card').classList.toggle('show-popup');
-  }
-
-  // Closes the window gracefully if clicked outside
-  window.addEventListener('click', function(e) {
-    const wrapper = document.querySelector('.map-popup-wrapper');
-    if (wrapper && !wrapper.contains(e.target)) {
-      document.getElementById('flag-card').classList.remove('show-popup');
-    }
-  });
-</script>
