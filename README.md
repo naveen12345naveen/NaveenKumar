@@ -548,17 +548,40 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     <section id="experience">
       <h2>Corporate Exposure</h2>
       <div class="card">
-        <h3>Junior Analyst</h3>
-        <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
-        <span class="meta">August 2025 - Present</span>
-        <ul class="experience-list">
-          <li>Assisted in preparing and maintaining accurate financial records and reports.</li>
-          <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
-          <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
-          <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
-        </ul>
-      </div>
-    </section>
+        <h3 style="display: inline-flex; align-items: center; gap: 12px; font-family: sans-serif; color: #2c221e; margin: 0;">
+  Junior Analyst 
+  <span style="font-size: 0.75rem; font-weight: 700; color: #d4af37; background: rgba(212, 175, 55, 0.08); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(212, 175, 55, 0.25); letter-spacing: 0.5px;">
+    ✨ ANALYST // 2026
+  </span>
+</h3>
+        <!-- Job Experience Block -->
+<div>
+  <h4>ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
+  
+  <!-- Integrated Company Resource Links -->
+  <div class="company-links" style="display: flex; gap: 15px; margin-top: 6px; margin-bottom: 10px; font-family: sans-serif; font-size: 0.9rem;">
+    <!-- Company Website Link -->
+    <a href="https://www.zoldgroup.com/" target="_blank" style="color: #1d4ed8; text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; gap: 4px;">
+      🌐 Company Website
+    </a>
+    
+    <span style="color: #cbd5e1; user-select: none;">|</span>
+    
+    <!-- Company Location Link -->
+    <a href="https://maps.app.goo.gl/QRWXGr5fm6w1y4nf6" target="_blank" style="color: #475569; text-decoration: underline; text-underline-offset: 3px; display: inline-flex; align-items: center; gap: 4px;">
+      📍 Company Location
+    </a>
+  </div>
+
+  <span class="meta" style="display: block; margin-bottom: 12px;">August 2025 - Present</span>
+  
+  <ul class="experience-list">
+    <li>Assisted in preparing and maintaining accurate financial records and reports.</li>
+    <li>Facilitated monthly closing processes, including reconciliations and posting journal entries.</li>
+    <li>Managed accounts payable and receivable to ensure timely processing and compliance.</li>
+    <li>Collaborated with senior accountants to improve efficiency and reduce reporting errors.</li>
+  </ul>
+</div>
 
 
   <section id="projects">
