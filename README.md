@@ -1417,7 +1417,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   </div>
 </section>
     
- <!-- High Effect Footer Section -->
+<!-- High Effect Footer Section -->
 <footer style="
     margin-top: 60px;
     padding: 40px 20px;
@@ -1432,8 +1432,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     box-shadow: 0 -4px 30px 0px rgba(255, 140, 0, 0.35), 0 -2px 10px 0px rgba(230, 140, 10, 0.15);
 ">
 
-  <!-- NEW UNIQUE EXTRA DESIGN SYMBOLS: Structural Corner Grid Marks -->
-  <div style="position: absolute; top: 8px; left: 12px; font-family: monospace; font-size: 0.75rem; color: #ff9f43; opacity: 0.35; letter-spacing: 2px;">[NKB_SYS_V1]</div>
+  <!-- UNIQUE EXTRA DESIGN SYMBOLS: Structural Corner Grid Marks -->
   <div style="position: absolute; top: 8px; right: 12px; opacity: 0.25; pointer-events: none;">
     <svg width="40" height="12" viewBox="0 0 40 12" fill="none" stroke="#ff9f43" stroke-width="1.5">
       <circle cx="6" cy="6" r="3" fill="#ff9f43"/>
@@ -1441,7 +1440,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     </svg>
   </div>
 
-  <div class="footer-content" style="max-width: 80px0px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;">
+  <div class="footer-content" style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;">
     
     <!-- Row 1: Copyright Shimmer Text -->
     <p style="margin: 0; font-size: 1.1rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(255, 159, 67, 0.45);">
