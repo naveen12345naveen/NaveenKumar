@@ -824,39 +824,102 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     </div> </div> </section>
 
 
-<!-- Skills & Certifications Section -->
-    <section id="skills">
-      <h2>Technical Skills & Credentials</h2>
-      <div class="skills-grid">
-        <div class="skills-box">
-          <h3>Analytical & Technical Skills</h3>
-          <ul>
-            <li>Advanced Excel – Pivot Tables, Macros, Data Visualization</li>
-            <li>MySQL – Database queries, joins, stored procedures</li>
-            <li>Power BI – Dashboard creation, data modeling</li>
-            <li>Python – Data analysis, automation, visualization (Pandas)</li>
-            <li>Business Analysis – Financial modeling, process improvement, strategic insights</li>
-          </ul>
-        </div>
-        <div class="skills-box">
-          <h3>Accounting & Taxation Skills</h3>
-          <ul>
-            <li>GST compliance, filing, and reconciliation</li>
-            <li>Tally Prime for accounting and financial management</li>
-            <li>TDS (Tax Deducted at Source) calculation and reporting</li>
-            <li>Income Tax preparation and return filing</li>
-            <li>VAT accounting and compliance procedures</li>
-          </ul>
-        </div>
-        <div class="skills-box">
-          <h3>Professional Certifications</h3>
-          <ul>
-            <li>Human Resources Management (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
-            <li>AI in Marketing (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<section id="skills" style="padding: 60px 20px; background: #0d0d0e;">
+  <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Technical Skills & Credentials</h2>
+  
+  <div class="skills-grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
+    
+    <div class="skills-box" style="
+        background: #121214; /* Deep premium dark background */
+        color: #f3f4f6; /* Light text for readability */
+        border-radius: 12px; 
+        padding: 25px; 
+        position: relative;
+        flex: 1 1 300px; /* Responsive sizing */
+        max-width: 360px;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
+        
+        /* VFX Warm Light Glow on all sides */
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   /* Vibrant inner amber warmth */
+            0 0 50px 10px rgba(230, 140, 10, 0.15), /* Soft golden outer spread */
+            inset 0 0 15px rgba(255, 100, 0, 0.08); /* Internal edge warmth */
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
+      <h3 style="margin-top: 0; margin-bottom: 15px; color: #ff9f43; font-size: 1.4rem; letter-spacing: 0.5px;">Analytical & Technical Skills</h3>
+      <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.6; color: #e0e0e6;">
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Advanced Excel</strong> – Pivot Tables, Macros, Data Visualization</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">MySQL</strong> – Database queries, joins, stored procedures</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Power BI</strong> – Dashboard creation, data modeling</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Python</strong> – Data analysis, automation, visualization (Pandas)</li>
+        <li style="margin-bottom: 0;"><strong style="color: #ffb774;">Business Analysis</strong> – Financial modeling, process improvement, strategic insights</li>
+      </ul>
+    </div>
+
+    <div class="skills-box" style="
+        background: #121214; 
+        color: #f3f4f6; 
+        border-radius: 12px; 
+        padding: 25px; 
+        position: relative;
+        flex: 1 1 300px;
+        max-width: 360px;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); 
+        
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   
+            0 0 50px 10px rgba(230, 140, 10, 0.15), 
+            inset 0 0 15px rgba(255, 100, 0, 0.08); 
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
+      <h3 style="margin-top: 0; margin-bottom: 15px; color: #ff9f43; font-size: 1.4rem; letter-spacing: 0.5px;">Accounting & Taxation Skills</h3>
+      <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.6; color: #e0e0e6;">
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">GST</strong> compliance, filing, and reconciliation</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Tally Prime</strong> for accounting and financial management</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">TDS</strong> (Tax Deducted at Source) calculation and reporting</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Income Tax</strong> preparation and return filing</li>
+        <li style="margin-bottom: 0;"><strong style="color: #ffb774;">VAT</strong> accounting and compliance procedures</li>
+      </ul>
+    </div>
+
+    <div class="skills-box" style="
+        background: #121214; 
+        color: #f3f4f6; 
+        border-radius: 12px; 
+        padding: 25px; 
+        position: relative;
+        flex: 1 1 300px;
+        max-width: 360px;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); 
+        
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   
+            0 0 50px 10px rgba(230, 140, 10, 0.15), 
+            inset 0 0 15px rgba(255, 100, 0, 0.08); 
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
+      <h3 style="margin-top: 0; margin-bottom: 15px; color: #ff9f43; font-size: 1.4rem; letter-spacing: 0.5px;">Professional Certifications</h3>
+      <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.6; color: #e0e0e6;">
+        <li style="margin-bottom: 12px;"><strong style="color: #ffb774;">Human Resources Management</strong> (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
+        <li style="margin-bottom: 0;"><strong style="color: #ffb774;">AI in Marketing</strong> (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- Quote Inspiration Showcase Module -->
 <div class="inspiration-container" style="
