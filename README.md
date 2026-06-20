@@ -429,15 +429,17 @@
 </head>
 <body>
 
- <!-- Navigation Bar -->
+<!-- Navigation Bar -->
 <nav style="
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    flex-wrap: wrap; 
-    gap: 10px; 
-    padding: 15px 20px; 
-    background: #121214; /* Deep premium dark background */
+    flex-wrap: nowrap; /* Forces all elements onto a strict single line */
+    overflow-x: auto;  /* Allows scrolling on small mobile screens without breaking layout */
+    white-space: nowrap; 
+    gap: 5px; /* Set exactly to 5px space between names */
+    padding: 12px 10px; 
+    background: #121214; 
     position: sticky; 
     top: 0; 
     z-index: 1000;
@@ -447,55 +449,96 @@
     box-shadow: 0 4px 25px 0px rgba(255, 140, 0, 0.45), 0 2px 10px 0px rgba(230, 140, 10, 0.25);
 ">
   <a href="#about" style="
-      color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
+      color: #ff9f43; /* Native warm amber color tint */
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); /* Always glowing text effect */
+      transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">About</a>
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">About</a>
   
   <a href="#education" style="
-      color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
+      color: #ff9f43; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Education Section</a>
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Education Section</a>
   
   <a href="#experience" style="
-      color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
+      color: #ff9f43; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Experience</a>
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Experience</a>
   
   <a href="#projects" style="
-      color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
+      color: #ff9f43; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Projects</a>
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Projects</a>
   
   <a href="#skills" style="
-      color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
+      color: #ff9f43; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Skills</a>
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Skills</a>
   
   <a href="#my professional work" style="
-      color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
+      color: #ff9f43; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">My Professional Work</a>
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">My Professional Work</a>
   
   <a href="#contact" style="
-      color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
+      color: #ff9f43; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Contact</a>
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Contact</a>
 </nav>
-
 
   
 <a id="scroll-left-pop" class="left-popup-box">
