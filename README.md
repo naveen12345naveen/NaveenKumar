@@ -1523,19 +1523,47 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 <!-- Stylish Button Link to Learn with Me Page -->
 <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
     <a href="page2.html" style="
-        display: inline-block;
-        padding: 15px 30px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        padding: 16px 36px;
         font-size: 18px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-weight: bold;
-        color: white;
-        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        color: #ffffff;
+        
+        /* Premium Obsidian Wood Gradient Core */
+        background: linear-gradient(135deg, #2c201a 0%, #16100e 100%);
         border-radius: 50px;
         text-decoration: none;
-        box-shadow: 0 4px 15px rgba(255, 75, 43, 0.4);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    " onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 20px rgba(255, 75, 43, 0.6)';" 
-      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 15px rgba(255, 75, 43, 0.4)';">
-        🎁 Learn with me
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        
+        /* Precision Warm Light VFX Laser Border & Ambient Core Glow */
+        border: 2px solid rgba(255, 140, 0, 0.4);
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25), 
+            0 8px 25px -8px rgba(0, 0, 0, 0.6),
+            inset 0 0 12px rgba(255, 140, 0, 0.1);
+            
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    " 
+    onmouseover="this.style.transform='translateY(-3px) scale(1.03)'; this.style.boxShadow='0 0 35px 6px rgba(255, 90, 0, 0.45), 0 12px 30px -5px rgba(0, 0, 0, 0.75), inset 0 0 15px rgba(255, 140, 0, 0.2)'; this.style.borderColor='rgba(255, 159, 67, 0.85)';" 
+    onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 8px 25px -8px rgba(0, 0, 0, 0.6), inset 0 0 12px rgba(255, 140, 0, 0.1)'; this.style.borderColor='rgba(255, 140, 0, 0.4)';" >
+        
+        <!-- UNIQUE DESIGN SYMBOL: Left Micro Bracket Node -->
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="3" style="opacity: 0.8; filter: drop-shadow(0 0 3px #ff9f43);">
+            <path d="M15 18l-6-6 6-6"/>
+        </svg>
+
+        <!-- Original Icon Intact -->
+        <span>🎁 Learn with me</span>
+
+        <!-- UNIQUE DESIGN SYMBOL: Right Micro Bracket Node -->
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="3" style="opacity: 0.8; filter: drop-shadow(0 0 3px #ff9f43);">
+            <path d="M9 18l6-6-6-6"/>
+        </svg>
     </a>
 </div>
