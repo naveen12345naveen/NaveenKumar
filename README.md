@@ -1212,18 +1212,20 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
             0 0 50px 10px rgba(230, 140, 10, 0.15), 
             inset 0 0 15px rgba(255, 100, 0, 0.08); 
         
-        transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     "
     onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
     onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
       <h3 style="margin-top: 0; margin-bottom: 15px; color: #ff9f43; font-size: 1.4rem; letter-spacing: 0.5px;">Professional Certifications</h3>
       <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.6; color: #e0e0e6;">
         <li style="margin-bottom: 12px;"><strong style="color: #ffb774;">Human Resources Management</strong> (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
-        <a href="javascript:void(0)" onclick="openPdfPopup('NPTL AI in Marketing.pdf')" style="color: #ffb774; text-decoration: underline; font-weight: bold;">
-  <li style="margin-bottom: 0;"><strong style="color: #ffb774;">AI in Marketing</strong> (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
+        <li style="margin-bottom: 0;"><strong style="color: #ffb774;">AI in Marketing</strong> (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
+      </ul>
+    </div>
 
   </div>
 </section>
+
 
 
 <!-- Quote Inspiration Showcase Module -->
