@@ -705,62 +705,118 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
 </div>
 
 <!-- Education Section -->
-<section id="education">
-  <h2>Education</h2>
+<section id="education" style="padding: 60px 20px; background: #0d0d0e;">
+  <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Education</h2>
   
-  <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+  <div class="education-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto;">
     
-<!-- Postgraduate Degree -->
-    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+    <!-- Postgraduate Degree -->
+    <div class="card" style="
+        background: #121214; 
+        color: #f3f4f6; 
+        border-radius: 12px; 
+        padding: 25px; 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); 
+        
+        /* VFX Warm Light Glow on all sides */
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   
+            0 0 50px 10px rgba(230, 140, 10, 0.15), 
+            inset 0 0 15px rgba(255, 100, 0, 0.08); 
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
       <div>
-        <!-- College Visual / Logo Placeholder -->
-        <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
-          <span style="font-size: 2.5rem;">🏛️</span> <!-- Replace this emoji with an <img src="anna-univ-logo.png"> later -->
+        <!-- College Visual / Glowing University SVG Icon -->
+        <div class="college-badge" style="background: #1a1a1e; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px; border: 1px solid rgba(255, 140, 0, 0.1); display: flex; justify-content: center; align-items: center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 8px rgba(255,159,67,0.6));">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+          </svg>
         </div>
-        <h3>Master of Business Administration (MBA)</h3>
-        <!-- Added hyperlink to college website -->
-        <a href="https://siims.ac.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-          <h4 style="margin: 0; transition: text-decoration 0.2s;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">SIIMS College-Pollachi</h4>
+        <h3 style="margin-top: 0; margin-bottom: 8px; color: #ff9f43; font-size: 1.4rem;">Master of Business Administration (MBA)</h3>
+        
+        <a href="https://siims.ac.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #ffffff;">
+          <h4 style="margin: 0; font-weight: 600; transition: color 0.2s;" onmouseover="this.style.color='#ffb774'" onmouseout="this.style.color='#ffffff'">SIIMS College - Pollachi</h4>
         </a>
-        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px; margin-top: 4px;">Affiliated to Anna University - Chennai </span>
-        <span class="meta" style="display: block; margin-bottom: 4px;">2023 - 2025</span>
-        <ul class="experience-list" style="margin-top: 12px;">
-          <li>Specialization in Financial Management & Data Analytics.</li>
-          <li>Deepened expertise in data-driven corporate finance strategy.</li>
+        <span class="meta" style="font-size: 0.85rem; color: #a0a0aa; display: block; margin-bottom: 4px; margin-top: 6px;">Affiliated to Anna University - Chennai </span>
+        <span class="meta" style="font-size: 0.9rem; color: #ffb774; display: block; margin-bottom: 4px; font-weight: 500;">2023 - 2025</span>
+        
+        <ul class="experience-list" style="margin-top: 12px; margin-bottom: 0; padding-left: 20px; line-height: 1.6; color: #e0e0e6;">
+          <li style="margin-bottom: 6px;">Specialization in Financial Management & Data Analytics.</li>
+          <li style="margin-bottom: 0;">Deepened expertise in data-driven corporate finance strategy.</li>
         </ul>
       </div>
-      <!-- Academic Gift/Highlight Tag -->
-      <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
+      
+      <!-- Academic Highlight Tag -->
+      <div class="academic-gift" style="background: rgba(255, 159, 67, 0.1); color: #ffb774; padding: 8px 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; margin-top: 20px; display: inline-block; width: max-content; border: 1px solid rgba(255, 159, 67, 0.25);">
         🏆 Academic Merit: 7.8 CGPA
       </div>
     </div> <!-- /card -->
-   <!-- Undergraduate Degree -->
-    <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+
+    <!-- Undergraduate Degree -->
+    <div class="card" style="
+        background: #121214; 
+        color: #f3f4f6; 
+        border-radius: 12px; 
+        padding: 25px; 
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); 
+        
+        /* VFX Warm Light Glow on all sides */
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   
+            0 0 50px 10px rgba(230, 140, 10, 0.15), 
+            inset 0 0 15px rgba(255, 100, 0, 0.08); 
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
       <div>
-        <!-- College Visual / Logo Placeholder -->
-        <div class="college-badge" style="background: #f4f6f9; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px;">
-          <span style="font-size: 2.5rem;">🎓</span> <!-- Replace this emoji with an <img src="ngm-logo.png"> later -->
+        <!-- College Visual / Glowing Certificate SVG Icon -->
+        <div class="college-badge" style="background: #1a1a1e; padding: 15px; text-align: center; border-radius: 6px; margin-bottom: 15px; border: 1px solid rgba(255, 140, 0, 0.1); display: flex; justify-content: center; align-items: center;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="filter: drop-shadow(0 0 8px rgba(255,159,67,0.6));">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
         </div>
-        <h3>Bachelor of Commerce (B.Com)</h3>
-        <!-- Added hyperlink to NGM college website -->
-        <a href="https://www.ngmc.org/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-          <h4 style="margin: 0; transition: text-decoration 0.2s;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">NGM College - Pollachi</h4>
+        <h3 style="margin-top: 0; margin-bottom: 8px; color: #ff9f43; font-size: 1.4rem;">Bachelor of Commerce (B.Com)</h3>
+        
+        <a href="https://www.ngmc.org/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #ffffff;">
+          <h4 style="margin: 0; font-weight: 600; transition: color 0.2s;" onmouseover="this.style.color='#ffb774'" onmouseout="this.style.color='#ffffff'">NGM College - Pollachi</h4>
         </a>
-        <span class="meta" style="font-size: 0.85rem; color: #777; display: block; margin-bottom: 4px; margin-top: 4px;">Affiliated to Bharathiar University - Coimbatore </span>
-        <span class="meta" style="display: block; margin-bottom: 4px;">2020 - 2023</span>
-        <ul class="experience-list" style="margin-top: 12px;">
-          <li>Built a strong foundation in accounting, corporate laws, and business statistics.</li>
-          <li>Active participation in commerce and financial literacy forums.</li>
+        <span class="meta" style="font-size: 0.85rem; color: #a0a0aa; display: block; margin-bottom: 4px; margin-top: 6px;">Affiliated to Bharathiar University - Coimbatore </span>
+        <span class="meta" style="font-size: 0.9rem; color: #ffb774; display: block; margin-bottom: 4px; font-weight: 500;">2020 - 2023</span>
+        
+        <ul class="experience-list" style="margin-top: 12px; margin-bottom: 0; padding-left: 20px; line-height: 1.6; color: #e0e0e6;">
+          <li style="margin-bottom: 6px;">Built a strong foundation in accounting, corporate laws, and business statistics.</li>
+          <li style="margin-bottom: 0;">Active participation in commerce and financial literacy forums.</li>
         </ul>
       </div>
-      <!-- Academic Gift/Highlight Tag -->
-      <div class="academic-gift" style="background: #eef9f0; color: #1e7e34; padding: 8px 12px; border-radius: 4px; font-weight: 600; font-size: 0.9rem; margin-top: 15px; display: inline-block; width: max-content;">
+      
+      <!-- Academic Highlight Tag -->
+      <div class="academic-gift" style="background: rgba(255, 159, 67, 0.1); color: #ffb774; padding: 8px 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; margin-top: 20px; display: inline-block; width: max-content; border: 1px solid rgba(255, 159, 67, 0.25);">
         🏆 Academic Merit: 7.5 CGPA
       </div>
     </div> <!-- /card -->
 
   </div> <!-- /education-grid -->
-</section> <!-- /education -->
+</section>
     
 <section id="experience" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Corporate Exposure</h2>
