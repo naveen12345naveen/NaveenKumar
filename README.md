@@ -556,89 +556,116 @@
   </div>
 </div>
 
-<header id="about">
-  <div class="corner-glow top-left"></div>
-  <div class="corner-glow top-right"></div>
-  <div class="corner-glow bottom-left"></div>
-  <div class="corner-glow bottom-right"></div>
 
+
+
+<header id="about" class="vfx-header">
   <div class="header-reveal">
-    <h1>NaveenKumar B</h1>
+    <h1 class="vfx-word-shimmer">NaveenKumar B</h1>
     <p class="title-role">Finance Analyst</p>
     <p class="sub">I am an MBA in Finance and Business Analytics professional blending core financial acumen with a robust data analytics toolkit. Currently driving financial health as a Junior Analyst at ZOLD UDP Foods, I specialize in financial modeling, accounts optimization, and month-end reconciliations. With hands-on mastery over Excel, Power BI, MySQL, and Python, I transform raw corporate data into strategic, actionable business insights. My background spans published research on NBFC capital adequacy alongside practical exposure to manufacturing and supply chain operations. I bridge the gap between finance and technology to eliminate operational inefficiencies and fuel data-backed business growth.</p>
   </div>
 </header>
 
 <style>
-  /* Base Header Configuration */
-  #about {
+  /* 1. Ambient 4-Side Edge Glow Container */
+  .vfx-header {
     position: relative;
-    overflow: hidden; /* Ensures the light leaks do not cause scrollbars */
-    background: #0f1115; /* Dark premium background so the warm light pops beautifully */
+    background: #0f1115; /* Dark premium background so the warm glow breaks perfectly */
     padding: 4rem 2rem;
-    border-radius: 12px; /* Smooth card edges if wrapping inside a section */
-    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
-  }
-
-  /* Core Corner Glow Configuration */
-  .corner-glow {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    /* Warm luxury golden light hue */
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0) 70%);
-    filter: blur(30px);
-    pointer-events: none; /* Allows text selection over the lights */
-    z-index: 1;
-    animation: gentlePulse 4s ease-in-out infinite alternate;
-  }
-
-  /* Positioning vectors for the 4 corners */
-  .top-left { top: -80px; left: -80px; }
-  .top-right { top: -80px; right: -80px; }
-  .bottom-left { bottom: -80px; left: -80px; }
-  .bottom-right { bottom: -80px; right: -80px; }
-
-  /* Content Wrapper adjustments */
-  .header-reveal {
-    position: relative;
-    z-index: 2; /* Keeps text cleanly on top of the VFX */
+    border-radius: 16px;
     text-align: center;
+    
+    /* 4-Side Edge Glow: Combines box shadows to project an even ambient border light on all sides */
+    box-shadow: 0 0 25px 2px rgba(212, 175, 55, 0.15),
+                0 0 50px 5px rgba(212, 175, 55, 0.08),
+                inset 0 0 30px rgba(0, 0, 0, 0.6);
+    
+    /* Subtle border accent */
+    border: 1px solid rgba(212, 175, 55, 0.18);
+    transition: box-shadow 0.5s ease, border-color 0.5s ease;
+  }
+
+  /* Interactive effect: Header intensifies its 4-side glow when hovered anywhere */
+  .vfx-header:hover {
+    border-color: rgba(212, 175, 55, 0.35);
+    box-shadow: 0 0 35px 5px rgba(212, 175, 55, 0.25),
+                0 0 70px 10px rgba(212, 175, 55, 0.12),
+                inset 0 0 30px rgba(0, 0, 0, 0.6);
+  }
+
+  .header-reveal {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  /* Typography Styles matching your context */
-  .header-reveal h1 {
-    font-size: 2.8rem;
-    color: #ffffff;
+  /* 2. VFX Word Shimmer Effect (Name) */
+  .vfx-word-shimmer {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     margin-bottom: 0.5rem;
-    letter-spacing: 1px;
-    /* Clean text-shadow to integrate with the corner light atmosphere */
-    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+    
+    /* Creates a golden metallic moving gradient shine through the words */
+    background: linear-gradient(
+      90deg, 
+      #ffffff 0%, 
+      #ffeaa7 25%, 
+      #d4af37 50%, 
+      #ffeaa7 75%, 
+      #ffffff 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Hardware accelerated smooth animation */
+    animation: metallicShine 4s linear infinite;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
   }
 
+  @keyframes metallicShine {
+    0% { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+
+  /* 3. VFX Subtitle/Role Glow Animation */
   .title-role {
     font-size: 1.4rem;
-    color: #d4af37; /* Matching golden-accent color for financial authority */
+    color: #d4af37;
     font-weight: 600;
     margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* Atmospheric text glow */
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+    animation: breathingGlow 3s ease-in-out infinite alternate;
   }
 
+  @keyframes breathingGlow {
+    0% { text-shadow: 0 0 6px rgba(212, 175, 55, 0.3); transform: scale(1); }
+    100% { text-shadow: 0 0 15px rgba(212, 175, 55, 0.7); transform: scale(1.01); }
+  }
+
+  /* Description paragraph settings */
   .sub {
     font-size: 1.05rem;
     color: #b0b5c1;
     line-height: 1.7;
     text-align: justify;
+    transition: color 0.3s ease;
   }
 
-  /* Subtle breathing ambient movement for the lights */
-  @keyframes gentlePulse {
-    0% { opacity: 0.8; transform: scale(1); }
-    100% { opacity: 1; transform: scale(1.15); }
+  /* Highlights paragraph dynamically when interacting with the dashboard header */
+  .vfx-header:hover .sub {
+    color: #e2e5ec;
   }
 </style>
+
+
+
+
 
 <!-- Tamil Culture & Philosophy Interactive Showcase Module -->
 <div class="cultural-motto-card" style="
