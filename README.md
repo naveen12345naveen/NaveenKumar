@@ -858,6 +858,87 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </div>
     </section>
 
+
+<!-- Quote Inspiration Showcase Module -->
+<div class="inspiration-container" style="
+  margin-top: 45px; 
+  padding: 35px 30px; 
+  background: #111113; /* Premium dark background to let the warm VFX light pop */
+  border-radius: 16px; 
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  
+  /* VFX Warm Light Glow distributed evenly on all sides */
+  box-shadow: 
+    0 0 25px 2px rgba(255, 100, 0, 0.2),    /* Warm volcanic core glow */
+    0 0 50px 10px rgba(212, 175, 55, 0.12), /* Ambient golden background spread */
+    inset 0 0 20px rgba(255, 255, 255, 0.02); /* Delicate internal edge light */
+    
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: default;
+" 
+onmouseover="
+  this.style.transform='translateY(-6px)'; 
+  this.style.boxShadow='0 0 40px 6px rgba(255, 100, 0, 0.35), 0 0 70px 18px rgba(212, 175, 55, 0.22), inset 0 0 25px rgba(255, 255, 255, 0.05)'; 
+  this.style.borderColor='rgba(255, 165, 0, 0.5)';
+"
+onmouseout="
+  this.style.transform='translateY(0)'; 
+  this.style.boxShadow='0 0 25px 2px rgba(255, 100, 0, 0.2), 0 0 50px 10px rgba(212, 175, 55, 0.12), inset 0 0 20px rgba(255, 255, 255, 0.02)'; 
+  this.style.borderColor='rgba(255, 140, 0, 0.2)';
+"
+>
+  <!-- Decorative Backdrop Layer Graphic -->
+  <div style="position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); font-size: 11rem; color: rgba(255, 140, 0, 0.02); font-weight: 900; pointer-events: none; user-select: none; font-family: sans-serif;">🏔️</div>
+  
+  <!-- Icon / Animated VFX Anchor -->
+  <div style="font-size: 2.5rem; margin-bottom: 8px; filter: drop-shadow(0 0 12px rgba(255, 165, 0, 0.6));">🏔️</div>
+
+  <!-- Label / Tagline -->
+  <span class="inspiration-label" style="display: block; font-size: 0.8rem; color: #ff9f43; margin-bottom: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">
+    Core Mindset
+  </span>
+  
+  <!-- Elegant Warm Divider Line -->
+  <div style="width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #ff8c00, transparent); margin: 0 auto 20px auto; border-radius: 2px;"></div>
+
+  <!-- Tamil Quote Text Effect -->
+  <p class="quote-tamil" style="font-size: 1.5rem; font-weight: 700; color: #ffffff; margin: 0 0 12px 0; padding: 0 10px; line-height: 1.5; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; letter-spacing: 0.5px;">
+    "விடாமுயற்சியும், தன்னம்பிக்கையும் இருந்தால், எந்த மலையையும் வெல்லலாம்."
+  </p>
+
+  <!-- English Quote Text Effect with Styled Key words -->
+  <blockquote class="quote-english" style="font-size: 1.1rem; font-style: italic; font-weight: 400; color: #b3b3ba; margin: 0 auto 24px auto; padding: 0 15px; line-height: 1.6; max-width: 600px;">
+    If you have <span style="color: #ff9f43; font-weight: 600; text-shadow: 0 0 8px rgba(255, 159, 67, 0.3);">perseverance</span> and <span style="color: #ff9f43; font-weight: 600; text-shadow: 0 0 8px rgba(255, 159, 67, 0.3);">self-confidence</span>, you can conquer any mountain.
+  </blockquote>
+
+  <!-- Academic Gift / Highlight Tag -->
+  <div class="achievement-badge" style="
+    background: linear-gradient(135deg, rgba(255,140,0,0.15) 0%, rgba(212,175,55,0.15) 100%); 
+    color: #ffd700; 
+    padding: 6px 14px; 
+    border-radius: 20px; 
+    font-weight: 600; 
+    font-size: 0.8rem; 
+    letter-spacing: 0.5px;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  ">
+    🏆 Peak Achiever Mindset
+  </div>
+</div>
+
+
+
+
+
+
+
 <section id="my professional work">
     <div class="skills-box" style="
         background: #121214; /* Deep premium dark background to make the glow stand out */
