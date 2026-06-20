@@ -440,307 +440,98 @@
     <a href="#contact">Contact</a>
   </nav>
 
-
-
-
-
-<div id="scroll-left-pop" class="front-popup-box left-side" onclick="spawnWalkingBoy('left')">
-  <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar">
-</div>
-
-<div id="scroll-right-pop" class="front-popup-box right-side" onclick="spawnWalkingBoy('right')">
-  <img src="Indiaflag.jpg" alt="India Flag">
-</div>
-
-<div id="traveler-boy" class="boy-avatar" onmouseenter="retreatHome()" ontouchstart="retreatHome()">
-  <div class="unique-boy-container">
-    <div class="boy-head"></div>
-    <div class="boy-body"></div>
-    <div class="boy-legs">
-      <div class="leg left-leg"></div>
-      <div class="leg right-leg"></div>
-    </div>
-  </div>
-</div>
-
+<a id="scroll-left-pop" class="left-popup-box">
+  <img src="naveenkumar.jpg.jpeg" alt="Pop-up Image">
+</a>
 
 <style>
-  /* Base setup for foreground interaction anchors */
-  .front-popup-box {
+  .left-popup-box {
     position: fixed;
+    bottom: 80px;          
+    left: -120px; /* FIXED: Start completely off-screen so the slide-in effect is visible */       
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 99999;        
     display: block; 
-    cursor: pointer;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    animation: gentleFloat 3s ease-in-out infinite alternate;
-    transition: box-shadow 0.4s ease, border-color 0.4s ease;
-    border: 3px solid transparent;
+    
+    /* Smooth cubic-bezier transition for a nice "pop/bounce" effect */
+    transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .left-side { bottom: 80px; left: 25px; }
-  .right-side { top: 80px; right: 25px; }
-
-  .front-popup-box img {
+  .left-popup-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
   }
 
-  /* --- TARGET IMAGE GLOW EFFECTS --- */
-  .front-popup-box.target-glow-left {
-    border-color: #00e676;
-    box-shadow: 0 0 30px #00e676, inset 0 0 15px #00e676;
-  }
-
-  .front-popup-box.target-glow-right {
-    border-color: #ff9933;
-    box-shadow: 0 0 30px #ff9933, inset 0 0 15px #ff9933;
-  }
-
-  .front-popup-box:hover img { transform: scale(1.05); }
-
-  /* --- UNIQUE VECTOR CHARACTER STYLING --- */
-  .boy-avatar {
-    position: fixed;
-    width: 40px;
-    height: 65px;
-    display: none; 
-    align-items: center;
-    justify-content: center;
-    z-index: 100000; 
-    cursor: pointer;
-    user-select: none;
-    pointer-events: auto;
-    transition: left 300000ms linear, top 300000ms linear;
-  }
-
-  .unique-boy-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-origin: bottom center;
-  }
-
-  /* Head */
-  .boy-head {
-    position: absolute;
-    top: 0;
-    left: 11px;
-    width: 18px;
-    height: 18px;
-    background: #ffdbac; /* Base skintone */
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  }
-
-  /* Premium Neon Tech Jacket Body */
-  .boy-body {
-    position: absolute;
-    top: 20px;
-    left: 8px;
-    width: 24px;
-    height: 26px;
-    background: #1a1f2c; /* Slick Dark Cyber Jacket */
-    border-radius: 6px;
-    border: 2px solid #00e676; /* Vibrant neon accent line */
-    box-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
-  }
-
-  /* Legs */
-  .boy-legs {
-    position: absolute;
-    top: 48px;
-    left: 8px;
-    width: 24px;
-    height: 17px;
-  }
-
-  .leg {
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background: #00d2ff; /* Tech pants hue */
-    border-radius: 3px;
-    transform-origin: top center;
-  }
-  .left-leg { left: 3px; }
-  .right-leg { right: 3px; }
-
-  /* --- REAL WALKING GRAPHICS ENGINE --- */
-  .boy-avatar.walking .unique-boy-container {
-    animation: bodyBob 1.2s ease-in-out infinite;
-  }
-  .boy-avatar.walking .left-leg {
-    animation: legSwing 1.2s ease-in-out infinite;
-  }
-  .boy-avatar.walking .right-leg {
-    animation: legSwing 1.2s ease-in-out infinite reverse;
-  }
-
-  /* --- REAL RUNNING GRAPHICS ENGINE --- */
-  .boy-avatar.running .unique-boy-container {
-    animation: bodySprint 0.3s linear infinite;
-  }
-  .boy-avatar.running .left-leg {
-    animation: legSprint 0.3s linear infinite;
-  }
-  .boy-avatar.running .right-leg {
-    animation: legSprint 0.3s linear infinite reverse;
-  }
-
-  /* Walking Keyframes */
-  @keyframes bodyBob {
-    0%, 100% { transform: translateY(0) rotate(-3deg); }
-    50% { transform: translateY(-4px) rotate(3deg); }
-  }
-  @keyframes legSwing {
-    0%, 100% { transform: rotate(-22deg); }
-    50% { transform: rotate(22deg); }
-  }
-
-  /* Running Keyframes (Leans forward aggressively with deeper leg strides) */
-  @keyframes bodySprint {
-    0%, 100% { transform: translateY(0) rotate(12deg) scaleY(0.95); }
-    50% { transform: translateY(-6px) rotate(15deg) scaleY(1.05); }
-  }
-  @keyframes legSprint {
-    0%, 100% { transform: rotate(-40deg); }
-    50% { transform: rotate(40deg); }
-  }
-
-  @keyframes gentleFloat {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-6px); }
+  /* When this class is added via JS, it overrides the default 'left' value */
+  .left-popup-box.slide-in {
+    left: 25px;            
   }
 </style>
 
-
 <script>
-  let currentStartOrigin = null;
-
-  function spawnWalkingBoy(originSide) {
-    const boy = document.getElementById('traveler-boy');
-    const leftBox = document.getElementById('scroll-left-pop');
-    const rightBox = document.getElementById('scroll-right-pop');
+  window.addEventListener('scroll', function() {
+    const popImage = document.getElementById('scroll-left-pop');
     
-    const leftNode = leftBox.getBoundingClientRect();
-    const rightNode = rightBox.getBoundingClientRect();
-
-    if (boy.style.display === 'flex') return;
-
-    currentStartOrigin = originSide;
-
-    // Reset old glow tracks
-    leftBox.classList.remove('target-glow-left');
-    rightBox.classList.remove('target-glow-right');
-
-    /* Centering calculation offset for our clean vector custom box */
-    const leftX = leftNode.left + leftNode.width / 2 - 20;
-    const leftY = leftNode.top + leftNode.height / 2 - 32;
-    const rightX = rightNode.left + rightNode.width / 2 - 20;
-    const rightY = rightNode.top + rightNode.height / 2 - 32;
-
-    boy.style.transition = 'none';
-    boy.classList.remove('running');
-    boy.classList.add('walking'); 
-
-    if (originSide === 'left') {
-      rightBox.classList.add('target-glow-right');
-
-      boy.style.left = `${leftX}px`;
-      boy.style.top = `${leftY}px`;
-      boy.style.transform = 'scaleX(1)'; 
-      boy.style.display = 'flex';
-
-      void boy.offsetWidth;
-
-      boy.style.transition = 'left 300000ms linear, top 300000ms linear';
-      boy.style.left = `${rightX}px`;
-      boy.style.top = `${rightY}px`;
+    // Checks if user has scrolled down more than 200px
+    if (window.scrollY > 200) {
+      popImage.classList.add('slide-in');
     } else {
-      leftBox.classList.add('target-glow-left');
-
-      boy.style.left = `${rightX}px`;
-      boy.style.top = `${rightY}px`;
-      boy.style.transform = 'scaleX(-1)'; 
-      boy.style.display = 'flex';
-
-      void boy.offsetWidth;
-
-      boy.style.transition = 'left 300000ms linear, top 300000ms linear';
-      boy.style.left = `${leftX}px`;
-      boy.style.top = `${leftY}px`;
+      popImage.classList.remove('slide-in');
     }
-  }
-
-  function retreatHome() {
-    const boy = document.getElementById('traveler-boy');
-    const leftBox = document.getElementById('scroll-left-pop');
-    const rightBox = document.getElementById('scroll-right-pop');
-
-    if (!boy || boy.style.display !== 'flex' || boy.classList.contains('running')) return;
-
-    boy.classList.remove('walking');
-    boy.classList.add('running');
-
-    leftBox.classList.remove('target-glow-left');
-    rightBox.classList.remove('target-glow-right');
-    if (currentStartOrigin === 'left') {
-      leftBox.classList.add('target-glow-left');
-    } else {
-      rightBox.classList.add('target-glow-right');
-    }
-
-    const currentPosition = boy.getBoundingClientRect();
-    
-    boy.style.transition = 'none';
-    boy.style.left = `${currentPosition.left}px`;
-    boy.style.top = `${currentPosition.top}px`;
-
-    void boy.offsetWidth;
-
-    const leftNode = leftBox.getBoundingClientRect();
-    const rightNode = rightBox.getBoundingClientRect();
-
-    const leftX = leftNode.left + leftNode.width / 2 - 20;
-    const leftY = leftNode.top + leftNode.height / 2 - 32;
-    const rightX = rightNode.left + rightNode.width / 2 - 20;
-    const rightY = rightNode.top + rightNode.height / 2 - 32;
-
-    boy.style.transition = 'left 600ms cubic-bezier(0.25, 1, 0.5, 1), top 600ms cubic-bezier(0.25, 1, 0.5, 1)';
-
-    if (currentStartOrigin === 'left') {
-      boy.style.transform = 'scaleX(-1)'; 
-      boy.style.left = `${leftX}px`;
-      boy.style.top = `${leftY}px`;
-    } else {
-      boy.style.transform = 'scaleX(1)'; 
-      boy.style.left = `${rightX}px`;
-      boy.style.top = `${rightY}px`;
-    }
-
-    setTimeout(() => {
-      boy.style.display = 'none';
-      boy.classList.remove('running');
-      leftBox.classList.remove('target-glow-left');
-      rightBox.classList.remove('target-glow-right');
-    }, 600);
-  }
+  });
 </script>
 
+<a id="scroll-right-pop" class="right-popup-box">
+  <img src="Indiaflag.jpg" alt="Pop-up Image">
+</a>
 
+<style>
+  .right-popup-box {
+    position: fixed;
+    top: 80px;            /* Positioned near the top */
+    right: -120px;        /* Hidden off-screen to the right initially */       
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 99999;        
+    display: block; 
+    
+    /* Smooth transition on the 'right' property */
+    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
 
+  .right-popup-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
+  /* When scrolled down, slides in 25px away from the right edge */
+  .right-popup-box.slide-in {
+    right: 25px;            
+  }
+</style>
 
-
-
+<script>
+  window.addEventListener('scroll', function() {
+    const popImage = document.getElementById('scroll-right-pop');
+    
+    if (window.scrollY > 200) {
+      popImage.classList.add('slide-in');
+    } else {
+      popImage.classList.remove('slide-in');
+    }
+  });
+</script>
 
 
 
