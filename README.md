@@ -1417,22 +1417,109 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   </div>
 </section>
     
-  <!-- High Effect Footer Section -->
-  <footer>
-    <div class="footer-content">
-      <p>&copy;💙2026 NaveenKumar B💙</p>
-      <p>📍Thungavi- Udumalpet - Coimbatore📍</p>
-      <p>🌐My personal design🌐</p>
-      <p>🎨Portfolio Website🎨</p>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank">LinkedIn</a>
-        <a href="https://github.com/naveen12345naveen" target="_blank">GitHub</a>
-        <a href="mailto:naveenbalakrishnan146@gmail.com">Email</a>
-        <a href="https://www.instagram.com/naveenkumar.b.nkb?igsh=MXNhYjFycG9tN2lnYw==">Instagram</a>
-        <a href="tel:+916369311629">Mobile</a>
-      </div>
+ <!-- High Effect Footer Section -->
+<footer style="
+    margin-top: 60px;
+    padding: 40px 20px;
+    background: radial-gradient(circle at top, #221a16 0%, #110c0a 100%); /* Deep dark wood aesthetic */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+    
+    /* Top Border Warm Light VFX Laser Glow Line */
+    border-top: 2px solid #ff9f43;
+    box-shadow: 0 -4px 30px 0px rgba(255, 140, 0, 0.35), 0 -2px 10px 0px rgba(230, 140, 10, 0.15);
+">
+
+  <!-- NEW UNIQUE EXTRA DESIGN SYMBOLS: Structural Corner Grid Marks -->
+  <div style="position: absolute; top: 8px; left: 12px; font-family: monospace; font-size: 0.75rem; color: #ff9f43; opacity: 0.35; letter-spacing: 2px;">[NKB_SYS_V1]</div>
+  <div style="position: absolute; top: 8px; right: 12px; opacity: 0.25; pointer-events: none;">
+    <svg width="40" height="12" viewBox="0 0 40 12" fill="none" stroke="#ff9f43" stroke-width="1.5">
+      <circle cx="6" cy="6" r="3" fill="#ff9f43"/>
+      <line x1="14" y1="6" x2="40" y2="6" stroke-dasharray="2 3"/>
+    </svg>
+  </div>
+
+  <div class="footer-content" style="max-width: 80px0px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px;">
+    
+    <!-- Row 1: Copyright Shimmer Text -->
+    <p style="margin: 0; font-size: 1.1rem; font-weight: 700; color: #ffffff; letter-spacing: 0.5px; text-shadow: 0 0 8px rgba(255, 159, 67, 0.45);">
+      &copy;💙2026 NaveenKumar B💙
+    </p>
+    
+    <!-- Row 2: Location Block with Ambient Container Frame -->
+    <p style="margin: 4px 0; font-size: 0.95rem; color: #e0e0e6; font-weight: 500; letter-spacing: 0.5px;">
+      📍Thungavi- Udumalpet - Coimbatore📍
+    </p>
+    
+    <!-- Rows 3 & 4: Design & Portfolio Marks -->
+    <p style="margin: 2px 0; font-size: 0.9rem; color: #ffb774; font-weight: 600; opacity: 0.9;">
+      🌐My personal design🌐
+    </p>
+    <p style="margin: 2px 0 20px 0; font-size: 0.9rem; color: #ffb774; font-weight: 600; opacity: 0.9;">
+      🎨Portfolio Website🎨
+    </p>
+
+    <!-- Mid-way Glowing Accent Divider Vector -->
+    <div style="width: 120px; height: 1px; background: linear-gradient(90deg, transparent, #ff9f43, transparent); margin: 5px auto 20px auto; filter: drop-shadow(0 0 3px #ff9f43);"></div>
+
+    <!-- Interactive Navigation Links Container -->
+    <div class="footer-links" style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px 18px;">
+      
+      <!-- LinkedIn Link Component -->
+      <a href="https://www.linkedin.com/in/naveenkumar-b-3713311ab" target="_blank" style="
+          color: #ff9f43; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
+          padding: 6px 14px; border: 1px solid rgba(255,159,67,0.25); border-radius: 20px; background: rgba(17,12,10,0.5);
+          text-shadow: 0 0 6px rgba(255,159,67,0.4); display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease;
+      "
+      onmouseover="this.style.color='#ffffff'; this.style.borderColor='#ff9f43'; this.style.boxShadow='0 0 14px rgba(255,159,67,0.45)'; this.style.background='rgba(255,159,67,0.1)';"
+      onmouseout="this.style.color='#ff9f43'; this.style.borderColor='rgba(255,159,67,0.25)'; this.style.boxShadow='none'; this.style.background='rgba(17,12,10,0.5)';"
+      ><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.8;"><circle cx="12" cy="12" r="10"/></svg>LinkedIn</a>
+      
+      <!-- GitHub Link Component -->
+      <a href="https://github.com/naveen12345naveen" target="_blank" style="
+          color: #ff9f43; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
+          padding: 6px 14px; border: 1px solid rgba(255,159,67,0.25); border-radius: 20px; background: rgba(17,12,10,0.5);
+          text-shadow: 0 0 6px rgba(255,159,67,0.4); display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease;
+      "
+      onmouseover="this.style.color='#ffffff'; this.style.borderColor='#ff9f43'; this.style.boxShadow='0 0 14px rgba(255,159,67,0.45)'; this.style.background='rgba(255,159,67,0.1)';"
+      onmouseout="this.style.color='#ff9f43'; this.style.borderColor='rgba(255,159,67,0.25)'; this.style.boxShadow='none'; this.style.background='rgba(17,12,10,0.5)';"
+      ><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.8;"><circle cx="12" cy="12" r="10"/></svg>GitHub</a>
+      
+      <!-- Email Link Component -->
+      <a href="mailto:naveenbalakrishnan146@gmail.com" style="
+          color: #ff9f43; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
+          padding: 6px 14px; border: 1px solid rgba(255,159,67,0.25); border-radius: 20px; background: rgba(17,12,10,0.5);
+          text-shadow: 0 0 6px rgba(255,159,67,0.4); display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease;
+      "
+      onmouseover="this.style.color='#ffffff'; this.style.borderColor='#ff9f43'; this.style.boxShadow='0 0 14px rgba(255,159,67,0.45)'; this.style.background='rgba(255,159,67,0.1)';"
+      onmouseout="this.style.color='#ff9f43'; this.style.borderColor='rgba(255,159,67,0.25)'; this.style.boxShadow='none'; this.style.background='rgba(17,12,10,0.5)';"
+      ><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.8;"><circle cx="12" cy="12" r="10"/></svg>Email</a>
+      
+      <!-- Instagram Link Component -->
+      <a href="https://www.instagram.com/naveenkumar.b.nkb?igsh=MXNhYjFycG9tN2lnYw==" target="_blank" style="
+          color: #ff9f43; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
+          padding: 6px 14px; border: 1px solid rgba(255,159,67,0.25); border-radius: 20px; background: rgba(17,12,10,0.5);
+          text-shadow: 0 0 6px rgba(255,159,67,0.4); display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease;
+      "
+      onmouseover="this.style.color='#ffffff'; this.style.borderColor='#ff9f43'; this.style.boxShadow='0 0 14px rgba(255,159,67,0.45)'; this.style.background='rgba(255,159,67,0.1)';"
+      onmouseout="this.style.color='#ff9f43'; this.style.borderColor='rgba(255,159,67,0.25)'; this.style.boxShadow='none'; this.style.background='rgba(17,12,10,0.5)';"
+      ><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.8;"><circle cx="12" cy="12" r="10"/></svg>Instagram</a>
+      
+      <!-- Mobile Link Component -->
+      <a href="tel:+916369311629" style="
+          color: #ff9f43; text-decoration: none; font-weight: 700; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase;
+          padding: 6px 14px; border: 1px solid rgba(255,159,67,0.25); border-radius: 20px; background: rgba(17,12,10,0.5);
+          text-shadow: 0 0 6px rgba(255,159,67,0.4); display: inline-flex; align-items: center; gap: 6px; transition: all 0.3s ease;
+      "
+      onmouseover="this.style.color='#ffffff'; this.style.borderColor='#ff9f43'; this.style.boxShadow='0 0 14px rgba(255,159,67,0.45)'; this.style.background='rgba(255,159,67,0.1)';"
+      onmouseout="this.style.color='#ff9f43'; this.style.borderColor='rgba(255,159,67,0.25)'; this.style.boxShadow='none'; this.style.background='rgba(17,12,10,0.5)';"
+      ><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.8;"><circle cx="12" cy="12" r="10"/></svg>Mobile</a>
+
     </div>
-  </footer>
+  </div>
+</footer>
 
 <!-- Stylish Button Link to Learn with Me Page -->
 <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
