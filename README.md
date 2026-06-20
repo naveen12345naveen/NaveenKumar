@@ -429,7 +429,7 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
+ <!-- Navigation Bar -->
 <nav style="
     display: flex; 
     justify-content: center; 
@@ -497,7 +497,6 @@
   onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
   onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">Contact</a>
 </nav>
-
 
 <a id="scroll-left-pop" class="left-popup-box">
   <img src="naveenkumar.jpg.jpeg" alt="Pop-up Image">
