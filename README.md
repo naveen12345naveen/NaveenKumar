@@ -999,28 +999,107 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   </blockquote>
 </div>
 
-  <section id="contact">
-  <div class="contact-box">
-    <h2>Get In Touch</h2>
-    <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      
-      <div class="input-group">
-        <input type="text" name="name" placeholder="Your Name" required>
-      </div>
-      
-      <div class="input-group">
-        <input type="email" name="email" placeholder="Your Email" required>
-      </div>
-      
-      <div class="input-group">
-        <textarea name="message" placeholder="Your Message" required></textarea>
-      </div>
-      
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+/* Base Contact Section Setup */
+#contact {
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  background: #0d0d0e; /* Slightly darker wrapper background to make the box pop */
+}
+
+/* The Glowing Form Container */
+.contact-box {
+  background: #121214; /* Deep premium dark background matching your skills box */
+  color: #f3f4f6;
+  border-radius: 12px; 
+  padding: 30px; 
+  width: 100%;
+  max-width: 500px; /* Keeps the form looking clean on desktop */
+  position: relative;
+  border: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
+  
+  /* VFX Warm Light Glow */
+  box-shadow: 
+    0 0 25px 2px rgba(255, 90, 0, 0.25),   
+    0 0 50px 10px rgba(230, 140, 10, 0.15), 
+    inset 0 0 15px rgba(255, 100, 0, 0.08); 
+  
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+/* Hover Effect matching the previous component */
+.contact-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 35px 5px rgba(255, 90, 0, 0.35), 
+    0 0 65px 15px rgba(230, 140, 10, 0.22), 
+    inset 0 0 20px rgba(255, 100, 0, 0.12);
+}
+
+/* Title Styling */
+.contact-box h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  color: #ff9f43; /* Warm Amber */
+  font-size: 1.8rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Form Fields Styling */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.contact-box input[type="text"],
+.contact-box input[type="email"],
+.contact-box textarea {
+  width: 100%;
+  padding: 12px;
+  background: #1a1a1e; /* Darker field background for contrast */
+  border: 1px solid rgba(255, 140, 0, 0.2);
+  border-radius: 6px;
+  color: #f3f4f6;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Input Focus Glow effect */
+.contact-box input:focus,
+.contact-box textarea:focus {
+  outline: none;
+  border-color: #ff9f43;
+  box-shadow: 0 0 10px rgba(255, 159, 67, 0.4);
+}
+
+.contact-box textarea {
+  height: 120px;
+  resize: vertical; /* Allows users to scale height but not break width */
+}
+
+/* Premium Submit Button */
+.contact-box button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #ff9f43, #ff6b6b); /* Sleek warm gradient */
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.contact-box button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.contact-box button:active {
+  transform: translateY(1px);
+}
 
   <!-- High Effect Footer Section -->
   <footer>
