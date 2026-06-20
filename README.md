@@ -443,20 +443,29 @@
 
 
 
+<!-- ==========================================================================
+     1. FIXED FOREGROUND POPUPS & CANVAS
+     ========================================================================== -->
 
-<a id="scroll-left-pop" class="front-popup-box left-side" onclick="triggerSlowLightning(event)">
+<!-- Left Box -->
+<a id="scroll-left-pop" class="front-popup-box left-side" onclick="triggerInstantLightning(event)">
   <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar">
   <div class="shockwave-ring"></div>
 </a>
 
-<a id="scroll-right-pop" class="front-popup-box right-side" onclick="triggerSlowLightning(event)">
+<!-- Right Box -->
+<a id="scroll-right-pop" class="front-popup-box right-side" onclick="triggerInstantLightning(event)">
   <img src="Indiaflag.jpg" alt="India Flag">
   <div class="shockwave-ring"></div>
 </a>
 
+<!-- Overlay Canvas for Drawing the Electricity Arcs -->
 <canvas id="lightning-canvas"></canvas>
 
 
+<!-- ==========================================================================
+     2. STYLES (FRONT DESIGN & NEON GLOWS)
+     ========================================================================== -->
 <style>
   #lightning-canvas {
     position: fixed;
@@ -475,7 +484,7 @@
     height: 100px;
     border-radius: 50%;
     overflow: visible; 
-    z-index: 99999; /* Higher than normal website text/sections */       
+    z-index: 99999;        
     display: block; 
     cursor: pointer;
     user-select: none;
@@ -550,6 +559,9 @@
 </style>
 
 
+<!-- ==========================================================================
+     3. INSTANT LIGHTNING JAVASCRIPT ENGINE (SIDES-AWARE)
+     ========================================================================== -->
 <script>
   const canvas = document.getElementById('lightning-canvas');
   const ctx = canvas.getContext('2d');
@@ -563,13 +575,16 @@
 
   let activeLightningBolts = [];
 
-  function triggerSlowLightning(event) {
+  function triggerInstantLightning(event) {
     event.preventDefault();
 
+    // Identify which specific element triggered the click event
+    const clickedElement = event.currentTarget;
     const leftElement = document.getElementById('scroll-left-pop');
     const rightElement = document.getElementById('scroll-right-pop');
+    const targetElement = (clickedElement === leftElement) ? rightElement : leftElement;
 
-    // Trigger visual pops on buttons
+    // Trigger visual feedback pops on both elements simultaneously
     [leftElement, rightElement].forEach(el => {
       el.classList.remove('impact-pop');
       void el.offsetWidth;
@@ -581,42 +596,38 @@
       ring.classList.add('blast-ring');
     });
 
-    const rectL = leftElement.getBoundingClientRect();
-    const rectR = rightElement.getBoundingClientRect();
+    // Extract screen coordinates
+    const rectClicked = clickedElement.getBoundingClientRect();
+    const rectTarget = targetElement.getBoundingClientRect();
 
-    const startX = rectL.left + rectL.width / 2;
-    const startY = rectL.top + rectL.height / 2;
-    const endX = rectR.left + rectR.width / 2;
-    const endY = rectR.top + rectR.height / 2;
+    // Start coordinates always originate from the specifically clicked item
+    const startX = rectClicked.left + rectClicked.width / 2;
+    const startY = rectClicked.top + rectClicked.height / 2;
+    const endX = rectTarget.left + rectTarget.width / 2;
+    const endY = rectTarget.top + rectTarget.height / 2;
 
-    // Create a slow traveling bolt setup (progress tracking from 0 to 1)
-    activeLightningBolts.push({
-      startX, startY, endX, endY,
-      progress: 0,       // Starts at 0%
-      speed: 0.02,       // Control speed (0.02 means 2% growth per frame = slower travel time)
-      alpha: 1.0,
-      isFading: false,
-      color: '#ffffff',
-      glow: '#00d2ff'
-    });
+    // Generate multiple raw jagged paths overlapping instantly for structural mass
+    activeLightningBolts.push({ startX, startY, endX, endY, alpha: 1.0, width: 4, color: '#ffffff', glow: '#00d2ff' });
+    activeLightningBolts.push({ startX, startY, endX, endY, alpha: 0.7, width: 2, color: '#e0f7fa', glow: '#00e676' });
+    activeLightningBolts.push({ startX, startY, endX, endY, alpha: 0.5, width: 1, color: '#ffffff', glow: '#ff9933' });
 
-    if (activeLightningBolts.length === 1) {
+    if (activeLightningBolts.length <= 3) {
       requestAnimationFrame(renderEngine);
     }
   }
 
-  // Generates lightning coordinates on the fly based on current travel progress
-  function drawSlowLightningPath(x1, y1, currentTargetX, currentTargetY, displace) {
+  // Generates complete lightning branch equations down to the targeted location instantly
+  function drawInstantLightningPath(x1, y1, x2, y2, displace) {
     if (displace < 4) {
-      ctx.lineTo(currentTargetX, currentTargetY);
+      ctx.lineTo(x2, y2);
     } else {
-      const midX = (x1 + currentTargetX) / 2;
-      const midY = (y1 + currentTargetY) / 2;
+      const midX = (x1 + x2) / 2;
+      const midY = (y1 + y2) / 2;
       const randX = midX + (Math.random() - 0.5) * displace;
       const randY = midY + (Math.random() - 0.5) * displace;
       
-      drawSlowLightningPath(x1, y1, randX, randY, displace / 2);
-      drawSlowLightningPath(randX, randY, currentTargetX, currentTargetY, displace / 2);
+      drawInstantLightningPath(x1, y1, randX, randY, displace / 2);
+      drawInstantLightningPath(randX, randY, x2, y2, displace / 2);
     }
   }
 
@@ -628,39 +639,26 @@
     for (let i = activeLightningBolts.length - 1; i >= 0; i--) {
       let bolt = activeLightningBolts[i];
 
-      // Step 1: Handle slow path expansion
-      if (!bolt.isFading) {
-        bolt.progress += bolt.speed;
-        if (bolt.progress >= 1) {
-          bolt.progress = 1;
-          bolt.isFading = true; // Complete path hit, begin fading out
-        }
-      } else {
-        bolt.alpha -= 0.05; // Fade speed after completion
-      }
-
-      // Calculate where the current traveling tip of electricity is right now
-      const currentEndX = bolt.startX + (bolt.endX - bolt.startX) * bolt.progress;
-      const currentEndY = bolt.startY + (bolt.endY - bolt.startY) * bolt.progress;
-
       ctx.save();
       ctx.globalAlpha = bolt.alpha;
-      ctx.shadowBlur = 15;
+      ctx.shadowBlur = 20;
       ctx.shadowColor = bolt.glow;
       ctx.strokeStyle = bolt.color;
-      ctx.lineWidth = 3;
+      ctx.lineWidth = bolt.width;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
 
       ctx.beginPath();
       ctx.moveTo(bolt.startX, bolt.startY);
       
-      // Dynamic fractal calculation up to the current progress points
-      drawSlowLightningPath(bolt.startX, bolt.startY, currentEndX, currentEndY, 50 * bolt.progress);
+      // Renders the whole dynamic arc calculation line instantly across the frame
+      drawInstantLightningPath(bolt.startX, bolt.startY, bolt.endX, bolt.endY, 65);
       
       ctx.stroke();
       ctx.restore();
 
+      // Sharp exponential fade out time cycle
+      bolt.alpha -= 0.07;
       if (bolt.alpha <= 0) {
         activeLightningBolts.splice(i, 1);
       }
@@ -671,6 +669,8 @@
     }
   }
 </script>
+
+
 
 
 
