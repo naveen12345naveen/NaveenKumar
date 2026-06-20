@@ -545,94 +545,142 @@
   <img src="naveenkumar.jpg.jpeg" alt="Pop-up Image">
 </a>
 
+<a id="scroll-right-pop" class="right-popup-box">
+  <img src="Indiaflag.jpg" alt="Pop-up Image">
+</a>
+
 <style>
+  /* ==================== LEFT POP-UP LUXURY MATRIX STYLES ==================== */
   .left-popup-box {
     position: fixed;
     bottom: 80px;          
-    left: -120px; /* FIXED: Start completely off-screen so the slide-in effect is visible */       
+    left: -140px; /* Kept completely off-screen initially for slide-in effect */       
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #4CAF50;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 99999;        
     display: block; 
+    box-sizing: border-box;
+    padding: 3px; /* Creates spacing for internal glow alignment */
     
-    /* Smooth cubic-bezier transition for a nice "pop/bounce" effect */
-    transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Obsidian Wood Deep Core Layer & Amber Laser Wireframe Rim */
+    background: radial-gradient(circle at center, #221a16 0%, #110c0a 100%);
+    border: 2px solid rgba(255, 140, 0, 0.45);
+    box-shadow: 
+        0 0 20px 2px rgba(255, 90, 0, 0.3), 
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        inset 0 0 10px rgba(255, 140, 0, 0.2);
+    
+    /* Premium smooth bounce cubic transition */
+    transition: left 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s ease;
   }
 
   .left-popup-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
   }
 
-  /* When this class is added via JS, it overrides the default 'left' value */
-  .left-popup-box.slide-in {
-    left: 25px;            
+  /* UNIQUE INTERACTIVE LAYOUT SYMBOL: Orbiting Tech Outer Reticle Wire */
+  .left-popup-box::before {
+    content: '';
+    position: absolute;
+    top: -6px; left: -6px; right: -6px; bottom: -6px;
+    border-radius: 50%;
+    border: 1px dashed rgba(255, 159, 67, 0.4);
+    pointer-events: none;
+    animation: spinSymbolWire 20s linear infinite;
   }
-</style>
 
-<script>
-  window.addEventListener('scroll', function() {
-    const popImage = document.getElementById('scroll-left-pop');
-    
-    // Checks if user has scrolled down more than 200px
-    if (window.scrollY > 200) {
-      popImage.classList.add('slide-in');
-    } else {
-      popImage.classList.remove('slide-in');
-    }
-  });
-</script>
+  .left-popup-box.slide-in { 
+    left: 25px; 
+  }
+  
+  .left-popup-box:hover {
+    transform: scale(1.08);
+    border-color: rgba(255, 159, 67, 0.85);
+    box-shadow: 0 0 30px 6px rgba(255, 90, 0, 0.5), 0 12px 35px rgba(0, 0, 0, 0.7);
+  }
 
-<a id="scroll-right-pop" class="right-popup-box">
-  <img src="Indiaflag.jpg" alt="Pop-up Image">
-</a>
-
-<style>
+  /* ==================== RIGHT POP-UP LUXURY MATRIX STYLES ==================== */
   .right-popup-box {
     position: fixed;
-    top: 80px;            /* Positioned near the top */
-    right: -120px;        /* Hidden off-screen to the right initially */       
+    top: 80px;            
+    right: -140px; /* Kept completely off-screen initially for slide-in effect */       
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #4CAF50;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 99999;        
     display: block; 
+    box-sizing: border-box;
+    padding: 3px;
     
-    /* Smooth transition on the 'right' property */
-    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Obsidian Wood Deep Core Layer & Amber Laser Wireframe Rim */
+    background: radial-gradient(circle at center, #221a16 0%, #110c0a 100%);
+    border: 2px solid rgba(255, 140, 0, 0.45);
+    box-shadow: 
+        0 0 20px 2px rgba(255, 90, 0, 0.3), 
+        0 10px 30px rgba(0, 0, 0, 0.6),
+        inset 0 0 10px rgba(255, 140, 0, 0.2);
+        
+    transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s ease;
   }
 
   .right-popup-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
   }
 
-  /* When scrolled down, slides in 25px away from the right edge */
-  .right-popup-box.slide-in {
-    right: 25px;            
+  /* UNIQUE INTERACTIVE LAYOUT SYMBOL: Top Facing Compass Crosshair Node Anchor */
+  .right-popup-box::after {
+    content: '✦';
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: #ff9f43;
+    text-shadow: 0 0 4px #ff9f43;
+  }
+
+  .right-popup-box.slide-in { 
+    right: 25px; 
+  }
+  
+  .right-popup-box:hover {
+    transform: scale(1.08);
+    border-color: rgba(255, 159, 67, 0.85);
+    box-shadow: 0 0 30px 6px rgba(255, 90, 0, 0.5), 0 12px 35px rgba(0, 0, 0, 0.7);
+  }
+
+  /* Structural Animation Rotation Keyframe Loop */
+  @keyframes spinSymbolWire {
+    100% { transform: rotate(360deg); }
   }
 </style>
 
 <script>
+  // Clean, consolidated event handling loop
   window.addEventListener('scroll', function() {
-    const popImage = document.getElementById('scroll-right-pop');
+    const leftPop = document.getElementById('scroll-left-pop');
+    const rightPop = document.getElementById('scroll-right-pop');
+    const scrollActivationLine = 200;
     
-    if (window.scrollY > 200) {
-      popImage.classList.add('slide-in');
+    if (window.scrollY > scrollActivationLine) {
+      if (leftPop) leftPop.classList.add('slide-in');
+      if (rightPop) rightPop.classList.add('slide-in');
     } else {
-      popImage.classList.remove('slide-in');
+      if (leftPop) leftPop.classList.remove('slide-in');
+      if (rightPop) rightPop.classList.remove('slide-in');
     }
   });
 </script>
+
+
+
 
 <div class="college-badge" style="text-align: center; margin-bottom: 25px;">
   <!-- Profile Image Link with Warm Glow -->
