@@ -556,14 +556,89 @@
   </div>
 </div>
 
-  <!-- High Effect Header Section -->
-  <header id="about">
-    <div class="header-reveal">
-      <h1>NaveenKumar B</h1>
-      <p>Finance Analyst</p>
-      <p class="sub">I am an MBA in Finance and Business Analytics professional blending core financial acumen with a robust data analytics toolkit. Currently driving financial health as a Junior Analyst at ZOLD UDP Foods, I specialize in financial modeling, accounts optimization, and month-end reconciliations. With hands-on mastery over Excel, Power BI, MySQL, and Python, I transform raw corporate data into strategic, actionable business insights. My background spans published research on NBFC capital adequacy alongside practical exposure to manufacturing and supply chain operations. I bridge the gap between finance and technology to eliminate operational inefficiencies and fuel data-backed business growth</p>
-    </div>
-  </header>
+<header id="about">
+  <div class="corner-glow top-left"></div>
+  <div class="corner-glow top-right"></div>
+  <div class="corner-glow bottom-left"></div>
+  <div class="corner-glow bottom-right"></div>
+
+  <div class="header-reveal">
+    <h1>NaveenKumar B</h1>
+    <p class="title-role">Finance Analyst</p>
+    <p class="sub">I am an MBA in Finance and Business Analytics professional blending core financial acumen with a robust data analytics toolkit. Currently driving financial health as a Junior Analyst at ZOLD UDP Foods, I specialize in financial modeling, accounts optimization, and month-end reconciliations. With hands-on mastery over Excel, Power BI, MySQL, and Python, I transform raw corporate data into strategic, actionable business insights. My background spans published research on NBFC capital adequacy alongside practical exposure to manufacturing and supply chain operations. I bridge the gap between finance and technology to eliminate operational inefficiencies and fuel data-backed business growth.</p>
+  </div>
+</header>
+
+<style>
+  /* Base Header Configuration */
+  #about {
+    position: relative;
+    overflow: hidden; /* Ensures the light leaks do not cause scrollbars */
+    background: #0f1115; /* Dark premium background so the warm light pops beautifully */
+    padding: 4rem 2rem;
+    border-radius: 12px; /* Smooth card edges if wrapping inside a section */
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+  }
+
+  /* Core Corner Glow Configuration */
+  .corner-glow {
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    /* Warm luxury golden light hue */
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(212, 175, 55, 0) 70%);
+    filter: blur(30px);
+    pointer-events: none; /* Allows text selection over the lights */
+    z-index: 1;
+    animation: gentlePulse 4s ease-in-out infinite alternate;
+  }
+
+  /* Positioning vectors for the 4 corners */
+  .top-left { top: -80px; left: -80px; }
+  .top-right { top: -80px; right: -80px; }
+  .bottom-left { bottom: -80px; left: -80px; }
+  .bottom-right { bottom: -80px; right: -80px; }
+
+  /* Content Wrapper adjustments */
+  .header-reveal {
+    position: relative;
+    z-index: 2; /* Keeps text cleanly on top of the VFX */
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Typography Styles matching your context */
+  .header-reveal h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+    /* Clean text-shadow to integrate with the corner light atmosphere */
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  }
+
+  .title-role {
+    font-size: 1.4rem;
+    color: #d4af37; /* Matching golden-accent color for financial authority */
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+  }
+
+  .sub {
+    font-size: 1.05rem;
+    color: #b0b5c1;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  /* Subtle breathing ambient movement for the lights */
+  @keyframes gentlePulse {
+    0% { opacity: 0.8; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1.15); }
+  }
+</style>
 
 <!-- Tamil Culture & Philosophy Interactive Showcase Module -->
 <div class="cultural-motto-card" style="
