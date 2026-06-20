@@ -487,6 +487,54 @@
   });
 </script>
 
+
+<a id="scroll-left-pop" class="right-popup-box">
+  <img src="Indiaflag.jpg" alt="Pop-up Image">
+</a>
+
+<style>
+  .left-popup-box {
+    position: fixed;
+    bottom: 80px;          
+    right: -120px; /* FIXED: Start completely off-screen so the slide-in effect is visible */       
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #4CAF50;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 99999;        
+    display: block; 
+    
+    /* Smooth cubic-bezier transition for a nice "pop/bounce" effect */
+    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .right-popup-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* When this class is added via JS, it overrides the default 'right' value */
+  .left-popup-box.slide-in {
+    left: 25px;            
+  }
+</style>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const popImage = document.getElementById('scroll-right-pop');
+    
+    // Checks if user has scrolled down more than 200px
+    if (window.scrollY > 200) {
+      popImage.classList.add('slide-in');
+    } else {
+      popImage.classList.remove('slide-in');
+    }
+  });
+</script>
+
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
   <!-- Profile Image Link -->
   <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
