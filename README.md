@@ -440,7 +440,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-<a id="scroll-left-pop" href="Indiamap.jpg" target="_blank" class="left-popup-box">
+<a id="scroll-left-pop">
   <img src="Indiaflag.jpg" alt="Pop-up Image">
 </a>
 
