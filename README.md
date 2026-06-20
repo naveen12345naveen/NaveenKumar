@@ -1219,7 +1219,42 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       <h3 style="margin-top: 0; margin-bottom: 15px; color: #ff9f43; font-size: 1.4rem; letter-spacing: 0.5px;">Professional Certifications</h3>
       <ul style="margin-bottom: 0; padding-left: 20px; line-height: 1.6; color: #e0e0e6;">
         <li style="margin-bottom: 12px;"><strong style="color: #ffb774;">Human Resources Management</strong> (Swayam-NPTEL) – Expanded knowledge of management concepts and HR practices</li>
-        <li style="margin-bottom: 0;"><strong style="color: #ffb774;">AI in Marketing</strong> (Swayam-NPTEL) – Strengthened understanding of AI’s role in modern marketing strategies</li>
+        <a href="javascript:void(0)" onclick="openPdfPopup('NPTL AI in Marketing.pdf')" style="color: #ffb774; text-decoration: underline; font-weight: bold;">
+  AI in Marketing
+</a>
+
+<div id="pdf-popup" onclick="closePdfPopup()" style="position: fixed; inset: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); display: none; justify-content: center; align-items: center; z-index: 999999;">
+  
+  <span onclick="closePdfPopup()" style="position: absolute; top: 20px; right: 30px; color: #fff; font-size: 40px; cursor: pointer; user-select: none;">&times;</span>
+  
+  <div onclick="event.stopPropagation()" style="width: 85%; height: 85%; background: #111; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+    
+    <iframe id="pdf-frame" src="" style="width: 100%; height: 100%; border: none;"></iframe>
+  
+  </div>
+</div>
+
+<script>
+  // Core Operational Window Open Engine
+  function openPdfPopup(url) {
+    document.getElementById('pdf-frame').src = url;
+    document.getElementById('pdf-popup').style.display = 'flex';
+    
+    // Safety Rule: Prevents background scrolling behavior while reading the document
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Core Operational Window Dismiss Engine
+  function closePdfPopup() {
+    document.getElementById('pdf-popup').style.display = 'none';
+    
+    // Clear data frames stream immediately to save memory performance allocations
+    document.getElementById('pdf-frame').src = '';
+    
+    // Restores default document background layout scrolling channels
+    document.body.style.overflow = '';
+  }
+</script>
       </ul>
     </div>
 
