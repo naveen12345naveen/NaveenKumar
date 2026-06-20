@@ -558,14 +558,11 @@
   </div>
 </div>
 
-
-
-
 <header id="about" class="vfx-header">
   <div class="header-reveal">
     <h1 class="vfx-word-shimmer">NaveenKumar B</h1>
     <p class="title-role">Finance Analyst</p>
-    <p class="sub">I am an MBA in Finance and Business Analytics professional blending core financial acumen with a robust data analytics toolkit. Currently driving financial health as a Junior Analyst at ZOLD UDP Foods, I specialize in financial modeling, accounts optimization, and month-end reconciliations. With hands-on mastery over Excel, Power BI, MySQL, and Python, I transform raw corporate data into strategic, actionable business insights. My background spans published research on NBFC capital adequacy alongside practical exposure to manufacturing and supply chain operations. I bridge the gap between finance and technology to eliminate operational inefficiencies and fuel data-backed business growth.</p>
+    <p class="sub">With an MBA blending Finance and Business Analytics, my career is built on a simple premise: financial data is only as good as the actionable insights you can extract from it. Currently, at ZOLD UDP Foods, I engineer the financial models, accounts optimization frameworks, and month-end reconciliations that protect and improve our bottom line. My background isn't just theoretical it’s anchored in manufacturing operations, supply chain dynamics, and published research on NBFC capital adequacy. Armed with Excel, Power BI, MySQL, and Python, I dismantle operational inefficiencies and build the data infrastructure modern businesses need to scale intelligently.</p>
   </div>
 </header>
 
@@ -664,10 +661,6 @@
     color: #e2e5ec;
   }
 </style>
-
-
-
-
 
 <!-- Tamil Culture & Philosophy Interactive Showcase Module -->
 <div class="cultural-motto-card" style="
