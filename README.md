@@ -1008,7 +1008,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       padding: 30px; 
       position: relative;
       width: 100%;
-      max-width: 450px; /* Keeps the form looking neat on desktop */
+      max-width: 500px; /* Keeps the form looking neat on desktop */
       box-sizing: border-box;
       border: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
       
@@ -1044,7 +1044,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       "></textarea>
       
       <button type="submit" style="
-          width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9f43, #ff6b6b); 
+          width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9f43,#55a142); 
           border: none; border-radius: 6px; color: #fff; font-size: 1rem; font-weight: bold; 
           cursor: pointer; transition: opacity 0.2s ease; margin-top: 5px;
       "
