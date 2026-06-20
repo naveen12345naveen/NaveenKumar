@@ -535,18 +535,44 @@
 
 
 
-<div class="college-badge" style="text-align: center; margin-bottom: 15px;">
-  <!-- Profile Image Link -->
+<div class="college-badge" style="text-align: center; margin-bottom: 25px;">
+  <!-- Profile Image Link with Warm Glow -->
   <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
-    <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="width: 200px; height: 200px; object-fit: cover; border-radius: 50%; border: 2px solid #d4af37; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 15px rgba(212, 175, 55, 0.6)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
+    <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="
+        width: 200px; 
+        height: 200px; 
+        object-fit: cover; 
+        border-radius: 50%; 
+        border: 2px solid rgba(255, 140, 0, 0.4); 
+        box-shadow: 
+            0 0 20px 2px rgba(255, 90, 0, 0.25),   /* Vibrant amber warmth */
+            0 0 40px 5px rgba(230, 140, 10, 0.15);  /* Golden outer spread */
+        transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    " 
+    onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 0 30px 5px rgba(255, 90, 0, 0.45), 0 0 55px 12px rgba(230, 140, 10, 0.25)';" 
+    onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 20px 2px rgba(255, 90, 0, 0.25), 0 0 40px 5px rgba(230, 140, 10, 0.15)';" />
   </a>
 
-  
-  <!-- Integrated PDF Download Action Bar -->
-  <div style="margin-top: 12px;">
-    <!-- FIXED: Changed inline-inline-flex to inline-flex -->
-    <a href="naveenKumarResume.pdf" download="naveenKumarResume.pdf" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; color: #81C784; text-decoration: none; font-size: 0.9rem; font-weight: 600; padding: 6px 14px; border: 1px solid rgba(129, 199, 132, 0.3); border-radius: 20px; background: rgba(129, 199, 132, 0.05); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(129, 199, 132, 0.15)'; this.style.borderColor='#81C784'; this.style.transform='translateY(-1px)';" onmouseout="this.style.background='rgba(129, 199, 132, 0.05)'; this.style.borderColor='rgba(129, 199, 132, 0.3)'; this.style.transform='translateY(0)';">
-      <!-- Inline SVG Graphic representing a PDF file with a clear downward download arrow -->
+  <!-- Integrated PDF Download Action Bar with Amber Glow Accent -->
+  <div style="margin-top: 18px;">
+    <a href="naveenKumarResume.pdf" download="naveenKumarResume.pdf" style="
+        display: inline-flex; 
+        align-items: center; 
+        justify-content: center; 
+        gap: 8px; 
+        color: #ffb774; /* Matching theme orange/amber text */
+        text-decoration: none; 
+        font-size: 0.9rem; 
+        font-weight: 600; 
+        padding: 8px 18px; 
+        border: 1px solid rgba(255, 140, 0, 0.3); 
+        border-radius: 20px; 
+        background: rgba(255, 140, 0, 0.05); 
+        box-shadow: 0 0 15px rgba(255, 90, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+    " 
+    onmouseover="this.style.background='rgba(255, 140, 0, 0.15)'; this.style.borderColor='#ff9f43'; this.style.boxShadow='0 0 20px rgba(255, 159, 67, 0.35)'; this.style.transform='translateY(-1px)';" 
+    onmouseout="this.style.background='rgba(255, 140, 0, 0.05)'; this.style.borderColor='rgba(255, 140, 0, 0.3)'; this.style.boxShadow='0 0 15px rgba(255, 90, 0, 0.1)'; this.style.transform='translateY(0)';" >
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
         <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
         <polyline points="14 2 14 8 20 8"></polyline>
@@ -558,13 +584,17 @@
   </div>
 </div>
 
-<header id="about" class="vfx-header">
+<!-- Header Section with text highlights and shimmer base alignment -->
+<header id="about" class="vfx-header" style="text-align: center; max-width: 750px; margin: 0 auto; padding: 20px; color: #f3f4f6;">
   <div class="header-reveal">
-    <h1 class="vfx-word-shimmer">NaveenKumar B</h1>
-    <p class="title-role">Finance Analyst</p>
-    <p class="sub">With an MBA blending Finance and Business Analytics, my career is built on a simple premise: financial data is only as good as the actionable insights you can extract from it. Currently, at ZOLD UDP Foods, I engineer the financial models, accounts optimization frameworks, and month-end reconciliations that protect and improve our bottom line. My background isn't just theoretical it’s anchored in manufacturing operations, supply chain dynamics, and published research on NBFC capital adequacy. Armed with Excel, Power BI, MySQL, and Python, I dismantle operational inefficiencies and build the data infrastructure modern businesses need to scale intelligently.</p>
+    <h1 class="vfx-word-shimmer" style="margin-top: 0; margin-bottom: 5px; font-size: 2.8rem; color: #ffffff; letter-spacing: 0.5px; filter: drop-shadow(0 0 10px rgba(255,159,67,0.2));">NaveenKumar B</h1>
+    <p class="title-role" style="font-size: 1.3rem; font-weight: 600; color: #ff9f43; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Finance Analyst</p>
+    <p class="sub" style="line-height: 1.7; color: #e0e0e6; font-size: 1.05rem; text-align: justify; margin-bottom: 0;">
+      With an MBA blending Finance and Business Analytics, my career is built on a simple premise: financial data is only as good as the actionable insights you can extract from it. Currently, at ZOLD UDP Foods, I engineer the financial models, accounts optimization frameworks, and month-end reconciliations that protect and improve our bottom line. My background isn't just theoretical—it’s anchored in manufacturing operations, supply chain dynamics, and published research on NBFC capital adequacy. Armed with <strong style="color: #ffb774;">Excel, Power BI, MySQL, and Python</strong>, I dismantle operational inefficiencies and build the data infrastructure modern businesses need to scale intelligently.
+    </p>
   </div>
 </header>
+
 
 <style>
   /* 1. Ambient 4-Side Edge Glow Container */
