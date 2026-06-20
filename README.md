@@ -634,8 +634,6 @@
   });
 </script>
 
-
-
 <div class="college-badge" style="text-align: center; margin-bottom: 25px;">
   <!-- Profile Image Link with Warm Glow -->
   <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
@@ -695,8 +693,6 @@
     </p>
   </div>
 </header>
-
-
 <style>
   /* 1. Ambient 4-Side Edge Glow Container */
   .vfx-header {
@@ -796,41 +792,72 @@
 <!-- Tamil Culture & Philosophy Interactive Showcase Module -->
 <div class="cultural-motto-card" style="
   margin-top: 45px; 
-  padding: 30px; 
-  background: linear-gradient(135deg, rgba(253, 251, 247, 0.9) 0%, rgba(245, 240, 230, 0.9) 100%); 
+  padding: 35px 30px; 
+  background: radial-gradient(circle at center, #221a16 0%, #110c0a 100%); /* Deep luxurious dark wood aesthetic */
   border-radius: 16px; 
   text-align: center;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.2);
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-sizing: border-box;
   cursor: default;
-" 
-onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 30px rgba(212, 175, 55, 0.18)'; this.style.borderColor='rgba(212, 175, 55, 0.5)';"
-onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(212, 175, 55, 0.08)'; this.style.borderColor='rgba(212, 175, 55, 0.2)';"
->
-  <!-- Decorative Background Quote Mark -->
-  <div style="position: absolute; top: -20px; right: -10px; font-size: 7rem; color: rgba(212, 175, 55, 0.04); font-family: serif; pointer-events: none; user-select: none;">"</div>
   
-  <!-- Icon -->
-  <div style="font-size: 2rem; margin-bottom: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">✨</div>
+  /* Precision Structural Border & Warm Light Burst Glow */
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  box-shadow: 
+      0 0 30px 2px rgba(255, 90, 0, 0.2),       
+      0 10px 40px -10px rgba(0, 0, 0, 0.7),      
+      inset 0 0 20px rgba(255, 100, 0, 0.05);    
+      
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+" 
+onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 0 45px 6px rgba(255, 90, 0, 0.35), 0 15px 50px -5px rgba(0, 0, 0, 0.85), inset 0 0 25px rgba(255, 100, 0, 0.1)'; this.style.borderColor='rgba(255, 159, 67, 0.6)';"
+onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px 2px rgba(255, 90, 0, 0.2), 0 10px 40px -10px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 100, 0, 0.05)'; this.style.borderColor='rgba(255, 140, 0, 0.3)';" >
 
-  <!-- Tamil Quote -->
-  <p style="font-size: 1.6rem; font-weight: 800; color: #2c221e; margin: 0 0 12px 0; font-family: 'Mukta Malar', sans-serif; letter-spacing: 0.5px;">
+  <!-- Decorative Custom Warm Light VFX Corner Accents -->
+  <div style="position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-top: 2px solid #ff9f43; border-left: 2px solid #ff9f43; border-top-left-radius: 16px; opacity: 0.4; pointer-events: none;"></div>
+  <div style="position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; border-bottom: 2px solid #ff9f43; border-right: 2px solid #ff9f43; border-bottom-right-radius: 16px; opacity: 0.4; pointer-events: none;"></div>
+
+  <!-- Decorative Ambient Wood-Ring Quote Mask Background -->
+  <div style="position: absolute; top: -35px; right: -15px; font-size: 10rem; color: rgba(255, 159, 67, 0.04); font-family: serif; pointer-events: none; user-select: none; line-height: 1;">“</div>
+  
+  <!-- Icon Wrapper containing the original Sparkle emoji flanked by unique glowing layout icons -->
+  <div style="margin-bottom: 16px; display: flex; justify-content: center; align-items: center; gap: 15px;">
+    <!-- Left Unique Vector Accent -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="2" style="opacity: 0.7; filter: drop-shadow(0 0 5px rgba(255,159,67,0.5));">
+      <path d="M12 2L2 12h3v8h14v-8h3L12 2z"/>
+    </svg>
+
+    <!-- Original Icon Intact -->
+    <div style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">✨</div>
+
+    <!-- Right Unique Vector Accent -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="2" style="opacity: 0.7; filter: drop-shadow(0 0 5px rgba(255,159,67,0.5));">
+      <circle cx="12" cy="12" r="10"/>
+      <path d="M12 6v6l4 2"/>
+    </svg>
+  </div>
+
+  <!-- Tamil Quote with Active Core Shimmer Text-Glow -->
+  <p style="font-size: 1.8rem; font-weight: 800; color: #ffffff; margin: 0 0 16px 0; font-family: 'Mukta Malar', sans-serif; letter-spacing: 0.5px; text-shadow: 0 0 10px rgba(255, 159, 67, 0.6), 0 0 20px rgba(255, 90, 0, 0.3);">
     "யாதும் ஊரே யாவரும் கேளிர்"
   </p>
   
-  <!-- Elegant Divider Line -->
-  <div style="width: 50px; height: 2px; background: #d4af37; margin: 0 auto 16px auto; border-radius: 2px;"></div>
+  <!-- Elegant Laser-Line Glowing Divider -->
+  <div style="width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #ff9f43, transparent); margin: 0 auto 20px auto; filter: drop-shadow(0 0 4px #ff9f43);"></div>
 
-  <!-- Meaning -->
-  <p style="font-size: 1.1rem; font-style: italic; color: #4a3e39; margin: 0; line-height: 1.7; font-weight: 500;">
-    <strong style="color: #d4af37; font-style: normal;">பொருள்:</strong> எல்லா ஊர்களும் நமது ஊர்களே, எல்லா மக்களும் நமது உறவினர்களே.
-  </p>
+  <!-- Meaning Wrapper Container with Wood Accent Border -->
+  <div style="background: rgba(17, 12, 10, 0.6); padding: 15px 20px; border-radius: 8px; border: 1px solid rgba(255, 140, 0, 0.1); max-width: 620px; margin: 0 auto;">
+    <p style="font-size: 1.1rem; color: #e0e0e6; margin: 0; line-height: 1.7; font-weight: 500;">
+      <strong style="color: #ff9f43; font-style: normal; text-shadow: 0 0 6px rgba(255,159,67,0.3);">பொருள்:</strong> எல்லா ஊர்களும் நமது ஊர்களே, எல்லா மக்களும் நமது உறவினர்களே.
+    </p>
+  </div>
   
-  <!-- Poet Credit -->
-  <span style="display: block; font-size: 0.85rem; color: #8c766c; margin-top: 15px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;">
+  <!-- Poet Credit Badge style with micro amber accent tags -->
+  <span style="display: inline-block; font-size: 0.8rem; color: #ffb774; margin-top: 22px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: rgba(255, 159, 67, 0.08); padding: 4px 14px; border-radius: 12px; border: 1px solid rgba(255, 159, 67, 0.15); display: inline-flex; align-items: center; gap: 8px;">
+    <!-- Unique Micro Badge Vector Symbol -->
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="color: #ff9f43;">
+      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+    </svg>
     — கணியன் பூங்குன்றனார் (புறநானூறு)
   </span>
 </div>
