@@ -440,25 +440,45 @@
     <a href="#contact">Contact</a>
   </nav>
 
-<a id="scroll-left-pop" class="left-popup-box">
-  <img src="naveenkumar.jpg.jpeg" alt="Pop-up Image">
+<a id="scroll-left-pop" class="left-popup-box" onclick="triggerLightningConnect(event)">
+  <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar">
+  <div class="shockwave-ring"></div>
 </a>
 
+<a id="scroll-right-pop" class="right-popup-box" onclick="triggerLightningConnect(event)">
+  <img src="Indiaflag.jpg" alt="India Flag">
+  <div class="shockwave-ring"></div>
+</a>
+
+<canvas id="lightning-canvas"></canvas>
+
+
 <style>
+  /* Global Canvas Layer configuration */
+  #lightning-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Allows user interactions to pass straight through */
+    z-index: 100000;      /* Forces lines above the popups */
+  }
+
+  /* LEFT POPUP STYLING (Bottom-Left Location) */
   .left-popup-box {
     position: fixed;
-    bottom: 80px;          
-    left: -120px; /* FIXED: Start completely off-screen so the slide-in effect is visible */       
+    bottom: 80px;         
+    left: -140px; 
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #4CAF50;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: visible; /* Allows glowing VFX borders to render completely */
     z-index: 99999;        
     display: block; 
-    
-    /* Smooth cubic-bezier transition for a nice "pop/bounce" effect */
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -466,46 +486,30 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #00e676; /* Vibrant Analytics Green Edge */
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+    transition: transform 0.2s ease;
   }
 
-  /* When this class is added via JS, it overrides the default 'left' value */
   .left-popup-box.slide-in {
     left: 25px;            
   }
-</style>
 
-<script>
-  window.addEventListener('scroll', function() {
-    const popImage = document.getElementById('scroll-left-pop');
-    
-    // Checks if user has scrolled down more than 200px
-    if (window.scrollY > 200) {
-      popImage.classList.add('slide-in');
-    } else {
-      popImage.classList.remove('slide-in');
-    }
-  });
-</script>
-
-<a id="scroll-right-pop" class="right-popup-box">
-  <img src="Indiaflag.jpg" alt="Pop-up Image">
-</a>
-
-<style>
+  /* RIGHT POPUP STYLING (Top-Right Location) */
   .right-popup-box {
     position: fixed;
-    top: 80px;            /* Positioned near the top */
-    right: -120px;        /* Hidden off-screen to the right initially */       
+    top: 80px;            
+    right: -140px;       
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    overflow: hidden;
-    border: 2px solid #4CAF50;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: visible;
     z-index: 99999;        
     display: block; 
-    
-    /* Smooth transition on the 'right' property */
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
     transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -513,24 +517,182 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #ff9933; /* Saffron Orange Edge Accent */
+    box-shadow: 0 0 20px rgba(255, 153, 51, 0.4);
+    transition: transform 0.2s ease;
   }
 
-  /* When scrolled down, slides in 25px away from the right edge */
   .right-popup-box.slide-in {
     right: 25px;            
   }
+
+  /* HOVER MAGNITUDE MULTIPLIERS */
+  .left-popup-box:hover img {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px #00e676;
+  }
+  .right-popup-box:hover img {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px #ff9933;
+  }
+
+  /* HARDWARE ACCELERATED IMPACT BUTTON POP */
+  .impact-pop {
+    animation: buttonWarp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4);
+  }
+
+  @keyframes buttonWarp {
+    0% { transform: scale(1); }
+    30% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+  }
+
+  /* RADIAL ELECTRIC DISCHARGE RINGS */
+  .shockwave-ring {
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    border: 4px solid #00d2ff;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .blast-ring {
+    animation: ringExpand 0.5s cubic-bezier(0.1, 0.8, 0.3, 1);
+  }
+
+  @keyframes ringExpand {
+    0% { transform: scale(0.8); opacity: 1; filter: blur(0px); }
+    100% { transform: scale(1.8); opacity: 0; filter: blur(4px); }
+  }
 </style>
 
+
 <script>
+  // --- A. HANDLING SCROLL TRACKING ENTRY ---
   window.addEventListener('scroll', function() {
-    const popImage = document.getElementById('scroll-right-pop');
+    const leftPop = document.getElementById('scroll-left-pop');
+    const rightPop = document.getElementById('scroll-right-pop');
     
     if (window.scrollY > 200) {
-      popImage.classList.add('slide-in');
+      leftPop.classList.add('slide-in');
+      rightPop.classList.add('slide-in');
     } else {
-      popImage.classList.remove('slide-in');
+      leftPop.classList.remove('slide-in');
+      rightPop.classList.remove('slide-in');
     }
   });
+
+  // --- B. CANVAS SETUP & STRUCTS ---
+  const canvas = document.getElementById('lightning-canvas');
+  const ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas(); // Initial adjustment loop
+
+  let activeLightningThreads = [];
+
+  // --- C. ELECTRICITY GENERATION LOGIC ---
+  function triggerLightningConnect(event) {
+    event.preventDefault();
+
+    const leftElement = document.getElementById('scroll-left-pop');
+    const rightElement = document.getElementById('scroll-right-pop');
+
+    // Insulate call if items aren't completely on screen yet
+    if (!leftElement.classList.contains('slide-in')) return;
+
+    // Trigger physical impact scale adjustments on both elements
+    [leftElement, rightElement].forEach(el => {
+      el.classList.remove('impact-pop');
+      void el.offsetWidth;
+      el.classList.add('impact-pop');
+
+      const ring = el.querySelector('.shockwave-ring');
+      ring.classList.remove('blast-ring');
+      void ring.offsetWidth;
+      ring.classList.add('blast-ring');
+    });
+
+    // Extract exact screen coordinates for the centers of both popups
+    const rectL = leftElement.getBoundingClientRect();
+    const rectR = rightElement.getBoundingClientRect();
+
+    const startX = rectL.left + rectL.width / 2;
+    const startY = rectL.top + rectL.height / 2;
+    const endX = rectR.left + rectR.width / 2;
+    const endY = rectR.top + rectR.height / 2;
+
+    // Load multiple random electrical bolt paths for thick, layered energy discharge
+    activeLightningThreads.push({ startX, startY, endX, endY, alpha: 1.0, width: 4, color: '#ffffff', glow: '#00d2ff' });
+    activeLightningThreads.push({ startX, startY, endX, endY, alpha: 0.8, width: 2, color: '#e0f7fa', glow: '#00e676' });
+    activeLightningThreads.push({ startX, startY, endX, endY, alpha: 0.6, width: 1, color: '#ffffff', glow: '#ff9933' });
+
+    // Begin render engine if loop is idle
+    if (activeLightningThreads.length <= 3) {
+      requestAnimationFrame(renderLightningEngine);
+    }
+  }
+
+  // Fractal displacement algorithm to compute jagged paths
+  function drawLightningPath(x1, y1, x2, y2, displace) {
+    if (displace < 4) {
+      ctx.lineTo(x2, y2);
+    } else {
+      const midX = (x1 + x2) / 2;
+      const midY = (y1 + y2) / 2;
+      // Displace position coordinates perpendicular to direction vector
+      const randX = midX + (Math.random() - 0.5) * displace;
+      const randY = midY + (Math.random() - 0.5) * displace;
+      
+      drawLightningPath(x1, y1, randX, randY, displace / 2);
+      drawLightningPath(randX, randY, x2, y2, displace / 2);
+    }
+  }
+
+  // --- D. CORE RENDERING ENGINE ---
+  function renderLightningEngine() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (activeLightningThreads.length === 0) return;
+
+    for (let i = activeLightningThreads.length - 1; i >= 0; i--) {
+      let bolt = activeLightningThreads[i];
+
+      ctx.save();
+      ctx.globalAlpha = bolt.alpha;
+      ctx.shadowBlur = 20;
+      ctx.shadowColor = bolt.glow;
+      ctx.strokeStyle = bolt.color;
+      ctx.lineWidth = bolt.width;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      ctx.beginPath();
+      ctx.moveTo(bolt.startX, bolt.startY);
+      
+      // Higher initial displacement creates dynamic jagged arcing paths
+      drawLightningPath(bolt.startX, bolt.startY, bolt.endX, bolt.endY, 65);
+      ctx.stroke();
+      ctx.restore();
+
+      // Exponentially decay transparency for flash/fade behavior
+      bolt.alpha -= 0.07;
+      if (bolt.alpha <= 0) {
+        activeLightningThreads.splice(i, 1);
+      }
+    }
+
+    // Keep running frame updates until lines have fully dissolved
+    if (activeLightningThreads.length > 0) {
+      requestAnimationFrame(renderLightningEngine);
+    }
+  }
 </script>
 
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
