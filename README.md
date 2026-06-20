@@ -533,6 +533,152 @@
   });
 </script>
 
+<a id="scroll-right-pop" class="vfx-box" onclick="popLike(event)">
+  <div class="thumb-container">
+    <img src="thumbsup.gif" alt="Like" class="thumb-gif">
+    <div class="shockwave"></div>
+  </div>
+  <span id="like-count" class="vfx-counter">0</span>
+</a>
+
+<style>
+  /* Base Floating Container */
+  .vfx-box {
+    position: fixed;
+    top: 80px;            
+    right: -130px; 
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99999;        
+    text-decoration: none;
+    user-select: none;
+    transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .vfx-box.slide-in {
+    right: 25px;            
+    animation: gentleFloat 3s ease-in-out infinite alternate;
+  }
+
+  /* Futuristic Cyber-Glow Wrapper */
+  .thumb-container {
+    position: relative;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #00e676;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+  }
+
+  /* GIF Layout Optimization */
+  .thumb-gif {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  /* Instant Visual Effect Styles triggered by JS */
+  .pop-impact {
+    animation: impactWarp 0.4s ease-out;
+  }
+
+  @keyframes impactWarp {
+    0% { transform: scale(1); filter: brightness(1); }
+    30% { transform: scale(1.35) rotate(-10deg); filter: brightness(1.4) drop-shadow(0 0 10px #00e676); }
+    100% { transform: scale(1); filter: brightness(1); }
+  }
+
+  /* Radial Shockwave Pulse Ring */
+  .shockwave {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid #00e676;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .pulse-blast {
+    animation: waveBlast 0.5s cubic-bezier(0.1, 0.8, 0.3, 1);
+  }
+
+  @keyframes waveBlast {
+    0% { transform: scale(0.9); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 0; filter: blur(2px); }
+  }
+
+  /* Neon Counter Glass Badge */
+  .vfx-counter {
+    margin-top: 8px;
+    background: linear-gradient(135deg, #00e676, #00b0ff);
+    color: white;
+    font-family: system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 3px 12px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,230,118,0.3);
+    min-width: 35px;
+    text-align: center;
+  }
+
+  .bump { animation: miniBump 0.2s ease-out; }
+  @keyframes miniBump { 50% { transform: scale(1.2); } }
+  @keyframes gentleFloat { 100% { transform: translateY(-5px); } }
+</style>
+
+<script>
+  // Slide-in visibility detector
+  window.addEventListener('scroll', function() {
+    const box = document.getElementById('scroll-right-pop');
+    if (window.scrollY > 200) box.classList.add('slide-in');
+    else box.classList.remove('slide-in');
+  });
+
+  let counts = 0;
+  function popLike(e) {
+    e.preventDefault();
+    
+    // Increment Score Metrics
+    counts++;
+    const label = document.getElementById('like-count');
+    label.innerText = counts;
+
+    const container = document.querySelector('.thumb-container');
+    const wave = document.querySelector('.shockwave');
+
+    // Trigger Brightness/Warp Visual Pop
+    container.classList.remove('pop-impact');
+    void container.offsetWidth; 
+    container.classList.add('pop-impact');
+
+    // Trigger Ring Blast Wave
+    wave.classList.remove('pulse-blast');
+    void wave.offsetWidth;
+    wave.classList.add('pulse-blast');
+
+    // Trigger Counter Bump
+    label.classList.remove('bump');
+    void label.offsetWidth;
+    label.classList.add('bump');
+  }
+</script>
+
+
+
+
+
+
+
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
   <!-- Profile Image Link -->
   <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
