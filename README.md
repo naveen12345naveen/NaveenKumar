@@ -858,7 +858,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </div>
     </section>
 
-
 <!-- Quote Inspiration Showcase Module -->
 <div class="inspiration-container" style="
   margin-top: 45px; 
@@ -933,12 +932,6 @@ onmouseout="
   </div>
 </div>
 
-
-
-
-
-
-
 <section id="my professional work">
     <div class="skills-box" style="
         background: #121214; /* Deep premium dark background to make the glow stand out */
@@ -1006,19 +999,28 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   </blockquote>
 </div>
 
-    <!-- Contact Section -->
-    <section id="contact">
-      <h2>Get In Touch</h2>
-      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        
+  <section id="contact">
+  <div class="contact-box">
+    <h2>Get In Touch</h2>
+    <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <div class="input-group">
         <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      
+      <div class="input-group">
         <input type="email" name="email" placeholder="Your Email" required>
+      </div>
+      
+      <div class="input-group">
         <textarea name="message" placeholder="Your Message" required></textarea>
-        
-        <button type="su  bmit">Send Message</button>
-      </form>
-    </section>
+      </div>
+      
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
 
   <!-- High Effect Footer Section -->
   <footer>
@@ -1036,7 +1038,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </div>
     </div>
   </footer>
-  
+
 <!-- Stylish Button Link to Learn with Me Page -->
 <div style="text-align: center; margin-top: 30px; margin-bottom: 20px;">
     <a href="page2.html" style="
@@ -1056,5 +1058,3 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
         🎁 Learn with me
     </a>
 </div>
-
-
