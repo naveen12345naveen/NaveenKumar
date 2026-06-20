@@ -858,15 +858,29 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
       </div>
     </section>
 
-<!-- My Professional Work -->
 <section id="my professional work">
-    <div class="skills-box">
-      <h3>My Professional Work</h3>
-      <ul>
-        <li>Digital Marketing – Strategic content creation, professional video editing, and impact-driven poster design.</li>
-        <li>Financial Analysis – Comprehensive financial statement evaluation and strategic portfolio management.</li>
-        <li>Custom Solutions – Dedicated consulting and tailored support to solve your unique business challenges.</li>
-        <li>Finance Filling – GST, VAT, TDS, TCS, Income Tax and other Filling and Queries.</li>
+    <div class="skills-box" style="
+        background: #ffffff; 
+        border-radius: 12px; 
+        padding: 25px; 
+        position: relative;
+        border: 1px solid rgba(255, 136, 0, 0.15);
+        /* The VFX Glow: Layering multiple smooth, warm ambient shadows on all sides */
+        box-shadow: 
+            0 0 20px 2px rgba(255, 115, 0, 0.12),   /* Core warm orange glow */
+            0 0 40px 5px rgba(255, 196, 0, 0.08),   /* Secondary gold spread */
+            inset 0 0 12px rgba(255, 136, 0, 0.03); /* Subtle internal warmth */
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 30px 4px rgba(255, 115, 0, 0.2), 0 0 50px 8px rgba(255, 196, 0, 0.12), inset 0 0 15px rgba(255, 136, 0, 0.05)';"
+    onmouseout="this.style.boxShadow='0 0 20px 2px rgba(255, 115, 0, 0.12), 0 0 40px 5px rgba(255, 196, 0, 0.08), inset 0 0 12px rgba(255, 136, 0, 0.03)';">
+      
+      <h3 style="margin-top: 0; color: #333;">My Professional Work</h3>
+      <ul class="skills-list" style="margin-bottom: 0; padding-left: 20px; line-height: 1.6;">
+        <li><strong>Digital Marketing</strong> – Strategic content creation, professional video editing, and impact-driven poster design.</li>
+        <li><strong>Financial Analysis</strong> – Comprehensive financial statement evaluation and strategic portfolio management.</li>
+        <li><strong>Custom Solutions</strong> – Dedicated consulting and tailored support to solve your unique business challenges.</li>
+        <li><strong>Finance Filing</strong> – GST, VAT, TDS, TCS, Income Tax and other Filing and Queries.</li>
       </ul>
     </div>
 </section>
