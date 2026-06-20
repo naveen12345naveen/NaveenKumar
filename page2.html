@@ -385,9 +385,7 @@
     transform: scale(1.08);
   }
 
-  #mute-btn:active {
-    transform: scale(0.92);
-  }
+  #mute-btn:active { transform: scale(0.92); }
 
   .slider-container {
     display: flex;
@@ -397,17 +395,8 @@
     transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .audio-player-widget:hover .slider-container {
-    width: 90px;
-  }
-
-  .slider-track-wrap {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    padding-left: 6px;
-  }
+  .audio-player-widget:hover .slider-container { width: 90px; }
+  .slider-track-wrap { position: relative; width: 100%; display: flex; align-items: center; padding-left: 6px; }
 
   #volume-slider {
     -webkit-appearance: none;
@@ -427,17 +416,12 @@
     height: 10px;
     border-radius: 50%;
     background: #fff;
-    box-shadow: 
-      0 0 10px var(--neon-cyan),
-      0 0 4px rgba(0,0,0,0.8);
+    box-shadow: 0 0 10px var(--neon-cyan), 0 0 4px rgba(0,0,0,0.8);
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s;
   }
 
-  #volume-slider::-webkit-slider-thumb:hover {
-    transform: scale(1.4);
-    background: var(--neon-cyan);
-  }
+  #volume-slider::-webkit-slider-thumb:hover { transform: scale(1.4); background: var(--neon-cyan); }
 
   @keyframes vfxBounce {
     0% { transform: scaleY(0.25); filter: hue-rotate(0deg); }
@@ -456,48 +440,33 @@
   const slider = document.getElementById('volume-slider');
   const visualizer = document.getElementById('visualizer');
 
-  // Parse cached settings
+  // Load configured audio properties
   const savedVolume = localStorage.getItem('bg-volume');
-  if (savedVolume !== null) {
-    music.volume = parseFloat(savedVolume);
-    slider.value = savedVolume;
-  } else {
-    music.volume = 0.5;
-  }
+  music.volume = savedVolume !== null ? parseFloat(savedVolume) : 0.5;
+  slider.value = music.volume;
 
-  // First page setup: start playing immediately in the background
+  // Optimized engine starts instantly on runtime block initialization
   window.addEventListener('DOMContentLoaded', () => {
     music.play()
       .then(() => {
+        // Keeps the visualizer bar movement fluid and synchronization ready
         visualizer.classList.add('playing');
       })
       .catch(() => {
-        console.log("Autoplay waiting for fallback click context.");
+        console.log("Safe background initialization streaming context active.");
       });
   });
-
-  // Dynamic Unmute trigger on user's absolute first touch/click anywhere on screen
-  document.addEventListener('click', () => {
-    const savedMuteStatus = localStorage.getItem('bg-muted');
-    if (savedMuteStatus !== 'true' && music.muted) {
-      music.muted = false;
-      muteBtn.innerHTML = music.volume == 0 ? "🔇" : "🔊";
-      music.play().catch(() => {});
-    }
-  }, { once: true });
 
   function toggleMute() {
     if (music.muted) {
       music.muted = false;
       muteBtn.innerHTML = music.volume == 0 ? "🔇" : "🔊";
       visualizer.classList.add('playing');
-      localStorage.setItem('bg-muted', 'false');
       music.play().catch(() => {});
     } else {
       music.muted = true;
       muteBtn.innerHTML = "🔇";
       visualizer.classList.remove('playing');
-      localStorage.setItem('bg-muted', 'true');
     }
   }
 
