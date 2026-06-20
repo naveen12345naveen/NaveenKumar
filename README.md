@@ -440,6 +440,10 @@
     <a href="#contact">Contact</a>
   </nav>
 
+
+
+
+
 <div id="scroll-left-pop" class="front-popup-box left-side" onclick="spawnWalkingBoy('left')">
   <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar">
 </div>
@@ -449,7 +453,14 @@
 </div>
 
 <div id="traveler-boy" class="boy-avatar" onmouseenter="retreatHome()" ontouchstart="retreatHome()">
-  🚶‍♂️
+  <div class="unique-boy-container">
+    <div class="boy-head"></div>
+    <div class="boy-body"></div>
+    <div class="boy-legs">
+      <div class="leg left-leg"></div>
+      <div class="leg right-leg"></div>
+    </div>
+  </div>
 </div>
 
 
@@ -466,17 +477,12 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     animation: gentleFloat 3s ease-in-out infinite alternate;
+    transition: box-shadow 0.4s ease, border-color 0.4s ease;
+    border: 3px solid transparent;
   }
 
-  .left-side {
-    bottom: 80px;         
-    left: 25px;            
-  }
-
-  .right-side {
-    top: 80px;            
-    right: 25px;            
-  }
+  .left-side { bottom: 80px; left: 25px; }
+  .right-side { top: 80px; right: 25px; }
 
   .front-popup-box img {
     width: 100%;
@@ -487,29 +493,128 @@
     transition: transform 0.2s ease;
   }
 
-  .front-popup-box:hover img {
-    transform: scale(1.05);
+  /* --- TARGET IMAGE GLOW EFFECTS --- */
+  .front-popup-box.target-glow-left {
+    border-color: #00e676;
+    box-shadow: 0 0 30px #00e676, inset 0 0 15px #00e676;
   }
 
-  /* The Walking Boy Avatar configuration */
+  .front-popup-box.target-glow-right {
+    border-color: #ff9933;
+    box-shadow: 0 0 30px #ff9933, inset 0 0 15px #ff9933;
+  }
+
+  .front-popup-box:hover img { transform: scale(1.05); }
+
+  /* --- UNIQUE VECTOR CHARACTER STYLING --- */
   .boy-avatar {
     position: fixed;
-    font-size: 2.5rem; /* Clean emoji visual scaled comfortably */
-    width: 50px;
-    height: 50px;
-    display: none; /* Managed dynamically by engine context */
+    width: 40px;
+    height: 65px;
+    display: none; 
     align-items: center;
     justify-content: center;
-    z-index: 100000; /* Stays securely on top of everything */
+    z-index: 100000; 
     cursor: pointer;
     user-select: none;
     pointer-events: auto;
-    
-    /* Linear progression makes the long 5 minute walk smooth and steady */
     transition: left 300000ms linear, top 300000ms linear;
   }
 
-  /* Gentle structural breathing animation for anchor elements */
+  .unique-boy-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-origin: bottom center;
+  }
+
+  /* Head */
+  .boy-head {
+    position: absolute;
+    top: 0;
+    left: 11px;
+    width: 18px;
+    height: 18px;
+    background: #ffdbac; /* Base skintone */
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  /* Premium Neon Tech Jacket Body */
+  .boy-body {
+    position: absolute;
+    top: 20px;
+    left: 8px;
+    width: 24px;
+    height: 26px;
+    background: #1a1f2c; /* Slick Dark Cyber Jacket */
+    border-radius: 6px;
+    border: 2px solid #00e676; /* Vibrant neon accent line */
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.5);
+  }
+
+  /* Legs */
+  .boy-legs {
+    position: absolute;
+    top: 48px;
+    left: 8px;
+    width: 24px;
+    height: 17px;
+  }
+
+  .leg {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background: #00d2ff; /* Tech pants hue */
+    border-radius: 3px;
+    transform-origin: top center;
+  }
+  .left-leg { left: 3px; }
+  .right-leg { right: 3px; }
+
+  /* --- REAL WALKING GRAPHICS ENGINE --- */
+  .boy-avatar.walking .unique-boy-container {
+    animation: bodyBob 1.2s ease-in-out infinite;
+  }
+  .boy-avatar.walking .left-leg {
+    animation: legSwing 1.2s ease-in-out infinite;
+  }
+  .boy-avatar.walking .right-leg {
+    animation: legSwing 1.2s ease-in-out infinite reverse;
+  }
+
+  /* --- REAL RUNNING GRAPHICS ENGINE --- */
+  .boy-avatar.running .unique-boy-container {
+    animation: bodySprint 0.3s linear infinite;
+  }
+  .boy-avatar.running .left-leg {
+    animation: legSprint 0.3s linear infinite;
+  }
+  .boy-avatar.running .right-leg {
+    animation: legSprint 0.3s linear infinite reverse;
+  }
+
+  /* Walking Keyframes */
+  @keyframes bodyBob {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-4px) rotate(3deg); }
+  }
+  @keyframes legSwing {
+    0%, 100% { transform: rotate(-22deg); }
+    50% { transform: rotate(22deg); }
+  }
+
+  /* Running Keyframes (Leans forward aggressively with deeper leg strides) */
+  @keyframes bodySprint {
+    0%, 100% { transform: translateY(0) rotate(12deg) scaleY(0.95); }
+    50% { transform: translateY(-6px) rotate(15deg) scaleY(1.05); }
+  }
+  @keyframes legSprint {
+    0%, 100% { transform: rotate(-40deg); }
+    50% { transform: rotate(40deg); }
+  }
+
   @keyframes gentleFloat {
     0% { transform: translateY(0); }
     100% { transform: translateY(-6px); }
@@ -522,40 +627,49 @@
 
   function spawnWalkingBoy(originSide) {
     const boy = document.getElementById('traveler-boy');
-    const leftNode = document.getElementById('scroll-left-pop').getBoundingClientRect();
-    const rightNode = document.getElementById('scroll-right-pop').getBoundingClientRect();
+    const leftBox = document.getElementById('scroll-left-pop');
+    const rightBox = document.getElementById('scroll-right-pop');
+    
+    const leftNode = leftBox.getBoundingClientRect();
+    const rightNode = rightBox.getBoundingClientRect();
 
-    // Prevent re-triggering mid-walk unless he resets
     if (boy.style.display === 'flex') return;
 
     currentStartOrigin = originSide;
 
-    // Compute center vectors
-    const leftX = leftNode.left + leftNode.width / 2 - 25;
-    const leftY = leftNode.top + leftNode.height / 2 - 25;
-    const rightX = rightNode.left + rightNode.width / 2 - 25;
-    const rightY = rightNode.top + rightNode.height / 2 - 25;
+    // Reset old glow tracks
+    leftBox.classList.remove('target-glow-left');
+    rightBox.classList.remove('target-glow-right');
 
-    // Temporary step to turn off transition timing for instant placement positioning
+    /* Centering calculation offset for our clean vector custom box */
+    const leftX = leftNode.left + leftNode.width / 2 - 20;
+    const leftY = leftNode.top + leftNode.height / 2 - 32;
+    const rightX = rightNode.left + rightNode.width / 2 - 20;
+    const rightY = rightNode.top + rightNode.height / 2 - 32;
+
     boy.style.transition = 'none';
+    boy.classList.remove('running');
+    boy.classList.add('walking'); 
 
     if (originSide === 'left') {
+      rightBox.classList.add('target-glow-right');
+
       boy.style.left = `${leftX}px`;
       boy.style.top = `${leftY}px`;
-      boy.style.transform = 'scaleX(1)'; // Facing forward right
+      boy.style.transform = 'scaleX(1)'; 
       boy.style.display = 'flex';
 
-      // Force layout flush rewrite before starting long transition
       void boy.offsetWidth;
 
-      // Initialize the 5-minute linear transition destination settings
       boy.style.transition = 'left 300000ms linear, top 300000ms linear';
       boy.style.left = `${rightX}px`;
       boy.style.top = `${rightY}px`;
     } else {
+      leftBox.classList.add('target-glow-left');
+
       boy.style.left = `${rightX}px`;
       boy.style.top = `${rightY}px`;
-      boy.style.transform = 'scaleX(-1)'; // Flip mirror image horizontally to face left
+      boy.style.transform = 'scaleX(-1)'; 
       boy.style.display = 'flex';
 
       void boy.offsetWidth;
@@ -566,49 +680,60 @@
     }
   }
 
-  // INTERRUPT ACTION: Triggered instantly on mouse hover or finger tap touch event input
   function retreatHome() {
     const boy = document.getElementById('traveler-boy');
-    if (!boy || boy.style.display !== 'flex') return;
+    const leftBox = document.getElementById('scroll-left-pop');
+    const rightBox = document.getElementById('scroll-right-pop');
 
-    // Get current fractional location coordinate layout markers instantly mid-walk
+    if (!boy || boy.style.display !== 'flex' || boy.classList.contains('running')) return;
+
+    boy.classList.remove('walking');
+    boy.classList.add('running');
+
+    leftBox.classList.remove('target-glow-left');
+    rightBox.classList.remove('target-glow-right');
+    if (currentStartOrigin === 'left') {
+      leftBox.classList.add('target-glow-left');
+    } else {
+      rightBox.classList.add('target-glow-right');
+    }
+
     const currentPosition = boy.getBoundingClientRect();
     
-    // Freeze the character exactly where he was touched
     boy.style.transition = 'none';
     boy.style.left = `${currentPosition.left}px`;
     boy.style.top = `${currentPosition.top}px`;
 
     void boy.offsetWidth;
 
-    const leftNode = document.getElementById('scroll-left-pop').getBoundingClientRect();
-    const rightNode = document.getElementById('scroll-right-pop').getBoundingClientRect();
+    const leftNode = leftBox.getBoundingClientRect();
+    const rightNode = rightBox.getBoundingClientRect();
 
-    const leftX = leftNode.left + leftNode.width / 2 - 25;
-    const leftY = leftNode.top + leftNode.height / 2 - 25;
-    const rightX = rightNode.left + rightNode.width / 2 - 25;
-    const rightY = rightNode.top + rightNode.height / 2 - 25;
+    const leftX = leftNode.left + leftNode.width / 2 - 20;
+    const leftY = leftNode.top + leftNode.height / 2 - 32;
+    const rightX = rightNode.left + rightNode.width / 2 - 20;
+    const rightY = rightNode.top + rightNode.height / 2 - 32;
 
-    // Apply a fast, snappy 600ms run-back animation curve
     boy.style.transition = 'left 600ms cubic-bezier(0.25, 1, 0.5, 1), top 600ms cubic-bezier(0.25, 1, 0.5, 1)';
 
     if (currentStartOrigin === 'left') {
-      boy.style.transform = 'scaleX(-1)'; // Turn around to run back left
+      boy.style.transform = 'scaleX(-1)'; 
       boy.style.left = `${leftX}px`;
       boy.style.top = `${leftY}px`;
     } else {
-      boy.style.transform = 'scaleX(1)'; // Turn around to run back right
+      boy.style.transform = 'scaleX(1)'; 
       boy.style.left = `${rightX}px`;
       boy.style.top = `${rightY}px`;
     }
 
-    // Fully hide avatar completely from DOM space once safe-return completes
     setTimeout(() => {
       boy.style.display = 'none';
+      boy.classList.remove('running');
+      leftBox.classList.remove('target-glow-left');
+      rightBox.classList.remove('target-glow-right');
     }, 600);
   }
 </script>
-
 
 
 
