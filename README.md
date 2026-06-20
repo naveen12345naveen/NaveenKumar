@@ -860,27 +860,30 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
 
 <section id="my professional work">
     <div class="skills-box" style="
-        background: #ffffff; 
+        background: #121214; /* Deep premium dark background to make the glow stand out */
+        color: #f3f4f6; /* Light text for readability */
         border-radius: 12px; 
         padding: 25px; 
         position: relative;
-        border: 1px solid rgba(255, 136, 0, 0.15);
-        /* The VFX Glow: Layering multiple smooth, warm ambient shadows on all sides */
+        border: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
+        
+        /* VFX Warm Light Glow on all sides (0 offset ensures it doesn't leak out of corners sharply) */
         box-shadow: 
-            0 0 20px 2px rgba(255, 115, 0, 0.12),   /* Core warm orange glow */
-            0 0 40px 5px rgba(255, 196, 0, 0.08),   /* Secondary gold spread */
-            inset 0 0 12px rgba(255, 136, 0, 0.03); /* Subtle internal warmth */
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   /* Vibrant inner amber warmth */
+            0 0 50px 10px rgba(230, 140, 10, 0.15), /* Soft golden outer spread */
+            inset 0 0 15px rgba(255, 100, 0, 0.08); /* Internal edge warmth */
+        
         transition: all 0.4s ease-in-out;
     "
-    onmouseover="this.style.boxShadow='0 0 30px 4px rgba(255, 115, 0, 0.2), 0 0 50px 8px rgba(255, 196, 0, 0.12), inset 0 0 15px rgba(255, 136, 0, 0.05)';"
-    onmouseout="this.style.boxShadow='0 0 20px 2px rgba(255, 115, 0, 0.12), 0 0 40px 5px rgba(255, 196, 0, 0.08), inset 0 0 12px rgba(255, 136, 0, 0.03)';">
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)';">
       
-      <h3 style="margin-top: 0; color: #333;">My Professional Work</h3>
-      <ul class="skills-list" style="margin-bottom: 0; padding-left: 20px; line-height: 1.6;">
-        <li><strong>Digital Marketing</strong> – Strategic content creation, professional video editing, and impact-driven poster design.</li>
-        <li><strong>Financial Analysis</strong> – Comprehensive financial statement evaluation and strategic portfolio management.</li>
-        <li><strong>Custom Solutions</strong> – Dedicated consulting and tailored support to solve your unique business challenges.</li>
-        <li><strong>Finance Filing</strong> – GST, VAT, TDS, TCS, Income Tax and other Filing and Queries.</li>
+      <h3 style="margin-top: 0; color: #ff9f43; font-size: 1.6rem; letter-spacing: 0.5px;">My Professional Work</h3>
+      <ul class="skills-list" style="margin-bottom: 0; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Digital Marketing</strong> – Strategic content creation, professional video editing, and impact-driven poster design.</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Financial Analysis</strong> – Comprehensive financial statement evaluation and strategic portfolio management.</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #ffb774;">Custom Solutions</strong> – Dedicated consulting and tailored support to solve your unique business challenges.</li>
+        <li style="margin-bottom: 0;"><strong style="color: #ffb774;">Finance Filing</strong> – GST, VAT, TDS, TCS, Income Tax and other Filing and Queries.</li>
       </ul>
     </div>
 </section>
