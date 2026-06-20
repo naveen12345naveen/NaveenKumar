@@ -441,7 +441,7 @@
   </nav>
 
 <a id="scroll-left-pop" class="left-popup-box">
-  <img src="Indiaflag.jpg" alt="Pop-up Image">
+  <img src="naveenkumar.jpg.jpeg" alt="Pop-up Image">
 </a>
 
 <style>
