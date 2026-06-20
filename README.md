@@ -487,16 +487,15 @@
   });
 </script>
 
-
-<a id="scroll-left-pop" class="right-popup-box">
+<a id="scroll-right-pop" class="right-popup-box">
   <img src="Indiaflag.jpg" alt="Pop-up Image">
 </a>
 
 <style>
-  .left-popup-box {
+  .right-popup-box {
     position: fixed;
-    bottom: 80px;          
-    right: -120px; /* FIXED: Start completely off-screen so the slide-in effect is visible */       
+    top: 80px;            /* Positioned near the top */
+    right: -120px;        /* Hidden off-screen to the right initially */       
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -506,7 +505,7 @@
     z-index: 99999;        
     display: block; 
     
-    /* Smooth cubic-bezier transition for a nice "pop/bounce" effect */
+    /* Smooth transition on the 'right' property */
     transition: right 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -516,9 +515,9 @@
     object-fit: cover;
   }
 
-  /* When this class is added via JS, it overrides the default 'right' value */
-  .left-popup-box.slide-in {
-    left: 25px;            
+  /* When scrolled down, slides in 25px away from the right edge */
+  .right-popup-box.slide-in {
+    right: 25px;            
   }
 </style>
 
@@ -526,7 +525,6 @@
   window.addEventListener('scroll', function() {
     const popImage = document.getElementById('scroll-right-pop');
     
-    // Checks if user has scrolled down more than 200px
     if (window.scrollY > 200) {
       popImage.classList.add('slide-in');
     } else {
