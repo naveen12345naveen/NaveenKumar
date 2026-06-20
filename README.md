@@ -999,19 +999,61 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
   </blockquote>
 </div>
 
-  <!-- Contact Section -->
-    <section id="contact">
-      <h2>Get In Touch</h2>
-      <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        
-        <button type="su  bmit">Send Message</button>
-      </form>
-    </section>
+  <section id="contact" style="padding: 50px 20px; display: flex; justify-content: center; background: #0d0d0e;">
+  
+  <div class="contact-box" style="
+      background: #121214; /* Deep premium dark background */
+      color: #f3f4f6; /* Light text for readability */
+      border-radius: 12px; 
+      padding: 30px; 
+      position: relative;
+      width: 100%;
+      max-width: 450px; /* Keeps the form looking neat on desktop */
+      box-sizing: border-box;
+      border: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
+      
+      /* VFX Warm Light Glow on all sides */
+      box-shadow: 
+          0 0 25px 2px rgba(255, 90, 0, 0.25),   /* Vibrant inner amber warmth */
+          0 0 50px 10px rgba(230, 140, 10, 0.15), /* Soft golden outer spread */
+          inset 0 0 15px rgba(255, 100, 0, 0.08); /* Internal edge warmth */
+      
+      transition: all 0.4s ease-in-out;
+  "
+  onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+  onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';">
+    
+    <h2 style="margin-top: 0; margin-bottom: 25px; color: #ff9f43; font-size: 1.8rem; letter-spacing: 0.5px; text-align: center;">Get In Touch</h2>
+    
+    <form action="https://formsubmit.co/naveenbalakrishnan146@gmail.com" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <input type="text" name="name" placeholder="Your Name" required style="
+          width: 100%; padding: 12px; background: #1a1a1e; border: 1px solid rgba(255, 140, 0, 0.2); 
+          border-radius: 6px; color: #f3f4f6; font-size: 1rem; box-sizing: border-box;
+      ">
+      
+      <input type="email" name="email" placeholder="Your Email" required style="
+          width: 100%; padding: 12px; background: #1a1a1e; border: 1px solid rgba(255, 140, 0, 0.2); 
+          border-radius: 6px; color: #f3f4f6; font-size: 1rem; box-sizing: border-box;
+      ">
+      
+      <textarea name="message" placeholder="Your Message" required style="
+          width: 100%; height: 120px; padding: 12px; background: #1a1a1e; border: 1px solid rgba(255, 140, 0, 0.2); 
+          border-radius: 6px; color: #f3f4f6; font-size: 1rem; box-sizing: border-box; resize: vertical;
+      "></textarea>
+      
+      <button type="submit" style="
+          width: 100%; padding: 14px; background: linear-gradient(135deg, #ff9f43, #ff6b6b); 
+          border: none; border-radius: 6px; color: #fff; font-size: 1rem; font-weight: bold; 
+          cursor: pointer; transition: opacity 0.2s ease; margin-top: 5px;
+      "
+      onmouseover="this.style.opacity='0.9'"
+      onmouseout="this.style.opacity='1'">Send Message</button>
+    </form>
+    
+  </div>
+</section>
     
   <!-- High Effect Footer Section -->
   <footer>
