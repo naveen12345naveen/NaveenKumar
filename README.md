@@ -440,7 +440,7 @@
     <a href="#contact">Contact</a>
   </nav>
 
-<a id="scroll-left-pop">
+<a id="scroll-left-pop" class="left-popup-box">
   <img src="Indiaflag.jpg" alt="Pop-up Image">
 </a>
 
@@ -448,7 +448,7 @@
   .left-popup-box {
     position: fixed;
     bottom: 80px;          
-    left: 130px;          
+    left: -120px; /* FIXED: Start completely off-screen so the slide-in effect is visible */       
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -456,8 +456,9 @@
     border: 2px solid #4CAF50;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 99999;        
-    display: block; /* Ensures the entire circle link area remains clickable */
+    display: block; 
     
+    /* Smooth cubic-bezier transition for a nice "pop/bounce" effect */
     transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -467,6 +468,7 @@
     object-fit: cover;
   }
 
+  /* When this class is added via JS, it overrides the default 'left' value */
   .left-popup-box.slide-in {
     left: 25px;            
   }
@@ -476,6 +478,7 @@
   window.addEventListener('scroll', function() {
     const popImage = document.getElementById('scroll-left-pop');
     
+    // Checks if user has scrolled down more than 200px
     if (window.scrollY > 200) {
       popImage.classList.add('slide-in');
     } else {
@@ -483,7 +486,6 @@
     }
   });
 </script>
-
 
 <div class="college-badge" style="text-align: center; margin-bottom: 15px;">
   <!-- Profile Image Link -->
