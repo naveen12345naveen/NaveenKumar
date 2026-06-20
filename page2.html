@@ -228,12 +228,15 @@
 
 
 
-
 <audio id="bg-music" loop autoplay muted>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="global-screen-glow"></div>
+
+<div id="audio-click-overlay" class="audio-interaction-overlay">
+  <div class="interaction-prompt">⚡ TAP ANYWHERE TO SYSTEM ACTIVATION ⚡</div>
+</div>
 
 <div class="audio-player-widget">
   <div class="visualizer-container playing" id="visualizer">
@@ -250,27 +253,54 @@
 
 <style>
   :root {
-    --neon-cyan: #00f0ff;
-    --neon-magenta: #ff007f;
-    --panel-bg: rgba(10, 12, 18, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --neon-gold: #ffdf00;
+    --neon-yellow: #e5b800;
+    --amber-glow: rgba(255, 223, 0, 0.3);
+    --panel-bg: rgba(10, 12, 18, 0.55);
+    --glass-border: rgba(255, 223, 0, 0.15);
   }
 
-  /* NEW: Dynamic Global Edge Glow Overlay for Entire Webpage */
+  /* Full Screen Click Capturer for Audio Context Initiation */
+  .audio-interaction-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 5, 10, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.6s ease, visibility 0.6s;
+  }
+
+  .interaction-prompt {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--neon-gold);
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px var(--amber-glow);
+    animation: textPulse 1.5s infinite alternate;
+  }
+
+  /* Dynamic Global Edge Glow Overlay on All Sides */
   .global-screen-glow {
     position: fixed;
     inset: 0;
     width: 100vw;
     height: 100vh;
-    pointer-events: none; /* Prevents blocking clicks on text or links underneath */
-    z-index: 9999; /* Overlays on top of background layers safely */
+    pointer-events: none;
+    z-index: 9999;
     
-    /* Configures inner shadow lines around all sides of your screen */
     box-shadow: 
-      inset 0 0 30px rgba(0, 240, 255, 0.25),
-      inset 0 0 60px rgba(255, 0, 127, 0.15);
+      inset 0 0 40px rgba(255, 223, 0, 0.2),
+      inset 0 0 80px rgba(229, 184, 0, 0.1);
     
-    animation: atmosphericPulse 4s ease-in-out infinite alternate;
+    animation: atmosphericPulse 3.5s ease-in-out infinite alternate;
   }
 
   /* Audio Player Widget */
@@ -291,19 +321,19 @@
     transform: perspective(800px) rotateX(10deg) rotateY(-10deg);
     transform-style: preserve-3d;
     box-shadow: 
-      -5px 5px 15px rgba(0, 0, 0, 0.4),
-      0 0 40px rgba(0, 240, 255, 0.05),
-      inset 0 1px 2px rgba(255, 255, 255, 0.2);
+      -5px 5px 15px rgba(0, 0, 0, 0.6),
+      0 0 30px rgba(255, 223, 0, 0.05),
+      inset 0 1px 2px rgba(255, 255, 255, 0.1);
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .audio-player-widget:hover {
-    background: rgba(15, 20, 30, 0.6);
+    background: rgba(20, 18, 12, 0.7);
     transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(-5px);
     box-shadow: 
-      0 15px 35px rgba(0, 0, 0, 0.5),
-      0 0 45px rgba(0, 240, 255, 0.3),
-      inset 0 1px 2px rgba(255, 255, 255, 0.3);
+      0 15px 35px rgba(0, 0, 0, 0.6),
+      0 0 40px rgba(255, 223, 0, 0.25),
+      inset 0 1px 2px rgba(255, 255, 255, 0.15);
   }
 
   .visualizer-container {
@@ -313,9 +343,9 @@
     justify-content: center;
     width: 44px;
     height: 44px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 223, 0, 0.1);
     transform: translateZ(15px);
     overflow: hidden;
   }
@@ -324,7 +354,7 @@
     position: absolute;
     width: 120%;
     height: 120%;
-    background: radial-gradient(circle, rgba(0,240,255,0.3) 0%, rgba(255,0,127,0) 70%);
+    background: radial-gradient(circle, rgba(255,223,0,0.3) 0%, rgba(229,184,0,0) 70%);
     opacity: 1;
     mix-blend-mode: screen;
     animation: pulseGlow 3s infinite alternate;
@@ -341,10 +371,10 @@
   .bar3d {
     width: 3px;
     height: 30%;
-    background: linear-gradient(to top, var(--neon-magenta), var(--neon-cyan));
+    background: linear-gradient(to top, var(--neon-yellow), var(--neon-gold));
     border-radius: 2px;
     transform-origin: bottom;
-    box-shadow: 0 0 8px var(--neon-cyan);
+    box-shadow: 0 0 8px var(--neon-gold);
     animation: vfxBounce 0.6s ease-in-out infinite alternate;
   }
 
@@ -354,25 +384,28 @@
   .bar3d:nth-child(4) { animation-delay: 0.5s; height: 100%; }
   .bar3d:nth-child(5) { animation-delay: 0.15s; height: 40%; }
 
-  /* NEW: Global Atmosphere Ambient Glow Keyframes */
+  /* Atmospheric Gold Pulse Animations */
   @keyframes atmosphericPulse {
     0% {
       box-shadow: 
-        inset 0 0 30px rgba(0, 240, 255, 0.2),
-        inset 0 0 60px rgba(255, 0, 127, 0.1);
-      filter: drop-shadow(0 0 2px var(--neon-cyan));
+        inset 0 0 30px rgba(255, 223, 0, 0.2),
+        inset 0 0 60px rgba(229, 184, 0, 0.1);
     }
     100% {
       box-shadow: 
-        inset 0 0 50px rgba(0, 240, 255, 0.4),
-        inset 0 0 100px rgba(255, 0, 127, 0.25);
-      filter: drop-shadow(0 0 10px var(--neon-magenta));
+        inset 0 0 60px rgba(255, 223, 0, 0.45),
+        inset 0 0 120px rgba(229, 184, 0, 0.25);
     }
   }
 
+  @keyframes textPulse {
+    from { opacity: 0.4; text-shadow: 0 0 5px var(--amber-glow); }
+    to { opacity: 1; text-shadow: 0 0 20px var(--neon-gold); }
+  }
+
   @keyframes vfxBounce {
-    0% { transform: scaleY(0.25); filter: hue-rotate(0deg); }
-    100% { transform: scaleY(1.1); filter: hue-rotate(45deg); }
+    0% { transform: scaleY(0.25); filter: brightness(0.9); }
+    100% { transform: scaleY(1.1); filter: brightness(1.2); }
   }
 
   @keyframes pulseGlow {
@@ -382,11 +415,26 @@
 </style>
 
 <script>
+  const music = document.getElementById('bg-music');
+  const overlay = document.getElementById('audio-click-overlay');
+
   window.addEventListener('DOMContentLoaded', () => {
-    const music = document.getElementById('bg-music');
     music.volume = 0.5;
-    music.play().catch(() => {
-      console.log("Automated ambient audio stream layer initialized.");
-    });
+    // Attempt auto play immediately (will buffer track in background)
+    music.play().catch(() => {});
+  });
+
+  // Global screen tracking script to remove browser restrictions
+  document.addEventListener('click', () => {
+    if (music.muted) {
+      music.muted = false; // Disables muted state safely
+      music.play().catch(() => {});
+      
+      // Smoothly hide prompt layer
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.style.visibility = 'hidden';
+      }, 600);
+    }
   });
 </script>
