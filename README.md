@@ -1283,41 +1283,82 @@ onmouseout="
     </div>
 </section>
 
-  <!-- Vision Statement Showcase Module -->
-<div class="vision-container" style="
+ <div class="vision-container" style="
   margin-top: 45px; 
-  padding: 30px; 
-  background: linear-gradient(135deg, rgba(253, 251, 247, 0.9) 0%, rgba(245, 240, 230, 0.9) 100%); 
+  padding: 35px 30px; 
+  background: radial-gradient(circle at center, #221a16 0%, #110c0a 100%); /* Deep luxurious dark wood aesthetic */
   border-radius: 16px; 
   text-align: center;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.2);
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-sizing: border-box;
   cursor: default;
-" 
-onmouseover="this.style.transform='translateY(-6px)'; this.style.boxShadow='0 12px 30px rgba(212, 175, 55, 0.18)'; this.style.borderColor='rgba(212, 175, 55, 0.5)';"
-onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(212, 175, 55, 0.08)'; this.style.borderColor='rgba(212, 175, 55, 0.2)';"
->
-  <!-- Decorative Background Quote Mark -->
-  <div style="position: absolute; top: -20px; right: -10px; font-size: 7rem; color: rgba(212, 175, 55, 0.04); font-family: serif; pointer-events: none; user-select: none;">"</div>
   
-  <!-- Icon -->
-  <div style="font-size: 2rem; margin-bottom: 12px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">💡</div>
+  /* Precision Structural Border & Warm Light Burst Glow */
+  border: 1px solid rgba(255, 140, 0, 0.3);
+  box-shadow: 
+      0 0 30px 2px rgba(255, 90, 0, 0.2),       /* Inner warm core */
+      0 10px 40px -10px rgba(0, 0, 0, 0.7),      /* Deep ground shadow drop */
+      inset 0 0 20px rgba(255, 100, 0, 0.05);    /* Ambient interior heat glow */
+      
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+" 
+onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 0 45px 6px rgba(255, 90, 0, 0.35), 0 15px 50px -5px rgba(0, 0, 0, 0.85), inset 0 0 25px rgba(255, 100, 0, 0.1)'; this.style.borderColor='rgba(255, 159, 67, 0.6)';"
+onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px 2px rgba(255, 90, 0, 0.2), 0 10px 40px -10px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(255, 100, 0, 0.05)'; this.style.borderColor='rgba(255, 140, 0, 0.3)';" >
 
-  <!-- Label / Tagline -->
-  <span class="vision-label" style="display: block; font-size: 0.85rem; color: #8c766c; margin-bottom: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;">
+  <div style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); opacity: 0.25; pointer-events: none;">
+    <svg width="14" height="40" viewBox="0 0 14 40" fill="none" stroke="#ff9f43" stroke-width="1.5">
+      <line x1="7" y1="0" x2="7" y2="40" stroke-dasharray="2 4"/>
+      <circle cx="7" cy="20" r="3" fill="#ff9f43"/>
+    </svg>
+  </div>
+  <div style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); opacity: 0.25; pointer-events: none;">
+    <svg width="14" height="40" viewBox="0 0 14 40" fill="none" stroke="#ff9f43" stroke-width="1.5">
+      <line x1="7" y1="0" x2="7" y2="40" stroke-dasharray="2 4"/>
+      <circle cx="7" cy="20" r="3" fill="#ff9f43"/>
+    </svg>
+  </div>
+
+  <div style="position: absolute; top: 0; left: 0; width: 60px; height: 60px; border-top: 2px solid #ff9f43; border-left: 2px solid #ff9f43; border-top-left-radius: 16px; opacity: 0.4; pointer-events: none;"></div>
+  <div style="position: absolute; bottom: 0; right: 0; width: 60px; height: 60px; border-bottom: 2px solid #ff9f43; border-right: 2px solid #ff9f43; border-bottom-right-radius: 16px; opacity: 0.4; pointer-events: none;"></div>
+
+  <div style="position: absolute; top: -35px; right: -15px; font-size: 10rem; color: rgba(255, 159, 67, 0.04); font-family: serif; pointer-events: none; user-select: none; line-height: 1;">“</div>
+  
+  <div style="margin-bottom: 16px; display: flex; justify-content: center; align-items: center; gap: 15px;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7; filter: drop-shadow(0 0 5px rgba(255,159,67,0.5));">
+      <circle cx="12" cy="12" r="10"></circle>
+      <circle cx="12" cy="12" r="6"></circle>
+      <circle cx="12" cy="12" r="2"></circle>
+    </svg>
+
+    <div style="font-size: 2rem; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));">💡</div>
+
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.7; filter: drop-shadow(0 0 5px rgba(255,159,67,0.5));">
+      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"></path>
+      <circle cx="12" cy="12" r="3"></circle>
+    </svg>
+  </div>
+
+  <span class="vision-label" style="display: inline-block; font-size: 0.8rem; color: #ffb774; margin-bottom: 16px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; background: rgba(255, 159, 67, 0.08); padding: 4px 14px; border-radius: 12px; border: 1px solid rgba(255, 159, 67, 0.15); display: inline-flex; align-items: center; gap: 8px;">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+      <path d="M20 6L9 17l-5-5"></path>
+    </svg>
     Our Vision
   </span>
   
-  <!-- Elegant Divider Line -->
-  <div style="width: 50px; height: 2px; background: #d4af37; margin: 0 auto 16px auto; border-radius: 2px;"></div>
+  <div style="width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #ff9f43, transparent); margin: 0 auto 20px auto; filter: drop-shadow(0 0 4px #ff9f43);"></div>
 
-  <!-- Main Core Quote -->
-  <blockquote class="vision-text" style="font-size: 1.45rem; font-style: italic; font-weight: 600; color: #2c221e; margin: 0; padding: 0 10px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, sans-serif;">
-    "A flexible, innovative approach to problem-solving that uses limited resources to get things done"
-  </blockquote>
+  <div style="background: rgba(17, 12, 10, 0.6); padding: 20px; border-radius: 8px; border: 1px solid rgba(255, 140, 0, 0.1); max-width: 650px; margin: 0 auto; position: relative;">
+    
+    <div style="position: absolute; top: 4px; left: 4px; width: 4px; height: 4px; background: #ff9f43; opacity: 0.4; border-radius: 50%;"></div>
+    <div style="position: absolute; top: 4px; right: 4px; width: 4px; height: 4px; background: #ff9f43; opacity: 0.4; border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: 4px; left: 4px; width: 4px; height: 4px; background: #ff9f43; opacity: 0.4; border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: 4px; right: 4px; width: 4px; height: 4px; background: #ff9f43; opacity: 0.4; border-radius: 50%;"></div>
+
+    <blockquote class="vision-text" style="font-size: 1.5rem; font-style: italic; font-weight: 600; color: #ffffff; margin: 0; padding: 0 5px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-shadow: 0 0 10px rgba(255, 159, 67, 0.5), 0 0 20px rgba(255, 90, 0, 0.25);">
+      "A flexible, innovative approach to problem-solving that uses limited resources to get things done"
+    </blockquote>
+  </div>
 </div>
 
   <section id="contact" style="padding: 50px 20px; display: flex; justify-content: center; background: #0d0d0e;">
@@ -1375,10 +1416,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20
     
   </div>
 </section>
-
-
-
-
     
   <!-- High Effect Footer Section -->
   <footer>
