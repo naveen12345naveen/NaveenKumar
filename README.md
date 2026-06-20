@@ -440,50 +440,26 @@
     <a href="#contact">Contact</a>
   </nav>
 
-
-
-
-<!-- ==========================================================================
-     1. FIXED FOREGROUND POPUPS & CANVAS
-     ========================================================================== -->
-
-<!-- Left Box -->
-<a id="scroll-left-pop" class="front-popup-box left-side" onclick="triggerInstantLightning(event)">
+<div id="scroll-left-pop" class="front-popup-box left-side" onclick="spawnWalkingBoy('left')">
   <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar">
-  <div class="shockwave-ring"></div>
-</a>
+</div>
 
-<!-- Right Box -->
-<a id="scroll-right-pop" class="front-popup-box right-side" onclick="triggerInstantLightning(event)">
+<div id="scroll-right-pop" class="front-popup-box right-side" onclick="spawnWalkingBoy('right')">
   <img src="Indiaflag.jpg" alt="India Flag">
-  <div class="shockwave-ring"></div>
-</a>
+</div>
 
-<!-- Overlay Canvas for Drawing the Electricity Arcs -->
-<canvas id="lightning-canvas"></canvas>
+<div id="traveler-boy" class="boy-avatar" onmouseenter="retreatHome()" ontouchstart="retreatHome()">
+  🚶‍♂️
+</div>
 
 
-<!-- ==========================================================================
-     2. STYLES (FRONT DESIGN & NEON GLOWS)
-     ========================================================================== -->
 <style>
-  #lightning-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none; 
-    z-index: 100000;      
-  }
-
-  /* Universal style for elements sitting in front of the website */
+  /* Base setup for foreground interaction anchors */
   .front-popup-box {
     position: fixed;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    overflow: visible; 
     z-index: 99999;        
     display: block; 
     cursor: pointer;
@@ -492,7 +468,6 @@
     animation: gentleFloat 3s ease-in-out infinite alternate;
   }
 
-  /* Fixed Positions instead of hidden coordinates */
   .left-side {
     bottom: 80px;         
     left: 25px;            
@@ -508,50 +483,33 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
   }
 
-  .left-side img {
-    border: 3px solid #00e676; 
-    box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+  .front-popup-box:hover img {
+    transform: scale(1.05);
   }
 
-  .right-side img {
-    border: 3px solid #ff9933; 
-    box-shadow: 0 0 20px rgba(255, 153, 51, 0.4);
+  /* The Walking Boy Avatar configuration */
+  .boy-avatar {
+    position: fixed;
+    font-size: 2.5rem; /* Clean emoji visual scaled comfortably */
+    width: 50px;
+    height: 50px;
+    display: none; /* Managed dynamically by engine context */
+    align-items: center;
+    justify-content: center;
+    z-index: 100000; /* Stays securely on top of everything */
+    cursor: pointer;
+    user-select: none;
+    pointer-events: auto;
+    
+    /* Linear progression makes the long 5 minute walk smooth and steady */
+    transition: left 300000ms linear, top 300000ms linear;
   }
 
-  /* Hover Magnifications */
-  .left-side:hover img { transform: scale(1.08); box-shadow: 0 0 30px #00e676; }
-  .right-side:hover img { transform: scale(1.08); box-shadow: 0 0 30px #ff9933; }
-
-  /* Click Impact Warp */
-  .impact-pop {
-    animation: buttonWarp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.4);
-  }
-  @keyframes buttonWarp {
-    0% { transform: scale(1); }
-    30% { transform: scale(1.25); }
-    100% { transform: scale(1); }
-  }
-
-  /* Discharge Rings */
-  .shockwave-ring {
-    position: absolute;
-    inset: -5px;
-    border-radius: 50%;
-    border: 4px solid #00d2ff;
-    opacity: 0;
-    pointer-events: none;
-  }
-  .blast-ring {
-    animation: ringExpand 0.5s cubic-bezier(0.1, 0.8, 0.3, 1);
-  }
-  @keyframes ringExpand {
-    0% { transform: scale(0.8); opacity: 1; filter: blur(0px); }
-    100% { transform: scale(1.8); opacity: 0; filter: blur(4px); }
-  }
-
+  /* Gentle structural breathing animation for anchor elements */
   @keyframes gentleFloat {
     0% { transform: translateY(0); }
     100% { transform: translateY(-6px); }
@@ -559,116 +517,101 @@
 </style>
 
 
-<!-- ==========================================================================
-     3. INSTANT LIGHTNING JAVASCRIPT ENGINE (SIDES-AWARE)
-     ========================================================================== -->
 <script>
-  const canvas = document.getElementById('lightning-canvas');
-  const ctx = canvas.getContext('2d');
+  let currentStartOrigin = null;
 
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  window.addEventListener('resize', resizeCanvas);
-  resizeCanvas();
+  function spawnWalkingBoy(originSide) {
+    const boy = document.getElementById('traveler-boy');
+    const leftNode = document.getElementById('scroll-left-pop').getBoundingClientRect();
+    const rightNode = document.getElementById('scroll-right-pop').getBoundingClientRect();
 
-  let activeLightningBolts = [];
+    // Prevent re-triggering mid-walk unless he resets
+    if (boy.style.display === 'flex') return;
 
-  function triggerInstantLightning(event) {
-    event.preventDefault();
+    currentStartOrigin = originSide;
 
-    // Identify which specific element triggered the click event
-    const clickedElement = event.currentTarget;
-    const leftElement = document.getElementById('scroll-left-pop');
-    const rightElement = document.getElementById('scroll-right-pop');
-    const targetElement = (clickedElement === leftElement) ? rightElement : leftElement;
+    // Compute center vectors
+    const leftX = leftNode.left + leftNode.width / 2 - 25;
+    const leftY = leftNode.top + leftNode.height / 2 - 25;
+    const rightX = rightNode.left + rightNode.width / 2 - 25;
+    const rightY = rightNode.top + rightNode.height / 2 - 25;
 
-    // Trigger visual feedback pops on both elements simultaneously
-    [leftElement, rightElement].forEach(el => {
-      el.classList.remove('impact-pop');
-      void el.offsetWidth;
-      el.classList.add('impact-pop');
+    // Temporary step to turn off transition timing for instant placement positioning
+    boy.style.transition = 'none';
 
-      const ring = el.querySelector('.shockwave-ring');
-      ring.classList.remove('blast-ring');
-      void ring.offsetWidth;
-      ring.classList.add('blast-ring');
-    });
+    if (originSide === 'left') {
+      boy.style.left = `${leftX}px`;
+      boy.style.top = `${leftY}px`;
+      boy.style.transform = 'scaleX(1)'; // Facing forward right
+      boy.style.display = 'flex';
 
-    // Extract screen coordinates
-    const rectClicked = clickedElement.getBoundingClientRect();
-    const rectTarget = targetElement.getBoundingClientRect();
+      // Force layout flush rewrite before starting long transition
+      void boy.offsetWidth;
 
-    // Start coordinates always originate from the specifically clicked item
-    const startX = rectClicked.left + rectClicked.width / 2;
-    const startY = rectClicked.top + rectClicked.height / 2;
-    const endX = rectTarget.left + rectTarget.width / 2;
-    const endY = rectTarget.top + rectTarget.height / 2;
-
-    // Generate multiple raw jagged paths overlapping instantly for structural mass
-    activeLightningBolts.push({ startX, startY, endX, endY, alpha: 1.0, width: 4, color: '#ffffff', glow: '#00d2ff' });
-    activeLightningBolts.push({ startX, startY, endX, endY, alpha: 0.7, width: 2, color: '#e0f7fa', glow: '#00e676' });
-    activeLightningBolts.push({ startX, startY, endX, endY, alpha: 0.5, width: 1, color: '#ffffff', glow: '#ff9933' });
-
-    if (activeLightningBolts.length <= 3) {
-      requestAnimationFrame(renderEngine);
-    }
-  }
-
-  // Generates complete lightning branch equations down to the targeted location instantly
-  function drawInstantLightningPath(x1, y1, x2, y2, displace) {
-    if (displace < 4) {
-      ctx.lineTo(x2, y2);
+      // Initialize the 5-minute linear transition destination settings
+      boy.style.transition = 'left 300000ms linear, top 300000ms linear';
+      boy.style.left = `${rightX}px`;
+      boy.style.top = `${rightY}px`;
     } else {
-      const midX = (x1 + x2) / 2;
-      const midY = (y1 + y2) / 2;
-      const randX = midX + (Math.random() - 0.5) * displace;
-      const randY = midY + (Math.random() - 0.5) * displace;
-      
-      drawInstantLightningPath(x1, y1, randX, randY, displace / 2);
-      drawInstantLightningPath(randX, randY, x2, y2, displace / 2);
+      boy.style.left = `${rightX}px`;
+      boy.style.top = `${rightY}px`;
+      boy.style.transform = 'scaleX(-1)'; // Flip mirror image horizontally to face left
+      boy.style.display = 'flex';
+
+      void boy.offsetWidth;
+
+      boy.style.transition = 'left 300000ms linear, top 300000ms linear';
+      boy.style.left = `${leftX}px`;
+      boy.style.top = `${leftY}px`;
     }
   }
 
-  function renderEngine() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // INTERRUPT ACTION: Triggered instantly on mouse hover or finger tap touch event input
+  function retreatHome() {
+    const boy = document.getElementById('traveler-boy');
+    if (!boy || boy.style.display !== 'flex') return;
 
-    if (activeLightningBolts.length === 0) return;
+    // Get current fractional location coordinate layout markers instantly mid-walk
+    const currentPosition = boy.getBoundingClientRect();
+    
+    // Freeze the character exactly where he was touched
+    boy.style.transition = 'none';
+    boy.style.left = `${currentPosition.left}px`;
+    boy.style.top = `${currentPosition.top}px`;
 
-    for (let i = activeLightningBolts.length - 1; i >= 0; i--) {
-      let bolt = activeLightningBolts[i];
+    void boy.offsetWidth;
 
-      ctx.save();
-      ctx.globalAlpha = bolt.alpha;
-      ctx.shadowBlur = 20;
-      ctx.shadowColor = bolt.glow;
-      ctx.strokeStyle = bolt.color;
-      ctx.lineWidth = bolt.width;
-      ctx.lineCap = 'round';
-      ctx.lineJoin = 'round';
+    const leftNode = document.getElementById('scroll-left-pop').getBoundingClientRect();
+    const rightNode = document.getElementById('scroll-right-pop').getBoundingClientRect();
 
-      ctx.beginPath();
-      ctx.moveTo(bolt.startX, bolt.startY);
-      
-      // Renders the whole dynamic arc calculation line instantly across the frame
-      drawInstantLightningPath(bolt.startX, bolt.startY, bolt.endX, bolt.endY, 65);
-      
-      ctx.stroke();
-      ctx.restore();
+    const leftX = leftNode.left + leftNode.width / 2 - 25;
+    const leftY = leftNode.top + leftNode.height / 2 - 25;
+    const rightX = rightNode.left + rightNode.width / 2 - 25;
+    const rightY = rightNode.top + rightNode.height / 2 - 25;
 
-      // Sharp exponential fade out time cycle
-      bolt.alpha -= 0.07;
-      if (bolt.alpha <= 0) {
-        activeLightningBolts.splice(i, 1);
-      }
+    // Apply a fast, snappy 600ms run-back animation curve
+    boy.style.transition = 'left 600ms cubic-bezier(0.25, 1, 0.5, 1), top 600ms cubic-bezier(0.25, 1, 0.5, 1)';
+
+    if (currentStartOrigin === 'left') {
+      boy.style.transform = 'scaleX(-1)'; // Turn around to run back left
+      boy.style.left = `${leftX}px`;
+      boy.style.top = `${leftY}px`;
+    } else {
+      boy.style.transform = 'scaleX(1)'; // Turn around to run back right
+      boy.style.left = `${rightX}px`;
+      boy.style.top = `${rightY}px`;
     }
 
-    if (activeLightningBolts.length > 0) {
-      requestAnimationFrame(renderEngine);
-    }
+    // Fully hide avatar completely from DOM space once safe-return completes
+    setTimeout(() => {
+      boy.style.display = 'none';
+    }, 600);
   }
 </script>
+
+
+
+
 
 
 
