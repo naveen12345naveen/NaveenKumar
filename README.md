@@ -438,66 +438,66 @@
     gap: 10px; 
     padding: 15px 20px; 
     background: #121214; /* Deep premium dark background */
-    border-bottom: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
     position: sticky; 
     top: 0; 
     z-index: 1000;
     
-    /* VFX Warm Light Ambient Bar Glow */
-    box-shadow: 
-        0 4px 20px rgba(255, 90, 0, 0.08), 
-        0 1px 5px rgba(230, 140, 10, 0.1);
+    /* Single Continuous Warm Light VFX Underline */
+    border-bottom: 2px solid #ff9f43; 
+    box-shadow: 0 4px 25px 0px rgba(255, 140, 0, 0.45), 0 2px 10px 0px rgba(230, 140, 10, 0.25);
 ">
   <a href="#about" style="
       color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease-in-out;
+      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">About</a>
+  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
+  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">About</a>
   
   <a href="#education" style="
       color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease-in-out;
+      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">Education Section</a>
+  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
+  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Education Section</a>
   
   <a href="#experience" style="
       color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease-in-out;
+      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">Experience</a>
+  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
+  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Experience</a>
   
   <a href="#projects" style="
       color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease-in-out;
+      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">Projects</a>
+  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
+  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Projects</a>
   
   <a href="#skills" style="
       color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease-in-out;
+      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">Skills</a>
+  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
+  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Skills</a>
   
   <a href="#my professional work" style="
       color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease-in-out;
+      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">My Professional Work</a>
+  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
+  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">My Professional Work</a>
   
   <a href="#contact" style="
       color: #e0e0e6; text-decoration: none; font-weight: 500; font-size: 0.95rem; 
-      padding: 8px 16px; border-radius: 6px; transition: all 0.3s ease-in-out;
+      padding: 8px 16px; border-radius: 4px; transition: all 0.25s ease-in-out;
   " 
-  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.06)'; this.style.boxShadow='inset 0 -2px 0 #ff9f43';" 
-  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent'; this.style.boxShadow='none';">Contact</a>
+  onmouseover="this.style.color='#ff9f43'; this.style.background='rgba(255, 140, 0, 0.05)';" 
+  onmouseout="this.style.color='#e0e0e6'; this.style.background='transparent';">Contact</a>
 </nav>
 
+
+  
 <a id="scroll-left-pop" class="left-popup-box">
   <img src="naveenkumar.jpg.jpeg" alt="Pop-up Image">
 </a>
