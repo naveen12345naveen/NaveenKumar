@@ -429,6 +429,269 @@
 </head>
 <body>
 
+<meta name="viewport" content="width=1200, initial-scale=1.0">
+
+<div id="audio-click-overlay" class="audio-interaction-overlay">
+  <div class="hud-scanner-grid"></div>
+  <div class="hud-corner-bracket tl"></div>
+  <div class="hud-corner-bracket tr"></div>
+  <div class="hud-corner-bracket bl"></div>
+  <div class="hud-corner-bracket br"></div>
+  
+  <div class="hud-central-matrix-box">
+    <div class="hud-telemetry-text">SYSTEM_INITIALIZATION: DESKTOP_MODE_FORCED_PASS_1024</div>
+    
+    <div class="hud-pulse-ring-vfx">
+      <div class="inner-core-node">⚡</div>
+    </div>
+    
+    <div class="interaction-prompt">ENGINE ACTIVATION REQUIRED</div>
+    <div class="interaction-subtitle">TAP ANYWHERE TO STREAM DESKTOP CORE MODULES</div>
+    
+    <div class="hud-progress-track">
+      <div class="hud-progress-fill"></div>
+    </div>
+  </div>
+</div>
+
+<div class="audio-player-widget">
+  <div class="visualizer-container playing" id="visualizer">
+    <div class="glow-orb"></div>
+    <div class="vfx-bars">
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  :root {
+    --cyber-gold: #ffdf00;
+    --cyber-amber: #ff9f43;
+    --dark-void: #030307;
+    --hud-glow: rgba(255, 223, 0, 0.25);
+  }
+
+  /* CORE LAYER LAYOUT SETUP: Closed by default on standard PC monitors */
+  .audio-interaction-overlay {
+    display: none; 
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle at center, rgba(15, 12, 5, 0.98) 0%, var(--dark-void) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    user-select: none;
+    transition: opacity 0.5s ease, visibility 0.5s;
+  }
+
+  /* MOBILE AND TABLET ENVIRONMENT AUTOMATION DETECTION TRIGGER */
+  @media (max-width: 1024px) {
+    .audio-interaction-overlay {
+      display: flex;
+    }
+  }
+
+  /* HIGH-TECH HUD SCREEN GRAPHICS MATRIX */
+  .hud-scanner-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 223, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 223, 0, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+    pointer-events: none;
+  }
+
+  /* Cybernetic Corner Geometry Brackets */
+  .hud-corner-bracket {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--cyber-gold);
+    pointer-events: none;
+    opacity: 0.7;
+  }
+  .tl { top: 40px; left: 40px; border-right: 0; border-bottom: 0; }
+  .tr { top: 40px; right: 40px; border-left: 0; border-bottom: 0; }
+  .bl { bottom: 40px; left: 40px; border-right: 0; border-top: 0; }
+  .br { bottom: 40px; right: 40px; border-left: 0; border-top: 0; }
+
+  /* Central Module Box Display Bounding Wrapper */
+  .hud-central-matrix-box {
+    text-align: center;
+    z-index: 10;
+    max-width: 500px;
+    padding: 30px;
+  }
+
+  .hud-telemetry-text {
+    font-family: monospace;
+    font-size: 0.75rem;
+    color: var(--cyber-amber);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    opacity: 0.8;
+    text-transform: uppercase;
+  }
+
+  /* Dynamic Ring Core Node Animation Logic */
+  .hud-pulse-ring-vfx {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 35px;
+    border-radius: 50%;
+    border: 2px dashed var(--cyber-gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px rgba(255, 223, 0, 0.1);
+    animation: spinRing 20s linear infinite;
+  }
+
+  .hud-pulse-ring-vfx::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 223, 0, 0.2);
+    animation: pulseRingVFX 1.8s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+  }
+
+  .inner-core-node {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 223, 0, 0.1);
+    border: 1px solid var(--cyber-gold);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    color: var(--cyber-gold);
+    text-shadow: 0 0 15px var(--cyber-gold);
+    animation: reverseSpinRing 20s linear infinite;
+  }
+
+  /* Text Layout Sizing Rules */
+  .interaction-prompt {
+    font-family: 'Segoe UI', Roboto, Helvetica, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px var(--hud-glow);
+  }
+
+  .interaction-subtitle {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--cyber-gold);
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+    text-shadow: 0 0 8px rgba(255, 223, 0, 0.3);
+  }
+
+  /* Advanced Tech Micro-Progress Loading Engine Bar */
+  .hud-progress-track {
+    width: 220px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(255, 223, 0, 0.1);
+  }
+
+  .hud-progress-fill {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 60%;
+    background: linear-gradient(90deg, var(--cyber-amber), var(--cyber-gold));
+    box-shadow: 0 0 10px var(--cyber-gold);
+    animation: loopProgress 2.5s ease-in-out infinite alternate;
+  }
+
+  /* STYLING CORES FOR THE COMPACT AUDIO PLAYER */
+  .audio-player-widget {
+    position: fixed; bottom: 30px; right: 30px;
+    background: rgba(10, 12, 18, 0.4); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px; border-radius: 20px;
+    display: flex; align-items: center; z-index: 10000;
+    transform: perspective(800px) rotateX(10deg) rotateY(-10deg); transform-style: preserve-3d;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  }
+
+  .visualizer-container {
+    position: relative; display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; background: rgba(0, 0, 0, 0.3); border-radius: 14px; overflow: hidden;
+  }
+
+  .glow-orb {
+    position: absolute; width: 120%; height: 120%;
+    background: radial-gradient(circle, rgba(255,223,0,0.3) 0%, rgba(0,0,0,0) 70%);
+    animation: pulseGlow 3s infinite alternate;
+  }
+
+  .vfx-bars { display: flex; align-items: flex-end; gap: 3px; height: 20px; z-index: 2; }
+  .bar3d {
+    width: 3px; height: 30%; background: linear-gradient(to top, var(--cyber-amber), var(--cyber-gold));
+    border-radius: 2px; transform-origin: bottom; box-shadow: 0 0 8px var(--cyber-gold);
+    animation: vfxBounce 0.6s ease-in-out infinite alternate;
+  }
+  .bar3d:nth-child(1) { animation-delay: 0.1s; height: 75%; }
+  .bar3d:nth-child(2) { animation-delay: 0.35s; height: 90%; }
+  .bar3d:nth-child(3) { animation-delay: 0.2s; height: 60%; }
+  .bar3d:nth-child(4) { animation-delay: 0.5s; height: 100%; }
+  .bar3d:nth-child(5) { animation-delay: 0.15s; height: 40%; }
+
+  /* SYSTEM ANIMATIONS MATRIX TIMELINES */
+  @keyframes spinRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  @keyframes reverseSpinRing { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+  
+  @keyframes pulseRingVFX {
+    0% { transform: scale(0.6); opacity: 0; }
+    50% { opacity: 0.7; }
+    100% { transform: scale(1.2); opacity: 0; }
+  }
+
+  @keyframes loopProgress {
+    0% { left: -20%; width: 30%; }
+    100% { left: 90%; width: 30%; }
+  }
+
+  @keyframes vfxBounce { 0% { transform: scaleY(0.25); } 100% { transform: scaleY(1.1); } }
+  @keyframes pulseGlow { 0% { transform: scale(1); } 100% { transform: scale(1.3); } }
+</style>
+
+<script>
+  // Global interaction tracking captures tap, releases screen lock, and unblocks background layers
+  document.addEventListener('click', () => {
+    const overlay = document.getElementById('audio-click-overlay');
+    if (overlay) {
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 500);
+    }
+  }, { once: true });
+</script>
+
+
+
+
 <!-- Navigation Bar -->
 <nav style="
     display: flex; 
