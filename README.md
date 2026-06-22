@@ -438,7 +438,9 @@
 
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
-<audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
+<a href="javascript:void(0)" onclick="triggerFinancialTerminal('https://your-target-website.com')" style="color: #00ffaa; text-decoration: underline; font-weight: bold; font-family: sans-serif;">
+  Open Secure Terminal Layout
+</a>
 
 <div id="desktop-lock-overlay" class="desktop-enforcement-screen">
   
@@ -456,8 +458,16 @@
   <div class="hud-central-matrix-box">
     <div id="gate-ring" class="hud-pulse-ring-vfx">
       <div class="outer-data-ring"></div>
+      <div class="middle-data-ring"></div>
       <div class="inner-data-ring"></div>
-      <div id="gate-icon" class="inner-core-node">+Δ 2.4%</div>
+      
+      <div class="radar-wave"></div>
+      <div class="radar-wave delay-1"></div>
+      
+      <div id="gate-icon-container" class="inner-core-node">
+        <div class="glow-particle-core"></div>
+        <div id="gate-icon" class="vector-symbol">💼</div>
+      </div>
     </div>
     
     <div id="gate-prompt" class="interaction-prompt">INITIALIZING TERMINAL</div>
@@ -486,13 +496,13 @@
     height: 100vh;
     background: radial-gradient(circle at center, #111420 0%, var(--dark-void) 100%);
     z-index: 9999999;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -551,12 +561,12 @@
     box-sizing: border-box;
   }
 
-  /* UNIQUE SEAMLESS SPINNING STATUS MECHANICS */
+  /* GEOMETRIC VISUALIZER INTERFACE SYSTEM */
   .hud-pulse-ring-vfx {
     position: relative;
-    width: 110px;
-    height: 110px;
-    margin: 0 auto 30px;
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 35px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -566,33 +576,82 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 2px solid rgba(0, 255, 170, 0.05);
+    border: 2px dashed rgba(0, 255, 170, 0.08);
     border-top: 2px solid var(--finance-emerald);
+    border-bottom: 2px solid var(--finance-emerald);
     border-radius: 50%;
-    animation: rotateClockwise 1.8s linear infinite;
+    animation: rotateClockwise 3s linear infinite;
+    transition: border-color 0.4s ease;
+  }
+
+  .middle-data-ring {
+    position: absolute;
+    width: 84%;
+    height: 84%;
+    border: 1px dotted rgba(255, 200, 61, 0.15);
+    border-left: 2px solid var(--finance-gold);
+    border-radius: 50%;
+    animation: rotateCounterClockwise 1.2s linear infinite;
     transition: border-color 0.4s ease;
   }
 
   .inner-data-ring {
     position: absolute;
-    width: 78%;
-    height: 78%;
-    border: 2px solid transparent;
-    border-bottom: 2px solid var(--finance-gold);
+    width: 68%;
+    height: 68%;
+    border: 2px solid rgba(0, 255, 170, 0.04);
+    border-right: 2px dashed var(--finance-emerald);
     border-radius: 50%;
-    opacity: 0.5;
-    animation: rotateCounterClockwise 1.2s linear infinite;
+    animation: rotateClockwise 1.8s linear infinite;
     transition: border-color 0.4s ease;
   }
 
+  /* RADAR WAVE PROPAGATION */
+  .radar-wave {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 1px solid var(--finance-emerald);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    animation: radarPulse 2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+    transition: border-color 0.4s ease;
+  }
+  .radar-wave.delay-1 { animation-delay: 1s; }
+
+  /* COMPUTING CORE GRAPHIC */
   .inner-core-node {
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 14px;
-    color: var(--finance-emerald);
-    text-shadow: 0 0 8px var(--finance-emerald);
+    position: relative;
+    width: 52px;
+    height: 52px;
+    background: rgba(9, 10, 15, 0.9);
+    border: 2px solid var(--finance-emerald);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 2;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
     transition: all 0.4s ease;
+  }
+
+  .glow-particle-core {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: var(--finance-emerald);
+    border-radius: 50%;
+    filter: blur(8px);
+    opacity: 0.15;
+    animation: coreBreathe 2s ease-in-out infinite alternate;
+    transition: background 0.4s ease;
+  }
+
+  .vector-symbol {
+    font-size: 20px;
+    z-index: 3;
+    transition: transform 0.3s ease;
   }
 
   /* TYPOGRAPHY */
@@ -631,81 +690,123 @@
   .hud-progress-fill {
     position: absolute;
     top: 0; left: 0; bottom: 0;
-    width: 35%;
+    width: 0%; /* Starts at zero for programmatic progress sync */
     background: linear-gradient(90deg, var(--finance-emerald), var(--finance-gold));
     box-shadow: 0 0 12px var(--finance-emerald);
-    animation: slideLoader 1.5s ease-in-out infinite alternate;
+    transition: width 8s linear; /* Syncs width transformation over exactly 8 seconds */
   }
 
   /* ANIMATION MATRIX */
   @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   @keyframes rotateCounterClockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
-  @keyframes slideLoader { 0% { left: -25%; } 100% { left: 95%; } }
   @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
+  @keyframes coreBreathe { 0% { opacity: 0.1; transform: scale(0.9); } 100% { opacity: 0.3; transform: scale(1.1); } }
+  @keyframes radarPulse {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(2.6); opacity: 0; }
+  }
 </style>
 
 <script>
-  function runGatewayVerificationEngine() {
+  function triggerFinancialTerminal(targetUrl) {
     const lockOverlay = document.getElementById('desktop-lock-overlay');
     const gateIcon = document.getElementById('gate-icon');
+    const gateIconContainer = document.getElementById('gate-icon-container');
+    const glowParticle = document.querySelector('.glow-particle-core');
     const gatePrompt = document.getElementById('gate-prompt');
     const gateSubtitle = document.getElementById('gate-subtitle');
     const gateProgress = document.getElementById('gate-progress');
-    const outerRing = document.querySelector('.outer-data-ring');
-    const innerRing = document.querySelector('.inner-data-ring');
-    const brackets = document.querySelectorAll('.hud-corner-bracket');
-    const audioNode = document.getElementById('terminal-audio');
     
-    // Identity verification parameters
+    const outerRing = document.querySelector('.outer-data-ring');
+    const middleRing = document.querySelector('.middle-data-ring');
+    const innerRing = document.querySelector('.inner-data-ring');
+    const waves = document.querySelectorAll('.radar-wave');
+    const brackets = document.querySelectorAll('.hud-corner-bracket');
+    
+    // Check hardware configurations
     const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
     const hasDesktopWidth = window.innerWidth >= 1024;
 
+    // Show Layer Matrix
+    lockOverlay.style.display = 'flex';
+    setTimeout(() => { lockOverlay.style.opacity = '1'; }, 10);
+
     if (isMobileDevice && !hasDesktopWidth) {
-      // 📉 HARD REJECTION STATE: Environment lacks desktop viewport configurations
-      gateIcon.textContent = "-ERR";
-      gateIcon.style.color = "var(--finance-alert)";
-      gateIcon.style.textShadow = "0 0 8px var(--finance-alert)";
+      // 📉 REJECTION SYSTEM HARDWARE LOCKED
+      gateIcon.textContent = "❌";
+      gateIconContainer.style.borderColor = "var(--finance-alert)";
+      gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
+      glowParticle.style.background = "var(--finance-alert)";
       
       gatePrompt.textContent = "ANALYST DESK REQUIRED";
       gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
       gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING HIGH-DENSITY QUANTUM DATA ASSETS REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE INITIALIZE YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
       
-      // Pivot design assets to alert configuration states smoothly
+      // Stop mechanics loop and switch layout to caution alert coloring
       outerRing.style.borderColor = "var(--finance-alert)";
+      middleRing.style.borderColor = "transparent";
       innerRing.style.borderColor = "transparent";
       outerRing.style.animationPlayState = 'paused';
+      middleRing.style.animationPlayState = 'paused';
       innerRing.style.animationPlayState = 'paused';
+      
+      waves.forEach(wave => wave.style.borderColor = "var(--finance-alert)");
       brackets.forEach(bracket => bracket.style.borderColor = "var(--finance-alert)");
       
+      gateProgress.style.width = "100%";
       gateProgress.style.background = "var(--finance-alert)";
       gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
-      
-      // Safety audio capture: If they tap the mobile block screen, attempt playback initialization anyway
-      document.addEventListener('click', () => { audioNode.play().catch(()=>{}); }, { once: true });
     } else {
-      // 📊 INITIAL PRE-LOADER TIMEOUT: Authorized resolution verified; stream music and open workspace
+      // RESET ALL ASSETS TO STANDARD GREEN CORE
+      gateIcon.textContent = "💼";
+      gateIconContainer.style.borderColor = "var(--finance-emerald)";
+      gateIconContainer.style.boxShadow = "0 0 15px rgba(0, 255, 170, 0.2)";
+      glowParticle.style.background = "var(--finance-emerald)";
+      gatePrompt.textContent = "INITIALIZING TERMINAL";
+      gateSubtitle.textContent = "CONNECTING SECURE RISK MATRIX MODULES AND COMPILING ASSET VISUALIZATION TELEMETRY... PLEASE WAIT.";
+      
+      outerRing.style.borderColor = "rgba(0, 255, 170, 0.08)";
+      outerRing.style.borderTopColor = "var(--finance-emerald)";
+      outerRing.style.borderBottomColor = "var(--finance-emerald)";
+      middleRing.style.borderColor = "rgba(255, 200, 61, 0.15)";
+      middleRing.style.borderLeftColor = "var(--finance-gold)";
+      innerRing.style.borderColor = "rgba(0, 255, 170, 0.04)";
+      innerRing.style.borderRightColor = "var(--finance-emerald)";
+      
+      outerRing.style.animationPlayState = 'running';
+      middleRing.style.animationPlayState = 'running';
+      innerRing.style.animationPlayState = 'running';
+      
+      waves.forEach(wave => wave.style.borderColor = "var(--finance-emerald)");
+      brackets.forEach(bracket => bracket.style.borderColor = "var(--finance-emerald)");
+      
+      // Initialize precision loader tracking
+      gateProgress.style.width = "0%";
+      gateProgress.style.background = "linear-gradient(90deg, var(--finance-emerald), var(--finance-gold))";
+      gateProgress.style.boxShadow = "0 0 12px var(--finance-emerald)";
+      
+      // Trigger smooth filling transition mapping sequence
+      setTimeout(() => { gateProgress.style.width = "100%"; }, 50);
+
+      // 📊 SYSTEM COMPILATION PIPELINE SUCCESSFUL (8 SECONDS DELAY CONFIGURATION)
       setTimeout(() => {
-        // Safe programmatic audio initiation loop
-        audioNode.play().catch(error => {
-          console.log("Audio waiting for explicit page interaction event capture context.");
-        });
-        
-        gateIcon.textContent = "OK";
-        gatePrompt.textContent = "DESK ENGINE READY";
+        gateIcon.textContent = "📈";
+        gatePrompt.textContent = "ACCESS GRANTED";
+        gateSubtitle.textContent = "Terminal compiled successfully. Redirecting to secure mainframe node...";
         
         setTimeout(() => {
           lockOverlay.style.opacity = '0';
           setTimeout(() => {
             lockOverlay.style.display = 'none';
+            window.location.href = targetUrl; 
           }, 600);
-        }, 400);
-      }, 1800);
+        }, 800);
+      }, 8000); // 8000ms = 8 Seconds System Validation Hold Time
     }
   }
-
-  window.addEventListener('DOMContentLoaded', runGatewayVerificationEngine);
 </script>
+
 
 
 
