@@ -434,7 +434,6 @@
 
 
 
-
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
 <audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
@@ -497,6 +496,7 @@
     height: 100vh;
     background: radial-gradient(circle at center, #111420 0%, var(--dark-void) 100%);
     z-index: 9999999;
+    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -668,7 +668,6 @@
     transition: width 8s linear;
   }
 
-  /* SLEEK MAIN MAIN DESK BUTTON */
   .secure-mainframe-btn {
     display: none;
     opacity: 0;
@@ -705,8 +704,6 @@
 </style>
 
 <script>
-  let targetAudioFile = document.getElementById('terminal-audio');
-
   function initWebsiteGateway() {
     const lockOverlay = document.getElementById('desktop-lock-overlay');
     const gateIcon = document.getElementById('gate-icon');
@@ -728,7 +725,7 @@
     const hasDesktopWidth = window.innerWidth >= 1024;
 
     if (isMobileDevice && !hasDesktopWidth) {
-      // MOBILE REJECTION BLOCKED SCREEN STATE
+      // MOBILE ERROR LOCKOUT BLOCK
       gateIcon.textContent = "❌";
       gateIconContainer.style.borderColor = "var(--finance-alert)";
       gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
@@ -752,35 +749,46 @@
       gateProgress.style.background = "var(--finance-alert)";
       gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
     } else {
-      // DESKTOP: Start tracking the progress track fill bar layout automatically
+      // DESKTOP VERIFIED: Start scanning sequence progress fill
       setTimeout(() => { gateProgress.style.width = "100%"; }, 50);
 
-      // 8-SECOND LOADER EXPIRATION MATRIX TIMER
+      // 8-SECOND PROGRESS RESOLUTION MATRIX TIMEOUT
       setTimeout(() => {
         gateIcon.textContent = "📈";
         gatePrompt.textContent = "COMPILATION COMPLETE";
         gateSubtitle.textContent = "Security handshake established. Secure interactive node generated.";
         
-        // Hide the progress track dynamically
         progressTrack.style.visibility = 'hidden';
         progressTrack.style.opacity = '0';
         
-        // Show our clean Entry Gateway Button
         enterBtn.style.display = 'block';
         setTimeout(() => { enterBtn.style.opacity = '1'; }, 50);
       }, 8000); 
     }
   }
 
-  // THIS FUNCTION ONLY RUNS ON AN EXPLICIT USER CLICK (Unlocks browser sound restrictions!)
+  // RE-INVENTED EXPLICIT CLICK ACTION ENGINE
   function engageMainframeContent() {
     const lockOverlay = document.getElementById('desktop-lock-overlay');
     
-    // 1. Play the music explicitly through the mouse click channel
-    targetAudioFile.volume = 1.0;
-    targetAudioFile.play().catch(e => console.log("Audio failed to process: ", e));
+    // Explicit dynamic runtime audio element pointer fetching logic
+    const audioEngine = document.getElementById('terminal-audio');
 
-    // 2. Smoothly dismiss the loading panel from view to display the hidden website content
+    if (audioEngine) {
+      audioEngine.muted = false;
+      audioEngine.volume = 1.0;
+      
+      // Force audio streaming engine state wake channels
+      const playPromise = audioEngine.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.error("Audio engine failed to stream path resource. Verify that 'music.mp3' exists in your root folder layout. Error: ", error);
+        });
+      }
+    }
+
+    // Dismiss overlay blocker
     lockOverlay.style.opacity = '0';
     setTimeout(() => {
       lockOverlay.style.display = 'none';
@@ -789,7 +797,6 @@
 
   window.addEventListener('DOMContentLoaded', initWebsiteGateway);
 </script>
-
 
 
 
