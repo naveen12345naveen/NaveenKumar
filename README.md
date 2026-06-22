@@ -437,6 +437,8 @@
 
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
+<audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
+
 <div id="desktop-lock-overlay" class="desktop-enforcement-screen" style="display: flex; opacity: 1;">
   
   <div class="ticker-backdrop-matrix">
@@ -686,7 +688,7 @@
     width: 0%; 
     background: linear-gradient(90deg, var(--finance-emerald), var(--finance-gold));
     box-shadow: 0 0 12px var(--finance-emerald);
-    transition: width 8s linear; /* Smoothly tracks loading progress over 8 seconds */
+    transition: width 8s linear;
   }
 
   /* ANIMATION MATRIX */
@@ -702,7 +704,7 @@
 </style>
 
 <script>
-  // AUTOMATED MAIN SITE LOADING CONTROLLER ENGINE
+  // AUTOMATED MAIN SITE LOADING CONTROLLER ENGINE WITH AUDIO INTERACTION BACKUP
   function initWebsiteGateway() {
     const lockOverlay = document.getElementById('desktop-lock-overlay');
     const gateIcon = document.getElementById('gate-icon');
@@ -711,6 +713,7 @@
     const gatePrompt = document.getElementById('gate-prompt');
     const gateSubtitle = document.getElementById('gate-subtitle');
     const gateProgress = document.getElementById('gate-progress');
+    const audioEngine = document.getElementById('terminal-audio');
     
     const outerRing = document.querySelector('.outer-data-ring');
     const middleRing = document.querySelector('.middle-data-ring');
@@ -747,6 +750,18 @@
       gateProgress.style.background = "var(--finance-alert)";
       gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
     } else {
+      // Try initialization of audio immediately (works if user previously interacted or has sound allowed)
+      audioEngine.play().catch(() => {
+        // Fallback for strict browser engines: plays on the first user interaction event
+        const startAudioOnInteraction = () => {
+          audioEngine.play().catch(() => {});
+          document.removeEventListener('click', startAudioOnInteraction);
+          document.removeEventListener('touchstart', startAudioOnInteraction);
+        };
+        document.addEventListener('click', startAudioOnInteraction);
+        document.addEventListener('touchstart', startAudioOnInteraction);
+      });
+
       // 📊 AUTHORIZED ACCESS SYSTEM: Run the loader and reveal content
       setTimeout(() => { gateProgress.style.width = "100%"; }, 50);
 
