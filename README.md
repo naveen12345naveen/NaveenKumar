@@ -433,7 +433,6 @@
 
 
 
-
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
 <audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
@@ -452,7 +451,9 @@
   <div class="hud-corner-bracket br"></div>
   
   <div class="hud-central-matrix-box">
-    <div id="gate-ring" class="hud-pulse-ring-vfx">
+    <div id="click-to-start-prompt" class="start-tap-vfx">⚡ CLICK ANYWHERE TO SECURE MAIN DESK NODE ⚡</div>
+
+    <div id="gate-ring" class="hud-pulse-ring-vfx" style="opacity: 0.35;">
       <div class="outer-data-ring"></div>
       <div class="middle-data-ring"></div>
       <div class="inner-data-ring"></div>
@@ -466,16 +467,12 @@
       </div>
     </div>
     
-    <div id="gate-prompt" class="interaction-prompt">INITIALIZING TERMINAL</div>
-    <div id="gate-subtitle" class="interaction-subtitle">CONNECTING SECURE RISK MATRIX MODULES AND COMPILING ASSET VISUALIZATION TELEMETRY...</div>
+    <div id="gate-prompt" class="interaction-prompt">MAINBOARD TERMINAL STANDBY</div>
+    <div id="gate-subtitle" class="interaction-subtitle">Awaiting identity handshake initialization sequence vectors...</div>
     
-    <div class="hud-progress-track">
+    <div id="progress-track-wrapper" class="hud-progress-track" style="opacity: 0; visibility: hidden;">
       <div id="gate-progress" class="hud-progress-fill"></div>
     </div>
-
-    <button id="terminal-enter-btn" class="secure-mainframe-btn" onclick="engageMainframeContent()">
-      ENTER MAINBOARD Mainframe
-    </button>
   </div>
 </div>
 
@@ -503,6 +500,19 @@
     user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer; /* Makes the whole screen an active click area */
+  }
+
+  /* INITIAL INTERACTION ENCOURAGEMENT TEXT */
+  .start-tap-vfx {
+    font-family: monospace;
+    font-size: 1rem;
+    color: var(--finance-gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(255, 200, 61, 0.4);
+    animation: textPulse 1.2s ease-in-out infinite alternate;
   }
 
   /* BACKGROUND GRAPHICS / DATA TICKERS */
@@ -554,6 +564,7 @@
   .hud-central-matrix-box {
     text-align: center;
     z-index: 10;
+    width: 100%;
     max-width: 520px;
     padding: 20px;
     box-sizing: border-box;
@@ -567,6 +578,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: opacity 0.5s ease;
   }
 
   .outer-data-ring {
@@ -665,33 +677,6 @@
     width: 0%; 
     background: linear-gradient(90deg, var(--finance-emerald), var(--finance-gold));
     box-shadow: 0 0 12px var(--finance-emerald);
-    transition: width 8s linear;
-  }
-
-  .secure-mainframe-btn {
-    display: none;
-    opacity: 0;
-    margin: 0 auto;
-    background: transparent;
-    border: 1px solid var(--finance-emerald);
-    color: var(--finance-emerald);
-    padding: 12px 28px;
-    font-family: monospace;
-    font-size: 0.9rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    border-radius: 4px;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(0, 255, 170, 0.1);
-    transition: all 0.3s ease-in-out;
-  }
-
-  .secure-mainframe-btn:hover {
-    background: var(--finance-emerald);
-    color: var(--dark-void);
-    box-shadow: 0 0 25px var(--finance-emerald);
-    transform: translateY(-1px);
   }
 
   /* KEYFRAMES */
@@ -701,103 +686,134 @@
   @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
   @keyframes coreBreathe { 0% { opacity: 0.1; transform: scale(0.9); } 100% { opacity: 0.3; transform: scale(1.1); } }
   @keyframes radarPulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(2.6); opacity: 0; } }
+  @keyframes textPulse { 0% { opacity: 0.4; transform: scale(0.98); } 100% { opacity: 1; transform: scale(1); } }
 </style>
 
 <script>
-  function initWebsiteGateway() {
-    const lockOverlay = document.getElementById('desktop-lock-overlay');
+  let targetAudioFile = document.getElementById('terminal-audio');
+  let mobileBlockActive = false;
+
+  // STEP 1: SCAN DEVICE CONFIGURATION IMMEDATELY ON LOAD
+  function checkSystemEnvironment() {
+    const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    const hasDesktopWidth = window.innerWidth >= 1024;
+
+    if (isMobileDevice && !hasDesktopWidth) {
+      mobileBlockActive = true;
+      renderMobileRejectionLayout();
+    } else {
+      // Desktop verified: Listen for the initial unlock tap event across the entire layout container
+      document.getElementById('desktop-lock-overlay').addEventListener('click', startEightSecondScanPipeline, { once: true });
+    }
+  }
+
+  // DESKTOP PIPELINE RUNTIME
+  function startEightSecondScanPipeline() {
+    if (mobileBlockActive) return;
+
+    const overlayLayer = document.getElementById('desktop-lock-overlay');
+    const initialPrompt = document.getElementById('click-to-start-prompt');
+    const gateRing = document.getElementById('gate-ring');
+    const gatePrompt = document.getElementById('gate-prompt');
+    const gateSubtitle = document.getElementById('gate-subtitle');
+    const progressTrackWrapper = document.getElementById('progress-track-wrapper');
+    const gateProgress = document.getElementById('gate-progress');
+
+    // Remove text instructions and set interactive objects wide open
+    overlayLayer.style.cursor = 'default';
+    if(initialPrompt) initialPrompt.style.display = 'none';
+    gateRing.style.opacity = '1';
+
+    // Wake and start the background audio stream tracking vectors cleanly
+    targetAudioFile.volume = 1.0;
+    targetAudioFile.play().catch(e => console.log("Audio failed to load. Check file configuration path vectors. Error: ", e));
+
+    // Update textual indicators
+    gatePrompt.textContent = "INITIALIZING TERMINAL";
+    gateSubtitle.textContent = "CONNECTING SECURE RISK MATRIX MODULES AND COMPILING ASSET VISUALIZATION TELEMETRY...";
+    
+    // Unhide layout filler bar
+    progressTrackWrapper.style.visibility = 'visible';
+    progressTrackWrapper.style.opacity = '1';
+    
+    // Set 8 seconds linear filling execution transition mapping rules
+    gateProgress.style.transition = "width 8s linear";
+    setTimeout(() => { gateProgress.style.width = "100%"; }, 20);
+
+    // STEP 4: EXACT 8 SECONDS TARGETED TERMINATION EVENT
+    setTimeout(() => {
+      
+      // Dynamic Fade-Out Loop: Completely subdues sound arrays down to absolute 0 over 800ms
+      let fadeOutEngine = setInterval(() => {
+        if (targetAudioFile.volume > 0.05) {
+          targetAudioFile.volume -= 0.05;
+        } else {
+          clearInterval(fadeOutEngine);
+          targetAudioFile.pause();
+          targetAudioFile.currentTime = 0; // Completely flushes the sound timeline markers
+        }
+      }, 40);
+
+      // Instantly dismiss screen mask overlay panels to render website mainboard content beneath
+      setTimeout(() => {
+        overlayLayer.style.opacity = '0';
+        setTimeout(() => {
+          overlayLayer.style.display = 'none'; // Site is completely accessible now!
+        }, 600);
+      }, 800); // Gives audio time to fade completely before screen vanishes
+      
+    }, 8000); // 8 Seconds Execution Window Allocation
+  }
+
+  // MOBILE REJECTION CONDITIONER RENDERING MATRIX
+  function renderMobileRejectionLayout() {
     const gateIcon = document.getElementById('gate-icon');
     const gateIconContainer = document.getElementById('gate-icon-container');
     const glowParticle = document.querySelector('.glow-particle-core');
     const gatePrompt = document.getElementById('gate-prompt');
     const gateSubtitle = document.getElementById('gate-subtitle');
     const gateProgress = document.getElementById('gate-progress');
-    const progressTrack = document.querySelector('.hud-progress-track');
-    const enterBtn = document.getElementById('terminal-enter-btn');
-    
+    const progressTrackWrapper = document.getElementById('progress-track-wrapper');
+    const initialPrompt = document.getElementById('click-to-start-prompt');
+    const gateRing = document.getElementById('gate-ring');
+
     const outerRing = document.querySelector('.outer-data-ring');
     const middleRing = document.querySelector('.middle-data-ring');
     const innerRing = document.querySelector('.inner-data-ring');
     const waves = document.querySelectorAll('.radar-wave');
     const brackets = document.querySelectorAll('.hud-corner-bracket');
+
+    if(initialPrompt) initialPrompt.style.display = 'none';
+    gateRing.style.opacity = '1';
+
+    gateIcon.textContent = "❌";
+    gateIconContainer.style.borderColor = "var(--finance-alert)";
+    gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
+    glowParticle.style.background = "var(--finance-alert)";
     
-    const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-    const hasDesktopWidth = window.innerWidth >= 1024;
-
-    if (isMobileDevice && !hasDesktopWidth) {
-      // MOBILE ERROR LOCKOUT BLOCK
-      gateIcon.textContent = "❌";
-      gateIconContainer.style.borderColor = "var(--finance-alert)";
-      gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
-      glowParticle.style.background = "var(--finance-alert)";
-      
-      gatePrompt.textContent = "ANALYST DESK REQUIRED";
-      gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
-      gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING DATA REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE OPEN YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
-      
-      outerRing.style.borderColor = "var(--finance-alert)";
-      middleRing.style.borderColor = "transparent";
-      innerRing.style.borderColor = "transparent";
-      outerRing.style.animationPlayState = 'paused';
-      middleRing.style.animationPlayState = 'paused';
-      innerRing.style.animationPlayState = 'paused';
-      
-      waves.forEach(wave => wave.style.borderColor = "var(--finance-alert)");
-      brackets.forEach(bracket => bracket.style.borderColor = "var(--finance-alert)");
-      
-      gateProgress.style.width = "100%";
-      gateProgress.style.background = "var(--finance-alert)";
-      gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
-    } else {
-      // DESKTOP VERIFIED: Start scanning sequence progress fill
-      setTimeout(() => { gateProgress.style.width = "100%"; }, 50);
-
-      // 8-SECOND PROGRESS RESOLUTION MATRIX TIMEOUT
-      setTimeout(() => {
-        gateIcon.textContent = "📈";
-        gatePrompt.textContent = "COMPILATION COMPLETE";
-        gateSubtitle.textContent = "Security handshake established. Secure interactive node generated.";
-        
-        progressTrack.style.visibility = 'hidden';
-        progressTrack.style.opacity = '0';
-        
-        enterBtn.style.display = 'block';
-        setTimeout(() => { enterBtn.style.opacity = '1'; }, 50);
-      }, 8000); 
-    }
+    gatePrompt.textContent = "ANALYST DESK REQUIRED";
+    gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
+    gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING HIGH-DENSITY QUANTUM DATA ASSETS REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE INITIALIZE YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
+    
+    outerRing.style.borderColor = "var(--finance-alert)";
+    middleRing.style.borderColor = "transparent";
+    innerRing.style.borderColor = "transparent";
+    outerRing.style.animationPlayState = 'paused';
+    middleRing.style.animationPlayState = 'paused';
+    innerRing.style.animationPlayState = 'paused';
+    
+    waves.forEach(wave => wave.style.borderColor = "var(--finance-alert)");
+    brackets.forEach(bracket => bracket.style.borderColor = "var(--finance-alert)");
+    
+    progressTrackWrapper.style.visibility = 'visible';
+    progressTrackWrapper.style.opacity = '1';
+    gateProgress.style.width = "100%";
+    gateProgress.style.background = "var(--finance-alert)";
+    gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
   }
 
-  // RE-INVENTED EXPLICIT CLICK ACTION ENGINE
-  function engageMainframeContent() {
-    const lockOverlay = document.getElementById('desktop-lock-overlay');
-    
-    // Explicit dynamic runtime audio element pointer fetching logic
-    const audioEngine = document.getElementById('terminal-audio');
-
-    if (audioEngine) {
-      audioEngine.muted = false;
-      audioEngine.volume = 1.0;
-      
-      // Force audio streaming engine state wake channels
-      const playPromise = audioEngine.play();
-      
-      if (playPromise !== undefined) {
-        playPromise.catch(error => {
-          console.error("Audio engine failed to stream path resource. Verify that 'music.mp3' exists in your root folder layout. Error: ", error);
-        });
-      }
-    }
-
-    // Dismiss overlay blocker
-    lockOverlay.style.opacity = '0';
-    setTimeout(() => {
-      lockOverlay.style.display = 'none';
-    }, 600);
-  }
-
-  window.addEventListener('DOMContentLoaded', initWebsiteGateway);
+  window.addEventListener('DOMContentLoaded', checkSystemEnvironment);
 </script>
-
 
 
 
