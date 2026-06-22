@@ -435,14 +435,9 @@
 
 
 
-
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
-<a href="javascript:void(0)" onclick="triggerFinancialTerminal('https://your-target-website.com')" style="color: #00ffaa; text-decoration: underline; font-weight: bold; font-family: sans-serif;">
-  Open Secure Terminal Layout
-</a>
-
-<div id="desktop-lock-overlay" class="desktop-enforcement-screen">
+<div id="desktop-lock-overlay" class="desktop-enforcement-screen" style="display: flex; opacity: 1;">
   
   <div class="ticker-backdrop-matrix">
     <div class="ticker-lane">ANALYTICS_CORE [ONLINE] &nbsp;&nbsp; NIFTY50 +24,000 &nbsp;&nbsp; SENSEX +77,094 &nbsp;&nbsp; NASDAQ +26,000 &nbsp;&nbsp; USD/INR 94.05 &nbsp;&nbsp; DATA_STREAM_A [ENGAGED]</div>
@@ -496,13 +491,11 @@
     height: 100vh;
     background: radial-gradient(circle at center, #111420 0%, var(--dark-void) 100%);
     z-index: 9999999;
-    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    opacity: 0;
     transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
@@ -690,10 +683,10 @@
   .hud-progress-fill {
     position: absolute;
     top: 0; left: 0; bottom: 0;
-    width: 0%; /* Starts at zero for programmatic progress sync */
+    width: 0%; 
     background: linear-gradient(90deg, var(--finance-emerald), var(--finance-gold));
     box-shadow: 0 0 12px var(--finance-emerald);
-    transition: width 8s linear; /* Syncs width transformation over exactly 8 seconds */
+    transition: width 8s linear; /* Smoothly tracks loading progress over 8 seconds */
   }
 
   /* ANIMATION MATRIX */
@@ -709,7 +702,8 @@
 </style>
 
 <script>
-  function triggerFinancialTerminal(targetUrl) {
+  // AUTOMATED MAIN SITE LOADING CONTROLLER ENGINE
+  function initWebsiteGateway() {
     const lockOverlay = document.getElementById('desktop-lock-overlay');
     const gateIcon = document.getElementById('gate-icon');
     const gateIconContainer = document.getElementById('gate-icon-container');
@@ -724,16 +718,12 @@
     const waves = document.querySelectorAll('.radar-wave');
     const brackets = document.querySelectorAll('.hud-corner-bracket');
     
-    // Check hardware configurations
+    // Check hardware layout matrices
     const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
     const hasDesktopWidth = window.innerWidth >= 1024;
 
-    // Show Layer Matrix
-    lockOverlay.style.display = 'flex';
-    setTimeout(() => { lockOverlay.style.opacity = '1'; }, 10);
-
     if (isMobileDevice && !hasDesktopWidth) {
-      // 📉 REJECTION SYSTEM HARDWARE LOCKED
+      // 📉 REJECTION HANDLER: Halt execution if on phone without desktop site checked
       gateIcon.textContent = "❌";
       gateIconContainer.style.borderColor = "var(--finance-alert)";
       gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
@@ -743,7 +733,6 @@
       gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
       gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING HIGH-DENSITY QUANTUM DATA ASSETS REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE INITIALIZE YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
       
-      // Stop mechanics loop and switch layout to caution alert coloring
       outerRing.style.borderColor = "var(--finance-alert)";
       middleRing.style.borderColor = "transparent";
       innerRing.style.borderColor = "transparent";
@@ -758,54 +747,31 @@
       gateProgress.style.background = "var(--finance-alert)";
       gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
     } else {
-      // RESET ALL ASSETS TO STANDARD GREEN CORE
-      gateIcon.textContent = "💼";
-      gateIconContainer.style.borderColor = "var(--finance-emerald)";
-      gateIconContainer.style.boxShadow = "0 0 15px rgba(0, 255, 170, 0.2)";
-      glowParticle.style.background = "var(--finance-emerald)";
-      gatePrompt.textContent = "INITIALIZING TERMINAL";
-      gateSubtitle.textContent = "CONNECTING SECURE RISK MATRIX MODULES AND COMPILING ASSET VISUALIZATION TELEMETRY... PLEASE WAIT.";
-      
-      outerRing.style.borderColor = "rgba(0, 255, 170, 0.08)";
-      outerRing.style.borderTopColor = "var(--finance-emerald)";
-      outerRing.style.borderBottomColor = "var(--finance-emerald)";
-      middleRing.style.borderColor = "rgba(255, 200, 61, 0.15)";
-      middleRing.style.borderLeftColor = "var(--finance-gold)";
-      innerRing.style.borderColor = "rgba(0, 255, 170, 0.04)";
-      innerRing.style.borderRightColor = "var(--finance-emerald)";
-      
-      outerRing.style.animationPlayState = 'running';
-      middleRing.style.animationPlayState = 'running';
-      innerRing.style.animationPlayState = 'running';
-      
-      waves.forEach(wave => wave.style.borderColor = "var(--finance-emerald)");
-      brackets.forEach(bracket => bracket.style.borderColor = "var(--finance-emerald)");
-      
-      // Initialize precision loader tracking
-      gateProgress.style.width = "0%";
-      gateProgress.style.background = "linear-gradient(90deg, var(--finance-emerald), var(--finance-gold))";
-      gateProgress.style.boxShadow = "0 0 12px var(--finance-emerald)";
-      
-      // Trigger smooth filling transition mapping sequence
+      // 📊 AUTHORIZED ACCESS SYSTEM: Run the loader and reveal content
       setTimeout(() => { gateProgress.style.width = "100%"; }, 50);
 
-      // 📊 SYSTEM COMPILATION PIPELINE SUCCESSFUL (8 SECONDS DELAY CONFIGURATION)
+      // 8-SECOND SYSTEM SCANNING RUNTIME PIPELINE
       setTimeout(() => {
         gateIcon.textContent = "📈";
         gatePrompt.textContent = "ACCESS GRANTED";
-        gateSubtitle.textContent = "Terminal compiled successfully. Redirecting to secure mainframe node...";
+        gateSubtitle.textContent = "Terminal compiled successfully. Loading environment mainframe modules...";
         
+        // Graceful fade transition block
         setTimeout(() => {
           lockOverlay.style.opacity = '0';
           setTimeout(() => {
-            lockOverlay.style.display = 'none';
-            window.location.href = targetUrl; 
+            lockOverlay.style.display = 'none'; // Unlocks total visual site access to the user
           }, 600);
         }, 800);
-      }, 8000); // 8000ms = 8 Seconds System Validation Hold Time
+      }, 8000); // 8 Seconds hold duration
     }
   }
+
+  // Auto-run the verification pipeline the moment the document object model maps into memory
+  window.addEventListener('DOMContentLoaded', initWebsiteGateway);
 </script>
+
+
 
 
 
