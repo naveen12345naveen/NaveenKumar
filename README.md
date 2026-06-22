@@ -429,6 +429,13 @@
 </head>
 <body>
 
+
+
+
+
+
+
+
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
 <div id="audio-click-overlay" class="audio-interaction-overlay">
@@ -439,14 +446,12 @@
   <div class="hud-corner-bracket br"></div>
   
   <div class="hud-central-matrix-box">
-    <div class="hud-telemetry-text">SYSTEM_INITIALIZATION: DESKTOP_MODE_FORCED_PASS_1024</div>
-    
     <div class="hud-pulse-ring-vfx">
       <div class="inner-core-node">⚡</div>
     </div>
     
-    <div class="interaction-prompt">ENGINE ACTIVATION REQUIRED</div>
-    <div class="interaction-subtitle">TAP ANYWHERE TO STREAM DESKTOP CORE MODULES</div>
+    <div class="interaction-prompt">ENABLE DESKTOP MODE</div>
+    <div class="interaction-subtitle">TAP ANYWHERE TO RENDER FULL DESKTOP MODULES</div>
     
     <div class="hud-progress-track">
       <div class="hud-progress-fill"></div>
@@ -533,16 +538,6 @@
     z-index: 10;
     max-width: 500px;
     padding: 30px;
-  }
-
-  .hud-telemetry-text {
-    font-family: monospace;
-    font-size: 0.75rem;
-    color: var(--cyber-amber);
-    letter-spacing: 2px;
-    margin-bottom: 40px;
-    opacity: 0.8;
-    text-transform: uppercase;
   }
 
   /* Dynamic Ring Core Node Animation Logic */
@@ -688,6 +683,7 @@
     }
   }, { once: true });
 </script>
+
 
 
 
