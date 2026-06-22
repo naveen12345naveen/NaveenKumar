@@ -473,6 +473,10 @@
     <div class="hud-progress-track">
       <div id="gate-progress" class="hud-progress-fill"></div>
     </div>
+
+    <button id="terminal-enter-btn" class="secure-mainframe-btn" onclick="engageMainframeContent()">
+      ENTER MAINBOARD Mainframe
+    </button>
   </div>
 </div>
 
@@ -533,7 +537,6 @@
     pointer-events: none;
   }
 
-  /* Minimal Corner Framing Elements */
   .hud-corner-bracket {
     position: absolute;
     width: 24px;
@@ -556,7 +559,6 @@
     box-sizing: border-box;
   }
 
-  /* GEOMETRIC VISUALIZER INTERFACE SYSTEM */
   .hud-pulse-ring-vfx {
     position: relative;
     width: 140px;
@@ -601,7 +603,6 @@
     transition: border-color 0.4s ease;
   }
 
-  /* RADAR WAVE PROPAGATION */
   .radar-wave {
     position: absolute;
     width: 50%;
@@ -615,7 +616,6 @@
   }
   .radar-wave.delay-1 { animation-delay: 1s; }
 
-  /* COMPUTING CORE GRAPHIC */
   .inner-core-node {
     position: relative;
     width: 52px;
@@ -643,34 +643,10 @@
     transition: background 0.4s ease;
   }
 
-  .vector-symbol {
-    font-size: 20px;
-    z-index: 3;
-    transition: transform 0.3s ease;
-  }
+  .vector-symbol { font-size: 20px; z-index: 3; transition: transform 0.3s ease; }
+  .interaction-prompt { font-size: 1.5rem; font-weight: 800; color: #ffffff; letter-spacing: 4px; margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 0 20px var(--hud-glow); transition: text-shadow 0.4s ease; }
+  .interaction-subtitle { font-family: monospace; font-size: 0.85rem; color: #8fa099; letter-spacing: 1.2px; line-height: 1.6; margin-bottom: 35px; }
 
-  /* TYPOGRAPHY */
-  .interaction-prompt {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: 4px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    text-shadow: 0 0 20px var(--hud-glow);
-    transition: text-shadow 0.4s ease;
-  }
-
-  .interaction-subtitle {
-    font-family: monospace;
-    font-size: 0.85rem;
-    color: #8fa099;
-    letter-spacing: 1.2px;
-    line-height: 1.6;
-    margin-bottom: 35px;
-  }
-
-  /* Precision Data Fill Bar */
   .hud-progress-track {
     width: 200px;
     height: 3px;
@@ -680,6 +656,7 @@
     overflow: hidden;
     position: relative;
     border: 1px solid rgba(0, 255, 170, 0.08);
+    transition: opacity 0.4s ease, visibility 0.4s;
   }
 
   .hud-progress-fill {
@@ -691,20 +668,45 @@
     transition: width 8s linear;
   }
 
-  /* ANIMATION MATRIX */
+  /* SLEEK MAIN MAIN DESK BUTTON */
+  .secure-mainframe-btn {
+    display: none;
+    opacity: 0;
+    margin: 0 auto;
+    background: transparent;
+    border: 1px solid var(--finance-emerald);
+    color: var(--finance-emerald);
+    padding: 12px 28px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 170, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .secure-mainframe-btn:hover {
+    background: var(--finance-emerald);
+    color: var(--dark-void);
+    box-shadow: 0 0 25px var(--finance-emerald);
+    transform: translateY(-1px);
+  }
+
+  /* KEYFRAMES */
   @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   @keyframes rotateCounterClockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
   @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
   @keyframes coreBreathe { 0% { opacity: 0.1; transform: scale(0.9); } 100% { opacity: 0.3; transform: scale(1.1); } }
-  @keyframes radarPulse {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(2.6); opacity: 0; }
-  }
+  @keyframes radarPulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(2.6); opacity: 0; } }
 </style>
 
 <script>
-  // AUTOMATED MAIN SITE LOADING CONTROLLER ENGINE WITH AUDIO INTERACTION BACKUP
+  let targetAudioFile = document.getElementById('terminal-audio');
+
   function initWebsiteGateway() {
     const lockOverlay = document.getElementById('desktop-lock-overlay');
     const gateIcon = document.getElementById('gate-icon');
@@ -713,7 +715,8 @@
     const gatePrompt = document.getElementById('gate-prompt');
     const gateSubtitle = document.getElementById('gate-subtitle');
     const gateProgress = document.getElementById('gate-progress');
-    const audioEngine = document.getElementById('terminal-audio');
+    const progressTrack = document.querySelector('.hud-progress-track');
+    const enterBtn = document.getElementById('terminal-enter-btn');
     
     const outerRing = document.querySelector('.outer-data-ring');
     const middleRing = document.querySelector('.middle-data-ring');
@@ -721,12 +724,11 @@
     const waves = document.querySelectorAll('.radar-wave');
     const brackets = document.querySelectorAll('.hud-corner-bracket');
     
-    // Check hardware layout matrices
     const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
     const hasDesktopWidth = window.innerWidth >= 1024;
 
     if (isMobileDevice && !hasDesktopWidth) {
-      // 📉 REJECTION HANDLER: Halt execution if on phone without desktop site checked
+      // MOBILE REJECTION BLOCKED SCREEN STATE
       gateIcon.textContent = "❌";
       gateIconContainer.style.borderColor = "var(--finance-alert)";
       gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
@@ -734,7 +736,7 @@
       
       gatePrompt.textContent = "ANALYST DESK REQUIRED";
       gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
-      gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING HIGH-DENSITY QUANTUM DATA ASSETS REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE INITIALIZE YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
+      gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING DATA REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE OPEN YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
       
       outerRing.style.borderColor = "var(--finance-alert)";
       middleRing.style.borderColor = "transparent";
@@ -750,41 +752,44 @@
       gateProgress.style.background = "var(--finance-alert)";
       gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
     } else {
-      // Try initialization of audio immediately (works if user previously interacted or has sound allowed)
-      audioEngine.play().catch(() => {
-        // Fallback for strict browser engines: plays on the first user interaction event
-        const startAudioOnInteraction = () => {
-          audioEngine.play().catch(() => {});
-          document.removeEventListener('click', startAudioOnInteraction);
-          document.removeEventListener('touchstart', startAudioOnInteraction);
-        };
-        document.addEventListener('click', startAudioOnInteraction);
-        document.addEventListener('touchstart', startAudioOnInteraction);
-      });
-
-      // 📊 AUTHORIZED ACCESS SYSTEM: Run the loader and reveal content
+      // DESKTOP: Start tracking the progress track fill bar layout automatically
       setTimeout(() => { gateProgress.style.width = "100%"; }, 50);
 
-      // 8-SECOND SYSTEM SCANNING RUNTIME PIPELINE
+      // 8-SECOND LOADER EXPIRATION MATRIX TIMER
       setTimeout(() => {
         gateIcon.textContent = "📈";
-        gatePrompt.textContent = "ACCESS GRANTED";
-        gateSubtitle.textContent = "Terminal compiled successfully. Loading environment mainframe modules...";
+        gatePrompt.textContent = "COMPILATION COMPLETE";
+        gateSubtitle.textContent = "Security handshake established. Secure interactive node generated.";
         
-        // Graceful fade transition block
-        setTimeout(() => {
-          lockOverlay.style.opacity = '0';
-          setTimeout(() => {
-            lockOverlay.style.display = 'none'; // Unlocks total visual site access to the user
-          }, 600);
-        }, 800);
-      }, 8000); // 8 Seconds hold duration
+        // Hide the progress track dynamically
+        progressTrack.style.visibility = 'hidden';
+        progressTrack.style.opacity = '0';
+        
+        // Show our clean Entry Gateway Button
+        enterBtn.style.display = 'block';
+        setTimeout(() => { enterBtn.style.opacity = '1'; }, 50);
+      }, 8000); 
     }
   }
 
-  // Auto-run the verification pipeline the moment the document object model maps into memory
+  // THIS FUNCTION ONLY RUNS ON AN EXPLICIT USER CLICK (Unlocks browser sound restrictions!)
+  function engageMainframeContent() {
+    const lockOverlay = document.getElementById('desktop-lock-overlay');
+    
+    // 1. Play the music explicitly through the mouse click channel
+    targetAudioFile.volume = 1.0;
+    targetAudioFile.play().catch(e => console.log("Audio failed to process: ", e));
+
+    // 2. Smoothly dismiss the loading panel from view to display the hidden website content
+    lockOverlay.style.opacity = '0';
+    setTimeout(() => {
+      lockOverlay.style.display = 'none';
+    }, 600);
+  }
+
   window.addEventListener('DOMContentLoaded', initWebsiteGateway);
 </script>
+
 
 
 
