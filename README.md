@@ -438,7 +438,15 @@
 
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
+<audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
+
 <div id="desktop-lock-overlay" class="desktop-enforcement-screen">
+  
+  <div class="ticker-backdrop-matrix">
+    <div class="ticker-lane">ANALYTICS_CORE [ONLINE] &nbsp;&nbsp; NIFTY50 +24,000 &nbsp;&nbsp; SENSEX +77,094 &nbsp;&nbsp; NASDAQ +26,000 &nbsp;&nbsp; USD/INR 94.05 &nbsp;&nbsp; DATA_STREAM_A [ENGAGED]</div>
+    <div class="ticker-lane reverse">RISK_MATRIX [ACTIVE] &nbsp;&nbsp; BTC/USD +4.82% &nbsp;&nbsp; GOLD/INR -0.15% &nbsp;&nbsp; ALPHA_ENGINE_CONNECTED &nbsp;&nbsp; MARGIN_SAFE</div>
+  </div>
+
   <div class="hud-scanner-grid"></div>
   <div class="hud-corner-bracket tl"></div>
   <div class="hud-corner-bracket tr"></div>
@@ -446,62 +454,89 @@
   <div class="hud-corner-bracket br"></div>
   
   <div class="hud-central-matrix-box">
-    <div class="hud-pulse-ring-vfx">
-      <div class="inner-core-node">🛑</div>
+    <div id="gate-ring" class="hud-pulse-ring-vfx">
+      <div class="outer-data-ring"></div>
+      <div class="inner-data-ring"></div>
+      <div id="gate-icon" class="inner-core-node">+Δ 2.4%</div>
     </div>
     
-    <div class="interaction-prompt">DESKTOP MODE REQUIRED</div>
-    <div class="interaction-subtitle">THIS SYSTEM IS RESTRICTED. YOU MUST OPEN YOUR BROWSER SETTINGS AND CHECK "REQUEST DESKTOP SITE" TO ACCESS THIS WEBSITE.</div>
+    <div id="gate-prompt" class="interaction-prompt">INITIALIZING TERMINAL</div>
+    <div id="gate-subtitle" class="interaction-subtitle">CONNECTING SECURE RISK MATRIX MODULES AND COMPILING ASSET VISUALIZATION TELEMETRY...</div>
     
     <div class="hud-progress-track">
-      <div class="hud-progress-fill"></div>
+      <div id="gate-progress" class="hud-progress-fill"></div>
     </div>
   </div>
 </div>
 
 <style>
   :root {
-    --cyber-gold: #ffdf00;
-    --cyber-amber: #ff9f43;
-    --dark-void: #030307;
-    --hud-glow: rgba(255, 223, 0, 0.25);
+    --finance-emerald: #00ffaa;
+    --finance-gold: #ffc83d;
+    --finance-alert: #ff4b2b;
+    --dark-void: #090a0f;
+    --hud-glow: rgba(0, 255, 170, 0.15);
   }
 
-  /* FULL SCREEN BLOCKER: Locked out by default on page initialization */
+  /* SUPREME LAYER IMMERSIVE CONTAINER */
   .desktop-enforcement-screen {
-    display: none; 
     position: fixed;
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at center, rgba(15, 12, 5, 1) 0%, var(--dark-void) 100%);
-    z-index: 9999999; /* Forces supreme stacking authority over everything */
+    background: radial-gradient(circle at center, #111420 0%, var(--dark-void) 100%);
+    z-index: 9999999;
+    display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     user-select: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  /* Tech Wireframe HUD Grid Background Styling */
+  /* BACKGROUND GRAPHICS / DATA TICKERS */
+  .ticker-backdrop-matrix {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    opacity: 0.03;
+    transform: rotate(-8deg) scale(1.3);
+    pointer-events: none;
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--finance-emerald);
+    white-space: nowrap;
+  }
+
+  .ticker-lane { animation: scrollLeft 35s linear infinite; }
+  .ticker-lane.reverse { animation: scrollRight 40s linear infinite; color: var(--finance-gold); }
+
   .hud-scanner-grid {
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(255, 223, 0, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 223, 0, 0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
+      linear-gradient(rgba(0, 255, 170, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 170, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
     background-position: center;
     pointer-events: none;
   }
 
-  /* Cybernetic Corner Geometry Framing Brackets */
+  /* Minimal Corner Framing Elements */
   .hud-corner-bracket {
     position: absolute;
-    width: 30px;
-    height: 30px;
-    border: 3px solid var(--cyber-gold);
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--finance-emerald);
     pointer-events: none;
-    opacity: 0.7;
+    opacity: 0.4;
+    transition: border-color 0.4s ease;
   }
   .tl { top: 40px; left: 40px; border-right: 0; border-bottom: 0; }
   .tr { top: 40px; right: 40px; border-left: 0; border-bottom: 0; }
@@ -511,124 +546,165 @@
   .hud-central-matrix-box {
     text-align: center;
     z-index: 10;
-    max-width: 600px;
-    padding: 30px;
+    max-width: 520px;
+    padding: 20px;
     box-sizing: border-box;
   }
 
-  /* Lock Core Spinning Animation Rules */
+  /* UNIQUE SEAMLESS SPINNING STATUS MECHANICS */
   .hud-pulse-ring-vfx {
     position: relative;
     width: 110px;
     height: 110px;
-    margin: 0 auto 35px;
-    border-radius: 50%;
-    border: 2px dashed var(--cyber-gold);
+    margin: 0 auto 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 30px rgba(255, 223, 0, 0.1);
-    animation: spinRing 20s linear infinite;
   }
 
-  .hud-pulse-ring-vfx::before {
-    content: '';
+  .outer-data-ring {
     position: absolute;
-    inset: -12px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid rgba(0, 255, 170, 0.05);
+    border-top: 2px solid var(--finance-emerald);
     border-radius: 50%;
-    border: 1px solid rgba(255, 223, 0, 0.2);
-    animation: pulseRingVFX 1.8s cubic-bezier(0.215, 0.610, 0.355, 1) infinite;
+    animation: rotateClockwise 1.8s linear infinite;
+    transition: border-color 0.4s ease;
+  }
+
+  .inner-data-ring {
+    position: absolute;
+    width: 78%;
+    height: 78%;
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--finance-gold);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: rotateCounterClockwise 1.2s linear infinite;
+    transition: border-color 0.4s ease;
   }
 
   .inner-core-node {
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 223, 0, 0.1);
-    border: 1px solid var(--cyber-gold);
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-size: 24px;
-    animation: reverseSpinRing 20s linear infinite;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--finance-emerald);
+    text-shadow: 0 0 8px var(--finance-emerald);
+    z-index: 2;
+    transition: all 0.4s ease;
   }
 
+  /* TYPOGRAPHY */
   .interaction-prompt {
-    font-family: 'Segoe UI', Roboto, sans-serif;
-    font-size: 1.8rem;
-    font-weight: 900;
+    font-size: 1.5rem;
+    font-weight: 800;
     color: #ffffff;
     letter-spacing: 4px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
     text-shadow: 0 0 20px var(--hud-glow);
+    transition: text-shadow 0.4s ease;
   }
 
   .interaction-subtitle {
     font-family: monospace;
     font-size: 0.85rem;
-    color: var(--cyber-gold);
-    letter-spacing: 1.5px;
-    line-height: 1.7;
-    margin-bottom: 40px;
-    text-shadow: 0 0 8px rgba(255, 223, 0, 0.3);
+    color: #8fa099;
+    letter-spacing: 1.2px;
+    line-height: 1.6;
+    margin-bottom: 35px;
   }
 
-  /* Micro-Loading Scanner Bar Graphic */
+  /* Precision Data Fill Bar */
   .hud-progress-track {
-    width: 220px;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    width: 200px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 6px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(255, 223, 0, 0.1);
+    border: 1px solid rgba(0, 255, 170, 0.08);
   }
 
   .hud-progress-fill {
     position: absolute;
     top: 0; left: 0; bottom: 0;
-    width: 30%;
-    background: linear-gradient(90deg, var(--cyber-amber), var(--cyber-gold));
-    box-shadow: 0 0 10px var(--cyber-gold);
-    animation: loopProgress 2s ease-in-out infinite alternate;
+    width: 35%;
+    background: linear-gradient(90deg, var(--finance-emerald), var(--finance-gold));
+    box-shadow: 0 0 12px var(--finance-emerald);
+    animation: slideLoader 1.5s ease-in-out infinite alternate;
   }
 
-  /* KEYFRAME CORE TIMELINES */
-  @keyframes spinRing { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-  @keyframes reverseSpinRing { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
-  @keyframes pulseRingVFX {
-    0% { transform: scale(0.6); opacity: 0; }
-    50% { opacity: 0.7; }
-    100% { transform: scale(1.2); opacity: 0; }
-  }
-  @keyframes loopProgress {
-    0% { left: -20%; }
-    100% { left: 90%; }
-  }
+  /* ANIMATION MATRIX */
+  @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  @keyframes rotateCounterClockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+  @keyframes slideLoader { 0% { left: -25%; } 100% { left: 95%; } }
+  @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+  @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
 </style>
 
 <script>
-  function enforceDesktopVerification() {
+  function runGatewayVerificationEngine() {
     const lockOverlay = document.getElementById('desktop-lock-overlay');
+    const gateIcon = document.getElementById('gate-icon');
+    const gatePrompt = document.getElementById('gate-prompt');
+    const gateSubtitle = document.getElementById('gate-subtitle');
+    const gateProgress = document.getElementById('gate-progress');
+    const outerRing = document.querySelector('.outer-data-ring');
+    const innerRing = document.querySelector('.inner-data-ring');
+    const brackets = document.querySelectorAll('.hud-corner-bracket');
+    const audioNode = document.getElementById('terminal-audio');
     
-    // Check if the device is a mobile/tablet screen AND does not match actual desktop criteria
+    // Identity verification parameters
     const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-    
-    // When desktop mode is selected on mobile browsers, the screen width reports as large desktop numbers (e.g. 1024px+)
     const hasDesktopWidth = window.innerWidth >= 1024;
 
     if (isMobileDevice && !hasDesktopWidth) {
-      // Keep user locked out completely
-      lockOverlay.style.display = 'flex';
+      // 📉 HARD REJECTION STATE: Environment lacks desktop viewport configurations
+      gateIcon.textContent = "-ERR";
+      gateIcon.style.color = "var(--finance-alert)";
+      gateIcon.style.textShadow = "0 0 8px var(--finance-alert)";
+      
+      gatePrompt.textContent = "ANALYST DESK REQUIRED";
+      gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
+      gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING HIGH-DENSITY QUANTUM DATA ASSETS REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE INITIALIZE YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
+      
+      // Pivot design assets to alert configuration states smoothly
+      outerRing.style.borderColor = "var(--finance-alert)";
+      innerRing.style.borderColor = "transparent";
+      outerRing.style.animationPlayState = 'paused';
+      innerRing.style.animationPlayState = 'paused';
+      brackets.forEach(bracket => bracket.style.borderColor = "var(--finance-alert)");
+      
+      gateProgress.style.background = "var(--finance-alert)";
+      gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
+      
+      // Safety audio capture: If they tap the mobile block screen, attempt playback initialization anyway
+      document.addEventListener('click', () => { audioNode.play().catch(()=>{}); }, { once: true });
     } else {
-      // Let them in automatically
-      lockOverlay.style.display = 'none';
+      // 📊 INITIAL PRE-LOADER TIMEOUT: Authorized resolution verified; stream music and open workspace
+      setTimeout(() => {
+        // Safe programmatic audio initiation loop
+        audioNode.play().catch(error => {
+          console.log("Audio waiting for explicit page interaction event capture context.");
+        });
+        
+        gateIcon.textContent = "OK";
+        gatePrompt.textContent = "DESK ENGINE READY";
+        
+        setTimeout(() => {
+          lockOverlay.style.opacity = '0';
+          setTimeout(() => {
+            lockOverlay.style.display = 'none';
+          }, 600);
+        }, 400);
+      }, 1800);
     }
   }
 
-  // Trigger scanning check parameters on initial execution and page orientation mutations
-  window.addEventListener('DOMContentLoaded', enforceDesktopVerification);
-  window.addEventListener('resize', enforceDesktopVerification);
+  window.addEventListener('DOMContentLoaded', runGatewayVerificationEngine);
 </script>
 
 
