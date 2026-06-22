@@ -429,6 +429,8 @@
 </head>
 <body>
 
+<meta name="viewport" content="width=1024, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <!-- Navigation Bar -->
 <nav style="
     display: flex; 
