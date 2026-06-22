@@ -1,3 +1,75 @@
+<meta name="viewport" content="width=1200, initial-scale=1.0">
+
+<div id="audio-click-overlay" class="audio-interaction-overlay">
+  <div class="interaction-prompt">⚡ TAP ANYWHERE FOR DESKTOP ENGINE ACTIVATION ⚡</div>
+</div>
+
+<div class="audio-player-widget">
+  <div class="visualizer-container playing" id="visualizer">
+    <div class="glow-orb"></div>
+    <div class="vfx-bars">
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+      <span class="bar3d"></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* BY DEFAULT: Hide the prompt everywhere (Desktop viewports) */
+  .audio-interaction-overlay {
+    display: none; 
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 5, 10, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.6s ease, visibility 0.6s;
+  }
+
+  /* MOBILE DEVICE DETECTION MATRIX: Only activates if the display screen is narrow */
+  @media (max-width: 1024px) {
+    .audio-interaction-overlay {
+      display: flex; /* Dynamically forces the box to display on phones/tablets */
+    }
+  }
+
+  .interaction-prompt {
+    font-family: monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #ffdf00;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 0 20px;
+    text-shadow: 0 0 15px rgba(255, 223, 0, 0.4);
+  }
+</style>
+
+<script>
+  // Simple listener removes the modal block on tap
+  document.addEventListener('click', () => {
+    const overlay = document.getElementById('audio-click-overlay');
+    if (overlay) {
+      overlay.style.opacity = '0';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 600);
+    }
+  }, { once: true });
+</script>
+
+
+
+
 
 <head>
   <meta charset="UTF-8">
