@@ -429,10 +429,6 @@
 </head>
 <body>
 
-
-
-
-
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
 <audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
@@ -442,18 +438,23 @@
   <div class="ticker-backdrop-matrix">
     <div class="ticker-lane">ANALYTICS_CORE [ONLINE] &nbsp;&nbsp; NIFTY50 +24,000 &nbsp;&nbsp; SENSEX +77,094 &nbsp;&nbsp; NASDAQ +26,000 &nbsp;&nbsp; USD/INR 94.05 &nbsp;&nbsp; DATA_STREAM_A [ENGAGED]</div>
     <div class="ticker-lane reverse">RISK_MATRIX [ACTIVE] &nbsp;&nbsp; BTC/USD +4.82% &nbsp;&nbsp; GOLD/INR -0.15% &nbsp;&nbsp; ALPHA_ENGINE_CONNECTED &nbsp;&nbsp; MARGIN_SAFE</div>
+    <div class="ticker-lane">HIGH_FREQUENCY_DESK &nbsp;&nbsp; LIQUIDITY_POOL_V4 &nbsp;&nbsp; DELTA_DELTA_HEDGE [SECURE] &nbsp;&nbsp; QUANT_ALGO_RUNNING</div>
   </div>
 
   <div class="hud-scanner-grid"></div>
-  <div class="hud-corner-bracket tl"></div>
+  
+  <div class="hud-crosshairch h-line"></div>
+  <div class="hud-crosshairch v-line"></div>
+  
+  <div class="hud-corner-bracket tl"><div class="hud-glitch-particle"></div></div>
   <div class="hud-corner-bracket tr"></div>
   <div class="hud-corner-bracket bl"></div>
-  <div class="hud-corner-bracket br"></div>
+  <div class="hud-corner-bracket br"><div class="hud-glitch-particle delay-particle"></div></div>
   
   <div class="hud-central-matrix-box">
-    <div id="click-to-start-prompt" class="start-tap-vfx">⚡ CLICK ANYWHERE TO SECURE MAIN DESK NODE ⚡</div>
+    <div id="click-to-start-prompt" class="start-tap-vfx">⚡ TAP ANYWHERE FOR SYSTEM ACTIVATION ⚡</div>
 
-    <div id="gate-ring" class="hud-pulse-ring-vfx" style="opacity: 0.35;">
+    <div id="gate-ring" class="hud-pulse-ring-vfx" style="opacity: 0.25;">
       <div class="outer-data-ring"></div>
       <div class="middle-data-ring"></div>
       <div class="inner-data-ring"></div>
@@ -467,8 +468,8 @@
       </div>
     </div>
     
-    <div id="gate-prompt" class="interaction-prompt">MAINBOARD TERMINAL STANDBY</div>
-    <div id="gate-subtitle" class="interaction-subtitle">Awaiting identity handshake initialization sequence vectors...</div>
+    <h1 id="gate-prompt" class="interaction-prompt">MAINBOARD TERMINAL STANDBY</h1>
+    <p id="gate-subtitle" class="interaction-subtitle">Awaiting identity handshake initialization sequence vectors...</p>
     
     <div id="progress-track-wrapper" class="hud-progress-track" style="opacity: 0; visibility: hidden;">
       <div id="gate-progress" class="hud-progress-fill"></div>
@@ -481,17 +482,18 @@
     --finance-emerald: #00ffaa;
     --finance-gold: #ffc83d;
     --finance-alert: #ff4b2b;
-    --dark-void: #090a0f;
-    --hud-glow: rgba(0, 255, 170, 0.15);
+    --dark-void: #06070a;
+    --hud-glow: rgba(0, 255, 170, 0.2);
+    --gold-glow-ambient: rgba(255, 200, 61, 0.12);
   }
 
-  /* SUPREME LAYER IMMERSIVE CONTAINER */
+  /* SUPREME LAYER IMMERSIVE CONTAINER WITH QUAD ALL-SIDES YELLOW CORES */
   .desktop-enforcement-screen {
     position: fixed;
     inset: 0;
     width: 100vw;
     height: 100vh;
-    background: radial-gradient(circle at center, #111420 0%, var(--dark-void) 100%);
+    background: radial-gradient(circle at center, #0e121d 0%, var(--dark-void) 100%);
     z-index: 9999999;
     display: flex;
     justify-content: center;
@@ -499,86 +501,117 @@
     overflow: hidden;
     user-select: none;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    cursor: pointer; /* Makes the whole screen an active click area */
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    cursor: pointer;
+    
+    /* SUPREME ALL-SIDES PERIPHERAL GLOW */
+    box-shadow: inset 0 0 80px rgba(255, 200, 61, 0.18),
+                inset 0 0 30px rgba(255, 165, 0, 0.08);
+    animation: borderGlowPulse 4s ease-in-out infinite alternate;
   }
 
-  /* INITIAL INTERACTION ENCOURAGEMENT TEXT */
+  /* CHART CROSSHAIRS VFX */
+  .hud-crosshairch {
+    position: absolute;
+    background: rgba(0, 255, 170, 0.02);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .hud-crosshairch.h-line { width: 100%; height: 1px; top: 50%; left: 0; }
+  .hud-crosshairch.v-line { height: 100%; width: 1px; left: 50%; top: 0; }
+
+  /* INITIAL INTERACTION TEXT GRAPHIC */
   .start-tap-vfx {
     font-family: monospace;
-    font-size: 1rem;
+    font-size: 1.05rem;
     color: var(--finance-gold);
     font-weight: bold;
-    letter-spacing: 2px;
-    margin-bottom: 25px;
-    text-shadow: 0 0 10px rgba(255, 200, 61, 0.4);
-    animation: textPulse 1.2s ease-in-out infinite alternate;
+    letter-spacing: 3px;
+    margin-bottom: 35px;
+    text-shadow: 0 0 15px rgba(255, 200, 61, 0.6);
+    animation: textPulse 1s ease-in-out infinite alternate;
   }
 
-  /* BACKGROUND GRAPHICS / DATA TICKERS */
+  /* BACKGROUND GRAPHICS / MULTI-LANE STAGGERED DATA TICKERS */
   .ticker-backdrop-matrix {
     position: absolute;
     inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    opacity: 0.03;
-    transform: rotate(-8deg) scale(1.3);
+    gap: 40px;
+    opacity: 0.025;
+    transform: rotate(-6deg) scale(1.4);
     pointer-events: none;
     font-family: monospace;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: bold;
     color: var(--finance-emerald);
     white-space: nowrap;
   }
 
-  .ticker-lane { animation: scrollLeft 35s linear infinite; }
-  .ticker-lane.reverse { animation: scrollRight 40s linear infinite; color: var(--finance-gold); }
+  .ticker-lane { animation: scrollLeft 30s linear infinite; }
+  .ticker-lane.reverse { animation: scrollRight 45s linear infinite; color: var(--finance-gold); }
 
   .hud-scanner-grid {
     position: absolute;
     inset: 0;
     background-image: 
-      linear-gradient(rgba(0, 255, 170, 0.02) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0, 255, 170, 0.02) 1px, transparent 1px);
-    background-size: 50px 50px;
+      linear-gradient(rgba(0, 255, 170, 0.015) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 170, 0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
     background-position: center;
     pointer-events: none;
   }
 
+  /* CYBERNETIC GEOMETRIC FRAME CORES */
   .hud-corner-bracket {
     position: absolute;
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     border: 2px solid var(--finance-emerald);
     pointer-events: none;
-    opacity: 0.4;
-    transition: border-color 0.4s ease;
+    opacity: 0.35;
+    transition: border-color 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
   }
-  .tl { top: 40px; left: 40px; border-right: 0; border-bottom: 0; }
-  .tr { top: 40px; right: 40px; border-left: 0; border-bottom: 0; }
-  .bl { bottom: 40px; left: 40px; border-right: 0; border-top: 0; }
-  .br { bottom: 40px; right: 40px; border-left: 0; border-top: 0; }
+  .tl { top: 50px; left: 40px; border-right: 0; border-bottom: 0; }
+  .tr { top: 50px; right: 40px; border-left: 0; border-bottom: 0; }
+  .bl { bottom: 50px; left: 40px; border-right: 0; border-top: 0; }
+  .br { bottom: 50px; right: 40px; border-left: 0; border-top: 0; }
+
+  /* DYNAMIC MINI HARDWARE GLITCH PARTICLES */
+  .hud-glitch-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--finance-gold);
+    box-shadow: 0 0 8px var(--finance-gold);
+    border-radius: 50%;
+    animation: particleFlicker 2s steps(4) infinite;
+  }
+  .tl .hud-glitch-particle { top: -2px; left: 45px; }
+  .br .hud-glitch-particle { bottom: -2px; right: 45px; }
 
   .hud-central-matrix-box {
     text-align: center;
     z-index: 10;
     width: 100%;
-    max-width: 520px;
+    max-width: 550px;
     padding: 20px;
     box-sizing: border-box;
   }
 
+  /* ADVANCED TRIPLE RING ENGINE HOUSINGS */
   .hud-pulse-ring-vfx {
     position: relative;
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 35px;
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 40px;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 0.5s ease;
+    animation: powerSurge 4s ease-in-out infinite alternate;
   }
 
   .outer-data-ring {
@@ -589,57 +622,59 @@
     border-top: 2px solid var(--finance-emerald);
     border-bottom: 2px solid var(--finance-emerald);
     border-radius: 50%;
-    animation: rotateClockwise 3s linear infinite;
+    animation: rotateClockwise 4s linear infinite;
     transition: border-color 0.4s ease;
   }
 
   .middle-data-ring {
     position: absolute;
-    width: 84%;
-    height: 84%;
+    width: 82%;
+    height: 82%;
     border: 1px dotted rgba(255, 200, 61, 0.15);
     border-left: 2px solid var(--finance-gold);
     border-radius: 50%;
-    animation: rotateCounterClockwise 1.2s linear infinite;
+    animation: rotateCounterClockwise 1.5s linear infinite;
     transition: border-color 0.4s ease;
   }
 
   .inner-data-ring {
     position: absolute;
-    width: 68%;
-    height: 68%;
-    border: 2px solid rgba(0, 255, 170, 0.04);
+    width: 64%;
+    height: 64%;
+    border: 2px solid rgba(0, 255, 170, 0.03);
     border-right: 2px dashed var(--finance-emerald);
     border-radius: 50%;
-    animation: rotateClockwise 1.8s linear infinite;
+    animation: rotateClockwise 2s linear infinite;
     transition: border-color 0.4s ease;
   }
 
+  /* HIGH-FIDELITY RADAR RAYS */
   .radar-wave {
     position: absolute;
-    width: 50%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
     border: 1px solid var(--finance-emerald);
     border-radius: 50%;
     opacity: 0;
     pointer-events: none;
-    animation: radarPulse 2s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+    animation: radarPulse 2.5s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
     transition: border-color 0.4s ease;
   }
-  .radar-wave.delay-1 { animation-delay: 1s; }
+  .radar-wave.delay-1 { animation-delay: 1.25s; }
 
+  /* HARDWARE EMULATION COMPILER CORE NODE */
   .inner-core-node {
     position: relative;
-    width: 52px;
-    height: 52px;
-    background: rgba(9, 10, 15, 0.9);
+    width: 56px;
+    height: 56px;
+    background: rgba(6, 7, 10, 0.95);
     border: 2px solid var(--finance-emerald);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    box-shadow: 0 0 15px rgba(0, 255, 170, 0.2);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 0.25);
     transition: all 0.4s ease;
   }
 
@@ -649,25 +684,26 @@
     height: 100%;
     background: var(--finance-emerald);
     border-radius: 50%;
-    filter: blur(8px);
+    filter: blur(10px);
     opacity: 0.15;
     animation: coreBreathe 2s ease-in-out infinite alternate;
     transition: background 0.4s ease;
   }
 
-  .vector-symbol { font-size: 20px; z-index: 3; transition: transform 0.3s ease; }
-  .interaction-prompt { font-size: 1.5rem; font-weight: 800; color: #ffffff; letter-spacing: 4px; margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 0 20px var(--hud-glow); transition: text-shadow 0.4s ease; }
-  .interaction-subtitle { font-family: monospace; font-size: 0.85rem; color: #8fa099; letter-spacing: 1.2px; line-height: 1.6; margin-bottom: 35px; }
+  .vector-symbol { font-size: 22px; z-index: 3; transition: transform 0.3s ease; }
+  .interaction-prompt { font-size: 1.55rem; font-weight: 800; color: #ffffff; letter-spacing: 5px; margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 0 25px var(--hud-glow); transition: text-shadow 0.4s ease; }
+  .interaction-subtitle { font-family: monospace; font-size: 0.85rem; color: #829499; letter-spacing: 1.2px; line-height: 1.6; margin-bottom: 35px; }
 
+  /* PRECISION MICRO-PROGRESS RAIL */
   .hud-progress-track {
-    width: 200px;
+    width: 220px;
     height: 3px;
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.03);
     border-radius: 6px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    border: 1px solid rgba(0, 255, 170, 0.08);
+    border: 1px solid rgba(0, 255, 170, 0.06);
     transition: opacity 0.4s ease, visibility 0.4s;
   }
 
@@ -676,24 +712,46 @@
     top: 0; left: 0; bottom: 0;
     width: 0%; 
     background: linear-gradient(90deg, var(--finance-emerald), var(--finance-gold));
-    box-shadow: 0 0 12px var(--finance-emerald);
+    box-shadow: 0 0 14px var(--finance-emerald);
   }
 
-  /* KEYFRAMES */
+  /* SYSTEM ANIMATIONS ARCHITECTURE MATRIX */
   @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   @keyframes rotateCounterClockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
   @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
   @keyframes scrollRight { 0% { transform: translateX(-50%); } 100% { transform: translateX(0); } }
-  @keyframes coreBreathe { 0% { opacity: 0.1; transform: scale(0.9); } 100% { opacity: 0.3; transform: scale(1.1); } }
-  @keyframes radarPulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(2.6); opacity: 0; } }
-  @keyframes textPulse { 0% { opacity: 0.4; transform: scale(0.98); } 100% { opacity: 1; transform: scale(1); } }
+  @keyframes coreBreathe { 0% { opacity: 0.1; transform: scale(0.85); } 100% { opacity: 0.35; transform: scale(1.15); } }
+  @keyframes radarPulse { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(2.8); opacity: 0; } }
+  @keyframes textPulse { 0% { opacity: 0.3; transform: scale(0.97); } 100% { opacity: 1; transform: scale(1.01); } }
+  
+  @keyframes particleFlicker {
+    0%, 100% { opacity: 0; transform: translateX(0); }
+    30% { opacity: 1; transform: translateX(3px); }
+    60% { opacity: 0.2; transform: translateX(-2px); }
+  }
+
+  @keyframes powerSurge {
+    0% { filter: drop-shadow(0 0 2px rgba(0, 255, 170, 0.05)); }
+    100% { filter: drop-shadow(0 0 12px rgba(0, 255, 170, 0.25)); }
+  }
+
+  /* FRAME AMBIENT PULSING EFFECT */
+  @keyframes borderGlowPulse {
+    0% {
+      box-shadow: inset 0 0 80px rgba(255, 200, 61, 0.14),
+                  inset 0 0 30px rgba(255, 165, 0, 0.05);
+    }
+    100% {
+      box-shadow: inset 0 0 120px rgba(255, 200, 61, 0.22),
+                  inset 0 0 50px rgba(255, 165, 0, 0.12);
+    }
+  }
 </style>
 
 <script>
   let targetAudioFile = document.getElementById('terminal-audio');
   let mobileBlockActive = false;
 
-  // STEP 1: SCAN DEVICE CONFIGURATION IMMEDATELY ON LOAD
   function checkSystemEnvironment() {
     const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
     const hasDesktopWidth = window.innerWidth >= 1024;
@@ -702,70 +760,71 @@
       mobileBlockActive = true;
       renderMobileRejectionLayout();
     } else {
-      // Desktop verified: Listen for the initial unlock tap event across the entire layout container
       document.getElementById('desktop-lock-overlay').addEventListener('click', startEightSecondScanPipeline, { once: true });
     }
   }
 
-  // DESKTOP PIPELINE RUNTIME
   function startEightSecondScanPipeline() {
     if (mobileBlockActive) return;
 
     const overlayLayer = document.getElementById('desktop-lock-overlay');
     const initialPrompt = document.getElementById('click-to-start-prompt');
     const gateRing = document.getElementById('gate-ring');
+    const gateIcon = document.getElementById('gate-icon');
     const gatePrompt = document.getElementById('gate-prompt');
     const gateSubtitle = document.getElementById('gate-subtitle');
     const progressTrackWrapper = document.getElementById('progress-track-wrapper');
     const gateProgress = document.getElementById('gate-progress');
 
-    // Remove text instructions and set interactive objects wide open
     overlayLayer.style.cursor = 'default';
     if(initialPrompt) initialPrompt.style.display = 'none';
     gateRing.style.opacity = '1';
 
-    // Wake and start the background audio stream tracking vectors cleanly
-    targetAudioFile.volume = 1.0;
-    targetAudioFile.play().catch(e => console.log("Audio failed to load. Check file configuration path vectors. Error: ", e));
+    // Shift central node icon to an absolute executing variable
+    gateIcon.textContent = "⏳";
 
-    // Update textual indicators
-    gatePrompt.textContent = "INITIALIZING TERMINAL";
-    gateSubtitle.textContent = "CONNECTING SECURE RISK MATRIX MODULES AND COMPILING ASSET VISUALIZATION TELEMETRY...";
+    // Play backend audio asset stream securely
+    targetAudioFile.volume = 1.0;
+    targetAudioFile.play().catch(e => console.log("Audio resource mapping block context flagged: ", e));
+
+    gatePrompt.textContent = "INITIALIZING DESK MAINBOARD";
+    gateSubtitle.textContent = "COMPILING TRADING CHANNELS, SECURITIES HANDSHAKES, AND LIVE TELEMETRY MATRIX STREAMS...";
     
-    // Unhide layout filler bar
     progressTrackWrapper.style.visibility = 'visible';
     progressTrackWrapper.style.opacity = '1';
     
-    // Set 8 seconds linear filling execution transition mapping rules
     gateProgress.style.transition = "width 8s linear";
     setTimeout(() => { gateProgress.style.width = "100%"; }, 20);
 
-    // STEP 4: EXACT 8 SECONDS TARGETED TERMINATION EVENT
+    // TARGETED EXPIRATION HOLD LOOP
     setTimeout(() => {
       
-      // Dynamic Fade-Out Loop: Completely subdues sound arrays down to absolute 0 over 800ms
+      // Decay audio loops smoothly
       let fadeOutEngine = setInterval(() => {
         if (targetAudioFile.volume > 0.05) {
           targetAudioFile.volume -= 0.05;
         } else {
           clearInterval(fadeOutEngine);
           targetAudioFile.pause();
-          targetAudioFile.currentTime = 0; // Completely flushes the sound timeline markers
+          targetAudioFile.currentTime = 0;
         }
       }, 40);
 
-      // Instantly dismiss screen mask overlay panels to render website mainboard content beneath
+      // Terminal accepted modifications layout execution
+      gateIcon.textContent = "❇️";
+      gatePrompt.textContent = "ACCESS GRANTED";
+      gateSubtitle.textContent = "Analyst desk matrix parameters verified. Syncing layout workspace nodes...";
+
       setTimeout(() => {
         overlayLayer.style.opacity = '0';
         setTimeout(() => {
-          overlayLayer.style.display = 'none'; // Site is completely accessible now!
+          overlayLayer.style.display = 'none';
         }, 600);
-      }, 800); // Gives audio time to fade completely before screen vanishes
+      }, 800);
       
-    }, 8000); // 8 Seconds Execution Window Allocation
+    }, 8000);
   }
 
-  // MOBILE REJECTION CONDITIONER RENDERING MATRIX
   function renderMobileRejectionLayout() {
     const gateIcon = document.getElementById('gate-icon');
     const gateIconContainer = document.getElementById('gate-icon-container');
@@ -776,6 +835,7 @@
     const progressTrackWrapper = document.getElementById('progress-track-wrapper');
     const initialPrompt = document.getElementById('click-to-start-prompt');
     const gateRing = document.getElementById('gate-ring');
+    const rootOverlay = document.getElementById('desktop-lock-overlay');
 
     const outerRing = document.querySelector('.outer-data-ring');
     const middleRing = document.querySelector('.middle-data-ring');
@@ -786,14 +846,18 @@
     if(initialPrompt) initialPrompt.style.display = 'none';
     gateRing.style.opacity = '1';
 
-    gateIcon.textContent = "❌";
+    // Shift border ambient glow parameters instantly to intense warning red
+    rootOverlay.style.animation = 'none';
+    rootOverlay.style.boxShadow = 'inset 0 0 100px rgba(255, 75, 43, 0.25)';
+
+    gateIcon.textContent = "⚠️";
     gateIconContainer.style.borderColor = "var(--finance-alert)";
     gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
     glowParticle.style.background = "var(--finance-alert)";
     
     gatePrompt.textContent = "ANALYST DESK REQUIRED";
     gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
-    gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING HIGH-DENSITY QUANTUM DATA ASSETS REQUIRES LARGER ENVIRONMENT SCREENSPACE VARIABLES.<br><br>PLEASE INITIALIZE YOUR MOBILE BROWSER OPTIONS SYSTEM AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
+    gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
     
     outerRing.style.borderColor = "var(--finance-alert)";
     middleRing.style.borderColor = "transparent";
@@ -803,7 +867,10 @@
     innerRing.style.animationPlayState = 'paused';
     
     waves.forEach(wave => wave.style.borderColor = "var(--finance-alert)");
-    brackets.forEach(bracket => bracket.style.borderColor = "var(--finance-alert)");
+    brackets.forEach(bracket => {
+      bracket.style.borderColor = "var(--finance-alert)";
+      bracket.style.opacity = "0.6";
+    });
     
     progressTrackWrapper.style.visibility = 'visible';
     progressTrackWrapper.style.opacity = '1';
@@ -814,11 +881,6 @@
 
   window.addEventListener('DOMContentLoaded', checkSystemEnvironment);
 </script>
-
-
-
-
-
 
 <!-- Navigation Bar -->
 <nav style="
