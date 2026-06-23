@@ -429,16 +429,17 @@
 </head>
 <body>
 
+
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
-<audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
+<audio id="terminal-audio" src="trading_floor_ambient.mp3" loop preload="auto"></audio>
 
 <div id="desktop-lock-overlay" class="desktop-enforcement-screen" style="display: flex; opacity: 1;">
   
   <div class="ticker-backdrop-matrix">
-    <div class="ticker-lane">ANALYTICS_CORE [ONLINE] &nbsp;&nbsp; NIFTY50 +24,000 &nbsp;&nbsp; SENSEX +77,094 &nbsp;&nbsp; NASDAQ +26,000 &nbsp;&nbsp; USD/INR 94.05 &nbsp;&nbsp; DATA_STREAM_A [ENGAGED]</div>
-    <div class="ticker-lane reverse">RISK_MATRIX [ACTIVE] &nbsp;&nbsp; BTC/USD +4.82% &nbsp;&nbsp; GOLD/INR -0.15% &nbsp;&nbsp; ALPHA_ENGINE_CONNECTED &nbsp;&nbsp; MARGIN_SAFE</div>
-    <div class="ticker-lane">HIGH_FREQUENCY_DESK &nbsp;&nbsp; LIQUIDITY_POOL_V4 &nbsp;&nbsp; DELTA_DELTA_HEDGE [SECURE] &nbsp;&nbsp; QUANT_ALGO_RUNNING</div>
+    <div class="ticker-lane">NDS_OM_CORE [ONLINE] &nbsp;&nbsp; NIFTY50 +24,000 &nbsp;&nbsp; SENSEX +77,094 &nbsp;&nbsp; BANKNIFTY +52,300 &nbsp;&nbsp; USD/INR 84.05 &nbsp;&nbsp; E_CBRICS_STREAM [ENGAGED]</div>
+    <div class="ticker-lane reverse">RBI_LIQUIDITY_MATRIX [ACTIVE] &nbsp;&nbsp; 10Y_G_SEC +6.92% &nbsp;&nbsp; GOLD/MCX -0.15% &nbsp;&nbsp; COLO_ENGINE_CONNECTED &nbsp;&nbsp; MARGIN_SAFE</div>
+    <div class="ticker-lane">PRO_HFT_DESK &nbsp;&nbsp; MUTUAL_FUND_NAV_v2 &nbsp;&nbsp; DELTA_VEGA_HEDGE [SECURE] &nbsp;&nbsp; SEBI_COMPLIANT_ALGO</div>
   </div>
 
   <div class="hud-scanner-grid"></div>
@@ -452,7 +453,7 @@
   <div class="hud-corner-bracket br"><div class="hud-glitch-particle delay-particle"></div></div>
   
   <div class="hud-central-matrix-box">
-    <div id="click-to-start-prompt" class="start-tap-vfx">⚡ TAP ANYWHERE FOR SYSTEM ACTIVATION ⚡</div>
+    <div id="click-to-start-prompt" class="start-tap-vfx">⚡ TAP ANYWHERE TO SYNC WITH NSE/BSE COLO NODE ⚡</div>
 
     <div id="gate-ring" class="hud-pulse-ring-vfx" style="opacity: 0.25;">
       <div class="outer-data-ring"></div>
@@ -464,12 +465,12 @@
       
       <div id="gate-icon-container" class="inner-core-node">
         <div class="glow-particle-core"></div>
-        <div id="gate-icon" class="vector-symbol">💼</div>
+        <div id="gate-icon" class="vector-symbol">📈</div>
       </div>
     </div>
     
-    <h1 id="gate-prompt" class="interaction-prompt">MAINBOARD TERMINAL STANDBY</h1>
-    <p id="gate-subtitle" class="interaction-subtitle">Awaiting identity handshake initialization sequence vectors...</p>
+    <h1 id="gate-prompt" class="interaction-prompt">PRO_DESK TERMINAL STANDBY</h1>
+    <p id="gate-subtitle" class="interaction-subtitle">Awaiting UCC authentication and Biometric token handshake sequence vectors...</p>
     
     <div id="progress-track-wrapper" class="hud-progress-track" style="opacity: 0; visibility: hidden;">
       <div id="gate-progress" class="hud-progress-fill"></div>
@@ -487,7 +488,6 @@
     --gold-glow-ambient: rgba(255, 200, 61, 0.12);
   }
 
-  /* SUPREME LAYER IMMERSIVE CONTAINER WITH QUAD ALL-SIDES YELLOW CORES */
   .desktop-enforcement-screen {
     position: fixed;
     inset: 0;
@@ -503,14 +503,11 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
     cursor: pointer;
-    
-    /* SUPREME ALL-SIDES PERIPHERAL GLOW */
     box-shadow: inset 0 0 80px rgba(255, 200, 61, 0.18),
                 inset 0 0 30px rgba(255, 165, 0, 0.08);
     animation: borderGlowPulse 4s ease-in-out infinite alternate;
   }
 
-  /* CHART CROSSHAIRS VFX */
   .hud-crosshairch {
     position: absolute;
     background: rgba(0, 255, 170, 0.02);
@@ -520,7 +517,6 @@
   .hud-crosshairch.h-line { width: 100%; height: 1px; top: 50%; left: 0; }
   .hud-crosshairch.v-line { height: 100%; width: 1px; left: 50%; top: 0; }
 
-  /* INITIAL INTERACTION TEXT GRAPHIC */
   .start-tap-vfx {
     font-family: monospace;
     font-size: 1.05rem;
@@ -532,7 +528,6 @@
     animation: textPulse 1s ease-in-out infinite alternate;
   }
 
-  /* BACKGROUND GRAPHICS / MULTI-LANE STAGGERED DATA TICKERS */
   .ticker-backdrop-matrix {
     position: absolute;
     inset: 0;
@@ -564,7 +559,6 @@
     pointer-events: none;
   }
 
-  /* CYBERNETIC GEOMETRIC FRAME CORES */
   .hud-corner-bracket {
     position: absolute;
     width: 32px;
@@ -579,7 +573,6 @@
   .bl { bottom: 50px; left: 40px; border-right: 0; border-top: 0; }
   .br { bottom: 50px; right: 40px; border-left: 0; border-top: 0; }
 
-  /* DYNAMIC MINI HARDWARE GLITCH PARTICLES */
   .hud-glitch-particle {
     position: absolute;
     width: 4px;
@@ -601,7 +594,6 @@
     box-sizing: border-box;
   }
 
-  /* ADVANCED TRIPLE RING ENGINE HOUSINGS */
   .hud-pulse-ring-vfx {
     position: relative;
     width: 160px;
@@ -648,7 +640,6 @@
     transition: border-color 0.4s ease;
   }
 
-  /* HIGH-FIDELITY RADAR RAYS */
   .radar-wave {
     position: absolute;
     width: 40%;
@@ -662,7 +653,6 @@
   }
   .radar-wave.delay-1 { animation-delay: 1.25s; }
 
-  /* HARDWARE EMULATION COMPILER CORE NODE */
   .inner-core-node {
     position: relative;
     width: 56px;
@@ -694,7 +684,6 @@
   .interaction-prompt { font-size: 1.55rem; font-weight: 800; color: #ffffff; letter-spacing: 5px; margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 0 25px var(--hud-glow); transition: text-shadow 0.4s ease; }
   .interaction-subtitle { font-family: monospace; font-size: 0.85rem; color: #829499; letter-spacing: 1.2px; line-height: 1.6; margin-bottom: 35px; }
 
-  /* PRECISION MICRO-PROGRESS RAIL */
   .hud-progress-track {
     width: 220px;
     height: 3px;
@@ -715,7 +704,6 @@
     box-shadow: 0 0 14px var(--finance-emerald);
   }
 
-  /* SYSTEM ANIMATIONS ARCHITECTURE MATRIX */
   @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   @keyframes rotateCounterClockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
   @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -735,7 +723,6 @@
     100% { filter: drop-shadow(0 0 12px rgba(0, 255, 170, 0.25)); }
   }
 
-  /* FRAME AMBIENT PULSING EFFECT */
   @keyframes borderGlowPulse {
     0% {
       box-shadow: inset 0 0 80px rgba(255, 200, 61, 0.14),
@@ -780,15 +767,13 @@
     if(initialPrompt) initialPrompt.style.display = 'none';
     gateRing.style.opacity = '1';
 
-    // Shift central node icon to an absolute executing variable
     gateIcon.textContent = "⏳";
 
-    // Play backend audio asset stream securely
     targetAudioFile.volume = 1.0;
     targetAudioFile.play().catch(e => console.log("Audio resource mapping block context flagged: ", e));
 
-    gatePrompt.textContent = "INITIALIZING DESK MAINBOARD";
-    gateSubtitle.textContent = "COMPILING TRADING CHANNELS, SECURITIES HANDSHAKES, AND LIVE TELEMETRY MATRIX STREAMS...";
+    gatePrompt.textContent = "INITIALIZING INSTI DESK MAINBOARD";
+    gateSubtitle.textContent = "COMPILING NSE LEASED LINE CHANNELS, SEBI COMPLIANCE CHECKS, AND ODIN ORDER BOOK TELEMETRY...";
     
     progressTrackWrapper.style.visibility = 'visible';
     progressTrackWrapper.style.opacity = '1';
@@ -796,10 +781,7 @@
     gateProgress.style.transition = "width 8s linear";
     setTimeout(() => { gateProgress.style.width = "100%"; }, 20);
 
-    // TARGETED EXPIRATION HOLD LOOP
     setTimeout(() => {
-      
-      // Decay audio loops smoothly
       let fadeOutEngine = setInterval(() => {
         if (targetAudioFile.volume > 0.05) {
           targetAudioFile.volume -= 0.05;
@@ -810,10 +792,9 @@
         }
       }, 40);
 
-      // Terminal accepted modifications layout execution
-      gateIcon.textContent = "❇️";
-      gatePrompt.textContent = "ACCESS GRANTED";
-      gateSubtitle.textContent = "Analyst desk matrix parameters verified. Syncing layout workspace nodes...";
+      gateIcon.textContent = "✅";
+      gatePrompt.textContent = "ORDER STATION READY";
+      gateSubtitle.textContent = "UCC and PAN authentication cleared. Syncing derivative workspace nodes...";
 
       setTimeout(() => {
         overlayLayer.style.opacity = '0';
@@ -846,18 +827,17 @@
     if(initialPrompt) initialPrompt.style.display = 'none';
     gateRing.style.opacity = '1';
 
-    // Shift border ambient glow parameters instantly to intense warning red
     rootOverlay.style.animation = 'none';
     rootOverlay.style.boxShadow = 'inset 0 0 100px rgba(255, 75, 43, 0.25)';
 
-    gateIcon.textContent = "⚠️";
+    gateIcon.textContent = "🛑";
     gateIconContainer.style.borderColor = "var(--finance-alert)";
     gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
     glowParticle.style.background = "var(--finance-alert)";
     
-    gatePrompt.textContent = "ANALYST DESK REQUIRED";
+    gatePrompt.textContent = "INSTITUTIONAL WORKSTATION REQUIRED";
     gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
-    gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
+    gateSubtitle.innerHTML = "CRITICAL RISK MANAGEMENT (RMS) BLOCK.<br><br>HIGH FREQUENCY ALGO AND BOLL-BAND PARAMETERS REQUIRE EXTENSIVE MULTI-MONITOR RESOLUTION SCREEN SPACE.<br><br>PLEASE OPEN OPTIONS AND SELECT <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong> FOR COMPLIANT RISK ACCESS.";
     
     outerRing.style.borderColor = "var(--finance-alert)";
     middleRing.style.borderColor = "transparent";
@@ -881,6 +861,9 @@
 
   window.addEventListener('DOMContentLoaded', checkSystemEnvironment);
 </script>
+
+
+
 
 <!-- Navigation Bar -->
 <nav style="
