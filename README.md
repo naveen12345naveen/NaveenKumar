@@ -839,9 +839,9 @@
     gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
     glowParticle.style.background = "var(--finance-alert)";
     
-   gatePrompt.textContent = "ANALYST DESK REQUIRED";
+ gatePrompt.textContent = "ANALYST DESK REQUIRED";
 gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
-gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>🖥️ PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <strong style='color:var(--finance-gold);'>'⚙️ REQUEST DESKTOP SITE'</strong>.";
+gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>🖥️ PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <br><br> <span style='display:inline-flex; align-items:center; gap:8px; background:rgba(255,200,61,0.07); border:1px dashed var(--finance-gold); padding:6px 14px; border-radius:4px; box-shadow:0 0 15px rgba(255,200,61,0.15); font-family:monospace; letter-spacing:1px; color:var(--finance-gold); font-weight:bold;'><span style='animation: textPulse 0.8s ease-in-out infinite alternate;'>⚡</span> [⚙️ REQUEST_DESKTOP_SITE]</span>";
     
     outerRing.style.borderColor = "var(--finance-alert)";
     middleRing.style.borderColor = "transparent";
