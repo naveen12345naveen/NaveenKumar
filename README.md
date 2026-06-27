@@ -429,13 +429,11 @@
 </head>
 <body>
 
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analyst Mainboard Terminal</title>
-  
+  <title>Analyst Desk Terminal Matrix</title>
   <style>
     :root {
       --finance-emerald: #00ffaa;
@@ -451,10 +449,10 @@
       padding: 0;
       background-color: var(--dark-void);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #ffffff;
+      overflow-x: hidden;
     }
 
-    /* OVERLAY SCREEN */
+    /* SUPREME LAYER IMMERSIVE CONTAINER WITH QUAD ALL-SIDES YELLOW CORES */
     .desktop-enforcement-screen {
       position: fixed;
       inset: 0;
@@ -474,6 +472,7 @@
       animation: borderGlowPulse 4s ease-in-out infinite alternate;
     }
 
+    /* CHART CROSSHAIRS VFX */
     .hud-crosshairch {
       position: absolute;
       background: rgba(0, 255, 170, 0.02);
@@ -483,17 +482,20 @@
     .hud-crosshairch.h-line { width: 100%; height: 1px; top: 50%; left: 0; }
     .hud-crosshairch.v-line { height: 100%; width: 1px; left: 50%; top: 0; }
 
+    /* INITIAL INTERACTION TEXT GRAPHIC */
     .start-tap-vfx {
       font-family: monospace;
-      font-size: 1.05rem;
+      font-size: clamp(0.85rem, 2.5vw, 1.05rem);
       color: var(--finance-gold);
       font-weight: bold;
       letter-spacing: 3px;
       margin-bottom: 35px;
+      padding: 0 10px;
       text-shadow: 0 0 15px rgba(255, 200, 61, 0.6);
       animation: textPulse 1s ease-in-out infinite alternate;
     }
 
+    /* BACKGROUND GRAPHICS / MULTI-LANE STAGGERED DATA TICKERS */
     .ticker-backdrop-matrix {
       position: absolute;
       inset: 0;
@@ -505,7 +507,7 @@
       transform: rotate(-6deg) scale(1.4);
       pointer-events: none;
       font-family: monospace;
-      font-size: 2.2rem;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
       font-weight: bold;
       color: var(--finance-emerald);
       white-space: nowrap;
@@ -525,20 +527,22 @@
       pointer-events: none;
     }
 
+    /* CYBERNETIC GEOMETRIC FRAME CORES - Repositioned dynamically via clamps to avoid edge bleed */
     .hud-corner-bracket {
       position: absolute;
-      width: 32px;
-      height: 32px;
+      width: clamp(20px, 5vw, 32px);
+      height: clamp(20px, 5vw, 32px);
       border: 2px solid var(--finance-emerald);
       pointer-events: none;
       opacity: 0.35;
       transition: border-color 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
     }
-    .tl { top: 50px; left: 40px; border-right: 0; border-bottom: 0; }
-    .tr { top: 50px; right: 40px; border-left: 0; border-bottom: 0; }
-    .bl { bottom: 50px; left: 40px; border-right: 0; border-top: 0; }
-    .br { bottom: 50px; right: 40px; border-left: 0; border-top: 0; }
+    .tl { top: clamp(15px, 4vw, 50px); left: clamp(15px, 4vw, 40px); border-right: 0; border-bottom: 0; }
+    .tr { top: clamp(15px, 4vw, 50px); right: clamp(15px, 4vw, 40px); border-left: 0; border-bottom: 0; }
+    .bl { bottom: clamp(15px, 4vw, 50px); left: clamp(15px, 4vw, 40px); border-right: 0; border-top: 0; }
+    .br { bottom: clamp(15px, 4vw, 50px); right: clamp(15px, 4vw, 40px); border-left: 0; border-top: 0; }
 
+    /* DYNAMIC MINI HARDWARE GLITCH PARTICLES */
     .hud-glitch-particle {
       position: absolute;
       width: 4px;
@@ -548,23 +552,24 @@
       border-radius: 50%;
       animation: particleFlicker 2s steps(4) infinite;
     }
-    .tl .hud-glitch-particle { top: -2px; left: 45px; }
-    .br .hud-glitch-particle { bottom: -2px; right: 45px; }
+    .tl .hud-glitch-particle { top: -2px; left: clamp(20px, 5vw, 45px); }
+    .br .hud-glitch-particle { bottom: -2px; right: clamp(20px, 5vw, 45px); }
 
     .hud-central-matrix-box {
       text-align: center;
       z-index: 10;
       width: 100%;
-      max-width: 550px;
+      max-width: min(550px, 90vw);
       padding: 20px;
       box-sizing: border-box;
     }
 
+    /* ADVANCED TRIPLE RING ENGINE HOUSINGS */
     .hud-pulse-ring-vfx {
       position: relative;
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 40px;
+      width: clamp(120px, 35vw, 160px);
+      height: clamp(120px, 35vw, 160px);
+      margin: 0 auto clamp(20px, 5vw, 40px);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -581,6 +586,7 @@
       border-bottom: 2px solid var(--finance-emerald);
       border-radius: 50%;
       animation: rotateClockwise 4s linear infinite;
+      transition: border-color 0.4s ease;
     }
 
     .middle-data-ring {
@@ -591,6 +597,7 @@
       border-left: 2px solid var(--finance-gold);
       border-radius: 50%;
       animation: rotateCounterClockwise 1.5s linear infinite;
+      transition: border-color 0.4s ease;
     }
 
     .inner-data-ring {
@@ -601,8 +608,10 @@
       border-right: 2px dashed var(--finance-emerald);
       border-radius: 50%;
       animation: rotateClockwise 2s linear infinite;
+      transition: border-color 0.4s ease;
     }
 
+    /* HIGH-FIDELITY RADAR RAYS */
     .radar-wave {
       position: absolute;
       width: 40%;
@@ -612,13 +621,15 @@
       opacity: 0;
       pointer-events: none;
       animation: radarPulse 2.5s cubic-bezier(0.1, 0.8, 0.3, 1) infinite;
+      transition: border-color 0.4s ease;
     }
     .radar-wave.delay-1 { animation-delay: 1.25s; }
 
+    /* HARDWARE EMULATION COMPILER CORE NODE */
     .inner-core-node {
       position: relative;
-      width: 56px;
-      height: 56px;
+      width: clamp(44px, 12vw, 56px);
+      height: clamp(44px, 12vw, 56px);
       background: rgba(6, 7, 10, 0.95);
       border: 2px solid var(--finance-emerald);
       border-radius: 50%;
@@ -627,6 +638,7 @@
       align-items: center;
       z-index: 2;
       box-shadow: 0 0 20px rgba(0, 255, 170, 0.25);
+      transition: all 0.4s ease;
     }
 
     .glow-particle-core {
@@ -638,14 +650,16 @@
       filter: blur(10px);
       opacity: 0.15;
       animation: coreBreathe 2s ease-in-out infinite alternate;
+      transition: background 0.4s ease;
     }
 
-    .vector-symbol { font-size: 22px; z-index: 3; }
-    .interaction-prompt { font-size: 1.55rem; font-weight: 800; color: #ffffff; letter-spacing: 5px; margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 0 25px var(--hud-glow); }
-    .interaction-subtitle { font-family: monospace; font-size: 0.85rem; color: #829499; letter-spacing: 1.2px; line-height: 1.6; margin-bottom: 35px; }
+    .vector-symbol { font-size: clamp(18px, 5vw, 22px); z-index: 3; transition: transform 0.3s ease; }
+    .interaction-prompt { font-size: clamp(1.1rem, 4vw, 1.55rem); font-weight: 800; color: #ffffff; letter-spacing: clamp(2px, 1vw, 5px); margin-bottom: 12px; text-transform: uppercase; text-shadow: 0 0 25px var(--hud-glow); transition: text-shadow 0.4s ease; }
+    .interaction-subtitle { font-family: monospace; font-size: clamp(0.75rem, 2.2vw, 0.85rem); color: #829499; letter-spacing: 1.2px; line-height: 1.6; margin-bottom: clamp(20px, 6vw, 35px); word-wrap: break-word; }
 
+    /* PRECISION MICRO-PROGRESS RAIL */
     .hud-progress-track {
-      width: 220px;
+      width: min(220px, 100%);
       height: 3px;
       background: rgba(255, 255, 255, 0.03);
       border-radius: 6px;
@@ -664,35 +678,7 @@
       box-shadow: 0 0 14px var(--finance-emerald);
     }
 
-    /* UNDERLYING MAIN INTERFACE CONTENT (HIDDEN BY OVERLAY INITIALLY) */
-    header {
-      padding: 20px;
-      background: #111625;
-      border-bottom: 1px solid #1f293d;
-      text-align: center;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      display: flex;
-      gap: 20px;
-      padding: 0 20px;
-    }
-
-    .card {
-      background: #111625;
-      padding: 25px;
-      border-radius: 8px;
-      border: 1px solid #1f293d;
-      flex: 1;
-    }
-
-    @media (max-width: 768px) {
-      .container { flex-direction: column; }
-    }
-
-    /* ANIMATIONS */
+    /* SYSTEM ANIMATIONS ARCHITECTURE MATRIX */
     @keyframes rotateClockwise { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     @keyframes rotateCounterClockwise { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
     @keyframes scrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
@@ -707,183 +693,177 @@
 </head>
 <body>
 
-  <audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
+<audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
 
-  <div id="desktop-lock-overlay" class="desktop-enforcement-screen">
-    <div class="ticker-backdrop-matrix">
-      <div class="ticker-lane">ANALYTICS_CORE [ONLINE] &nbsp;&nbsp; NIFTY50 +24,000 &nbsp;&nbsp; SENSEX +77,094 &nbsp;&nbsp; NASDAQ +26,000 &nbsp;&nbsp; USD/INR 94.05 &nbsp;&nbsp; DATA_STREAM_A [ENGAGED]</div>
-      <div class="ticker-lane reverse">RISK_MATRIX [ACTIVE] &nbsp;&nbsp; BTC/USD +4.82% &nbsp;&nbsp; GOLD/INR -0.15% &nbsp;&nbsp; ALPHA_ENGINE_CONNECTED &nbsp;&nbsp; MARGIN_SAFE</div>
-      <div class="ticker-lane">HIGH_FREQUENCY_DESK &nbsp;&nbsp; LIQUIDITY_POOL_V4 &nbsp;&nbsp; DELTA_DELTA_HEDGE [SECURE] &nbsp;&nbsp; QUANT_ALGO_RUNNING</div>
-    </div>
-
-    <div class="hud-scanner-grid"></div>
-    <div class="hud-crosshairch h-line"></div>
-    <div class="hud-crosshairch v-line"></div>
-    
-    <div class="hud-corner-bracket tl"><div class="hud-glitch-particle"></div></div>
-    <div class="hud-corner-bracket tr"></div>
-    <div class="hud-corner-bracket bl"></div>
-    <div class="hud-corner-bracket br"><div class="hud-glitch-particle delay-particle"></div></div>
-    
-    <div class="hud-central-matrix-box">
-      <div id="click-to-start-prompt" class="start-tap-vfx">⚡ TAP ANYWHERE FOR SYSTEM ACTIVATION ⚡</div>
-
-      <div id="gate-ring" class="hud-pulse-ring-vfx" style="opacity: 0.25;">
-        <div class="outer-data-ring"></div>
-        <div class="middle-data-ring"></div>
-        <div class="inner-data-ring"></div>
-        <div class="radar-wave"></div>
-        <div class="radar-wave delay-1"></div>
-        
-        <div id="gate-icon-container" class="inner-core-node">
-          <div class="glow-particle-core"></div>
-          <div id="gate-icon" class="vector-symbol">📊</div>
-        </div>
-      </div>
-      
-      <h1 id="gate-prompt" class="interaction-prompt">MAINBOARD TERMINAL STANDBY</h1>
-      <p id="gate-subtitle" class="interaction-subtitle">Awaiting identity handshake initialization sequence vectors...</p>
-      
-      <div id="progress-track-wrapper" class="hud-progress-track" style="opacity: 0; visibility: hidden;">
-        <div id="gate-progress" class="hud-progress-fill"></div>
-      </div>
-    </div>
+<div id="desktop-lock-overlay" class="desktop-enforcement-screen" style="display: flex; opacity: 1;">
+  
+  <div class="ticker-backdrop-matrix">
+    <div class="ticker-lane">ANALYTICS_CORE [ONLINE] &nbsp;&nbsp; NIFTY50 +24,000 &nbsp;&nbsp; SENSEX +77,094 &nbsp;&nbsp; NASDAQ +26,000 &nbsp;&nbsp; USD/INR 94.05 &nbsp;&nbsp; DATA_STREAM_A [ENGAGED]</div>
+    <div class="ticker-lane reverse">RISK_MATRIX [ACTIVE] &nbsp;&nbsp; BTC/USD +4.82% &nbsp;&nbsp; GOLD/INR -0.15% &nbsp;&nbsp; ALPHA_ENGINE_CONNECTED &nbsp;&nbsp; MARGIN_SAFE</div>
+    <div class="ticker-lane">HIGH_FREQUENCY_DESK &nbsp;&nbsp; LIQUIDITY_POOL_V4 &nbsp;&nbsp; DELTA_DELTA_HEDGE [SECURE] &nbsp;&nbsp; QUANT_ALGO_RUNNING</div>
   </div>
 
-  <header>
-    <h1>My Responsive Website Workspace</h1>
-  </header>
+  <div class="hud-scanner-grid"></div>
+  
+  <div class="hud-crosshairch h-line"></div>
+  <div class="hud-crosshairch v-line"></div>
+  
+  <div class="hud-corner-bracket tl"><div class="hud-glitch-particle"></div></div>
+  <div class="hud-corner-bracket tr"></div>
+  <div class="hud-corner-bracket bl"></div>
+  <div class="hud-corner-bracket br"><div class="hud-glitch-particle delay-particle"></div></div>
+  
+  <div class="hud-central-matrix-box">
+    <div id="click-to-start-prompt" class="start-tap-vfx">⚡ TAP ANYWHERE FOR SYSTEM ACTIVATION ⚡</div>
 
-  <main class="container">
-    <section class="card">
-      <h2>Feature 1</h2>
-      <p>This box dynamically resizes based on your screen.</p>
-    </section>
-    <section class="card">
-      <h2>Feature 2</h2>
-      <p>On desktop, these sit side-by-side. On mobile setups, they scale down responsibly.</p>
-    </section>
-  </main>
+    <div id="gate-ring" class="hud-pulse-ring-vfx" style="opacity: 0.25;">
+      <div class="outer-data-ring"></div>
+      <div class="middle-data-ring"></div>
+      <div class="inner-data-ring"></div>
+      
+      <div class="radar-wave"></div>
+      <div class="radar-wave delay-1"></div>
+      
+      <div id="gate-icon-container" class="inner-core-node">
+        <div class="glow-particle-core"></div>
+        <div id="gate-icon" class="vector-symbol">📊</div>
+      </div>
+    </div>
+    
+    <h1 id="gate-prompt" class="interaction-prompt">MAINBOARD TERMINAL STANDBY</h1>
+    <p id="gate-subtitle" class="interaction-subtitle">Awaiting identity handshake initialization sequence vectors...</p>
+    
+    <div id="progress-track-wrapper" class="hud-progress-track" style="opacity: 0; visibility: hidden;">
+      <div id="gate-progress" class="hud-progress-fill"></div>
+    </div>
+  </div>
+</div>
 
-  <script>
-    const targetAudioFile = document.getElementById('terminal-audio');
-    let mobileBlockActive = false;
+<script>
+  let targetAudioFile = document.getElementById('terminal-audio');
+  let mobileBlockActive = false;
 
-    function checkSystemEnvironment() {
-      const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-      const hasDesktopWidth = window.innerWidth >= 1024;
+  function checkSystemEnvironment() {
+    const isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
+    const hasDesktopWidth = window.innerWidth >= 1024;
 
-      // If they are on a mobile device and haven't toggled "Request Desktop Site" (which broadens window.innerWidth)
-      if (isMobileDevice && !hasDesktopWidth) {
-        mobileBlockActive = true;
-        renderMobileRejectionLayout();
-      } else {
-        document.getElementById('desktop-lock-overlay').addEventListener('click', startEightSecondScanPipeline, { once: true });
-      }
+    if (isMobileDevice && !hasDesktopWidth) {
+      mobileBlockActive = true;
+      renderMobileRejectionLayout();
+    } else {
+      document.getElementById('desktop-lock-overlay').addEventListener('click', startEightSecondScanPipeline, { once: true });
     }
+  }
 
-    function startEightSecondScanPipeline() {
-      if (mobileBlockActive) return;
+  function startEightSecondScanPipeline() {
+    if (mobileBlockActive) return;
 
-      const overlayLayer = document.getElementById('desktop-lock-overlay');
-      const initialPrompt = document.getElementById('click-to-start-prompt');
-      const gateRing = document.getElementById('gate-ring');
-      const gateIcon = document.getElementById('gate-icon');
-      const gatePrompt = document.getElementById('gate-prompt');
-      const gateSubtitle = document.getElementById('gate-subtitle');
-      const progressTrackWrapper = document.getElementById('progress-track-wrapper');
-      const gateProgress = document.getElementById('gate-progress');
+    const overlayLayer = document.getElementById('desktop-lock-overlay');
+    const initialPrompt = document.getElementById('click-to-start-prompt');
+    const gateRing = document.getElementById('gate-ring');
+    const gateIcon = document.getElementById('gate-icon');
+    const gatePrompt = document.getElementById('gate-prompt');
+    const gateSubtitle = document.getElementById('gate-subtitle');
+    const progressTrackWrapper = document.getElementById('progress-track-wrapper');
+    const gateProgress = document.getElementById('gate-progress');
 
-      overlayLayer.style.cursor = 'default';
-      if(initialPrompt) initialPrompt.style.display = 'none';
-      gateRing.style.opacity = '1';
-      gateIcon.textContent = "⏳";
+    overlayLayer.style.cursor = 'default';
+    if(initialPrompt) initialPrompt.style.display = 'none';
+    gateRing.style.opacity = '1';
 
-      targetAudioFile.volume = 1.0;
-      targetAudioFile.play().catch(e => console.log("Audio contextual block: ", e));
+    gateIcon.textContent = "⏳";
 
-      gatePrompt.textContent = "INITIALIZING DESK MAINBOARD";
-      gateSubtitle.textContent = "COMPILING TRADING CHANNELS, SECURITIES HANDSHAKES, AND LIVE TELEMETRY MATRIX STREAMS...";
-      
-      progressTrackWrapper.style.visibility = 'visible';
-      progressTrackWrapper.style.opacity = '1';
-      
-      setTimeout(() => { gateProgress.style.width = "100%"; gateProgress.style.transition = "width 8s linear"; }, 20);
+    targetAudioFile.volume = 1.0;
+    targetAudioFile.play().catch(e => console.log("Audio resource mapping block context flagged: ", e));
+
+    gatePrompt.textContent = "INITIALIZING DESK MAINBOARD";
+    gateSubtitle.textContent = "COMPILING TRADING CHANNELS, SECURITIES HANDSHAKES, AND LIVE TELEMETRY MATRIX STREAMS...";
+    
+    progressTrackWrapper.style.visibility = 'visible';
+    progressTrackWrapper.style.opacity = '1';
+    
+    gateProgress.style.transition = "width 8s linear";
+    setTimeout(() => { gateProgress.style.width = "100%"; }, 20);
+
+    setTimeout(() => {
+      let fadeOutEngine = setInterval(() => {
+        if (targetAudioFile.volume > 0.05) {
+          targetAudioFile.volume -= 0.05;
+        } else {
+          clearInterval(fadeOutEngine);
+          targetAudioFile.pause();
+          targetAudioFile.currentTime = 0;
+        }
+      }, 40);
+
+      gateIcon.textContent = "📈";
+      gatePrompt.textContent = "ACCESS GRANTED";
+      gateSubtitle.textContent = "Analyst desk matrix parameters verified. Syncing layout workspace nodes...";
 
       setTimeout(() => {
-        let fadeOutEngine = setInterval(() => {
-          if (targetAudioFile.volume > 0.05) {
-            targetAudioFile.volume -= 0.05;
-          } else {
-            clearInterval(fadeOutEngine);
-            targetAudioFile.pause();
-            targetAudioFile.currentTime = 0;
-          }
-        }, 40);
-
-        gateIcon.textContent = "📈";
-        gatePrompt.textContent = "ACCESS GRANTED";
-        gateSubtitle.textContent = "Analyst desk matrix parameters verified. Syncing layout workspace nodes...";
-
+        overlayLayer.style.opacity = '0';
         setTimeout(() => {
-          overlayLayer.style.opacity = '0';
-          setTimeout(() => { overlayLayer.style.display = 'none'; }, 600);
-        }, 800);
-        
-      }, 8000);
-    }
-
-    function renderMobileRejectionLayout() {
-      const gateIcon = document.getElementById('gate-icon');
-      const gateIconContainer = document.getElementById('gate-icon-container');
-      const glowParticle = document.querySelector('.glow-particle-core');
-      const gatePrompt = document.getElementById('gate-prompt');
-      const gateSubtitle = document.getElementById('gate-subtitle');
-      const gateProgress = document.getElementById('gate-progress');
-      const progressTrackWrapper = document.getElementById('progress-track-wrapper');
-      const initialPrompt = document.getElementById('click-to-start-prompt');
-      const gateRing = document.getElementById('gate-ring');
-      const rootOverlay = document.getElementById('desktop-lock-overlay');
-
-      const outerRing = document.querySelector('.outer-data-ring');
-      const middleRing = document.querySelector('.middle-data-ring');
-      const innerRing = document.querySelector('.inner-data-ring');
-      const waves = document.querySelectorAll('.radar-wave');
-      const brackets = document.querySelectorAll('.hud-corner-bracket');
-
-      if(initialPrompt) initialPrompt.style.display = 'none';
-      gateRing.style.opacity = '1';
-
-      rootOverlay.style.animation = 'none';
-      rootOverlay.style.boxShadow = 'inset 0 0 100px rgba(255, 75, 43, 0.25)';
-
-      gateIcon.textContent = "📉";
-      gateIconContainer.style.borderColor = "var(--finance-alert)";
-      gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
-      glowParticle.style.background = "var(--finance-alert)";
+          overlayLayer.style.display = 'none';
+        }, 600);
+      }, 800);
       
-      gatePrompt.textContent = "ANALYST DESK REQUIRED";
-      gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
-      gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
-      
-      outerRing.style.borderColor = "var(--finance-alert)";
-      middleRing.style.borderColor = "transparent";
-      innerRing.style.borderColor = "transparent";
-      
-      waves.forEach(wave => wave.style.borderColor = "var(--finance-alert)");
-      brackets.forEach(bracket => {
-        bracket.style.borderColor = "var(--finance-alert)";
-        bracket.style.opacity = "0.6";
-      });
-      
-      progressTrackWrapper.style.visibility = 'visible';
-      progressTrackWrapper.style.opacity = '1';
-      gateProgress.style.width = "100%";
-      gateProgress.style.background = "var(--finance-alert)";
-    }
+    }, 8000);
+  }
 
-    window.addEventListener('DOMContentLoaded', checkSystemEnvironment);
-  </script>
+  function renderMobileRejectionLayout() {
+    const gateIcon = document.getElementById('gate-icon');
+    const gateIconContainer = document.getElementById('gate-icon-container');
+    const glowParticle = document.querySelector('.glow-particle-core');
+    const gatePrompt = document.getElementById('gate-prompt');
+    const gateSubtitle = document.getElementById('gate-subtitle');
+    const gateProgress = document.getElementById('gate-progress');
+    const progressTrackWrapper = document.getElementById('progress-track-wrapper');
+    const initialPrompt = document.getElementById('click-to-start-prompt');
+    const gateRing = document.getElementById('gate-ring');
+    const rootOverlay = document.getElementById('desktop-lock-overlay');
+
+    const outerRing = document.querySelector('.outer-data-ring');
+    const middleRing = document.querySelector('.middle-data-ring');
+    const innerRing = document.querySelector('.inner-data-ring');
+    const waves = document.querySelectorAll('.radar-wave');
+    const brackets = document.querySelectorAll('.hud-corner-bracket');
+
+    if(initialPrompt) initialPrompt.style.display = 'none';
+    gateRing.style.opacity = '1';
+
+    rootOverlay.style.animation = 'none';
+    rootOverlay.style.boxShadow = 'inset 0 0 100px rgba(255, 75, 43, 0.25)';
+
+    gateIcon.textContent = "📉";
+    gateIconContainer.style.borderColor = "var(--finance-alert)";
+    gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
+    glowParticle.style.background = "var(--finance-alert)";
+    
+    gatePrompt.textContent = "ANALYST DESK REQUIRED";
+    gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
+    gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
+    
+    outerRing.style.borderColor = "var(--finance-alert)";
+    middleRing.style.borderColor = "transparent";
+    innerRing.style.borderColor = "transparent";
+    outerRing.style.animationPlayState = 'paused';
+    middleRing.style.animationPlayState = 'paused';
+    innerRing.style.animationPlayState = 'paused';
+    
+    waves.forEach(wave => wave.style.borderColor = "var(--finance-alert)");
+    brackets.forEach(bracket => {
+      bracket.style.borderColor = "var(--finance-alert)";
+      bracket.style.opacity = "0.6";
+    });
+    
+    progressTrackWrapper.style.visibility = 'visible';
+    progressTrackWrapper.style.opacity = '1';
+    gateProgress.style.width = "100%";
+    gateProgress.style.background = "var(--finance-alert)";
+    gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
+  }
+  window.addEventListener('DOMContentLoaded', checkSystemEnvironment);
+</script>
 </body>
 </html>
 
