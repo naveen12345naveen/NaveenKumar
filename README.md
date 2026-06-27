@@ -839,9 +839,9 @@
     gateIconContainer.style.boxShadow = "0 0 15px rgba(255, 75, 43, 0.4)";
     glowParticle.style.background = "var(--finance-alert)";
     
-    gatePrompt.textContent = "ANALYST DESK REQUIRED";
-    gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
-    gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <strong style='color:var(--finance-gold);'>'REQUEST DESKTOP SITE'</strong>.";
+   gatePrompt.textContent = "ANALYST DESK REQUIRED";
+gatePrompt.style.textShadow = "0 0 20px rgba(255, 75, 43, 0.4)";
+gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPILING DATA MODULES REQUIRES LARGER SANDBOX RESOLUTION SCREEN VARIABLES.<br><br>🖥️ PLEASE OPEN YOUR MOBILE BROWSER OPTIONS AND VERIFY <strong style='color:var(--finance-gold);'>'⚙️ REQUEST DESKTOP SITE'</strong>.";
     
     outerRing.style.borderColor = "var(--finance-alert)";
     middleRing.style.borderColor = "transparent";
