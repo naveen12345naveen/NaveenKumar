@@ -879,7 +879,6 @@
     gateProgress.style.background = "var(--finance-alert)";
     gateProgress.style.boxShadow = "0 0 12px var(--finance-alert)";
   }
-
   window.addEventListener('DOMContentLoaded', checkSystemEnvironment);
 </script>
 
