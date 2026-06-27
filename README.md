@@ -429,6 +429,12 @@
 </head>
 <body>
 
+<!-- SYSTEM TELEMETRY SUB-TAG (TOP LEFT VECTOR) -->
+<div style="position: absolute; top: 25px; left: 25px; z-index: 10000000; font-family: monospace; font-size: 0.7rem; font-weight: 900; color: #ffffff; letter-spacing: 2.5px; background: linear-gradient(135deg, rgba(6,7,10,0.9) 0%, rgba(14,18,29,0.7) 100%); padding: 6px 12px; border-left: 3px solid var(--finance-gold); box-shadow: 0 4px 20px rgba(0,0,0,0.5), inset 0 0 10px rgba(255,200,61,0.05); pointer-events: none; text-transform: uppercase;">
+  <span style="color: var(--finance-gold); animation: particleFlicker 1s steps(2) infinite; margin-right: 4px;">●</span> 
+  SYS_INPUT: <span style="color: var(--finance-emerald); text-shadow: 0 0 8px rgba(0,255,170,0.4);">[DOUBLE_TAP_OVERRIDE]</span>
+</div>
+
 <meta name="viewport" content="width=1200, initial-scale=1.0">
 
 <audio id="terminal-audio" src="music.mp3" loop preload="auto"></audio>
