@@ -1,0 +1,68 @@
+import os
+import sys
+from google import genai
+from google.genai import types
+
+def main():
+    # 1. Check for the API key
+    if not os.environ.get("GEMINI_API_KEY"):
+        print("Error: GEMINI_API_KEY environment variable not set.")
+        print("Please set your API key and try again.")
+        sys.exit(1)
+
+    # 2. Initialize the client
+    client = genai.Client()
+
+    # 3. Define the assistant's personality using system instructions
+    system_instruction = (
+        "You are 'Nova', a helpful, witty, and highly capable personal AI assistant. "
+        "Keep your answers concise, engaging, and clear. Help the user with tasks, "
+        "brainstorming, coding, or general questions."
+    )
+
+    # 4. Start a chat session with memory enabled
+    print("Initializing Nova...")
+    chat = client.chats.create(
+        model="gemini-2.5-flash",
+        config=types.GenerateContentConfig(
+            system_instruction=system_instruction,
+            temperature=0.7,
+        )
+    )
+
+    print("\n====================================================")
+    print("Nova is ready! Type 'exit' or 'quit' to end the chat.")
+    print("====================================================\n")
+
+    # 5. Main conversation loop
+    while True:
+        try:
+            user_input = input("You: ").strip()
+            
+            # Check for exit commands
+            if user_input.lower() in ['exit', 'quit']:
+                print("\nNova: Goodbye! Have a wonderful day!")
+                break
+                
+            # Skip empty inputs
+            if not user_input:
+                continue
+
+            print("Nova thinking...")
+            
+            # Send message to the model (automatically includes history)
+            response = chat.send_message(user_input)
+            
+            # Clear the "thinking..." line and print the response
+            print("\033[A                             \033[A") # Clears terminal line
+            print(f"Nova: {response.text}\n")
+
+        except KeyboardInterrupt:
+            # Handle Ctrl+C gracefully
+            print("\n\ Nova: Goodbye!")
+            break
+        except Exception as e:
+            print(f"\nAn error occurred: {e}\n")
+
+if __name__ == "__main__":
+    main()
