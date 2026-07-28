@@ -1119,7 +1119,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
 
 <div class="college-badge" style="text-align: center; margin-bottom: 25px;">
   <!-- Profile Image Link with Warm Glow -->
-  <a href="naveenKumarResume.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
+  <a href="NaveenKumar_B.pdf" target="_blank" title="View Full Resume (PDF)" style="display: inline-block; text-decoration: none; outline: none;">
     <img src="naveenkumar.jpg.jpeg" alt="Naveen Kumar" style="
         width: 200px; 
         height: 200px; 
@@ -1137,7 +1137,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
 
   <!-- Integrated PDF Download Action Bar with Amber Glow Accent -->
   <div style="margin-top: 18px;">
-    <a href="naveenKumarResume.pdf" download="naveenKumarResume.pdf" style="
+    <a href="NaveenKumar_B.pdf" download="NaveenKumar_B.pdf" style="
         display: inline-flex; 
         align-items: center; 
         justify-content: center; 
