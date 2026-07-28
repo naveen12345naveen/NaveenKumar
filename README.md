@@ -714,7 +714,7 @@
   <div class="hud-corner-bracket br"><div class="hud-glitch-particle delay-particle"></div></div>
   
   <div class="hud-central-matrix-box">
-    <div id="click-to-start-prompt" class="start-tap-vfx">⚡ TAP ANYWHERE FOR SYSTEM ACTIVATION ⚡</div>
+<div id="click-to-start-prompt" class="start-tap-vfx">⚡TAP ANYWHERE FOR SYSTEM ACTIVATION⚡</div>
 
     <div id="gate-ring" class="hud-pulse-ring-vfx" style="opacity: 0.25;">
       <div class="outer-data-ring"></div>
