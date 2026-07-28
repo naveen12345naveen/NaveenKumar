@@ -2050,5 +2050,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ff9f43" stroke-width="3" style="opacity: 0.8; filter: drop-shadow(0 0 3px #ff9f43);">
             <path d="M9 18l6-6-6-6"/>
         </svg>
+        
     </a>
 </div>
