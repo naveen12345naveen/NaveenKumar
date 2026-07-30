@@ -1496,7 +1496,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </div>
       
       <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">August 2025 - Present</span>
-      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 600; font-size: 1.1rem;">ZOLD UDP FOODS PRIVATE LIMITED, Udumalpet</h4>
+      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 600; font-size: 1.1rem;">ZOLD UDP GROUP OF COMPANIES, Udumalpet</h4>
       
       <ul class="experience-list" style="margin-bottom: 20px; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
         <li style="margin-bottom: 8px;">Assisted in preparing and maintaining accurate financial records and reports.</li>
