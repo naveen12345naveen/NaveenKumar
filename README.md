@@ -910,9 +910,9 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Education Section</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Education </a>
   
-  <a href="#experience" style="
+  <a href="#corporate exposure" style="
       color: #ff9f43; 
       text-decoration: none; 
       font-weight: 600; 
@@ -923,7 +923,20 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Experience</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Corporate Exposure</a>
+
+   <a href="#INTERNSHIP EXPOSURE SECTION" style="
+      color: #ff9f43; 
+      text-decoration: none; 
+      font-weight: 600; 
+      font-size: 0.9rem; 
+      padding: 6px 10px; 
+      border-radius: 4px; 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      transition: all 0.25s ease-in-out;
+  " 
+  onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">INTERNSHIP</a>
   
   <a href="#projects" style="
       color: #ff9f43; 
@@ -1172,8 +1185,8 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
     <h1 class="vfx-word-shimmer" style="margin-top: 0; margin-bottom: 5px; font-size: 2.8rem; color: #ffffff; letter-spacing: 0.5px; filter: drop-shadow(0 0 10px rgba(255,159,67,0.2));">NaveenKumar B</h1>
     <p class="title-role" style="font-size: 1.3rem; font-weight: 600; color: #ff9f43; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Finance Analyst</p>
     <p class="sub" style="line-height: 1.7; color: #e0e0e6; font-size: 1.05rem; text-align: justify; margin-bottom: 0;">
-     Holding an MBA that combines Finance and Business Analytics, my professional journey is founded on a fundamental principle: the value of financial data lies in the actionable insights derived from it.
-At present, I work at ZOLD UDP Group of Companies, where I develop financial models, optimize accounts frameworks, and manage month-end reconciliations to safeguard and enhance our profitability. My experience extends beyond theory; it is rooted in manufacturing operations, supply chain intricacies, and published research concerning NBFC capital adequacy. Armed with <strong style="color: #ffb774;">Excel, Power BI, MySQL, R programming, HTML, SAP FICO, and Python</strong>, I identify and eliminate operational inefficiencies while constructing the data infrastructure that modern businesses require for intelligent scaling.
+     Holding an I hold a Master’s Degree in Finance & Analytics, my professional journey is founded on a fundamental principle the value of financial data lies in the actionable insights derived from it.
+At present, I work at ZOLD UDP Group of Companies, where I develop financial models, optimize accounts frameworks, and manage month-end reconciliations to safeguard and enhance our profitability. My experience extends beyond theory, it is rooted in manufacturing operations, supply chain intricacies, and published research concerning NBFC capital adequacy. Armed with <strong style="color: #ffb774;">Excel, Power BI, MySQL, R programming, HTML, SAP FICO, and Python</strong>, I identify and eliminate operational inefficiencies while constructing the data infrastructure that modern businesses require for intelligent scaling.
     </p>
   </div>
 </header>
@@ -1346,7 +1359,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   </span>
 </div>
 
-<!-- Education Section -->
+<!-- Education -->
 <section id="education" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Education</h2>
   
@@ -1460,6 +1473,9 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   </div> <!-- /education-grid -->
 </section>
     
+Here is the updated HTML code with an **Internship Exposure** section inserted right between your Corporate Exposure and Research & Projects sections. It maintains the exact same dark theme, glowing amber aesthetics, fonts, and inline hover effects for seamless integration:
+
+```html
 <section id="experience" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Corporate Exposure</h2>
   
@@ -1516,7 +1532,108 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         </a>
       </div>
       
-    </div> </div> </section>
+    </div> 
+  </div> 
+</section>
+
+<!-- NEW: INTERNSHIP EXPOSURE SECTION -->
+<section id="internship" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
+  <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Internship Exposure</h2>
+  
+  <div class="grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
+    
+    <div class="card" style="
+        background: #121214; 
+        color: #f3f4f6; 
+        border-radius: 12px; 
+        padding: 30px; 
+        position: relative;
+        width: 100%;
+        max-width: 600px; 
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); 
+        
+        /* VFX Warm Light Glow on all sides */
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   
+            0 0 50px 10px rgba(230, 140, 10, 0.15), 
+            inset 0 0 15px rgba(255, 100, 0, 0.08); 
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
+      
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 6px;">
+        <h3 style="display: inline-flex; align-items: center; gap: 12px; font-family: sans-serif; color: #ff9f43; margin: 0; font-size: 1.5rem;">
+          Production & Management Intern
+        </h3>
+        <span style="font-size: 0.75rem; font-weight: 700; color: #ffb774; background: rgba(255, 159, 67, 0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255, 159, 67, 0.25); letter-spacing: 0.5px;">
+          ✨ INTERN // 1 MONTH
+        </span>
+      </div>
+      
+      <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">1 Month Internship</span>
+      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 600; font-size: 1.1rem;">SRG Apparels Pvt. Ltd., Udumalpet</h4>
+      
+      <ul class="experience-list" style="margin-bottom: 0; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
+        <li style="margin-bottom: 8px;">Enhanced skills in team management, production planning, and quality assurance.</li>
+        <li style="margin-bottom: 8px;">Drove operational efficiency across garment manufacturing workflows.</li>
+        <li style="margin-bottom: 0;">Developed strong leadership capabilities while gaining hands-on apparel industry knowledge.</li>
+      </ul>
+      
+    </div> 
+  </div> 
+</section>
+
+<section id="projects" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
+  <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Research & Projects</h2>
+  
+  <div class="grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
+    
+    <div class="card" style="
+        background: #121214; 
+        color: #f3f4f6; 
+        border-radius: 12px; 
+        padding: 30px; 
+        position: relative;
+        width: 100%;
+        max-width: 600px; 
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); 
+        
+        /* VFX Warm Light Glow on all sides */
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   
+            0 0 50px 10px rgba(230, 140, 10, 0.15), 
+            inset 0 0 15px rgba(255, 100, 0, 0.08); 
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
+      
+      <h3 style="margin-top: 0; margin-bottom: 6px; color: #ff9f43; font-size: 1.5rem; letter-spacing: 0.5px;">NBFC Financial Performance Analysis</h3>
+      <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 15px;">Postgraduate Project (Published - May 2025)</span>
+      
+      <p style="line-height: 1.7; color: #e0e0e6; margin-bottom: 20px; font-size: 1rem;">
+        Published a research paper titled <strong style="color: #ffffff;">"Analysis of Capital Adequacy of Leading 5 Non-Banking Financial Companies in India"</strong> 
+        in the EPRA International Journal of Economics, Business and Management Studies (EBMS), Vol. 12, Issue 5, May 2025.
+      </p>
+      
+      <div class="article-links-container" style="margin-top: 15px; font-size: 0.95rem;">
+        <a href="NaveenKumar_Published_Article.pdf" target="_blank" class="text-link-pdf primary-link" style="color: #ffb774; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#ff9f43'" onmouseout="this.style.color='#ffb774'">
+          View Published Article (PDF)
+        </a>
+        <span class="link-separator" style="color: rgba(255, 140, 0, 0.3); margin: 0 10px;">|</span>
+        <a href="naveenkumar_article_certificate.pdf" target="_blank" class="text-link-pdf secondary-link" style="color: #ffb774; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#ff9f43'" onmouseout="this.style.color='#ffb774'">
+          View Published Article Certificate (PDF)
+        </a>
+      </div>
+      
+    </div> 
+  </div> 
+</section>
 
 <section id="projects" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Research & Projects</h2>
