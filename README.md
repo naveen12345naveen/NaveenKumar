@@ -912,7 +912,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
   onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Education </a>
   
-  <a href="#corporate-exposure" style="
+  <a href="#corporate exposure" style="
       color: #ff9f43; 
       text-decoration: none; 
       font-weight: 550; 
@@ -925,7 +925,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
   onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Corporate Exposure</a>
 
-   <a href="#INTERNSHIP EXPOSURE SECTION" style="
+   <a href="#Internship" style="
       color: #ff9f43; 
       text-decoration: none; 
       font-weight: 550; 
@@ -1473,8 +1473,8 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   </div> <!-- /education-grid -->
 </section>
 
-<!-- Corporate Exposure -->
-<section id="Corporate Exposure" style="padding: 60px 20px; background: #0d0d0e;">
+<!-- corporate exposure -->
+<section id="corporate exposure" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Corporate Exposure</h2>
   
   <div class="grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
@@ -1531,12 +1531,12 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </div>
       
     </div> 
-  </div><!-- /Corporate Exposure-grid -->
+  </div><!-- /corporate exposure-grid -->
 </section>
 
-<!--Internship -->
-<section id="Internship" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
-  <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Internship Exposure</h2>
+<!--internship -->
+<section id="internship" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
+  <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Internship</h2>
   
   <div class="grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
     
@@ -1581,7 +1581,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </ul>
       
     </div> 
-  </div> <!-- /Internship-grid -->
+  </div> <!-- /internship-grid -->
 </section>
 
 <section id="projects" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
