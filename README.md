@@ -893,11 +893,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); /* Always glowing text effect */
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); /* Always glowing text effect */
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">About</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">About</a>
   
   <a href="#education" style="
       color: #ff9f43; 
@@ -906,11 +906,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Education </a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Education </a>
   
   <a href="#corporate exposure" style="
       color: #ff9f43; 
@@ -919,11 +919,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Corporate Exposure</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Corporate Exposure</a>
 
    <a href="#INTERNSHIP EXPOSURE SECTION" style="
       color: #ff9f43; 
@@ -932,11 +932,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">INTERNSHIP</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Internship</a>
   
   <a href="#projects" style="
       color: #ff9f43; 
@@ -945,11 +945,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Projects</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Projects</a>
   
   <a href="#skills" style="
       color: #ff9f43; 
@@ -958,11 +958,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Skills</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Skills</a>
   
   <a href="#my professional work" style="
       color: #ff9f43; 
@@ -971,11 +971,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">My Professional Work</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">My Professional Work</a>
   
   <a href="#contact" style="
       color: #ff9f43; 
@@ -984,11 +984,11 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
+      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Contact</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Contact</a>
 </nav>
 
   
@@ -1185,7 +1185,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
     <h1 class="vfx-word-shimmer" style="margin-top: 0; margin-bottom: 5px; font-size: 2.8rem; color: #ffffff; letter-spacing: 0.5px; filter: drop-shadow(0 0 10px rgba(255,159,67,0.2));">NaveenKumar B</h1>
     <p class="title-role" style="font-size: 1.3rem; font-weight: 600; color: #ff9f43; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Finance Analyst</p>
     <p class="sub" style="line-height: 1.7; color: #e0e0e6; font-size: 1.05rem; text-align: justify; margin-bottom: 0;">
-     Holding an I hold a Master’s Degree in Finance & Analytics, my professional journey is founded on a fundamental principle the value of financial data lies in the actionable insights derived from it.
+     I hold a Master’s Degree in Finance & Analytics, my professional journey is founded on a fundamental principle the value of financial data lies in the actionable insights derived from it.
 At present, I work at ZOLD UDP Group of Companies, where I develop financial models, optimize accounts frameworks, and manage month-end reconciliations to safeguard and enhance our profitability. My experience extends beyond theory, it is rooted in manufacturing operations, supply chain intricacies, and published research concerning NBFC capital adequacy. Armed with <strong style="color: #ffb774;">Excel, Power BI, MySQL, R programming, HTML, SAP FICO, and Python</strong>, I identify and eliminate operational inefficiencies while constructing the data infrastructure that modern businesses require for intelligent scaling.
     </p>
   </div>
@@ -1472,10 +1472,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
   </div> <!-- /education-grid -->
 </section>
-    
-Here is the updated HTML code with an **Internship Exposure** section inserted right between your Corporate Exposure and Research & Projects sections. It maintains the exact same dark theme, glowing amber aesthetics, fonts, and inline hover effects for seamless integration:
 
-```html
 <section id="experience" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Corporate Exposure</h2>
   
@@ -1569,7 +1566,7 @@ Here is the updated HTML code with an **Internship Exposure** section inserted r
           Production & Management Intern
         </h3>
         <span style="font-size: 0.75rem; font-weight: 700; color: #ffb774; background: rgba(255, 159, 67, 0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255, 159, 67, 0.25); letter-spacing: 0.5px;">
-          ✨ INTERN // 1 MONTH
+          ✨ INTERN / 1 MONTH / Aug 2022  ✨
         </span>
       </div>
       
