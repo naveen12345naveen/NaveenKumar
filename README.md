@@ -991,6 +991,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
   onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Contact</a>
 </nav>
 
+<nav style="margin-bottom: 30px;">
   
 <a id="scroll-left-pop" class="left-popup-box">
   <img src="naveenkumar.jpg.jpeg" alt="Pop-up Image">
