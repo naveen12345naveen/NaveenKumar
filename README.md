@@ -1474,7 +1474,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 </section>
 
 <!-- Corporate Exposure -->
-<section id="experience" style="padding: 60px 20px; background: #0d0d0e;">
+<section id="Corporate Exposure" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Corporate Exposure</h2>
   
   <div class="grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
@@ -1534,8 +1534,8 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   </div> 
 </section>
 
-<!--Internshi -->
-<section id="internship" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
+<!--Internship -->
+<section id="Internship" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Internship Exposure</h2>
   
   <div class="grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
