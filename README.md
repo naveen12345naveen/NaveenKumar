@@ -912,7 +912,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
   onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Education </a>
   
-  <a href="#corporate exposure" style="
+  <a href="#corporate-exposure" style="
       color: #ff9f43; 
       text-decoration: none; 
       font-weight: 550; 
