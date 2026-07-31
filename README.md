@@ -804,7 +804,7 @@
         overlayLayer.style.opacity = '0';
         setTimeout(() => {
           overlayLayer.style.display = 'none';
-        }, 600);
+        }, 550);
       }, 800);
       
     }, 8000);
@@ -889,106 +889,106 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
   <a href="#about" style="
       color: #ff9f43; /* Native warm amber color tint */
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); /* Always glowing text effect */
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); /* Always glowing text effect */
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">About</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">About</a>
   
   <a href="#education" style="
       color: #ff9f43; 
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Education </a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Education </a>
   
   <a href="#corporate exposure" style="
       color: #ff9f43; 
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Corporate Exposure</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Corporate Exposure</a>
 
    <a href="#INTERNSHIP EXPOSURE SECTION" style="
       color: #ff9f43; 
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Internship</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Internship</a>
   
   <a href="#projects" style="
       color: #ff9f43; 
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Projects</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Projects</a>
   
   <a href="#skills" style="
       color: #ff9f43; 
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Skills</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Skills</a>
   
   <a href="#my professional work" style="
       color: #ff9f43; 
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">My Professional Work</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">My Professional Work</a>
   
   <a href="#contact" style="
       color: #ff9f43; 
       text-decoration: none; 
-      font-weight: 600; 
+      font-weight: 550; 
       font-size: 0.9rem; 
       padding: 6px 10px; 
       border-radius: 4px; 
-      text-shadow: 0 0 8px rgba(245, 155, 65, 0.6); 
+      text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
   " 
   onmouseover="this.style.color='#ffffff'; this.style.textShadow='0 0 12px #ff9f43, 0 0 20px #ff5a00'; this.style.background='rgba(255, 140, 0, 0.08)';" 
-  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(245, 155, 65, 0.6)'; this.style.background='transparent';">Contact</a>
+  onmouseout="this.style.color='#ff9f43'; this.style.textShadow='0 0 8px rgba(255, 159, 67, 0.7)'; this.style.background='transparent';">Contact</a>
 </nav>
 
   
@@ -1158,7 +1158,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
         color: #ffb774; /* Matching theme orange/amber text */
         text-decoration: none; 
         font-size: 0.9rem; 
-        font-weight: 600; 
+        font-weight: 550; 
         padding: 8px 18px; 
         border: 1px solid rgba(255, 140, 0, 0.3); 
         border-radius: 20px; 
@@ -1183,7 +1183,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
 <header id="about" class="vfx-header" style="text-align: center; max-width: 750px; margin: 0 auto; padding: 20px; color: #f3f4f6;">
   <div class="header-reveal">
     <h1 class="vfx-word-shimmer" style="margin-top: 0; margin-bottom: 5px; font-size: 2.8rem; color: #ffffff; letter-spacing: 0.5px; filter: drop-shadow(0 0 10px rgba(255,159,67,0.2));">NaveenKumar B</h1>
-    <p class="title-role" style="font-size: 1.3rem; font-weight: 600; color: #ff9f43; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Finance Analyst</p>
+    <p class="title-role" style="font-size: 1.3rem; font-weight: 550; color: #ff9f43; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Finance Analyst</p>
     <p class="sub" style="line-height: 1.7; color: #e0e0e6; font-size: 1.05rem; text-align: justify; margin-bottom: 0;">
      I hold a Master’s Degree in Finance & Analytics, my professional journey is founded on a fundamental principle the value of financial data lies in the actionable insights derived from it.
 At present, I work at ZOLD UDP Group of Companies, where I develop financial models, optimize accounts frameworks, and manage month-end reconciliations to safeguard and enhance our profitability. My experience extends beyond theory, it is rooted in manufacturing operations, supply chain intricacies, and published research concerning NBFC capital adequacy. Armed with <strong style="color: #ffb774;">Excel, Power BI, MySQL, R programming, HTML, SAP FICO, and Python</strong>, I identify and eliminate operational inefficiencies while constructing the data infrastructure that modern businesses require for intelligent scaling.
@@ -1256,7 +1256,7 @@ At present, I work at ZOLD UDP Group of Companies, where I develop financial mod
   .title-role {
     font-size: 1.4rem;
     color: #d4af37;
-    font-weight: 600;
+    font-weight: 550;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1399,7 +1399,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         <h3 style="margin-top: 0; margin-bottom: 8px; color: #ff9f43; font-size: 1.4rem;">Master of Business Administration (MBA)</h3>
         
         <a href="https://siims.ac.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #ffffff;">
-          <h4 style="margin: 0; font-weight: 600; transition: color 0.2s;" onmouseover="this.style.color='#ffb774'" onmouseout="this.style.color='#ffffff'">SIIMS College - Pollachi</h4>
+          <h4 style="margin: 0; font-weight: 550; transition: color 0.2s;" onmouseover="this.style.color='#ffb774'" onmouseout="this.style.color='#ffffff'">SIIMS College - Pollachi</h4>
         </a>
         <span class="meta" style="font-size: 0.85rem; color: #a0a0aa; display: block; margin-bottom: 4px; margin-top: 6px;">Affiliated to Anna University - Chennai </span>
         <span class="meta" style="font-size: 0.9rem; color: #ffb774; display: block; margin-bottom: 4px; font-weight: 500;">2023 - 2025</span>
@@ -1411,7 +1411,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </div>
       
       <!-- Academic Highlight Tag -->
-      <div class="academic-gift" style="background: rgba(255, 159, 67, 0.1); color: #ffb774; padding: 8px 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; margin-top: 20px; display: inline-block; width: max-content; border: 1px solid rgba(255, 159, 67, 0.25);">
+      <div class="academic-gift" style="background: rgba(255, 159, 67, 0.1); color: #ffb774; padding: 8px 12px; border-radius: 6px; font-weight: 550; font-size: 0.9rem; margin-top: 20px; display: inline-block; width: max-content; border: 1px solid rgba(255, 159, 67, 0.25);">
         🏆 Academic Merit: 7.8 CGPA
       </div>
     </div> <!-- /card -->
@@ -1453,7 +1453,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         <h3 style="margin-top: 0; margin-bottom: 8px; color: #ff9f43; font-size: 1.4rem;">Bachelor of Commerce (B.Com)</h3>
         
         <a href="https://www.ngmc.org/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #ffffff;">
-          <h4 style="margin: 0; font-weight: 600; transition: color 0.2s;" onmouseover="this.style.color='#ffb774'" onmouseout="this.style.color='#ffffff'">NGM College - Pollachi</h4>
+          <h4 style="margin: 0; font-weight: 550; transition: color 0.2s;" onmouseover="this.style.color='#ffb774'" onmouseout="this.style.color='#ffffff'">NGM College - Pollachi</h4>
         </a>
         <span class="meta" style="font-size: 0.85rem; color: #a0a0aa; display: block; margin-bottom: 4px; margin-top: 6px;">Affiliated to Bharathiar University - Coimbatore </span>
         <span class="meta" style="font-size: 0.9rem; color: #ffb774; display: block; margin-bottom: 4px; font-weight: 500;">2020 - 2023</span>
@@ -1465,7 +1465,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </div>
       
       <!-- Academic Highlight Tag -->
-      <div class="academic-gift" style="background: rgba(255, 159, 67, 0.1); color: #ffb774; padding: 8px 12px; border-radius: 6px; font-weight: 600; font-size: 0.9rem; margin-top: 20px; display: inline-block; width: max-content; border: 1px solid rgba(255, 159, 67, 0.25);">
+      <div class="academic-gift" style="background: rgba(255, 159, 67, 0.1); color: #ffb774; padding: 8px 12px; border-radius: 6px; font-weight: 550; font-size: 0.9rem; margin-top: 20px; display: inline-block; width: max-content; border: 1px solid rgba(255, 159, 67, 0.25);">
         🏆 Academic Merit: 7.5 CGPA
       </div>
     </div> <!-- /card -->
@@ -1485,7 +1485,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         padding: 30px; 
         position: relative;
         width: 100%;
-        max-width: 600px; /* Gives the timeline entry a spacious layout */
+        max-width: 550px; /* Gives the timeline entry a spacious layout */
         box-sizing: border-box;
         border: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
         
@@ -1510,7 +1510,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </div>
       
       <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">August 2025 - Present</span>
-      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 600; font-size: 1.1rem;">ZOLD UDP GROUP OF COMPANIES, Udumalpet</h4>
+      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 550; font-size: 1.1rem;">ZOLD UDP GROUP OF COMPANIES, Udumalpet</h4>
       
       <ul class="experience-list" style="margin-bottom: 20px; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
         <li style="margin-bottom: 8px;">Assisted in preparing and maintaining accurate financial records and reports.</li>
@@ -1546,7 +1546,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         padding: 30px; 
         position: relative;
         width: 100%;
-        max-width: 600px; 
+        max-width: 550px; 
         box-sizing: border-box;
         border: 1px solid rgba(255, 140, 0, 0.25); 
         
@@ -1566,12 +1566,12 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           Production & Management Intern
         </h3>
         <span style="font-size: 0.75rem; font-weight: 700; color: #ffb774; background: rgba(255, 159, 67, 0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255, 159, 67, 0.25); letter-spacing: 0.5px;">
-          ✨ INTERN / 1 MONTH / Aug 2022  ✨
+          ✨ INTERN / Aug 2022  ✨
         </span>
       </div>
       
       <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">1 Month Internship</span>
-      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 600; font-size: 1.1rem;">SRG Apparels Pvt. Ltd., Udumalpet</h4>
+      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 550; font-size: 1.1rem;">SRG Apparels Pvt. Ltd., Udumalpet</h4>
       
       <ul class="experience-list" style="margin-bottom: 0; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
         <li style="margin-bottom: 8px;">Enhanced skills in team management, production planning, and quality assurance.</li>
@@ -1595,7 +1595,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         padding: 30px; 
         position: relative;
         width: 100%;
-        max-width: 600px; 
+        max-width: 550px; 
         box-sizing: border-box;
         border: 1px solid rgba(255, 140, 0, 0.25); 
         
@@ -1644,7 +1644,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         padding: 30px; 
         position: relative;
         width: 100%;
-        max-width: 600px; 
+        max-width: 550px; 
         box-sizing: border-box;
         border: 1px solid rgba(255, 140, 0, 0.25); 
         
@@ -1830,8 +1830,8 @@ onmouseout="
   </p>
 
   <!-- English Quote Text Effect with Styled Key words -->
-  <blockquote class="quote-english" style="font-size: 1.1rem; font-style: italic; font-weight: 400; color: #b3b3ba; margin: 0 auto 24px auto; padding: 0 15px; line-height: 1.6; max-width: 600px;">
-    If you have <span style="color: #ff9f43; font-weight: 600; text-shadow: 0 0 8px rgba(255, 159, 67, 0.3);">perseverance</span> and <span style="color: #ff9f43; font-weight: 600; text-shadow: 0 0 8px rgba(255, 159, 67, 0.3);">self-confidence</span>, you can conquer any mountain.
+  <blockquote class="quote-english" style="font-size: 1.1rem; font-style: italic; font-weight: 400; color: #b3b3ba; margin: 0 auto 24px auto; padding: 0 15px; line-height: 1.6; max-width: 550px;">
+    If you have <span style="color: #ff9f43; font-weight: 550; text-shadow: 0 0 8px rgba(255, 159, 67, 0.3);">perseverance</span> and <span style="color: #ff9f43; font-weight: 550; text-shadow: 0 0 8px rgba(255, 159, 67, 0.3);">self-confidence</span>, you can conquer any mountain.
   </blockquote>
 
   <!-- Academic Gift / Highlight Tag -->
@@ -1840,7 +1840,7 @@ onmouseout="
     color: #ffd700; 
     padding: 6px 14px; 
     border-radius: 20px; 
-    font-weight: 600; 
+    font-weight: 550; 
     font-size: 0.8rem; 
     letter-spacing: 0.5px;
     display: inline-flex; 
@@ -1955,7 +1955,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     <div style="position: absolute; bottom: 4px; left: 4px; width: 4px; height: 4px; background: #ff9f43; opacity: 0.4; border-radius: 50%;"></div>
     <div style="position: absolute; bottom: 4px; right: 4px; width: 4px; height: 4px; background: #ff9f43; opacity: 0.4; border-radius: 50%;"></div>
 
-    <blockquote class="vision-text" style="font-size: 1.5rem; font-style: italic; font-weight: 600; color: #ffffff; margin: 0; padding: 0 5px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-shadow: 0 0 10px rgba(255, 159, 67, 0.5), 0 0 20px rgba(255, 90, 0, 0.25);">
+    <blockquote class="vision-text" style="font-size: 1.5rem; font-style: italic; font-weight: 550; color: #ffffff; margin: 0; padding: 0 5px; line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, sans-serif; text-shadow: 0 0 10px rgba(255, 159, 67, 0.5), 0 0 20px rgba(255, 90, 0, 0.25);">
       "A flexible, innovative approach to problem-solving that uses limited resources to get things done"
     </blockquote>
   </div>
@@ -2053,10 +2053,10 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     </p>
     
     <!-- Rows 3 & 4: Design & Portfolio Marks -->
-    <p style="margin: 2px 0; font-size: 0.9rem; color: #ffb774; font-weight: 600; opacity: 0.9;">
+    <p style="margin: 2px 0; font-size: 0.9rem; color: #ffb774; font-weight: 550; opacity: 0.9;">
       🌐My personal design🌐
     </p>
-    <p style="margin: 2px 0 20px 0; font-size: 0.9rem; color: #ffb774; font-weight: 600; opacity: 0.9;">
+    <p style="margin: 2px 0 20px 0; font-size: 0.9rem; color: #ffb774; font-weight: 550; opacity: 0.9;">
       🎨Portfolio Website🎨
     </p>
 
