@@ -1531,7 +1531,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </div>
       
     </div> 
-  </div> 
+  </div><!-- /Corporate Exposure-grid -->
 </section>
 
 <!--Internship -->
@@ -1581,7 +1581,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </ul>
       
     </div> 
-  </div> 
+  </div> <!-- /Internship-grid -->
 </section>
 
 <section id="projects" style="padding: 60px 20px; background: #0d0d0e; border-top: 1px solid rgba(255, 140, 0, 0.05);">
