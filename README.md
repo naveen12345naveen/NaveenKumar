@@ -891,7 +891,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); /* Always glowing text effect */
       transition: all 0.25s ease-in-out;
@@ -904,7 +904,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
@@ -917,7 +917,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
@@ -930,7 +930,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
@@ -943,7 +943,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
@@ -956,7 +956,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
@@ -969,7 +969,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
@@ -982,7 +982,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
       text-decoration: none; 
       font-weight: 550; 
       font-size: 0.9rem; 
-      padding: 5px 9px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       text-shadow: 0 0 8px rgba(255, 159, 67, 0.7); 
       transition: all 0.25s ease-in-out;
