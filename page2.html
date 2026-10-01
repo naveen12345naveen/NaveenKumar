@@ -184,8 +184,8 @@
             let existingTarget = localStorage.getItem('persistent_launch_stamp');
             
             if (!existingTarget) {
-                // Calculate exactly 75 days into future coordinates from first visit initialization
-                const timelineOffset = 75 * 24 * 60 * 60 * 1000;
+                // Calculate exactly 120 days into future coordinates from first visit initialization
+                const timelineOffset = 120 * 24 * 60 * 60 * 1000;
                 const freshTargetStamp = new Date().getTime() + timelineOffset;
                 localStorage.setItem('persistent_launch_stamp', freshTargetStamp);
                 return freshTargetStamp;
