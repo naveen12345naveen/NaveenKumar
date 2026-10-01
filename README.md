@@ -2124,48 +2124,386 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
 
 
-<script>
-  const modal = document.getElementById('hireModal');
-  const closeBtn = document.getElementById('closeHireModal');
 
-  // Open modal helper
-  function openFinanceModal() {
-    // Check if the user already dismissed it during this visit
-    if (sessionStorage.getItem('hireModalDismissed') === 'true') return;
+
+
+<!-- Modern Interactive Popup: Executive Golden Glow Edition -->
+<div id="hireModal" class="hire-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+  <div class="hire-modal-container">
+    <button class="modal-close-btn" id="closeHireModal" aria-label="Close dialog">&times;</button>
     
-    modal.classList.add('is-active');
-    modal.setAttribute('aria-hidden', 'false');
+    <!-- Profile & Header Section -->
+    <div class="modal-header">
+      <div class="profile-row">
+        <div class="avatar-ring">
+          <div class="avatar-box">NK</div>
+        </div>
+        <div class="title-details">
+          <span class="status-pill"><span class="status-dot"></span> Available for Hire</span>
+          <h2 id="modalTitle">Naveen Kumar B</h2>
+          <p class="role-tag">Financial Analyst & Business Intelligence Specialist</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="modal-summary">
+      MBA in Finance & Business Analytics with hands-on corporate experience in cash flow optimization, data modeling, and regulatory compliance.
+    </p>
+
+    <!-- 4 Expanded Golden Cards with Financial Symbols -->
+    <div class="metrics-grid">
+      <!-- Card 1 -->
+      <div class="metric-card">
+        <div class="card-icon">
+          <!-- Graduation Cap / Analytics Symbol -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="metric-num">MBA Finance</span>
+          <span class="metric-lbl">Sakthi Institute (7.9 CGPA)</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="metric-card">
+        <div class="card-icon">
+          <!-- Trend / Analysis Chart -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="metric-num">Power BI & SQL</span>
+          <span class="metric-lbl">Interactive Dashboards & DAX</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="metric-card">
+        <div class="card-icon">
+          <!-- Wallet / Balance Symbol -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="metric-num">AP / AR & Cash Flow</span>
+          <span class="metric-lbl">Reconciliations & Closing</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="metric-card">
+        <div class="card-icon">
+          <!-- Python / Coding Code Symbol -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="card-info">
+          <span class="metric-num">Python & R</span>
+          <span class="metric-lbl">Predictive Modeling & Automation</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Competencies Badges -->
+    <div class="skills-section">
+      <span class="skill-tag">Financial Modeling</span>
+      <span class="skill-tag">GST & TDS Compliance</span>
+      <span class="skill-tag">Ratio Analysis</span>
+      <span class="skill-tag">Advanced Excel</span>
+      <span class="skill-tag">MySQL Workbench</span>
+      <span class="skill-tag">Tally Prime</span>
+    </div>
+
+    <!-- CTA Contact Buttons -->
+    <div class="modal-actions">
+      <a href="mailto:naveenbalakrishnan146@gmail.com?subject=Job%20Opportunity%20-%20Financial%20Analyst" class="btn-gold-primary">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        Direct Interview Invite
+      </a>
+      <a href="tel:+916369311629" class="btn-gold-secondary">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Call
+      </a>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Base Backdrop */
+  .hire-modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(8, 8, 10, 0.85);
+    backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    padding: 24px;
+    box-sizing: border-box;
   }
 
-  // Close modal helper
+  .hire-modal-backdrop.is-active {
+    display: flex;
+    animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* Golden Luxury Card Container */
+  .hire-modal-container {
+    position: relative;
+    background: radial-gradient(circle at top right, #1f1b14 0%, #0d0d0e 100%);
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    border-radius: 20px;
+    max-width: 580px;
+    width: 100%;
+    padding: 38px 34px 30px;
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.18), 0 25px 60px rgba(0, 0, 0, 0.85);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #f5f5f7;
+  }
+
+  /* Close Button */
+  .modal-close-btn {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    color: #a39577;
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.2s ease;
+  }
+  .modal-close-btn:hover {
+    color: #f7d070;
+    transform: rotate(90deg);
+  }
+
+  /* Profile Avatar Header */
+  .profile-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+  .avatar-ring {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f7d070, #9e7b23);
+    padding: 2px;
+    box-shadow: 0 0 16px rgba(247, 208, 112, 0.35);
+    flex-shrink: 0;
+  }
+  .avatar-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #141416;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 20px;
+    color: #f7d070;
+    letter-spacing: 1px;
+  }
+
+  /* Status Pill */
+  .status-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(212, 175, 55, 0.12);
+    color: #f3cf7a;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 30px;
+    margin-bottom: 6px;
+  }
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #22c55e;
+    border-radius: 50%;
+    margin-right: 7px;
+    box-shadow: 0 0 8px #22c55e;
+  }
+
+  .title-details h2 {
+    margin: 0;
+    font-size: 23px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    background: linear-gradient(90deg, #ffffff 40%, #f7d070);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .role-tag {
+    margin: 4px 0 0;
+    color: #d1b87a;
+    font-size: 13.5px;
+    font-weight: 500;
+  }
+  .modal-summary {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #bbb3a4;
+    margin: 20px 0 22px;
+  }
+
+  /* 4 Expanded Metric Cards */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 22px;
+  }
+  .metric-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 14px 14px;
+    transition: all 0.25s ease;
+  }
+  .metric-card:hover {
+    border-color: rgba(247, 208, 112, 0.6);
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.15);
+    transform: translateY(-2px);
+  }
+  .card-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(212, 175, 55, 0.1);
+    color: #f7d070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .card-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .metric-num {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .metric-lbl {
+    font-size: 11px;
+    color: #a89f91;
+    margin-top: 2px;
+  }
+
+  /* Skills Badges */
+  .skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 26px;
+  }
+  .skill-tag {
+    font-size: 11px;
+    background: rgba(255, 255, 255, 0.03);
+    color: #e4d5b7;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  /* Call-To-Action Golden Buttons */
+  .modal-actions {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 12px;
+  }
+  .btn-gold-primary, .btn-gold-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 12px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+  .btn-gold-primary {
+    background: linear-gradient(135deg, #f7d070, #c89d2d);
+    color: #121212;
+    box-shadow: 0 4px 18px rgba(247, 208, 112, 0.35);
+  }
+  .btn-gold-primary:hover {
+    background: linear-gradient(135deg, #ffe08a, #d4a837);
+    box-shadow: 0 6px 24px rgba(247, 208, 112, 0.5);
+    transform: translateY(-2px);
+  }
+  .btn-gold-secondary {
+    background: transparent;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    color: #f7d070;
+  }
+  .btn-gold-secondary:hover {
+    background: rgba(212, 175, 55, 0.08);
+    border-color: rgba(247, 208, 112, 0.7);
+    transform: translateY(-2px);
+  }
+
+  @keyframes modalScaleUp {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 520px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
+    }
+    .modal-actions {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const hireModal = document.getElementById('hireModal');
+  const closeHireBtn = document.getElementById('closeHireModal');
+
+  function openFinanceModal() {
+    if (sessionStorage.getItem('hireModalDismissed') === 'true') return;
+    hireModal.classList.add('is-active');
+    hireModal.setAttribute('aria-hidden', 'false');
+  }
+
   function closeFinanceModal() {
-    modal.classList.remove('is-active');
-    modal.setAttribute('aria-hidden', 'true');
-    // Prevent it from popping up repeatedly in the same browser session
+    hireModal.classList.remove('is-active');
+    hireModal.setAttribute('aria-hidden', 'true');
     sessionStorage.setItem('hireModalDismissed', 'true');
   }
 
-  // Event Listeners for Closing
-  closeBtn.addEventListener('click', closeFinanceModal);
-  modal.addEventListener('click', function(e) {
-    if (e.target === this) closeFinanceModal();
+  closeHireBtn.addEventListener('click', closeFinanceModal);
+  hireModal.addEventListener('click', (e) => {
+    if (e.target === hireModal) closeFinanceModal();
   });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && hireModal.classList.contains('is-active')) {
       closeFinanceModal();
     }
   });
 
-  // Trigger 1: Auto-popup after 3 seconds
+  // Popup automatically after 3.5 seconds
   window.addEventListener('load', () => {
-    setTimeout(openFinanceModal, 3000);
-  });
-
-  // Trigger 2: Pop up when scrolled 50% down the page
-  window.addEventListener('scroll', () => {
-    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
-    if (scrollTotal > 0 && (window.scrollY / scrollTotal) > 0.5) {
-      openFinanceModal();
-    }
+    setTimeout(openFinanceModal, 3500);
   });
 </script>
