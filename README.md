@@ -2127,9 +2127,25 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
 
 
-<!-- Modern Interactive Popup: Ultra-Luxury Compact Edition -->
-<div id="hireModal" class="hire-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-  <div class="glow-wrapper" id="glowCardWrapper">
+<!-- Modern Interactive Popup: Fail-Safe Direct Version -->
+<div id="hireModal" role="dialog" aria-modal="true" style="
+  display: flex !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(0, 0, 0, 0.45) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  justify-content: center !important;
+  align-items: center !important;
+  z-index: 2147483647 !important;
+  padding: 16px !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+">
+  <div class="glow-wrapper" id="glowCardWrapper" style="cursor: default !important;">
     <div class="hire-modal-container">
       
       <!-- Top Glowing Financial Ticker Tape -->
@@ -2170,7 +2186,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">MBA in Finance</span>
-            <span class="metric-sub">Anna University (7.9 CGPA)</span>
+            <span class="metric-sub">Anna University (7.9 CGPA)[cite: 1]</span>
           </div>
         </div>
 
@@ -2181,7 +2197,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Business Intelligence</span>
-            <span class="metric-sub">Power BI, DAX &amp; MySQL</span>
+            <span class="metric-sub">Power BI, DAX &amp; MySQL[cite: 1, 2]</span>
           </div>
         </div>
 
@@ -2192,7 +2208,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Corporate Accounting</span>
-            <span class="metric-sub">AP/AR, Closings, TDS/GST</span>
+            <span class="metric-sub">AP/AR, Closings, TDS/GST[cite: 1, 2]</span>
           </div>
         </div>
 
@@ -2203,19 +2219,19 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Data Analytics &amp; Code</span>
-            <span class="metric-sub">Python (Pandas), R, Excel</span>
+            <span class="metric-sub">Python (Pandas), R, Excel[cite: 1, 2]</span>
           </div>
         </div>
       </div>
 
       <!-- Analytical Competencies Badges -->
       <div class="skills-section">
-        <span class="skill-tag">Ratio Analysis</span>
-        <span class="skill-tag">Capital Adequacy Modeling</span>
-        <span class="skill-tag">Tally Prime</span>
-        <span class="skill-tag">Trend Projections</span>
+        <span class="skill-tag">Ratio Analysis[cite: 1]</span>
+        <span class="skill-tag">Capital Adequacy Modeling[cite: 2]</span>
+        <span class="skill-tag">Tally Prime[cite: 2]</span>
+        <span class="skill-tag">Trend Projections[cite: 1]</span>
         <span class="skill-tag">Variance Analysis</span>
-        <span class="skill-tag">Process Enhancement</span>
+        <span class="skill-tag">Process Enhancement[cite: 1]</span>
       </div>
 
       <!-- Action Buttons with Undo/Dismiss Icon on the Right -->
@@ -2232,7 +2248,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         </div>
 
         <!-- Undo Dismiss Icon -->
-        <button id="undoDismissBtn" class="btn-undo-icon" title="Dismiss" aria-label="Dismiss popup">
+        <button type="button" id="undoDismissBtn" class="btn-undo-icon" title="Dismiss" aria-label="Dismiss popup">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="9 14 4 9 9 4"></polyline>
             <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
@@ -2250,30 +2266,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 </div>
 
 <style>
-  /* Semi-transparent backdrop so website shows cleanly behind */
-  .hire-modal-backdrop {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    justify-content: center;
-    align-items: center;
-    z-index: 999999;
-    padding: 16px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-
-  .hire-modal-backdrop.is-active {
-    display: flex;
-    animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
   /* Compact Glow Outer Frame */
   .glow-wrapper {
     position: relative;
@@ -2283,7 +2275,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     padding: 1.5px;
     background: linear-gradient(135deg, #f5d061 0%, #aa771c 40%, #543d0e 70%, #d4af37 100%);
     box-shadow: 0 0 35px rgba(212, 175, 55, 0.3), 0 25px 65px rgba(0, 0, 0, 0.85);
-    cursor: default;
     animation: pulseGlow 4s ease-in-out infinite alternate;
   }
 
@@ -2558,11 +2549,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     transform-origin: left;
   }
 
-  /* Animations */
-  @keyframes modalFadeIn {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-  }
   @keyframes pulseGlow {
     0% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
     100% { box-shadow: 0 0 45px rgba(212, 175, 55, 0.4); }
@@ -2587,15 +2573,23 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     const timerBar = document.getElementById('timerBar');
     const glowCardWrapper = document.getElementById('glowCardWrapper');
 
+    if (!modal) return;
+
     const AUTO_CLOSE_MS = 5000;
     let remainingTime = AUTO_CLOSE_MS;
-    let timerStart = null;
+    let timerStart = Date.now();
     let autoCloseTimer = null;
     let animFrame = null;
     let isPaused = false;
 
+    function hideModal() {
+      modal.style.setProperty('display', 'none', 'important');
+      clearTimeout(autoCloseTimer);
+      cancelAnimationFrame(animFrame);
+    }
+
     function updateProgress() {
-      if (!isPaused && timerStart) {
+      if (!isPaused) {
         const elapsed = Date.now() - timerStart;
         const currentRemaining = Math.max(0, remainingTime - elapsed);
         const percent = (currentRemaining / AUTO_CLOSE_MS) * 100;
@@ -2606,16 +2600,14 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           return;
         }
       }
-      if (modal.classList.contains('is-active')) {
+      if (modal.style.display !== 'none') {
         animFrame = requestAnimationFrame(updateProgress);
       }
     }
 
     function startTimer() {
       timerStart = Date.now();
-      autoCloseTimer = setTimeout(() => {
-        hideModal();
-      }, remainingTime);
+      autoCloseTimer = setTimeout(hideModal, remainingTime);
       animFrame = requestAnimationFrame(updateProgress);
     }
 
@@ -2629,53 +2621,34 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     }
 
     function resumeTimer() {
-      if (isPaused && modal.classList.contains('is-active')) {
+      if (isPaused && modal.style.display !== 'none') {
         isPaused = false;
         startTimer();
       }
     }
 
-    function showModal() {
-      modal.classList.add('is-active');
-      modal.setAttribute('aria-hidden', 'false');
-      startTimer();
-    }
-
-    function hideModal() {
-      modal.classList.remove('is-active');
-      modal.setAttribute('aria-hidden', 'true');
-      clearTimeout(autoCloseTimer);
-      cancelAnimationFrame(animFrame);
-    }
-
-    // Dismiss using the undo button
+    // Dismiss using undo button
     if (undoDismissBtn) {
-      undoDismissBtn.addEventListener('click', hideModal);
+      undoDismissBtn.onclick = hideModal;
     }
 
-    // Dismiss by clicking anywhere on the background
-    modal.addEventListener('click', function(e) {
+    // Dismiss clicking outside
+    modal.onclick = function(e) {
       if (e.target === modal) hideModal();
-    });
+    };
 
     // Dismiss with Escape key
     document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape' && modal.classList.contains('is-active')) {
-        hideModal();
-      }
+      if (e.key === 'Escape') hideModal();
     });
 
-    // Pause timer on hover so recruiter can read or click buttons comfortably
+    // Pause on hover
     if (glowCardWrapper) {
-      glowCardWrapper.addEventListener('mouseenter', pauseTimer);
-      glowCardWrapper.addEventListener('mouseleave', resumeTimer);
+      glowCardWrapper.onmouseenter = pauseTimer;
+      glowCardWrapper.onmouseleave = resumeTimer;
     }
 
-    // Runs automatically on every page refresh
-    if (document.readyState === 'complete') {
-      setTimeout(showModal, 800);
-    } else {
-      window.addEventListener('load', () => setTimeout(showModal, 800));
-    }
+    // Start 5-second countdown immediately
+    startTimer();
   })();
 </script>
