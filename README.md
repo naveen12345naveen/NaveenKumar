@@ -2127,7 +2127,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
 
 
-<!-- Modern Interactive Popup: Fail-Safe Direct Version -->
+<!-- Modern Interactive Popup: Production Ready -->
 <div id="hireModal" role="dialog" aria-modal="true" style="
   display: flex !important;
   position: fixed !important;
@@ -2186,7 +2186,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">MBA in Finance</span>
-            <span class="metric-sub">Anna University (7.9 CGPA)[cite: 1]</span>
+            <span class="metric-sub">Anna University (7.9 CGPA)</span>
           </div>
         </div>
 
@@ -2197,7 +2197,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Business Intelligence</span>
-            <span class="metric-sub">Power BI, DAX &amp; MySQL[cite: 1, 2]</span>
+            <span class="metric-sub">Power BI, DAX &amp; MySQL</span>
           </div>
         </div>
 
@@ -2208,7 +2208,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Corporate Accounting</span>
-            <span class="metric-sub">AP/AR, Closings, TDS/GST[cite: 1, 2]</span>
+            <span class="metric-sub">AP/AR, Closings, TDS/GST</span>
           </div>
         </div>
 
@@ -2219,19 +2219,19 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Data Analytics &amp; Code</span>
-            <span class="metric-sub">Python (Pandas), R, Excel[cite: 1, 2]</span>
+            <span class="metric-sub">Python (Pandas), R, Excel</span>
           </div>
         </div>
       </div>
 
       <!-- Analytical Competencies Badges -->
       <div class="skills-section">
-        <span class="skill-tag">Ratio Analysis[cite: 1]</span>
-        <span class="skill-tag">Capital Adequacy Modeling[cite: 2]</span>
-        <span class="skill-tag">Tally Prime[cite: 2]</span>
-        <span class="skill-tag">Trend Projections[cite: 1]</span>
+        <span class="skill-tag">Ratio Analysis</span>
+        <span class="skill-tag">Capital Adequacy Modeling</span>
+        <span class="skill-tag">Tally Prime</span>
+        <span class="skill-tag">Trend Projections</span>
         <span class="skill-tag">Variance Analysis</span>
-        <span class="skill-tag">Process Enhancement[cite: 1]</span>
+        <span class="skill-tag">Process Enhancement</span>
       </div>
 
       <!-- Action Buttons with Undo/Dismiss Icon on the Right -->
