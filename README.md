@@ -1571,7 +1571,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </div>
       
       <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">1 Month Internship</span>
-      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 550; font-size: 1.1rem;">SRG Apparels Pvt. Ltd., Udumalpet</h4>
+    <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 550; font-size: 1.1rem;"><a href="https://www.srgapparels.com/" target="_blank" style="color: inherit; text-decoration: underline;">SRG Apparels Pvt. Ltd.</a>, Udumalpet</h4>
       
       <ul class="experience-list" style="margin-bottom: 0; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
         <li style="margin-bottom: 8px;">Enhanced skills in team management, production planning, and quality assurance.</li>
