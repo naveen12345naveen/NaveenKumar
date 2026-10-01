@@ -2124,270 +2124,48 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
 
 
-<!-- Modern Interactive Popup for Finance & Analysis Portfolio -->
-<div id="hireModal" class="hire-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-  <div class="hire-modal-container">
-    <button class="modal-close-btn" id="closeHireModal" aria-label="Close dialog">&times;</button>
-    
-    <div class="modal-header">
-      <span class="status-pill"><span class="status-dot"></span> Available for Opportunities</span>
-      <h2 id="modalTitle">Naveen Kumar B</h2>
-      <p class="role-tag">Financial Analyst & Business Modeling Specialist</p>
-    </div>
-
-    <p class="modal-summary">
-      MBA in Finance with expertise in quantitative modeling, process optimization, and corporate accounting. Ready to drive data-driven financial decision-making for your team.
-    </p>
-
-    <!-- Key Metrics / Highlights Grid -->
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <span class="metric-num">MBA</span>
-        <span class="metric-lbl">Finance & Analytics</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-num">AP/AR</span>
-        <span class="metric-lbl">Cash Flow & Reconciliations</span>
-      </div>
-      <div class="metric-card">
-        <span class="metric-num">BI & SQL</span>
-        <span class="metric-lbl">Data & Trend Analysis</span>
-      </div>
-    </div>
-
-    <!-- Core Competencies -->
-    <div class="skills-section">
-      <div class="skill-tag">Financial Modeling</div>
-      <div class="skill-tag">Power BI & Dashboards</div>
-      <div class="skill-tag">Python & Pandas</div>
-      <div class="skill-tag">MySQL Workbench</div>
-      <div class="skill-tag">GST & TDS Compliance</div>
-      <div class="skill-tag">Ratio & Trend Evaluation</div>
-    </div>
-
-    <!-- CTA Contact Buttons -->
-    <div class="modal-actions">
-      <a href="mailto:naveenbalakrishnan146@gmail.com?subject=Job%20Opportunity%20-%20Financial%20Analyst" class="btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        Direct Interview Invite
-      </a>
-      <a href="tel:+916369311629" class="btn-secondary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        Quick Call
-      </a>
-    </div>
-  </div>
-</div>
-
-<style>
-  /* Base Styles & Backdrop */
-  .hire-modal-backdrop {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(10, 25, 47, 0.72);
-    backdrop-filter: blur(8px);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    padding: 16px;
-    box-sizing: border-box;
-  }
-
-  .hire-modal-backdrop.is-active {
-    display: flex;
-    animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
-
-  /* Card Container */
-  .hire-modal-container {
-    position: relative;
-    background: linear-gradient(145deg, #0d1b2a, #1b263b);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-top: 2px solid #00b4d8;
-    color: #e0e1dd;
-    border-radius: 16px;
-    max-width: 480px;
-    width: 100%;
-    padding: 32px 28px 24px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 180, 216, 0.15);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  }
-
-  /* Close Button */
-  .modal-close-btn {
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    background: transparent;
-    border: none;
-    font-size: 26px;
-    color: #778da9;
-    cursor: pointer;
-    line-height: 1;
-    transition: color 0.2s ease;
-  }
-  .modal-close-btn:hover {
-    color: #ffffff;
-  }
-
-  /* Status Tag */
-  .status-pill {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(16, 185, 129, 0.12);
-    color: #10b981;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 4px 10px;
-    border-radius: 20px;
-    margin-bottom: 12px;
-  }
-  .status-dot {
-    width: 6px;
-    height: 6px;
-    background-color: #10b981;
-    border-radius: 50%;
-    margin-right: 6px;
-    box-shadow: 0 0 8px #10b981;
-  }
-
-  /* Typography */
-  .modal-header h2 {
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.02em;
-  }
-  .role-tag {
-    margin: 4px 0 0;
-    color: #00b4d8;
-    font-size: 13.5px;
-    font-weight: 500;
-  }
-  .modal-summary {
-    font-size: 13.5px;
-    line-height: 1.55;
-    color: #a0aec0;
-    margin: 14px 0 18px;
-  }
-
-  /* Metrics Grid */
-  .metrics-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 18px;
-  }
-  .metric-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 8px;
-    padding: 10px 8px;
-    text-align: center;
-  }
-  .metric-num {
-    display: block;
-    font-size: 14px;
-    font-weight: 700;
-    color: #ffffff;
-  }
-  .metric-lbl {
-    display: block;
-    font-size: 10px;
-    color: #778da9;
-    margin-top: 2px;
-  }
-
-  /* Tags */
-  .skills-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 24px;
-  }
-  .skill-tag {
-    font-size: 11px;
-    background: rgba(0, 180, 216, 0.08);
-    color: #90e0ef;
-    border: 1px solid rgba(0, 180, 216, 0.2);
-    padding: 3px 8px;
-    border-radius: 4px;
-  }
-
-  /* Action Buttons */
-  .modal-actions {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 10px;
-  }
-  .btn-primary, .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    font-size: 13px;
-    font-weight: 600;
-    padding: 10px 14px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-  .btn-primary {
-    background: #00b4d8;
-    color: #0d1b2a;
-    box-shadow: 0 4px 14px rgba(0, 180, 216, 0.3);
-  }
-  .btn-primary:hover {
-    background: #90e0ef;
-    transform: translateY(-1px);
-  }
-  .btn-secondary {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-  }
-  .btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  @keyframes modalFadeIn {
-    from { opacity: 0; transform: scale(0.96); }
-    to { opacity: 1; transform: scale(1); }
-  }
-</style>
-
 <script>
-  // Trigger after 4 seconds or when called via openFinanceModal()
+  const modal = document.getElementById('hireModal');
+  const closeBtn = document.getElementById('closeHireModal');
+
+  // Open modal helper
   function openFinanceModal() {
-    const modal = document.getElementById('hireModal');
+    // Check if the user already dismissed it during this visit
+    if (sessionStorage.getItem('hireModalDismissed') === 'true') return;
+    
     modal.classList.add('is-active');
     modal.setAttribute('aria-hidden', 'false');
   }
 
+  // Close modal helper
   function closeFinanceModal() {
-    const modal = document.getElementById('hireModal');
     modal.classList.remove('is-active');
     modal.setAttribute('aria-hidden', 'true');
+    // Prevent it from popping up repeatedly in the same browser session
+    sessionStorage.setItem('hireModalDismissed', 'true');
   }
 
-  document.getElementById('closeHireModal').addEventListener('click', closeFinanceModal);
-
-  // Close when clicking background outside card
-  document.getElementById('hireModal').addEventListener('click', function(e) {
+  // Event Listeners for Closing
+  closeBtn.addEventListener('click', closeFinanceModal);
+  modal.addEventListener('click', function(e) {
     if (e.target === this) closeFinanceModal();
   });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+      closeFinanceModal();
+    }
+  });
 
-  // Auto-launch trigger (default: 4 seconds)
-  window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(openFinanceModal, 4000);
+  // Trigger 1: Auto-popup after 3 seconds
+  window.addEventListener('load', () => {
+    setTimeout(openFinanceModal, 3000);
+  });
+
+  // Trigger 2: Pop up when scrolled 50% down the page
+  window.addEventListener('scroll', () => {
+    const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
+    if (scrollTotal > 0 && (window.scrollY / scrollTotal) > 0.5) {
+      openFinanceModal();
+    }
   });
 </script>
