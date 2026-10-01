@@ -2127,100 +2127,117 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
 
 
-<!-- Modern Interactive Popup: Executive Golden Glow Edition -->
+<!-- Modern Interactive Popup: Ultra-Luxury Golden Edition -->
 <div id="hireModal" class="hire-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
-  <div class="hire-modal-container">
-    <button class="modal-close-btn" id="closeHireModal" aria-label="Close dialog">&times;</button>
-    
-    <!-- Profile & Header Section -->
-    <div class="modal-header">
-      <div class="profile-row">
-        <div class="avatar-ring">
-          <div class="avatar-box">NK</div>
-        </div>
-        <div class="title-details">
-          <span class="status-pill"><span class="status-dot"></span> Available for Hire</span>
-          <h2 id="modalTitle">Naveen Kumar B</h2>
-          <p class="role-tag">Financial Analyst & Business Intelligence Specialist</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="modal-summary">
-      MBA in Finance & Business Analytics with hands-on corporate experience in cash flow optimization, data modeling, and regulatory compliance.
-    </p>
-
-    <!-- 4 Expanded Golden Cards with Financial Symbols -->
-    <div class="metrics-grid">
-      <!-- Card 1 -->
-      <div class="metric-card">
-        <div class="card-icon">
-          <!-- Graduation Cap / Analytics Symbol -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-        </div>
-        <div class="card-info">
-          <span class="metric-num">MBA Finance</span>
-          <span class="metric-lbl">Sakthi Institute (7.9 CGPA)</span>
+  <div class="glow-wrapper">
+    <div class="hire-modal-container">
+      
+      <!-- Top Glowing Financial Ticker Tape -->
+      <div class="ticker-wrap">
+        <div class="ticker-move">
+          <span class="ticker-item"><span class="ticker-dot">▲</span> POWER BI & DAX</span>
+          <span class="ticker-item"><span class="ticker-dot">▲</span> FINANCIAL MODELING</span>
+          <span class="ticker-item"><span class="ticker-dot">▲</span> PYTHON & PANDAS</span>
+          <span class="ticker-item"><span class="ticker-dot">▲</span> CASH FLOW OPTIMIZATION</span>
+          <span class="ticker-item"><span class="ticker-dot">▲</span> SQL WORKBENCH</span>
+          <span class="ticker-item"><span class="ticker-dot">▲</span> RATIO ANALYSIS</span>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="metric-card">
-        <div class="card-icon">
-          <!-- Trend / Analysis Chart -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-        </div>
-        <div class="card-info">
-          <span class="metric-num">Power BI & SQL</span>
-          <span class="metric-lbl">Interactive Dashboards & DAX</span>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="metric-card">
-        <div class="card-icon">
-          <!-- Wallet / Balance Symbol -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
-        </div>
-        <div class="card-info">
-          <span class="metric-num">AP / AR & Cash Flow</span>
-          <span class="metric-lbl">Reconciliations & Closing</span>
+      <!-- Profile & Header Section -->
+      <div class="modal-header">
+        <div class="profile-row">
+          <div class="avatar-ring">
+            <div class="avatar-box">NK</div>
+          </div>
+          <div class="title-details">
+            <div class="status-container">
+              <span class="status-pill"><span class="status-dot"></span> Available for Immediate Hiring</span>
+              <span class="location-badge">📍 Udumalpet / Coimbatore</span>
+            </div>
+            <h2 id="modalTitle">Naveen Kumar B</h2>
+            <p class="role-tag">Financial Analyst & Business Intelligence Specialist</p>
+          </div>
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="metric-card">
-        <div class="card-icon">
-          <!-- Python / Coding Code Symbol -->
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <p class="modal-summary">
+        MBA in Finance (Sakthi Institute) with proven operational experience in AP/AR cash flow optimization, quantitative financial modeling, and automated data visualization pipelines.
+      </p>
+
+      <!-- 4 Expanded Golden Glow Dashboard Cards -->
+      <div class="metrics-grid">
+        <!-- Card 1 -->
+        <div class="metric-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div class="card-info">
+            <span class="metric-title">MBA in Finance</span>
+            <span class="metric-sub"> Sakthi Institute (7.9 CGPA)</span>
+          </div>
         </div>
-        <div class="card-info">
-          <span class="metric-num">Python & R</span>
-          <span class="metric-lbl">Predictive Modeling & Automation</span>
+
+        <!-- Card 2 -->
+        <div class="metric-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <div class="card-info">
+            <span class="metric-title">Business Intelligence</span>
+            <span class="metric-sub">Power BI, DAX & MySQL Workbench</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="metric-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+          </div>
+          <div class="card-info">
+            <span class="metric-title">Corporate Accounting</span>
+            <span class="metric-sub">AP/AR, Month-End Closing, TDS/GST</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="metric-card">
+          <div class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <div class="card-info">
+            <span class="metric-title">Data Analytics & Code</span>
+            <span class="metric-sub">Python (Pandas), R, Advanced Excel</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Core Competencies Badges -->
-    <div class="skills-section">
-      <span class="skill-tag">Financial Modeling</span>
-      <span class="skill-tag">GST & TDS Compliance</span>
-      <span class="skill-tag">Ratio Analysis</span>
-      <span class="skill-tag">Advanced Excel</span>
-      <span class="skill-tag">MySQL Workbench</span>
-      <span class="skill-tag">Tally Prime</span>
-    </div>
+      <!-- Analytical Competencies Badges -->
+      <div class="skills-section">
+        <span class="skill-tag">Ratio Analysis</span>
+        <span class="skill-tag">Capital Adequacy Modeling</span>
+        <span class="skill-tag">Tally Prime</span>
+        <span class="skill-tag">Trend Projections</span>
+        <span class="skill-tag">Variance Analysis</span>
+        <span class="skill-tag">Process Enhancement</span>
+      </div>
 
-    <!-- CTA Contact Buttons -->
-    <div class="modal-actions">
-      <a href="mailto:naveenbalakrishnan146@gmail.com?subject=Job%20Opportunity%20-%20Financial%20Analyst" class="btn-gold-primary">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-        Direct Interview Invite
-      </a>
-      <a href="tel:+916369311629" class="btn-gold-secondary">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-        Call
-      </a>
+      <!-- Action Buttons -->
+      <div class="modal-actions">
+        <a href="mailto:naveenbalakrishnan146@gmail.com?subject=Job%20Opportunity%20-%20Financial%20Analyst%20Role" class="btn-gold-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          Schedule Interview
+        </a>
+        <a href="tel:+916369311629" class="btn-gold-secondary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          Direct Call
+        </a>
+      </div>
+
+      <div class="modal-footer-hint">
+        Click anywhere outside to dismiss
+      </div>
+
     </div>
   </div>
 </div>
@@ -2234,128 +2251,160 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(8, 8, 10, 0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(4, 4, 6, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     justify-content: center;
     align-items: center;
-    z-index: 99999;
-    padding: 24px;
+    z-index: 999999;
+    padding: 20px;
     box-sizing: border-box;
+    cursor: pointer; /* Indicates clicking outside will close */
   }
 
   .hire-modal-backdrop.is-active {
     display: flex;
-    animation: modalScaleUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: modalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  /* Golden Luxury Card Container */
+  /* Animated Neon Border Container */
+  .glow-wrapper {
+    position: relative;
+    max-width: 660px; /* Increased size */
+    width: 100%;
+    border-radius: 24px;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(135deg, #f5d061 0%, #aa771c 40%, #543d0e 70%, #d4af37 100%);
+    box-shadow: 0 0 45px rgba(212, 175, 55, 0.28), 0 30px 80px rgba(0, 0, 0, 0.95);
+    cursor: default; /* Keeps pointer normal inside modal */
+    animation: pulseGlow 4s ease-in-out infinite alternate;
+  }
+
+  /* Main Inner Card */
   .hire-modal-container {
     position: relative;
-    background: radial-gradient(circle at top right, #1f1b14 0%, #0d0d0e 100%);
-    border: 1px solid rgba(212, 175, 55, 0.35);
-    border-radius: 20px;
-    max-width: 580px;
-    width: 100%;
-    padding: 38px 34px 30px;
-    box-shadow: 0 0 35px rgba(212, 175, 55, 0.18), 0 25px 60px rgba(0, 0, 0, 0.85);
+    background: radial-gradient(circle at 80% 10%, #1c1810 0%, #0d0d0f 100%);
+    border-radius: 22px;
+    padding: 30px 38px 28px;
+    box-sizing: border-box;
+    overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: #f5f5f7;
+    color: #f7f7f9;
   }
 
-  /* Close Button */
-  .modal-close-btn {
-    position: absolute;
-    top: 18px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    font-size: 28px;
-    color: #a39577;
-    cursor: pointer;
-    line-height: 1;
-    transition: all 0.2s ease;
+  /* Financial Stock Ticker Banner */
+  .ticker-wrap {
+    width: calc(100% + 76px);
+    margin: -30px -38px 24px -38px;
+    background: rgba(212, 175, 55, 0.08);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 7px 0;
   }
-  .modal-close-btn:hover {
+  .ticker-move {
+    display: inline-block;
+    animation: tickerLoop 22s linear infinite;
+  }
+  .ticker-item {
+    display: inline-block;
+    padding: 0 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     color: #f7d070;
-    transform: rotate(90deg);
+  }
+  .ticker-dot {
+    color: #10b981;
+    font-size: 9px;
+    margin-right: 4px;
   }
 
-  /* Profile Avatar Header */
+  /* Profile Header */
   .profile-row {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 20px;
   }
   .avatar-ring {
-    width: 62px;
-    height: 62px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #f7d070, #9e7b23);
-    padding: 2px;
-    box-shadow: 0 0 16px rgba(247, 208, 112, 0.35);
+    background: linear-gradient(135deg, #ffe082, #b8860b);
+    padding: 2.5px;
+    box-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
     flex-shrink: 0;
   }
   .avatar-box {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: #141416;
+    background: #111114;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 20px;
+    font-weight: 800;
+    font-size: 24px;
     color: #f7d070;
     letter-spacing: 1px;
   }
 
-  /* Status Pill */
+  .status-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
   .status-pill {
     display: inline-flex;
     align-items: center;
-    background: rgba(212, 175, 55, 0.12);
-    color: #f3cf7a;
-    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: rgba(16, 185, 129, 0.12);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.35);
     font-size: 11px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     padding: 4px 10px;
-    border-radius: 30px;
-    margin-bottom: 6px;
+    border-radius: 20px;
   }
   .status-dot {
     width: 6px;
     height: 6px;
-    background-color: #22c55e;
+    background-color: #34d399;
     border-radius: 50%;
-    margin-right: 7px;
-    box-shadow: 0 0 8px #22c55e;
+    margin-right: 6px;
+    box-shadow: 0 0 8px #34d399;
+  }
+  .location-badge {
+    font-size: 11.5px;
+    color: #a89f91;
   }
 
   .title-details h2 {
     margin: 0;
-    font-size: 23px;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    background: linear-gradient(90deg, #ffffff 40%, #f7d070);
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(90deg, #ffffff 30%, #f7d070 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   .role-tag {
     margin: 4px 0 0;
-    color: #d1b87a;
-    font-size: 13.5px;
+    color: #d8b76b;
+    font-size: 14.5px;
     font-weight: 500;
   }
   .modal-summary {
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 1.6;
-    color: #bbb3a4;
-    margin: 20px 0 22px;
+    color: #c7beaf;
+    margin: 18px 0 22px;
   }
 
-  /* 4 Expanded Metric Cards */
+  /* 4 Grid Cards - Expanded */
   .metrics-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2365,145 +2414,167 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   .metric-card {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 12px;
-    padding: 14px 14px;
-    transition: all 0.25s ease;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 14px;
+    padding: 15px 16px;
+    transition: all 0.28s ease;
   }
   .metric-card:hover {
-    border-color: rgba(247, 208, 112, 0.6);
-    background: rgba(212, 175, 55, 0.05);
-    box-shadow: 0 0 16px rgba(212, 175, 55, 0.15);
+    border-color: rgba(247, 208, 112, 0.7);
+    background: rgba(212, 175, 55, 0.07);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.22);
     transform: translateY(-2px);
   }
   .card-icon {
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    background: rgba(212, 175, 55, 0.1);
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.04));
+    border: 1px solid rgba(212, 175, 55, 0.3);
     color: #f7d070;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
   }
-  .card-info {
-    display: flex;
-    flex-direction: column;
-  }
-  .metric-num {
-    font-size: 13.5px;
+  .metric-title {
+    display: block;
+    font-size: 14.5px;
     font-weight: 700;
     color: #ffffff;
   }
-  .metric-lbl {
-    font-size: 11px;
+  .metric-sub {
+    display: block;
+    font-size: 12px;
     color: #a89f91;
-    margin-top: 2px;
+    margin-top: 3px;
   }
 
   /* Skills Badges */
   .skills-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 26px;
+    gap: 8px;
+    margin-bottom: 24px;
   }
   .skill-tag {
-    font-size: 11px;
+    font-size: 11.5px;
     background: rgba(255, 255, 255, 0.03);
-    color: #e4d5b7;
+    color: #e5d8be;
     border: 1px solid rgba(212, 175, 55, 0.25);
-    padding: 4px 10px;
-    border-radius: 6px;
+    padding: 5px 12px;
+    border-radius: 8px;
+    transition: border-color 0.2s;
+  }
+  .skill-tag:hover {
+    border-color: #f7d070;
   }
 
-  /* Call-To-Action Golden Buttons */
+  /* Actions */
   .modal-actions {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 12px;
+    gap: 14px;
   }
   .btn-gold-primary, .btn-gold-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    font-size: 13.5px;
-    font-weight: 600;
-    padding: 12px 16px;
-    border-radius: 10px;
+    gap: 9px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 13px 20px;
+    border-radius: 12px;
     text-decoration: none;
-    cursor: pointer;
     transition: all 0.25s ease;
   }
   .btn-gold-primary {
-    background: linear-gradient(135deg, #f7d070, #c89d2d);
-    color: #121212;
-    box-shadow: 0 4px 18px rgba(247, 208, 112, 0.35);
+    background: linear-gradient(135deg, #f7d070 0%, #caa033 100%);
+    color: #0d0d0f;
+    box-shadow: 0 4px 20px rgba(247, 208, 112, 0.35);
   }
   .btn-gold-primary:hover {
-    background: linear-gradient(135deg, #ffe08a, #d4a837);
-    box-shadow: 0 6px 24px rgba(247, 208, 112, 0.5);
+    background: linear-gradient(135deg, #ffe18b 0%, #d8ae43 100%);
+    box-shadow: 0 6px 26px rgba(247, 208, 112, 0.55);
     transform: translateY(-2px);
   }
   .btn-gold-secondary {
     background: transparent;
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    border: 1.5px solid rgba(212, 175, 55, 0.35);
     color: #f7d070;
   }
   .btn-gold-secondary:hover {
-    background: rgba(212, 175, 55, 0.08);
-    border-color: rgba(247, 208, 112, 0.7);
+    background: rgba(212, 175, 55, 0.1);
+    border-color: #f7d070;
     transform: translateY(-2px);
   }
 
-  @keyframes modalScaleUp {
-    from { opacity: 0; transform: scale(0.92); }
-    to { opacity: 1; transform: scale(1); }
+  .modal-footer-hint {
+    text-align: center;
+    font-size: 11.5px;
+    color: #6d675e;
+    margin-top: 14px;
+    letter-spacing: 0.02em;
   }
 
-  /* Mobile Responsiveness */
-  @media (max-width: 520px) {
-    .metrics-grid {
-      grid-template-columns: 1fr;
-    }
-    .modal-actions {
-      grid-template-columns: 1fr;
-    }
+  /* Animations */
+  @keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.94); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulseGlow {
+    0% { box-shadow: 0 0 35px rgba(212, 175, 55, 0.2); }
+    100% { box-shadow: 0 0 55px rgba(212, 175, 55, 0.4); }
+  }
+  @keyframes tickerLoop {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 600px) {
+    .metrics-grid { grid-template-columns: 1fr; }
+    .modal-actions { grid-template-columns: 1fr; }
+    .hire-modal-container { padding: 26px 20px; }
   }
 </style>
 
 <script>
-  const hireModal = document.getElementById('hireModal');
-  const closeHireBtn = document.getElementById('closeHireModal');
+  (function() {
+    const modal = document.getElementById('hireModal');
 
-  function openFinanceModal() {
-    if (sessionStorage.getItem('hireModalDismissed') === 'true') return;
-    hireModal.classList.add('is-active');
-    hireModal.setAttribute('aria-hidden', 'false');
-  }
-
-  function closeFinanceModal() {
-    hireModal.classList.remove('is-active');
-    hireModal.setAttribute('aria-hidden', 'true');
-    sessionStorage.setItem('hireModalDismissed', 'true');
-  }
-
-  closeHireBtn.addEventListener('click', closeFinanceModal);
-  hireModal.addEventListener('click', (e) => {
-    if (e.target === hireModal) closeFinanceModal();
-  });
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && hireModal.classList.contains('is-active')) {
-      closeFinanceModal();
+    // Open Modal function
+    function showModal() {
+      modal.classList.add('is-active');
+      modal.setAttribute('aria-hidden', 'false');
     }
-  });
 
-  // Popup automatically after 3.5 seconds
-  window.addEventListener('load', () => {
-    setTimeout(openFinanceModal, 3500);
-  });
+    // Close Modal function
+    function hideModal() {
+      modal.classList.remove('is-active');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    // Close when clicking ANYWHERE outside the modal card (on the backdrop)
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) {
+        hideModal();
+      }
+    });
+
+    // Close with the Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-active')) {
+        hideModal();
+      }
+    });
+
+    // Display EVERY TIME page is refreshed (1.2 second smooth delay)
+    if (document.readyState === 'complete') {
+      setTimeout(showModal, 1200);
+    } else {
+      window.addEventListener('load', () => setTimeout(showModal, 1200));
+    }
+  })();
 </script>
