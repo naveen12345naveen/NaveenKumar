@@ -2135,9 +2135,9 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       <!-- Top Glowing Financial Ticker Tape -->
       <div class="ticker-wrap">
         <div class="ticker-move">
-          <span class="ticker-item"><span class="ticker-dot">▲</span> POWER BI & DAX</span>
+          <span class="ticker-item"><span class="ticker-dot">▲</span> POWER BI &amp; DAX</span>
           <span class="ticker-item"><span class="ticker-dot">▲</span> FINANCIAL MODELING</span>
-          <span class="ticker-item"><span class="ticker-dot">▲</span> PYTHON & PANDAS</span>
+          <span class="ticker-item"><span class="ticker-dot">▲</span> PYTHON &amp; PANDAS</span>
           <span class="ticker-item"><span class="ticker-dot">▲</span> CASH FLOW OPTIMIZATION</span>
           <span class="ticker-item"><span class="ticker-dot">▲</span> SQL WORKBENCH</span>
           <span class="ticker-item"><span class="ticker-dot">▲</span> RATIO ANALYSIS</span>
@@ -2170,7 +2170,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">MBA in Finance</span>
-            <span class="metric-sub">Anna University (7.9 CGPA)[cite: 1]</span>
+            <span class="metric-sub">Anna University (7.9 CGPA)</span>
           </div>
         </div>
 
@@ -2181,7 +2181,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Business Intelligence</span>
-            <span class="metric-sub">Power BI, DAX & MySQL[cite: 1, 2]</span>
+            <span class="metric-sub">Power BI, DAX &amp; MySQL</span>
           </div>
         </div>
 
@@ -2192,7 +2192,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="card-info">
             <span class="metric-title">Corporate Accounting</span>
-            <span class="metric-sub">AP/AR, Closings, TDS/GST[cite: 1, 2]</span>
+            <span class="metric-sub">AP/AR, Closings, TDS/GST</span>
           </div>
         </div>
 
@@ -2202,20 +2202,20 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="card-info">
-            <span class="metric-title">Data Analytics & Code</span>
-            <span class="metric-sub">Python (Pandas), R, Excel[cite: 1, 2]</span>
+            <span class="metric-title">Data Analytics &amp; Code</span>
+            <span class="metric-sub">Python (Pandas), R, Excel</span>
           </div>
         </div>
       </div>
 
       <!-- Analytical Competencies Badges -->
       <div class="skills-section">
-        <span class="skill-tag">Ratio Analysis[cite: 1]</span>
-        <span class="skill-tag">Capital Adequacy Modeling[cite: 2]</span>
-        <span class="skill-tag">Tally Prime[cite: 2]</span>
-        <span class="skill-tag">Trend Projections[cite: 1]</span>
+        <span class="skill-tag">Ratio Analysis</span>
+        <span class="skill-tag">Capital Adequacy Modeling</span>
+        <span class="skill-tag">Tally Prime</span>
+        <span class="skill-tag">Trend Projections</span>
         <span class="skill-tag">Variance Analysis</span>
-        <span class="skill-tag">Process Enhancement[cite: 1]</span>
+        <span class="skill-tag">Process Enhancement</span>
       </div>
 
       <!-- Action Buttons with Undo/Dismiss Icon on the Right -->
@@ -2599,7 +2599,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         const elapsed = Date.now() - timerStart;
         const currentRemaining = Math.max(0, remainingTime - elapsed);
         const percent = (currentRemaining / AUTO_CLOSE_MS) * 100;
-        timerBar.style.width = percent + '%';
+        if (timerBar) timerBar.style.width = percent + '%';
         
         if (currentRemaining <= 0) {
           hideModal();
@@ -2649,7 +2649,9 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     }
 
     // Dismiss using the undo button
-    undoDismissBtn.addEventListener('click', hideModal);
+    if (undoDismissBtn) {
+      undoDismissBtn.addEventListener('click', hideModal);
+    }
 
     // Dismiss by clicking anywhere on the background
     modal.addEventListener('click', function(e) {
@@ -2664,16 +2666,16 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     });
 
     // Pause timer on hover so recruiter can read or click buttons comfortably
-    glowCardWrapper.addEventListener('mouseenter', pauseTimer);
-    glowCardWrapper.addEventListener('mouseleave', resumeTimer);
+    if (glowCardWrapper) {
+      glowCardWrapper.addEventListener('mouseenter', pauseTimer);
+      glowCardWrapper.addEventListener('mouseleave', resumeTimer);
+    }
 
-    // Runs automatically on every page refresh (smooth 0.8s launch)
+    // Runs automatically on every page refresh
     if (document.readyState === 'complete') {
       setTimeout(showModal, 800);
     } else {
       window.addEventListener('load', () => setTimeout(showModal, 800));
     }
-  })();
-</script>
   })();
 </script>
