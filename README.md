@@ -2127,7 +2127,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
 
 
-<!-- Modern Interactive Popup: Ultra-Luxury Golden Edition -->
+<!-- Modern Interactive Popup: Ultra-Luxury Compact Edition -->
 <div id="hireModal" class="hire-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
   <div class="glow-wrapper">
     <div class="hire-modal-container">
@@ -2152,7 +2152,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           </div>
           <div class="title-details">
             <div class="status-container">
-              <span class="status-pill"><span class="status-dot"></span> Available for Immediate Hiring</span>
+              <span class="status-pill"><span class="status-dot"></span> Seeking Employment</span>
               <span class="location-badge">📍 Udumalpet / Coimbatore</span>
             </div>
             <h2 id="modalTitle">Naveen Kumar B</h2>
@@ -2161,53 +2161,49 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         </div>
       </div>
 
-      <p class="modal-summary">
-        MBA in Finance (Sakthi Institute) with proven operational experience in AP/AR cash flow optimization, quantitative financial modeling, and automated data visualization pipelines.
-      </p>
-
-      <!-- 4 Expanded Golden Glow Dashboard Cards -->
+      <!-- 4 Golden Glow Dashboard Cards -->
       <div class="metrics-grid">
         <!-- Card 1 -->
         <div class="metric-card">
           <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
           <div class="card-info">
             <span class="metric-title">MBA in Finance</span>
-            <span class="metric-sub"> Sakthi Institute (7.9 CGPA)</span>
+            <span class="metric-sub">Sakthi Institute (7.9 CGPA)</span>
           </div>
         </div>
 
         <!-- Card 2 -->
         <div class="metric-card">
           <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
           </div>
           <div class="card-info">
             <span class="metric-title">Business Intelligence</span>
-            <span class="metric-sub">Power BI, DAX & MySQL Workbench</span>
+            <span class="metric-sub">Power BI, DAX & MySQL</span>
           </div>
         </div>
 
         <!-- Card 3 -->
         <div class="metric-card">
           <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
           </div>
           <div class="card-info">
             <span class="metric-title">Corporate Accounting</span>
-            <span class="metric-sub">AP/AR, Month-End Closing, TDS/GST</span>
+            <span class="metric-sub">AP/AR, Closings, TDS/GST</span>
           </div>
         </div>
 
         <!-- Card 4 -->
         <div class="metric-card">
           <div class="card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           </div>
           <div class="card-info">
             <span class="metric-title">Data Analytics & Code</span>
-            <span class="metric-sub">Python (Pandas), R, Advanced Excel</span>
+            <span class="metric-sub">Python (Pandas), R, Excel</span>
           </div>
         </div>
       </div>
@@ -2222,20 +2218,26 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         <span class="skill-tag">Process Enhancement</span>
       </div>
 
-      <!-- Action Buttons -->
-      <div class="modal-actions">
-        <a href="mailto:naveenbalakrishnan146@gmail.com?subject=Job%20Opportunity%20-%20Financial%20Analyst%20Role" class="btn-gold-primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          Schedule Interview
-        </a>
-        <a href="tel:+916369311629" class="btn-gold-secondary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          Direct Call
-        </a>
-      </div>
+      <!-- Action Buttons with Undo/Dismiss Icon on the Right -->
+      <div class="modal-bottom-row">
+        <div class="modal-actions">
+          <a href="mailto:naveenbalakrishnan146@gmail.com?subject=Job%20Opportunity%20-%20Financial%20Analyst%20Role" class="btn-gold-primary">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Mail
+          </a>
+          <a href="tel:+916369311629" class="btn-gold-secondary">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            Call
+          </a>
+        </div>
 
-      <div class="modal-footer-hint">
-        Click anywhere outside to dismiss
+        <!-- Undo Dismiss Icon -->
+        <button id="undoDismissBtn" class="btn-undo-icon" title="Dismiss / Minimize" aria-label="Dismiss popup">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 14 4 9 9 4"></polyline>
+            <path d="M20 20v-7a4 4 0 0 0-4-4H4"></path>
+          </svg>
+        </button>
       </div>
 
     </div>
@@ -2251,41 +2253,41 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(4, 4, 6, 0.88);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    background: rgba(4, 4, 6, 0.86);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     justify-content: center;
     align-items: center;
     z-index: 999999;
-    padding: 20px;
+    padding: 16px;
     box-sizing: border-box;
-    cursor: pointer; /* Indicates clicking outside will close */
+    cursor: pointer;
   }
 
   .hire-modal-backdrop.is-active {
     display: flex;
-    animation: modalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  /* Animated Neon Border Container */
+  /* Compact Glow Outer Frame */
   .glow-wrapper {
     position: relative;
-    max-width: 660px; /* Increased size */
+    max-width: 490px;
     width: 100%;
-    border-radius: 24px;
-    padding: 2px; /* Border thickness */
+    border-radius: 20px;
+    padding: 1.5px;
     background: linear-gradient(135deg, #f5d061 0%, #aa771c 40%, #543d0e 70%, #d4af37 100%);
-    box-shadow: 0 0 45px rgba(212, 175, 55, 0.28), 0 30px 80px rgba(0, 0, 0, 0.95);
-    cursor: default; /* Keeps pointer normal inside modal */
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.28), 0 25px 65px rgba(0, 0, 0, 0.95);
+    cursor: default;
     animation: pulseGlow 4s ease-in-out infinite alternate;
   }
 
-  /* Main Inner Card */
+  /* Main Inner Container */
   .hire-modal-container {
     position: relative;
-    background: radial-gradient(circle at 80% 10%, #1c1810 0%, #0d0d0f 100%);
-    border-radius: 22px;
-    padding: 30px 38px 28px;
+    background: radial-gradient(circle at 80% 10%, #1a160e 0%, #0d0d0f 100%);
+    border-radius: 19px;
+    padding: 22px 24px 20px;
     box-sizing: border-box;
     overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -2294,45 +2296,46 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
   /* Financial Stock Ticker Banner */
   .ticker-wrap {
-    width: calc(100% + 76px);
-    margin: -30px -38px 24px -38px;
+    width: calc(100% + 48px);
+    margin: -22px -24px 18px -24px;
     background: rgba(212, 175, 55, 0.08);
     border-bottom: 1px solid rgba(212, 175, 55, 0.2);
     overflow: hidden;
     white-space: nowrap;
-    padding: 7px 0;
+    padding: 5px 0;
   }
   .ticker-move {
     display: inline-block;
-    animation: tickerLoop 22s linear infinite;
+    animation: tickerLoop 20s linear infinite;
   }
   .ticker-item {
     display: inline-block;
-    padding: 0 16px;
-    font-size: 11px;
+    padding: 0 14px;
+    font-size: 10.5px;
     font-weight: 700;
     letter-spacing: 0.08em;
     color: #f7d070;
   }
   .ticker-dot {
     color: #10b981;
-    font-size: 9px;
+    font-size: 8px;
     margin-right: 4px;
   }
 
-  /* Profile Header */
+  /* Header Section */
   .profile-row {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
+    margin-bottom: 18px;
   }
   .avatar-ring {
-    width: 72px;
-    height: 72px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
     background: linear-gradient(135deg, #ffe082, #b8860b);
-    padding: 2.5px;
-    box-shadow: 0 0 20px rgba(245, 208, 97, 0.4);
+    padding: 2px;
+    box-shadow: 0 0 16px rgba(245, 208, 97, 0.38);
     flex-shrink: 0;
   }
   .avatar-box {
@@ -2344,7 +2347,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     align-items: center;
     justify-content: center;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 20px;
     color: #f7d070;
     letter-spacing: 1px;
   }
@@ -2352,85 +2355,82 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   .status-container {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 6px;
+    gap: 8px;
+    margin-bottom: 5px;
     flex-wrap: wrap;
   }
   .status-pill {
     display: inline-flex;
     align-items: center;
-    background: rgba(16, 185, 129, 0.12);
-    color: #34d399;
-    border: 1px solid rgba(16, 185, 129, 0.35);
-    font-size: 11px;
-    font-weight: 600;
+    background: rgba(212, 175, 55, 0.12);
+    color: #f7d070;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    font-size: 10px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    padding: 4px 10px;
+    padding: 3px 8px;
     border-radius: 20px;
   }
   .status-dot {
     width: 6px;
     height: 6px;
-    background-color: #34d399;
+    background-color: #f7d070;
     border-radius: 50%;
-    margin-right: 6px;
-    box-shadow: 0 0 8px #34d399;
+    margin-right: 5px;
+    box-shadow: 0 0 8px #f7d070;
   }
   .location-badge {
-    font-size: 11.5px;
+    font-size: 10.5px;
     color: #a89f91;
   }
 
   .title-details h2 {
     margin: 0;
-    font-size: 26px;
+    font-size: 21px;
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
     background: linear-gradient(90deg, #ffffff 30%, #f7d070 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  /* Increased space between Naveenkumar and Financial Analyst */
   .role-tag {
-    margin: 4px 0 0;
+    margin: 11px 0 0;
     color: #d8b76b;
-    font-size: 14.5px;
+    font-size: 13px;
     font-weight: 500;
-  }
-  .modal-summary {
-    font-size: 14.5px;
-    line-height: 1.6;
-    color: #c7beaf;
-    margin: 18px 0 22px;
+    letter-spacing: 0.01em;
   }
 
-  /* 4 Grid Cards - Expanded */
+  /* 4 Dashboard Cards */
   .metrics-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-bottom: 22px;
+    gap: 10px;
+    margin-bottom: 16px;
   }
   .metric-card {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 10px;
     background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(212, 175, 55, 0.22);
-    border-radius: 14px;
-    padding: 15px 16px;
-    transition: all 0.28s ease;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 11px;
+    padding: 10px 11px;
+    transition: all 0.25s ease;
   }
   .metric-card:hover {
     border-color: rgba(247, 208, 112, 0.7);
     background: rgba(212, 175, 55, 0.07);
-    box-shadow: 0 0 20px rgba(212, 175, 55, 0.22);
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.2);
     transform: translateY(-2px);
   }
   .card-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.04));
     border: 1px solid rgba(212, 175, 55, 0.3);
     color: #f7d070;
@@ -2441,63 +2441,71 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   }
   .metric-title {
     display: block;
-    font-size: 14.5px;
+    font-size: 12.5px;
     font-weight: 700;
     color: #ffffff;
+    line-height: 1.25;
   }
   .metric-sub {
     display: block;
-    font-size: 12px;
+    font-size: 10.5px;
     color: #a89f91;
-    margin-top: 3px;
+    margin-top: 2px;
+    line-height: 1.2;
   }
 
   /* Skills Badges */
   .skills-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
+    gap: 6px;
+    margin-bottom: 18px;
   }
   .skill-tag {
-    font-size: 11.5px;
+    font-size: 10.5px;
     background: rgba(255, 255, 255, 0.03);
     color: #e5d8be;
-    border: 1px solid rgba(212, 175, 55, 0.25);
-    padding: 5px 12px;
-    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    padding: 4px 9px;
+    border-radius: 6px;
     transition: border-color 0.2s;
   }
   .skill-tag:hover {
     border-color: #f7d070;
   }
 
-  /* Actions */
+  /* Bottom Row with Actions and Undo Icon */
+  .modal-bottom-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
   .modal-actions {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 14px;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 9px;
+    flex-grow: 1;
   }
   .btn-gold-primary, .btn-gold-secondary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
-    font-size: 14px;
+    gap: 7px;
+    font-size: 13px;
     font-weight: 700;
-    padding: 13px 20px;
-    border-radius: 12px;
+    padding: 10px 14px;
+    border-radius: 9px;
     text-decoration: none;
     transition: all 0.25s ease;
   }
   .btn-gold-primary {
     background: linear-gradient(135deg, #f7d070 0%, #caa033 100%);
     color: #0d0d0f;
-    box-shadow: 0 4px 20px rgba(247, 208, 112, 0.35);
+    box-shadow: 0 4px 16px rgba(247, 208, 112, 0.35);
   }
   .btn-gold-primary:hover {
     background: linear-gradient(135deg, #ffe18b 0%, #d8ae43 100%);
-    box-shadow: 0 6px 26px rgba(247, 208, 112, 0.55);
+    box-shadow: 0 6px 20px rgba(247, 208, 112, 0.55);
     transform: translateY(-2px);
   }
   .btn-gold-secondary {
@@ -2511,70 +2519,88 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     transform: translateY(-2px);
   }
 
-  .modal-footer-hint {
-    text-align: center;
-    font-size: 11.5px;
-    color: #6d675e;
-    margin-top: 14px;
-    letter-spacing: 0.02em;
+  /* Undo Button in the Last Right Corner */
+  .btn-undo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 9px;
+    background: rgba(212, 175, 55, 0.08);
+    border: 1.5px solid rgba(212, 175, 55, 0.3);
+    color: #f7d070;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+  }
+  .btn-undo-icon:hover {
+    background: rgba(212, 175, 55, 0.2);
+    border-color: #f7d070;
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(212, 175, 55, 0.3);
+    transform: rotate(-15deg) scale(1.05);
   }
 
   /* Animations */
   @keyframes modalFadeIn {
-    from { opacity: 0; transform: scale(0.94); }
+    from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
   }
   @keyframes pulseGlow {
-    0% { box-shadow: 0 0 35px rgba(212, 175, 55, 0.2); }
-    100% { box-shadow: 0 0 55px rgba(212, 175, 55, 0.4); }
+    0% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.2); }
+    100% { box-shadow: 0 0 45px rgba(212, 175, 55, 0.4); }
   }
   @keyframes tickerLoop {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 480px) {
     .metrics-grid { grid-template-columns: 1fr; }
-    .modal-actions { grid-template-columns: 1fr; }
-    .hire-modal-container { padding: 26px 20px; }
+    .modal-bottom-row { flex-wrap: wrap; }
+    .modal-actions { grid-template-columns: 1fr 1fr; width: 100%; }
+    .btn-undo-icon { width: 100%; height: 38px; }
   }
 </style>
 
 <script>
   (function() {
     const modal = document.getElementById('hireModal');
+    const undoDismissBtn = document.getElementById('undoDismissBtn');
 
-    // Open Modal function
     function showModal() {
       modal.classList.add('is-active');
       modal.setAttribute('aria-hidden', 'false');
     }
 
-    // Close Modal function
     function hideModal() {
       modal.classList.remove('is-active');
       modal.setAttribute('aria-hidden', 'true');
     }
 
-    // Close when clicking ANYWHERE outside the modal card (on the backdrop)
+    // Dismiss using the undo button on the bottom right
+    undoDismissBtn.addEventListener('click', hideModal);
+
+    // Close when clicking outside the modal box
     modal.addEventListener('click', function(e) {
       if (e.target === modal) {
         hideModal();
       }
     });
 
-    // Close with the Escape key
+    // Close with Escape key
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && modal.classList.contains('is-active')) {
         hideModal();
       }
     });
 
-    // Display EVERY TIME page is refreshed (1.2 second smooth delay)
+    // Displays every time page is refreshed (1 second smooth delay)
     if (document.readyState === 'complete') {
-      setTimeout(showModal, 1200);
+      setTimeout(showModal, 1000);
     } else {
-      window.addEventListener('load', () => setTimeout(showModal, 1200));
+      window.addEventListener('load', () => setTimeout(showModal, 1000));
     }
   })();
 </script>
