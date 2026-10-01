@@ -1451,7 +1451,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         </div>
         <h3 style="margin-top: 0; margin-bottom: 8px; color: #ff9f43; font-size: 1.4rem;">Bachelor of Commerce (B.Com)</h3>
         
-        <a href="https://https://www.ngmc.ac.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #ffffff;">
+        <a href="https://www.ngmc.ac.in/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: #ffffff;">
           <h4 style="margin: 0; font-weight: 550; transition: color 0.2s;" onmouseover="this.style.color='#ffb774'" onmouseout="this.style.color='#ffffff'">NGM College - Pollachi</h4>
         </a>
         <span class="meta" style="font-size: 0.85rem; color: #a0a0aa; display: block; margin-bottom: 4px; margin-top: 6px;">Affiliated to Bharathiar University - Coimbatore </span>
