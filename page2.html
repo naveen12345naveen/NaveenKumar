@@ -147,33 +147,6 @@
             text-shadow: 0 0 8px rgba(255,255,255,0.6);
         }
 
-        /* Full Screen Click Capturer for Audio Context Initiation */
-        .audio-interaction-overlay {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(5, 5, 10, 0.4);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            z-index: 99999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: opacity 0.6s ease, visibility 0.6s;
-        }
-
-        .interaction-prompt {
-            font-family: monospace;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--neon-gold);
-            letter-spacing: 3px;
-            text-shadow: 0 0 15px var(--amber-glow);
-            animation: textPulse 1.5s infinite alternate;
-        }
-
         /* Dynamic Global Edge Glow Overlay on All Sides */
         .global-screen-glow {
             position: fixed;
@@ -278,11 +251,6 @@
             }
         }
 
-        @keyframes textPulse {
-            from { opacity: 0.4; text-shadow: 0 0 5px var(--amber-glow); }
-            to { opacity: 1; text-shadow: 0 0 20px var(--neon-gold); }
-        }
-
         @keyframes vfxBounce {
             0% { transform: scaleY(0.25); filter: brightness(0.9); }
             100% { transform: scaleY(1.1); filter: brightness(1.2); }
@@ -300,14 +268,10 @@
     <div class="background-effect"></div>
     <div class="global-screen-glow"></div>
 
-    <!-- Audio Player & Elements -->
-    <audio id="bg-music" loop muted>
+    <!-- Audio Player & Elements (Without Overlay) -->
+    <audio id="bg-music" loop autoplay>
         <source src="music.mp3" type="audio/mpeg">
     </audio>
-
-    <div id="audio-click-overlay" class="audio-interaction-overlay">
-        <div class="interaction-prompt">⚡ TAP ANYWHERE TO SYSTEM ACTIVATION ⚡</div>
-    </div>
 
     <div class="audio-player-widget">
         <div class="visualizer-container playing" id="visualizer">
@@ -349,9 +313,8 @@
         <a href="index.html" class="back-btn">← Go Back to Home</a>
     </div>
 
-    <!-- Combined Scripts -->
+    <!-- Countdown Timer Logic -->
     <script>
-        // Countdown Timer Logic
         const targetDate = new Date("January 30, 2027 00:00:00").getTime();
 
         function updateCountdown() {
@@ -377,27 +340,6 @@
 
         updateCountdown();
         const timerInterval = setInterval(updateCountdown, 1000);
-
-        // Audio Activation Script
-        const music = document.getElementById('bg-music');
-        const overlay = document.getElementById('audio-click-overlay');
-
-        window.addEventListener('DOMContentLoaded', () => {
-            music.volume = 0.5;
-            music.play().catch(() => {});
-        });
-
-        document.addEventListener('click', () => {
-            if (music.muted) {
-                music.muted = false; 
-                music.play().catch(() => {});
-                
-                overlay.style.opacity = '0';
-                setTimeout(() => {
-                    overlay.style.visibility = 'hidden';
-                }, 600);
-            }
-        });
     </script>
 </body>
 </html>
