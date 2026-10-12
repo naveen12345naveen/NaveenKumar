@@ -23,13 +23,14 @@
       margin: 0; 
       padding: 0; 
     }
-    body { 
-      background: var(--dark); 
-      color: var(--text); 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    
+<body>
+  <!-- Canvas background -->
+  <canvas id="plexusCanvas"></canvas>
+
+  <!-- Your existing website content goes here -->
+
+</body>
     
     /* Sticky Navigation Bar with backdrop filter */
     nav { 
@@ -428,6 +429,9 @@
 </head>
 <body>
 
+
+
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -443,14 +447,172 @@
       --gold-glow-ambient: rgba(255, 200, 61, 0.12);
     }
 
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: var(--dark-void);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
+    body, html {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      background-color: #03080c;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: relative;
+    }
+
+    /* Fullscreen Fixed Canvas Background */
+    #plexusCanvas {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -2;
+    }
+
+    /* Radial Vignette Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.7) 100%);
+      pointer-events: none;
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Plexus Canvas and Vignette Background -->
+  <canvas id="plexusCanvas"></canvas>
+  <div class="overlay"></div>
+
+  <!-- Plexus Animation Script -->
+  <script>
+    const canvas = document.getElementById('plexusCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    const config = {
+      particleCount: 45,
+      maxDistance: 250,
+      dotColor: 'rgba(0, 240, 255, 0.9)',
+      lineColor: 'rgba(0, 200, 220, 0.15)',
+      glowColor: 'rgba(0, 240, 255, 0.4)',
+      bgGradientStart: '#02131a',
+      bgGradientEnd: '#03080c'
+    };
+
+    const particles = [];
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.4;
+        this.vy = (Math.random() - 0.5) * 0.4;
+        this.radius = Math.random() * 2.5 + 1;
+        this.alpha = Math.random() * 0.5 + 0.5;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = config.dotColor;
+        
+        if (this.radius > 2.5) {
+          ctx.shadowBlur = 12;
+          ctx.shadowColor = config.glowColor;
+        } else {
+          ctx.shadowBlur = 0;
+        }
+        
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+    }
+
+    function init() {
+      particles.length = 0;
+      for (let i = 0; i < config.particleCount; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < config.maxDistance) {
+            const opacity = (1 - (distance / config.maxDistance)) * 0.25;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(0, 220, 240, ${opacity})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animate() {
+      const gradient = ctx.createRadialGradient(
+        canvas.width / 2, canvas.height / 2, 10,
+        canvas.width / 2, canvas.height / 2, canvas.width
+      );
+      gradient.addColorStop(0, config.bgGradientStart);
+      gradient.addColorStop(1, config.bgGradientEnd);
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      drawLines();
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    init();
+    animate();
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+        
     /* SUPREME LAYER IMMERSIVE CONTAINER WITH QUAD ALL-SIDES YELLOW CORES */
     .desktop-enforcement-screen {
       position: fixed;
