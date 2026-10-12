@@ -24,13 +24,13 @@
       padding: 0; 
     }
     
-    body { 
-      background: var(--dark); 
-      color: var(--text); 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+    <body>
+  <!-- Canvas background -->
+  <canvas id="plexusCanvas"></canvas>
+
+  <!-- Your existing website content goes here -->
+
+</body>
     
     /* Sticky Navigation Bar with backdrop filter */
     nav { 
