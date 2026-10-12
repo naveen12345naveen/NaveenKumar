@@ -11,41 +11,58 @@
             --neon-green: #00ff88;
         }
 
-        /* Modern Dark Theme Base */
-        body {
+       <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plexus Constellation Countdown</title>
+    <style>
+        * {
             margin: 0;
             padding: 0;
-            background: radial-gradient(circle at center, #0f0f25 0%, #05050b 100%);
-            color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-blue: #00f0ff;
+            --primary-glow: rgba(0, 240, 255, 0.4);
+        }
+
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            overflow: hidden;
+            background-color: #040d12;
             position: relative;
         }
 
-        /* Moving Particle/Star Background Effect */
-        .background-effect {
+        /* Plexus Canvas Background */
+        canvas {
+            display: block;
             position: absolute;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
-            background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px);
-            background-size: 550px 550px, 350px 350px;
-            background-position: 0 0, 40px 60px;
-            animation: moveBackground 60s linear infinite;
-            opacity: 0.15;
+            width: 100%;
+            height: 100%;
             z-index: 1;
         }
 
-        @keyframes moveBackground {
-            from { background-position: 0 0, 40px 60px; }
-            to { background-position: 550px 1100px, 400px 760px; }
+        /* Subtle dark vignette overlay to replicate depth */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 30%, rgba(0,0,0,0.7) 100%);
+            pointer-events: none;
+            z-index: 2;
         }
 
         /* Glassmorphism Container Card */
@@ -63,7 +80,7 @@
             width: 90%;
         }
 
-        /* Required Title: Bold, 25px, with subtle text-glow */
+        /* Status Title */
         .status-text {
             font-size: 25px;
             font-weight: bold;
@@ -80,7 +97,7 @@
             to { text-shadow: 0 0 25px rgba(255, 75, 43, 0.8); transform: scale(1.02); }
         }
 
-        /* Unique Countdown Grid */
+        /* Countdown Grid */
         .countdown-grid {
             display: flex;
             justify-content: center;
@@ -144,6 +161,147 @@
     </style>
 </head>
 <body>
+
+    <!-- Plexus Background Canvas -->
+    <canvas id="plexusCanvas"></canvas>
+    <div class="overlay"></div>
+
+    <!-- Glassmorphism Container Card -->
+    <div class="container">
+        <div class="status-text">Launching Soon</div>
+        
+        <div class="countdown-grid">
+            <div class="time-box">
+                <span class="number" id="days">00</span>
+                <span class="label">Days</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="hours">00</span>
+                <span class="label">Hours</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="minutes">00</span>
+                <span class="label">Minutes</span>
+            </div>
+            <div class="time-box">
+                <span class="number" id="seconds">00</span>
+                <span class="label">Seconds</span>
+            </div>
+        </div>
+
+        <a href="#" class="back-btn">&larr; Return to Home</a>
+    </div>
+
+    <script>
+        // --- Plexus Constellation Effect Script ---
+        const canvas = document.getElementById('plexusCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const config = {
+            particleCount: 45,
+            maxDistance: 250,
+            dotColor: 'rgba(0, 240, 255, 0.9)',
+            lineColor: 'rgba(0, 200, 220, 0.15)',
+            glowColor: 'rgba(0, 240, 255, 0.4)',
+            bgGradientStart: '#02131a',
+            bgGradientEnd: '#03080c'
+        };
+
+        const particles = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.radius = Math.random() * 2.5 + 1;
+                this.alpha = Math.random() * 0.5 + 0.5;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0) this.x = canvas.width;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.y < 0) this.y = canvas.height;
+                if (this.y > canvas.height) this.y = 0;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = config.dotColor;
+                
+                if(this.radius > 2.5) {
+                    ctx.shadowBlur = 12;
+                    ctx.shadowColor = config.glowColor;
+                } else {
+                    ctx.shadowBlur = 0;
+                }
+                
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        function init() {
+            particles.length = 0;
+            for (let i = 0; i < config.particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < config.maxDistance) {
+                        const opacity = (1 - (distance / config.maxDistance)) * 0.25;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 220, 240, ${opacity})`;
+                        ctx.lineWidth = 0.8;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            const gradient = ctx.createRadialGradient(canvas.width/2, canvas.height/2, 10, canvas.width/2, canvas.height/2, canvas.width);
+            gradient.addColorStop(0, config.bgGradientStart);
+            gradient.addColorStop(1, config.bgGradientEnd);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            drawLines();
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
 
     <!-- Visual Background Effect Layer -->
     <div class="background-effect"></div>
