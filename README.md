@@ -2126,20 +2126,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 
 
 
-<body>
-    <!-- Plexus Background Canvas & Vignette Overlay -->
-    <canvas id="plexusCanvas"></canvas>
-    <div class="overlay"></div>
-
-    <!-- Your existing content container -->
-    <div class="container">
-        <!-- Content here -->
-    </div>
-
-    <!-- Script goes at the bottom before </body> -->
-</body>
-
-
 
 
 
