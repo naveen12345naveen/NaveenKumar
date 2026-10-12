@@ -2645,7 +2645,3 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     // Start 5-second countdown immediately
     startTimer();
 
-
-
-
- 
