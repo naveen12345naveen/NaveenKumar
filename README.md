@@ -2121,6 +2121,35 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 </div>
 
 
+
+
+
+
+
+<body>
+    <!-- Plexus Background Canvas & Vignette Overlay -->
+    <canvas id="plexusCanvas"></canvas>
+    <div class="overlay"></div>
+
+    <!-- Your existing content container -->
+    <div class="container">
+        <!-- Content here -->
+    </div>
+
+    <!-- Script goes at the bottom before </body> -->
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Modern Interactive Popup: Production Ready -->
 <div id="hireModal" role="dialog" aria-modal="true" style="
   display: flex !important;
@@ -2646,3 +2675,4 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
     startTimer();
   })();
 </script>
+
