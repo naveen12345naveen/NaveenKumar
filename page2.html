@@ -9,6 +9,11 @@
             --primary-glow: rgba(0, 242, 254, 0.4);
             --neon-blue: #00f2fe;
             --neon-green: #00ff88;
+            --neon-gold: #ffdf00;
+            --neon-yellow: #e5b800;
+            --amber-glow: rgba(255, 223, 0, 0.3);
+            --panel-bg: rgba(10, 12, 18, 0.55);
+            --glass-border: rgba(255, 223, 0, 0.15);
         }
 
         /* Modern Dark Theme Base */
@@ -141,16 +146,184 @@
             border-bottom-color: #ffffff;
             text-shadow: 0 0 8px rgba(255,255,255,0.6);
         }
+
+        /* Full Screen Click Capturer for Audio Context Initiation */
+        .audio-interaction-overlay {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(5, 5, 10, 0.4);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: 99999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: opacity 0.6s ease, visibility 0.6s;
+        }
+
+        .interaction-prompt {
+            font-family: monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--neon-gold);
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px var(--amber-glow);
+            animation: textPulse 1.5s infinite alternate;
+        }
+
+        /* Dynamic Global Edge Glow Overlay on All Sides */
+        .global-screen-glow {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 
+                inset 0 0 40px rgba(255, 223, 0, 0.2),
+                inset 0 0 80px rgba(229, 184, 0, 0.1);
+            animation: atmosphericPulse 3.5s ease-in-out infinite alternate;
+        }
+
+        /* Audio Player Widget */
+        .audio-player-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--panel-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            padding: 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            z-index: 10000;
+            transform: perspective(800px) rotateX(10deg) rotateY(-10deg);
+            transform-style: preserve-3d;
+            box-shadow: 
+                -5px 5px 15px rgba(0, 0, 0, 0.6),
+                0 0 30px rgba(255, 223, 0, 0.05),
+                inset 0 1px 2px rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .audio-player-widget:hover {
+            background: rgba(20, 18, 12, 0.7);
+            transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(-5px);
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.6),
+                0 0 40px rgba(255, 223, 0, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.15);
+        }
+
+        .visualizer-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 223, 0, 0.1);
+            transform: translateZ(15px);
+            overflow: hidden;
+        }
+
+        .glow-orb {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: radial-gradient(circle, rgba(255,223,0,0.3) 0%, rgba(229,184,0,0) 70%);
+            opacity: 1;
+            mix-blend-mode: screen;
+            animation: pulseGlow 3s infinite alternate;
+        }
+
+        .vfx-bars {
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            height: 20px;
+            z-index: 2;
+        }
+
+        .bar3d {
+            width: 3px;
+            height: 30%;
+            background: linear-gradient(to top, var(--neon-yellow), var(--neon-gold));
+            border-radius: 2px;
+            transform-origin: bottom;
+            box-shadow: 0 0 8px var(--neon-gold);
+            animation: vfxBounce 0.6s ease-in-out infinite alternate;
+        }
+
+        .bar3d:nth-child(1) { animation-delay: 0.1s; height: 75%; }
+        .bar3d:nth-child(2) { animation-delay: 0.35s; height: 90%; }
+        .bar3d:nth-child(3) { animation-delay: 0.2s; height: 60%; }
+        .bar3d:nth-child(4) { animation-delay: 0.5s; height: 100%; }
+        .bar3d:nth-child(5) { animation-delay: 0.15s; height: 40%; }
+
+        /* Animations */
+        @keyframes atmosphericPulse {
+            0% {
+                box-shadow: inset 0 0 30px rgba(255, 223, 0, 0.2), inset 0 0 60px rgba(229, 184, 0, 0.1);
+            }
+            100% {
+                box-shadow: inset 0 0 60px rgba(255, 223, 0, 0.45), inset 0 0 120px rgba(229, 184, 0, 0.25);
+            }
+        }
+
+        @keyframes textPulse {
+            from { opacity: 0.4; text-shadow: 0 0 5px var(--amber-glow); }
+            to { opacity: 1; text-shadow: 0 0 20px var(--neon-gold); }
+        }
+
+        @keyframes vfxBounce {
+            0% { transform: scaleY(0.25); filter: brightness(0.9); }
+            100% { transform: scaleY(1.1); filter: brightness(1.2); }
+        }
+
+        @keyframes pulseGlow {
+            0% { transform: scale(1) rotate(0deg); }
+            100% { transform: scale(1.3) rotate(180deg); }
+        }
     </style>
 </head>
 <body>
 
     <!-- Visual Background Effect Layer -->
     <div class="background-effect"></div>
+    <div class="global-screen-glow"></div>
+
+    <!-- Audio Player & Elements -->
+    <audio id="bg-music" loop muted>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="audio-click-overlay" class="audio-interaction-overlay">
+        <div class="interaction-prompt">⚡ TAP ANYWHERE TO SYSTEM ACTIVATION ⚡</div>
+    </div>
+
+    <div class="audio-player-widget">
+        <div class="visualizer-container playing" id="visualizer">
+            <div class="glow-orb"></div>
+            <div class="vfx-bars">
+                <span class="bar3d"></span>
+                <span class="bar3d"></span>
+                <span class="bar3d"></span>
+                <span class="bar3d"></span>
+                <span class="bar3d"></span>
+            </div>
+        </div>
+    </div>
 
     <!-- Main Content Card -->
     <div class="container">
-        <!-- Required State Text (Bold & Size 25) -->
         <div class="status-text">⚡ Will be in soon ⚡</div>
 
         <!-- Countdown Display Grid -->
@@ -173,14 +346,12 @@
             </div>
         </div>
 
-        <!-- Back link to homepage -->
         <a href="index.html" class="back-btn">← Go Back to Home</a>
     </div>
 
-    <!-- Countdown Timer Logic Script (Synced from Today) -->
+    <!-- Combined Scripts -->
     <script>
-        // Set your target launch date here (Format: "Month Day, Year HH:MM:SS")
-        // Default set to 120 days from today. You can change this string anytime.
+        // Countdown Timer Logic
         const targetDate = new Date("January 30, 2027 00:00:00").getTime();
 
         function updateCountdown() {
@@ -193,230 +364,40 @@
                 return;
             }
 
-            // Time math calculations
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
             const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            // Print numbers safely into the boxes, adding leading zeros if needed
             document.getElementById("days").innerText = days.toString().padStart(2, '0');
             document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
             document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
             document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
         }
 
-        // Run calculation instantly, then update it every 1 second
         updateCountdown();
         const timerInterval = setInterval(updateCountdown, 1000);
+
+        // Audio Activation Script
+        const music = document.getElementById('bg-music');
+        const overlay = document.getElementById('audio-click-overlay');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            music.volume = 0.5;
+            music.play().catch(() => {});
+        });
+
+        document.addEventListener('click', () => {
+            if (music.muted) {
+                music.muted = false; 
+                music.play().catch(() => {});
+                
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.visibility = 'hidden';
+                }, 600);
+            }
+        });
     </script>
 </body>
 </html>
-
-<audio id="bg-music" loop autoplay muted>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<div class="global-screen-glow"></div>
-
-<div id="audio-click-overlay" class="audio-interaction-overlay">
-  <div class="interaction-prompt">⚡ TAP ANYWHERE TO SYSTEM ACTIVATION ⚡</div>
-</div>
-
-<div class="audio-player-widget">
-  <div class="visualizer-container playing" id="visualizer">
-    <div class="glow-orb"></div>
-    <div class="vfx-bars">
-      <span class="bar3d"></span>
-      <span class="bar3d"></span>
-      <span class="bar3d"></span>
-      <span class="bar3d"></span>
-      <span class="bar3d"></span>
-    </div>
-  </div>
-</div>
-
-<style>
-  :root {
-    --neon-gold: #ffdf00;
-    --neon-yellow: #e5b800;
-    --amber-glow: rgba(255, 223, 0, 0.3);
-    --panel-bg: rgba(10, 12, 18, 0.55);
-    --glass-border: rgba(255, 223, 0, 0.15);
-  }
-
-  /* Full Screen Click Capturer for Audio Context Initiation */
-  .audio-interaction-overlay {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(5, 5, 10, 0.4);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    z-index: 99999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: opacity 0.6s ease, visibility 0.6s;
-  }
-
-  .interaction-prompt {
-    font-family: monospace;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--neon-gold);
-    letter-spacing: 3px;
-    text-shadow: 0 0 15px var(--amber-glow);
-    animation: textPulse 1.5s infinite alternate;
-  }
-
-  /* Dynamic Global Edge Glow Overlay on All Sides */
-  .global-screen-glow {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-    
-    box-shadow: 
-      inset 0 0 40px rgba(255, 223, 0, 0.2),
-      inset 0 0 80px rgba(229, 184, 0, 0.1);
-    
-    animation: atmosphericPulse 3.5s ease-in-out infinite alternate;
-  }
-
-  /* Audio Player Widget */
-  .audio-player-widget {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: var(--panel-bg);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
-    padding: 12px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    z-index: 10000;
-    
-    transform: perspective(800px) rotateX(10deg) rotateY(-10deg);
-    transform-style: preserve-3d;
-    box-shadow: 
-      -5px 5px 15px rgba(0, 0, 0, 0.6),
-      0 0 30px rgba(255, 223, 0, 0.05),
-      inset 0 1px 2px rgba(255, 255, 255, 0.1);
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  .audio-player-widget:hover {
-    background: rgba(20, 18, 12, 0.7);
-    transform: perspective(800px) rotateX(0deg) rotateY(0deg) translateY(-5px);
-    box-shadow: 
-      0 15px 35px rgba(0, 0, 0, 0.6),
-      0 0 40px rgba(255, 223, 0, 0.25),
-      inset 0 1px 2px rgba(255, 255, 255, 0.15);
-  }
-
-  .visualizer-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 14px;
-    border: 1px solid rgba(255, 223, 0, 0.1);
-    transform: translateZ(15px);
-    overflow: hidden;
-  }
-
-  .glow-orb {
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, rgba(255,223,0,0.3) 0%, rgba(229,184,0,0) 70%);
-    opacity: 1;
-    mix-blend-mode: screen;
-    animation: pulseGlow 3s infinite alternate;
-  }
-
-  .vfx-bars {
-    display: flex;
-    align-items: flex-end;
-    gap: 3px;
-    height: 20px;
-    z-index: 2;
-  }
-
-  .bar3d {
-    width: 3px;
-    height: 30%;
-    background: linear-gradient(to top, var(--neon-yellow), var(--neon-gold));
-    border-radius: 2px;
-    transform-origin: bottom;
-    box-shadow: 0 0 8px var(--neon-gold);
-    animation: vfxBounce 0.6s ease-in-out infinite alternate;
-  }
-
-  .bar3d:nth-child(1) { animation-delay: 0.1s; height: 75%; }
-  .bar3d:nth-child(2) { animation-delay: 0.35s; height: 90%; }
-  .bar3d:nth-child(3) { animation-delay: 0.2s; height: 60%; }
-  .bar3d:nth-child(4) { animation-delay: 0.5s; height: 100%; }
-  .bar3d:nth-child(5) { animation-delay: 0.15s; height: 40%; }
-
-  /* Atmospheric Gold Pulse Animations */
-  @keyframes atmosphericPulse {
-    0% {
-      box-shadow: 
-        inset 0 0 30px rgba(255, 223, 0, 0.2),
-        inset 0 0 60px rgba(229, 184, 0, 0.1);
-    }
-    100% {
-      box-shadow: 
-        inset 0 0 60px rgba(255, 223, 0, 0.45),
-        inset 0 0 120px rgba(229, 184, 0, 0.25);
-    }
-  }
-
-  @keyframes textPulse {
-    from { opacity: 0.4; text-shadow: 0 0 5px var(--amber-glow); }
-    to { opacity: 1; text-shadow: 0 0 20px var(--neon-gold); }
-  }
-
-  @keyframes vfxBounce {
-    0% { transform: scaleY(0.25); filter: brightness(0.9); }
-    100% { transform: scaleY(1.1); filter: brightness(1.2); }
-  }
-
-  @keyframes pulseGlow {
-    0% { transform: scale(1) rotate(0deg); }
-    100% { transform: scale(1.3) rotate(180deg); }
-  }
-</style>
-
-<script>
-  const music = document.getElementById('bg-music');
-  const overlay = document.getElementById('audio-click-overlay');
-
-  window.addEventListener('DOMContentLoaded', () => {
-    music.volume = 0.5;
-    music.play().catch(() => {});
-  });
-
-  document.addEventListener('click', () => {
-    if (music.muted) {
-      music.muted = false; 
-      music.play().catch(() => {});
-      
-      overlay.style.opacity = '0';
-      setTimeout(() => {
-        overlay.style.visibility = 'hidden';
-      }, 600);
-    }
-  });
-</script>
