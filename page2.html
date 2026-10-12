@@ -316,10 +316,6 @@
         </div>
     </div>
 
-    <audio id="bg-music" loop autoplay muted>
-        <source src="https://actions.google.com/sounds/v1/ambiences/space_ship_ambient.ogg" type="audio/ogg">
-    </audio>
-
     <div class="container">
         <div class="status-text">⚡ WILL BE IN SOON ⚡</div>
         
@@ -373,26 +369,77 @@
         updateCountdown();
         const timerInterval = setInterval(updateCountdown, 1000);
 
-        // Audio Activation Script
-        const music = document.getElementById('bg-music');
+        // Robust Web Audio API Synthesizer & Audio Activation Script
+        let audioCtx = null;
+        let isAudioPlaying = false;
+        let masterGain = null;
+        let droneOsc1 = null;
+        let droneOsc2 = null;
+        let lfo = null;
+
+        function initSynthesizer() {
+            if (audioCtx) return;
+            const AudioContext = window.AudioContext || window.webkitAudioContext;
+            audioCtx = new AudioContext();
+
+            masterGain = audioCtx.createGain();
+            masterGain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            masterGain.connect(audioCtx.destination);
+
+            // Low warm cosmic chord drones (Root & Fifth in minor)
+            droneOsc1 = audioCtx.createOscillator();
+            droneOsc1.type = 'sine';
+            droneOsc1.frequency.setValueAtTime(110, audioCtx.currentTime); // A2 note
+
+            droneOsc2 = audioCtx.createOscillator();
+            droneOsc2.type = 'triangle';
+            droneOsc2.frequency.setValueAtTime(164.81, audioCtx.currentTime); // E3 note
+
+            // Filter for warm atmospheric space texture
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(350, audioCtx.currentTime);
+
+            // LFO for subtle rhythmic breathing/pulsing effect
+            lfo = audioCtx.createOscillator();
+            lfo.type = 'sine';
+            lfo.frequency.setValueAtTime(0.15, audioCtx.currentTime); // slow pulse
+            const lfoGain = audioCtx.createGain();
+            lfoGain.gain.setValueAtTime(150, audioCtx.currentTime);
+            lfo.connect(lfoGain);
+            lfoGain.connect(filter.frequency);
+
+            // Connect oscillators through filter and master gain
+            droneOsc1.connect(filter);
+            droneOsc2.connect(filter);
+            filter.connect(masterGain);
+
+            droneOsc1.start();
+            droneOsc2.start();
+            lfo.start();
+        }
+
         const overlay = document.getElementById('audio-click-overlay');
+        const visualizer = document.getElementById('visualizer');
 
-        window.addEventListener('DOMContentLoaded', () => {
-            music.volume = 0.5;
-            music.play().catch(() => {});
-        });
-
-        document.addEventListener('click', () => {
-            if (music.muted) {
-                music.muted = false; 
-                music.play().catch(() => {});
+        function startAudioExperience() {
+            if (!isAudioPlaying) {
+                initSynthesizer();
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                isAudioPlaying = true;
+                visualizer.classList.add('playing');
                 
                 overlay.style.opacity = '0';
                 setTimeout(() => {
                     overlay.style.visibility = 'hidden';
                 }, 600);
             }
-        });
+        }
+
+        document.addEventListener('click', startAudioExperience);
+        document.addEventListener('keydown', startAudioExperience);
 
         // Plexus Constellation Effect Script
         const canvas = document.getElementById('plexusCanvas');
