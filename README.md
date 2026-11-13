@@ -1528,7 +1528,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
       </ul>
       
       <div class="article-links-container" style="margin-top: 15px; font-size: 0.95rem;">
-        <a href="https://www.https://apexcoconuts.com/" target="_blank" class="text-link-pdf primary-link" style="color: #ffb774; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#ff9f43'" onmouseout="this.style.color='#ffb774'">
+        <a href="https://apexcoconuts.com/" target="_blank" class="text-link-pdf primary-link" style="color: #ffb774; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#ff9f43'" onmouseout="this.style.color='#ffb774'">
           Company Website
         </a>
         <span class="link-separator" style="color: rgba(255, 140, 0, 0.3); margin: 0 10px;">|</span>
