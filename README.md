@@ -1192,8 +1192,7 @@ gateSubtitle.innerHTML = "CRITICAL DESK AUTHENTICATION ERROR.<br><br>🚨 COMPIL
     <h1 class="vfx-word-shimmer" style="margin-top: 0; margin-bottom: 5px; font-size: 2.8rem; color: #ffffff; letter-spacing: 0.5px; filter: drop-shadow(0 0 10px rgba(255,159,67,0.2));">NaveenKumar B</h1>
     <p class="title-role" style="font-size: 1.3rem; font-weight: 550; color: #ff9f43; margin-top: 0; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Finance Analyst</p>
     <p class="sub" style="line-height: 1.7; color: #e0e0e6; font-size: 1.05rem; text-align: justify; margin-bottom: 0;">
-     I hold a Master’s Degree in Finance & Analytics, my professional journey is founded on a fundamental principle the value of financial data lies in the actionable insights derived from it.
-At present, I work at ZOLD UDP Group of Companies, where I develop financial models, optimize accounts frameworks, and manage month-end reconciliations to safeguard and enhance our profitability. My experience extends beyond theory, it is rooted in manufacturing operations, supply chain intricacies, and published research concerning NBFC capital adequacy. Armed with <strong style="color: #ffb774;">Excel, Power BI, MySQL, R programming, HTML, SAP FICO, and Python</strong>, I identify and eliminate operational inefficiencies while constructing the data infrastructure that modern businesses require for intelligent scaling.
+     Holding a Master’s Degree in Finance &amp; Analytics, my career is built on a core belief: the true value of financial data lies in the actionable insights derived from it. Currently serving as a Junior Executive at <strong style="color: #ffb774;">Apex Coco and Solar Energy Limited</strong>, I oversee accounts payable operations, physical-to-ERP inventory reconciliations, and production cost analysis within <strong style="color: #ffb774;">SAP S/4HANA and Tally Prime</strong> to drive bottom-line performance. Anchored in real-world manufacturing operations, supply chain dynamics, and published research on NBFC capital adequacy, I leverage <strong style="color: #ffb774;">SAP S/4HANA, Tally Prime, Power BI, Advanced Excel, MySQL, Python, R programming, and HTML</strong> to dismantle operational inefficiencies and engineer scalable financial infrastructure.
     </p>
   </div>
 </header>
@@ -1481,11 +1480,12 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
 </section>
 
 <!-- corporate exposure -->
-<section id="corporate exposure" style="padding: 60px 20px; background: #0d0d0e;">
+<section id="corporate-exposure" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Corporate Exposure</h2>
   
   <div class="grid" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; max-width: 1200px; margin: 0 auto;">
     
+    <!-- Card 1: Apex Coco and Solar Energy Limited (Current Role) -->
     <div class="card" style="
         background: #121214; /* Deep premium dark background */
         color: #f3f4f6; /* Light text for readability */
@@ -1506,18 +1506,71 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
         transition: all 0.4s ease-in-out;
     "
     onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
-    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';" >
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';">
+      
+      <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 6px;">
+        <h3 style="display: inline-flex; align-items: center; gap: 12px; font-family: sans-serif; color: #ff9f43; margin: 0; font-size: 1.5rem;">
+          Junior Executive
+        </h3>
+        <span style="font-size: 0.75rem; font-weight: 700; color: #ffb774; background: rgba(255, 159, 67, 0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255, 159, 67, 0.25); letter-spacing: 0.5px;">
+          ✨ JUNIOR EXECUTIVE // 2026
+        </span>
+      </div>
+      
+      <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">November 2026 - Present</span>
+      <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 550; font-size: 1.1rem;">APEX COCO AND SOLAR ENERGY LIMITED, Pollachi</h4>
+      
+      <ul class="experience-list" style="margin-bottom: 20px; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
+        <li style="margin-bottom: 8px;">Direct end-to-end Accounts Payable (AP) workflows, vendor reconciliations, and payment processing across SAP S/4HANA and Tally Prime to optimize cash flow and compliance.</li>
+        <li style="margin-bottom: 8px;">Analyze manufacturing metrics, input-output ratios, and production cost variances to identify cost-saving opportunities and improve shop-floor efficiency.</li>
+        <li style="margin-bottom: 8px;">Audit and reconcile physical inventory records against ERP stock ledgers to ensure accurate asset valuation and prevent discrepancies.</li>
+        <li style="margin-bottom: 0;">Execute daily accounting entries, ledger maintenance, and month-end closing routines across dual ERP systems while collaborating with production and procurement teams to resolve bottlenecks.</li>
+      </ul>
+      
+      <div class="article-links-container" style="margin-top: 15px; font-size: 0.95rem;">
+        <a href="https://www.https://apexcoconuts.com/" target="_blank" class="text-link-pdf primary-link" style="color: #ffb774; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#ff9f43'" onmouseout="this.style.color='#ffb774'">
+          Company Website
+        </a>
+        <span class="link-separator" style="color: rgba(255, 140, 0, 0.3); margin: 0 10px;">|</span>
+        <a href="https://maps.app.goo.gl/5iq2doodmRfvnT7AA" target="_blank" class="text-link-pdf secondary-link" style="color: #ffb774; text-decoration: none; font-weight: 500; transition: color 0.2s;" onmouseover="this.style.color='#ff9f43'" onmouseout="this.style.color='#ffb774'">
+          Company Location
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2: ZOLD UDP Group of Companies (Previous Role) -->
+    <div class="card" style="
+        background: #121214; /* Deep premium dark background */
+        color: #f3f4f6; /* Light text for readability */
+        border-radius: 12px; 
+        padding: 30px; 
+        position: relative;
+        width: 100%;
+        max-width: 550px; /* Gives the timeline entry a spacious layout */
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 140, 0, 0.25); /* Subtle warm amber border */
+        
+        /* VFX Warm Light Glow on all sides */
+        box-shadow: 
+            0 0 25px 2px rgba(255, 90, 0, 0.25),   /* Vibrant inner amber warmth */
+            0 0 50px 10px rgba(230, 140, 10, 0.15), /* Soft golden outer spread */
+            inset 0 0 15px rgba(255, 100, 0, 0.08); /* Internal edge warmth */
+        
+        transition: all 0.4s ease-in-out;
+    "
+    onmouseover="this.style.boxShadow='0 0 35px 5px rgba(255, 90, 0, 0.35), 0 0 65px 15px rgba(230, 140, 10, 0.22), inset 0 0 20px rgba(255, 100, 0, 0.12)'; this.style.transform='translateY(-2px)';"
+    onmouseout="this.style.boxShadow='0 0 25px 2px rgba(255, 90, 0, 0.25), 0 0 50px 10px rgba(230, 140, 10, 0.15), inset 0 0 15px rgba(255, 100, 0, 0.08)'; this.style.transform='translateY(0)';">
       
       <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 6px;">
         <h3 style="display: inline-flex; align-items: center; gap: 12px; font-family: sans-serif; color: #ff9f43; margin: 0; font-size: 1.5rem;">
           Junior Analyst 
         </h3>
         <span style="font-size: 0.75rem; font-weight: 700; color: #ffb774; background: rgba(255, 159, 67, 0.1); padding: 4px 10px; border-radius: 6px; border: 1px solid rgba(255, 159, 67, 0.25); letter-spacing: 0.5px;">
-          ✨ ANALYST // 2026
+          ✨ ANALYST // 2025 - 2026
         </span>
       </div>
       
-      <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">August 2025 - Present</span>
+      <span class="meta" style="display: block; font-size: 0.9rem; color: #a0a0aa; margin-bottom: 8px;">August 2025 - October 2026</span>
       <h4 style="margin-top: 0; margin-bottom: 15px; color: #ffffff; font-weight: 550; font-size: 1.1rem;">ZOLD UDP GROUP OF COMPANIES, Udumalpet</h4>
       
       <ul class="experience-list" style="margin-bottom: 20px; padding-left: 20px; line-height: 1.7; color: #e0e0e6;">
@@ -1536,6 +1589,12 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           Company Location
         </a>
       </div>
+    </div>
+
+  </div>
+</section>
+
+      
       
     </div> 
   </div><!-- /corporate exposure-grid -->
