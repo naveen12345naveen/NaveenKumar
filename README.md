@@ -1479,7 +1479,7 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
   </div> <!-- /education-grid -->
 </section>
 
-<!-- corporate exposure -->
+<!-- Corporate Exposure -->
 <section id="corporate-exposure" style="padding: 60px 20px; background: #0d0d0e;">
   <h2 style="color: #ff9f43; font-size: 2rem; text-align: center; margin-bottom: 40px; letter-spacing: 0.5px;">Corporate Exposure</h2>
   
