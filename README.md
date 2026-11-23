@@ -1589,8 +1589,6 @@ onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 0 30px
           Company Location
         </a>
       </div>
-    </div>
-
     </div> 
   </div><!-- /corporate exposure-grid -->
 </section>
